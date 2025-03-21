@@ -1,0 +1,197 @@
+<main id="container">
+	<!-- 본문 영역 // -->
+	<div id="contents" class="{{prop.depth1}} {{prop.depth2}} {{prop.depth3}}"> <!-- 해당 depth별로 class명 추가 -->
+		<div class="inner">
+			<button class="btn small fill" onclick="fn.popup('open', '#popupWrittenContract');"><i class="svgicon svgicon-session"></i>서면 계약서 부본​</button>
+			<button class="btn small fill" onclick="fn.popup('open', '#popupDepositConfirmation');"><i class="svgicon svgicon-session"></i>입금확인증​</button>
+			<button class="btn small fill" onclick="fn.popup('open', '#popupDepositConfirmationSend');"><i class="svgicon svgicon-session"></i>입금확인증 발송</button>
+			<button class="btn small fill" onclick="fn.popup('open', '#popupAddressSearch');"><i class="svgicon svgicon-session"></i>주소검색</button>
+			<button class="btn small fill" onclick="fn.popup('open', '#popupVoucherBenefits');"><i class="svgicon svgicon-session"></i>바우처 혜택</button>
+			<button class="btn small fill" onclick="fn.popup('open', '#popupVoucherBenefitsNodata');"><i class="svgicon svgicon-session"></i>바우처 혜택-Nodata</button>
+			<button class="btn small fill" onclick="fn.popup('open', '#popupCouponBenefits');"><i class="svgicon svgicon-session"></i>쿠폰 혜택</button>
+			<button class="btn small fill" onclick="fn.popup('open', '#popupCouponBenefitsNodata');"><i class="svgicon svgicon-session"></i>쿠폰 혜택-Nodata</button>
+			<button class="btn small fill" onclick="fn.popup('open', '#popupGiftBenefits');"><i class="svgicon svgicon-session"></i>사은품 혜택</button>
+			<button class="btn small fill" onclick="fn.popup('open', '#popupGiftBenefitsNodata');"><i class="svgicon svgicon-session"></i>사은품 혜택-Nodata</button>
+			<button class="btn small fill" onclick="fn.popup('open', '#popupAmountAdjustment');"><i class="svgicon svgicon-session"></i>결제 금액 조정​</button>
+			<button class="btn small fill" onclick="fn.popup('open', '#popupInformationSettings');"><i class="svgicon svgicon-session"></i>발송 정보 설정</button>
+			<button class="btn small fill" onclick="fn.popup('open', '#popupElectronicContract');"><i class="svgicon svgicon-session"></i>전자계약서 부본</button>
+			<button class="btn small fill" onclick="fn.popup('open', '#popupSignContract');"><i class="svgicon svgicon-session"></i>전자계약서 서명하기​</button>
+			<a href="http://project.cstone.co.kr/portfolio/hankgolf/email/eMailTemplate_13_deposit.html" class="btn small fill" ><i class="svgicon svgicon-session"></i>입금확인증 이메일템플릿</a>
+
+		</div>
+	</div>
+	
+	<!-- 팝업 : 서면 계약서 부본​ // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupWrittenContract",
+			"class": "popupwrittencontract",
+			"tit": "서면 계약서 부본​",
+			"header": true,
+			"content": "./contents/popup/popupWrittenContract.html"
+		}
+	})}}
+	<!-- // 팝업 : 서면 계약서 부본​ -->
+
+	<!-- 팝업 : 입금확인증​ // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupDepositConfirmation",
+			"class": "popupdepositconfirmation",
+			"tit": "입금확인증​",
+			"header": true,
+			"content": "./contents/popup/popupDepositConfirmation.html"
+		}
+	})}}
+	<!-- // 팝업 : 입금확인증​ -->
+
+	<!-- 팝업 : 입금확인증 발송​ // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupDepositConfirmationSend",
+			"class": "popupdepositconfirmation send",
+			"tit": "입금확인증 발송​",
+			"header": true,
+			"content": "./contents/popup/popupDepositConfirmationSend.html"
+		}
+	})}}
+	<!-- // 팝업 : 입금확인증 발송​ -->
+
+	<!-- 팝업 : 주소검색 // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupAddressSearch",
+			"class": "popupaddresssearch",
+			"tit": "주소검색",
+			"header": true,
+			"content": "./contents/popup/popupAddressSearch.html"
+		}
+	})}}
+	<!-- // 팝업 : 주소검색 -->
+
+	<!-- 팝업 : 바우처 혜택 // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupVoucherBenefits",
+			"class": "popupvoucherbenefits",
+			"tit": "바우처 혜택",
+			"header": true,
+			"content": "./contents/popup/popupVoucherBenefits.html"
+		}
+	})}}
+	<!-- // 팝업 : 바우처 혜택 -->
+
+	<!-- 팝업 : 바우처 혜택 -Nodata // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupVoucherBenefitsNodata",
+			"class": "popupvoucherbenefits",
+			"tit": "바우처 혜택",
+			"header": true,
+			"content": "./contents/popup/popupVoucherBenefitsNodata.html"
+		}
+	})}}
+	<!-- // 팝업 : 바우처 혜택 -Nodata -->
+
+	<!-- 팝업 : 쿠폰 혜택 // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupCouponBenefits",
+			"class": "popupvoucherbenefits",
+			"tit": "쿠폰 혜택",
+			"header": true,
+			"content": "./contents/popup/popupCouponBenefits.html"
+		}
+	})}}
+	<!-- // 팝업 : 쿠폰 혜택 -->
+
+	<!-- 팝업 : 쿠폰 혜택 -Nodata // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupCouponBenefitsNodata",
+			"class": "popupvoucherbenefits",
+			"tit": "쿠폰 혜택",
+			"header": true,
+			"content": "./contents/popup/popupCouponBenefitsNodata.html"
+		}
+	})}}
+	<!-- // 팝업 : 쿠폰 혜택 -Nodata -->
+
+	<!-- 팝업 : 사은품 혜택 // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupGiftBenefits",
+			"class": "popupvoucherbenefits gift",
+			"tit": "사은품 혜택",
+			"header": true,
+			"content": "./contents/popup/popupGiftBenefits.html"
+		}
+	})}}
+	<!-- // 팝업 : 사은품 혜택 -->
+
+	<!-- 팝업 : 사은품 혜택 -Nodata // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupGiftBenefitsNodata",
+			"class": "popupvoucherbenefits gift",
+			"tit": "사은품 혜택",
+			"header": true,
+			"content": "./contents/popup/popupGiftBenefitsNodata.html"
+		}
+	})}}
+	<!-- // 팝업 : 사은품 혜택 -Nodata -->
+
+
+	<!-- 팝업 : 결제 금액 조정​ // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupAmountAdjustment",
+			"class": "popupamountadjustment",
+			"tit": "결제 금액 조정​",
+			"header": true,
+			"content": "./contents/popup/popupAmountAdjustment.html"
+		}
+	})}}
+	<!-- // 팝업 : 결제 금액 조정​ -->
+
+	<!-- 팝업 : 발송 정보 설정 // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupInformationSettings",
+			"class": "popupamountadjustment",
+			"tit": "발송 정보 설정",
+			"header": true,
+			"content": "./contents/popup/popupInformationSettings.html"
+		}
+	})}}
+	<!-- // 팝업 : 발송 정보 설정 -->
+
+	<!--// 2024-12-11 추가 -->
+	<!-- 팝업 : 전자 계약서 부본 // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupElectronicContract",
+			"class": "popupelectroniccontract",
+			"tit": "전자 계약서 부본",
+			"header": true,
+			"content": "./contents/popup/popupElectronicContract.html"
+		}
+	})}}
+	<!-- // 팝업 : 전자 계약서 부본 -->
+	<!-- 2024-12-11 추가 //-->
+
+	<!--// 2025-01-31 추가 -->
+	<!-- 팝업 : 전자계약서 서명하기​ // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupSignContract",
+			"class": "popupsigncontract",
+			"tit": "전자계약서 서명하기​",
+			"header": true,
+			"content": "./contents/popup/popupSignContract.html"
+		}
+	})}}
+	<!-- // 팝업 : 전자계약서 서명하기​ -->
+	<!-- 2025-01-31 추가 //-->
+	<!-- // 본문 영역 -->
+</main>

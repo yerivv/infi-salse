@@ -1,0 +1,117 @@
+<main id="container">
+	<!-- 본문 영역 // -->
+	<div id="contents" class="{{prop.depth1}} {{prop.depth2}} {{prop.depth3}}"> <!-- 해당 depth별로 class명 추가 -->
+
+		<div class="title-area">
+			<h2 class="tit">투어현황관리</h2>
+			
+			<div>
+				<p><i class="svgicon svgicon-plane"></i>투어예약을 할 수 있도록 독려해보세요!</p>
+				<button class="btn small fill"><i class="svgicon svgicon-customer"></i>첫 투어 대기고객</button>
+			</div>
+		</div>
+		
+		<div class="inner">
+			<div class="sorting list-sort">
+				<div class="sorting-container">
+					<div class="input-sorting">
+						<label><input type="checkbox" name="" checked=""><span>예약중<em>0</em></span></label>
+						<label><input type="checkbox" name=""><span>예약완료<em>0</em></span></label>
+						<label><input type="checkbox" name=""><span>첫투어<em>0</em></span></label>
+						<label><input type="checkbox" name=""><span>투어중<em>0</em></span></label>
+						<label><input type="checkbox" name=""><span>예약접수<em>0</em></span></label>
+						<!-- 2025.02.03 수정 // -->
+						<label><input type="checkbox" name=""><span>예약변경<em>0</em></span></label>
+						<!-- // 2025.02.03 수정 -->
+						<label><input type="checkbox" name=""><span>투어완료<em>0</em></span></label>
+						<label><input type="checkbox" name=""><span>투어취소<em>0</em></span></label>
+					</div>
+					<button class="input-btn"><i class="svgicon svgicon-inputbutton"></i></button>
+				</div>
+
+				<div class="search-form">
+					<div class="select">
+						<select title="select 선택">
+							<!--// 2024-12-10 수정 -->
+							<option value="" class="select-ti">고객명</option>
+							<option value="">고객명</option>
+							<option value="">그룹코드</option>
+							<!-- 2024-12-10 수정 //-->
+						</select>
+					</div>
+					<div class="form-search">
+						<input type="text" name="" title="검색어 입력" placeholder="검색어 입력">
+						<button type="button" class="btn-delete"><span class="blind">삭제</span></button>
+						<button type="button" class="btn-search"><span class="blind">검색</span></button>
+					</div>
+					<button type="button" class="btn" onclick="fn.popup('open', '#popupSearchDetail')"><span class="blind">상세검색</span><i class="svgicon svgicon-detailsearch"></i></button>
+				</div>
+			</div>
+		</div>
+		
+		<div class="customer-list">
+			<div class="info-area">
+				<p>총<strong>0</strong>건</p>
+				<div class="sel-area">
+					<p onclick="fn.popup('open', '#popupGolfLocationSelect')">골프장 지역 <i class="icon icon-select"></i></p>
+					<div class="select">
+						<select title="select 선택">
+							<option value="" class="select-ti">최근접수순</option>
+							<option value="">최근접수순</option>
+							<option value="">빠른출발순</option>
+							<option value="">최대인원</option>
+							<option value="">최소인원</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<!-- list // -->
+			<div class="customer-list">
+				<div class="nodata">
+					<p>
+						<i class="icon icon-nodata"></i>
+						<small>고객님의 투어활동을 독려해주세요.</small>
+					</p>
+				</div>
+			</div>
+			<!-- // list -->
+
+			<!-- pagination // -->
+			<div class="pagination-list">
+				<a href="#" class="btn-prev"><span class="blind">이전 페이지</span><i class="svgicon svgicon-pagearrowleft"></i></a>
+				<ol>
+					<li class="active"><a href="javascript:void(0);"><span class="blind">현재 페이지</span>1</a></li><!-- 활성화 class="active" -->
+				</ol>
+				<a href="#" class="btn-next"><span class="blind">다음 페이지</span><i class="svgicon svgicon-pagearrowright"></i></a>
+			</div>
+			<!-- // pagination -->
+		</div>
+
+		<!-- 팝업 : 골프장 지역 선택​ // -->
+		{{include('./components/popup.html', {
+			"prop": {
+				"id": "popupGolfLocationSelect",
+				"class": "popupgolflocationselect",
+				"tit": "골프장 지역 선택​",
+				"header": true,
+				"content": "./contents/popup/popupGolfLocationSelect.html"
+			}
+		})}}
+		<!-- // 팝업 : 골프장 지역 선택​ -->
+
+
+		<!-- 팝업 : 상세검색 // -->
+		{{include('./components/popup.html', {
+			"prop": {
+				"id": "popupSearchDetail",
+				"class": "popupsearchdetail",
+				"tit": "상세검색",
+				"header": true,
+				"content": "./contents/popup/popupSearchDetail.html"
+			}
+		})}}
+		<!-- // 팝업 : 상세검색 -->
+	</div>
+	<!-- // 본문 영역 -->
+</main>

@@ -1,0 +1,237 @@
+<main id="container">
+	<!-- 본문 영역 // -->
+	<div id="contents" class="{{prop.depth1}} {{prop.depth2}} {{prop.depth3}}"> <!-- 해당 depth별로 class명 추가 -->
+		<div class="title-area">
+			<h2 class="tit">전체일정관리</h2>
+			<button type="button" class="btn small fill" onclick="fn.popup('open', '#popupRegistercalendar'); fn.timePickerInit('#startTime', '#endTime')"><i class="svgicon svgicon-date"></i>일정등록</button>
+		</div>
+
+		<div class="activity-area">
+			<form>
+				<fieldset>
+					<div class="search-filter">
+						<div class="team-area">
+							<div class="activity-ti">
+								<a href="#" class="active">내일정</a>
+								<a href="#">팀일정 </a>
+							</div>
+							<div class="select">
+								<select title="select 선택" disabled>
+									<!-- 1개일 경우 disabled -->
+									<option value="" class="select-ti">TGS 1팀</option>
+									<option value="">TGS 1팀</option>
+									<option value="">TGS 1팀</option>
+									<option value="">TGS 1팀</option>
+									<option value="">TGS 1팀</option>
+								</select>
+							</div>
+							<div class="select">
+								<select title="select 선택">
+									<option value="" class="select-ti">전체</option>
+									<option value="">김민관</option>
+									<option value="">송영신</option>
+									<option value="">이성식</option>
+									<option value="">정우영</option>
+								</select>
+							</div>
+							<div class="select">
+								<select title="select 선택">
+									<option value="" class="select-ti">영업활동 전체</option>
+									<option value="">상담</option>
+									<option value="">계약</option>
+									<option value="">교육/설명</option>
+									<option value="">송영</option>
+									<option value="">기타</option>
+								</select>
+							</div>
+							<div class="select">
+								<select title="select 선택">
+									<option value="" class="select-ti">출퇴근 전체</option>
+									<option value="">직출</option>
+									<option value="">직퇴</option>
+								</select>
+							</div>
+						</div>
+						<div class="sort">
+							<span class="daterangepickers single center"><input type="text" placeholder="YYYY.MM.DD ~ YYYY.MM.DD" readonly><i class="svgicon svgicon-date"></i></span>
+							<div class="btns">
+								<button type="button" class="btn fill">오늘</button>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+
+			
+			<div class="activity-contents">
+				<div class="calendar-date">
+					<button class="btn-prev"><i class="svgicon svgicon-arrowleft"></i></button>
+					<button class="btn-next"><i class="svgicon svgicon-arrowright"></i></button>
+					<p class="today"><span>11</span>월</p>
+					<p><span>12</span>화</p>
+					<p><span>13</span>수</p>
+				</div>
+
+				
+				<!--// 2025-01-02 수정 -->
+				<!-- 오늘 날짜 아닐 시 today 삭제 -->
+				<div class="calendar today">
+					<table class="calendar-table">
+						<tr>
+							<td class="left">
+								<div class="cal-content contract" onclick="fn.popup('open', '#popupCalendarView')">
+									<div class="cal-subject">
+										<span class="label">계약</span>
+										<p>강수영고객님 소개로 친한 친구 소개강수영고객님 소개로 친한 친구 소개</p>
+										<p class="date">시간 : 09:30 ~ 11:00</p>
+									</div>
+								</div>
+							</td>
+							<td>
+								<div class="cal-content edu" onclick="fn.popup('open', '#popupCalendarView')">
+									<div class="cal-subject">
+										<span class="label">회원관리</span>
+										<p>강수영고객님 소개로 친한 친구 소개강수영고객님 소개로 친한 친구 소개</p>
+										<p class="date">시간 : 09:30 ~ 11:00</p>
+									</div>
+								</div>
+							</td>
+							<td class="right">
+								<div class="cal-content consult" onclick="fn.popup('open', '#popupCalendarView')">
+									<div class="cal-subject">
+										<!--// 2024-12-13 문구 수정 -->
+										<span class="label">입회상담</span>
+										<!-- 2024-12-13 문구 수정 //-->
+										<p>강수영고객님 소개로 친한 친구 소개강수영고객님 소개로 친한 친구 소개</p>
+										<p class="date">시간 : 09:30 ~ 11:00</p>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="left">
+								<div class="cal-content consult" onclick="fn.popup('open', '#popupCalendarView')">
+									<div class="cal-subject">
+										<!--// 2024-12-13 문구 수정 -->
+										<span class="label">입회상담</span>
+										<!-- 2024-12-13 문구 수정 //-->
+										<p>강수영고객님 소개로 친한 친구 소개강수영고객님 소개로 친한 친구 소개</p>
+										<p class="date">시간 : 09:30 ~ 11:00</p>
+									</div>
+								</div>
+							</td>
+							<td>
+								<div class="cal-content edu disabled" onclick="fn.popup('open', '#popupCalendarView')">
+									<div class="cal-subject">
+										<!--// 2024-12-13 문구 수정 -->
+										<span class="label">회원관리</span>
+										<!-- 2024-12-13 문구 수정 //-->
+										<span class="label">직출</span>
+										<p>강수영고객님 소개로 친한 친구 소개강수영고객님 소개로 친한 친구 소개</p>
+										<p class="date">시간 : 09:30 ~ 11:00</p>
+									</div>
+								</div>
+							</td>
+							<td class="right">
+								<div class="cal-content event" onclick="fn.popup('open', '#popupCalendarView')">
+									<div class="cal-subject">
+										<span class="label">행사</span>
+										<p>강수영고객님 소개로 친한 친구 소개강수영고객님 소개로 친한 친구 소개</p>
+										<p class="date">시간 : 09:30 ~ 11:00</p>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="left">
+								<div class="cal-content pickup" onclick="fn.popup('open', '#popupCalendarView')">
+									<div class="cal-subject">
+										<span class="label">송영</span>
+										<p>강수영고객님 소개로 친한 친구 소개강수영고객님 소개로 친한 친구 소개</p>
+										<p class="date">시간 : 09:30 ~ 11:00</p>
+									</div>
+								</div>
+							</td>
+							<td>
+								<div class="cal-content etc" onclick="fn.popup('open', '#popupCalendarView')">
+									<div class="cal-subject">
+										<span class="label">기타</span>
+										<p>강수영고객님 소개로 친한 친구 소개강수영고객님 소개로 친한 친구 소개</p>
+										<p class="date">시간 : 09:30 ~ 11:00</p>
+									</div>
+								</div>
+							</td>
+							<td class="right">
+								
+							</td>
+						</tr>
+					</table>
+				</div>
+				
+				<!-- 2025-01-02 수정 //-->
+			</div>
+		</div>
+
+		
+	<!-- 팝업 : 일정등록​ // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupRegistercalendar",
+			"class": "popupregistercalendar",
+			"tit": "일정등록​",
+			"header": true,
+			"content": "./contents/popup/popupRegistercalendar.html"
+		}
+	})}}
+	<!-- // 팝업 : 일정등록​ -->
+
+	<!-- 팝업 : 외부 일정 수정 // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupRegistercalendarEdit",
+			"class": "popupregistercalendar",
+			"tit": "일정수정",
+			"header": true,
+			"content": "./contents/popup/popupRegistercalendarEdit.html"
+		}
+	})}}
+	<!-- // 팝업 : 외부 일정 수정 -->
+
+	<!-- 팝업 : 일정상세 // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupCalendarView",
+			"class": "popupcalendarview",
+			"tit": "일정상세",
+			"header": true,
+			"content": "./contents/popup/popupCalendarView.html"
+		}
+	})}}
+	<!-- // 팝업 : 일정상세 -->
+
+	<!-- 팝업 : 시간선택 // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupTimePicker",
+			"class": "popuptimepicker",
+			"tit": "시간선택",
+			"header": true,
+			"content": "./contents/popup/popupTimePicker.html"
+		}
+	})}}
+	<!-- // 팝업 : 시간선택 -->
+
+	<!-- 팝업 : 고객조회 // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupCustomerLookup",
+			"class": "popupcustomerlookup",
+			"tit": "고객조회",
+			"header": true,
+			"content": "./contents/popup/popupCustomerLookup.html"
+		}
+	})}}
+	<!-- // 팝업 : 고객조회 -->
+	</div>
+	<!-- // 본문 영역 -->
+</main>

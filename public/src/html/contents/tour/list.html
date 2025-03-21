@@ -1,0 +1,833 @@
+<main id="container">
+	<!-- 본문 영역 // -->
+	<div id="contents" class="{{prop.depth1}} {{prop.depth2}} {{prop.depth3}}"> <!-- 해당 depth별로 class명 추가 -->
+
+		<div class="title-area">
+			<h2 class="tit">투어현황관리</h2>
+			
+			<div>
+				<p><i class="svgicon svgicon-plane"></i>투어예약을 할 수 있도록 독려해보세요!</p>
+				<button class="btn small fill"><i class="svgicon svgicon-customer"></i>첫 투어 대기고객</button>
+			</div>
+		</div>
+		
+		<div class="inner">
+			<div class="sorting list-sort">
+				<div class="sorting-container">
+					<div class="input-sorting">
+						<label><input type="checkbox" name="" checked=""><span>예약중<em>0</em></span></label>
+						<label><input type="checkbox" name=""><span>예약완료<em>0</em></span></label>
+						<label><input type="checkbox" name=""><span>첫투어<em>0</em></span></label>
+						<label><input type="checkbox" name=""><span>투어중<em>20</em></span></label>
+						<label><input type="checkbox" name=""><span>예약접수<em>0</em></span></label>
+						<!-- 2025.02.03 수정 // -->
+						<label><input type="checkbox" name=""><span>예약변경<em>0</em></span></label>
+						<!-- // 2025.02.03 수정 -->
+						<label><input type="checkbox" name=""><span>투어완료<em>0</em></span></label>
+						<label><input type="checkbox" name=""><span>투어취소<em>10</em></span></label>
+					</div>
+					<button class="input-btn"><i class="svgicon svgicon-inputbutton"></i></button>
+				</div>
+
+				<div class="search-form">
+					<div class="select">
+						<select title="select 선택">
+							<!--// 2024-12-10 수정 -->
+							<option value="" class="select-ti">고객명</option>
+							<option value="">고객명</option>
+							<option value="">그룹코드</option>
+							<!-- 2024-12-10 수정 //-->
+						</select>
+					</div>
+					<div class="form-search">
+						<input type="text" name="" title="검색어 입력" placeholder="검색어 입력">
+						<button type="button" class="btn-delete"><span class="blind">삭제</span></button>
+						<button type="button" class="btn-search"><span class="blind">검색</span></button>
+					</div>
+					<button type="button" class="btn" onclick="fn.popup('open', '#popupSearchDetail')"><span class="blind">상세검색</span><i class="svgicon svgicon-detailsearch"></i></button>
+				</div>
+			</div>
+		</div>
+		<!-- list // -->
+		<div class="customer-list">
+			<div class="info-area">
+				<p>총<strong>20</strong>건</p>
+				<div class="sel-area">
+					<p onclick="fn.popup('open', '#popupGolfLocationSelect')">골프장 지역 <i class="icon icon-select"></i></p>
+					<div class="select">
+						<select title="select 선택">
+							<option value="">최근예약순</option>
+							<option value="">빠른출발순</option>
+							<option value="">최대인원</option>
+							<option value="">최소인원</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<ul>
+				<li>
+					<div class="customer-info">
+						<div class="state">예약중</div>
+						<div class="customer">
+							<p><strong>[베트남/달랏] 삼투엔람 골프 리조트 2024.11.12 (4박)</strong></p>
+							<div class="customer-detail">
+								<span>결제진행</span>
+								<span>REV202410250</span>
+								<!-- 2025.02.07 수정 // -->
+								<span>예약일 : 2024.07.08</span>
+								<!-- // 2025.02.07 수정 -->
+							</div>
+							<div class="info">
+								<p><i class="svgicon svgicon-customer"></i>이진숙<span><i class="svgicon svgicon-usercode"></i>MEM123</span><span><i class="svgicon svgicon-phone"></i>010-2545-2562 </span></p>
+							</div>
+						</div>
+						<div class="btn-area">
+							<button class="btn small line"><i class="svgicon svgicon-confirmation"></i>예약확인증</button>
+							<button class="btn small line"><i class="svgicon svgicon-receipt"></i>견적서</button>
+						</div>
+					</div>
+
+					<div class="tour-info">
+						<ul>
+							<li>
+								여행기간
+								<p>2024.11.12 ~ 2024.11.20</p>
+							</li>
+							<li>
+								금액
+								<p>3,000,000원<span>(1,000,000원)</span></p>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								여행인원
+								<p>3명</p>
+							</li>
+							<li>
+								신청
+								<p>항공 골프 숙소 보험 티켓/입장권</p>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								여행지역
+								<p>카싼쿤탄</p>
+							</li>
+							<li>
+								회원권
+								<p>카싼쿤탄 VIP 외1 (위임포함)</p>
+							</li>
+						</ul>
+					</div>
+				</li>
+
+				<li>
+					<div class="customer-info">
+						<div class="state">예약완료</div>
+						<div class="customer">
+							<p><strong>[베트남/달랏] 삼투엔람 골프 리조트 2024.11.12 (4박)</strong></p>
+							<div class="customer-detail">
+								<span>결제진행</span>
+								<span>REV202410250</span>
+								<!-- 2025.02.07 수정 // -->
+								<span>예약일 : 2024.07.08</span>
+								<!-- // 2025.02.07 수정 -->
+							</div>
+							<div class="info">
+								<p><i class="svgicon svgicon-customer"></i>이진숙<span><i class="svgicon svgicon-usercode"></i>MEM123</span><span><i class="svgicon svgicon-phone"></i>010-2545-2562 </span></p>
+							</div>
+						</div>
+						<div class="btn-area">
+							<button class="btn small line"><i class="svgicon svgicon-receipt"></i>견적서</button>
+						</div>
+					</div>
+
+					<div class="tour-info">
+						<ul>
+							<li>
+								여행기간
+								<p>2024.11.12 ~ 2024.11.20</p>
+							</li>
+							<li>
+								금액
+								<p>3,000,000원<span>(1,000,000원)</span></p>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								여행인원
+								<p>2명</p>
+							</li>
+							<li>
+								신청
+								<p>패키지</p>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								여행지역
+								<p>카싼쿤탄</p>
+							</li>
+							<li>
+								판매대상
+								<p>회원전용</p>
+							</li>
+						</ul>
+					</div>
+				</li>
+
+				<li>
+					<div class="customer-info">
+						<div class="state end">투어완료</div>
+						<div class="customer">
+							<p><strong>[베트남/달랏] 삼투엔람 골프 리조트 2024.11.12 (4박)</strong></p>
+							<div class="customer-detail">
+								<span>결제진행</span>
+								<span>REV202410250</span>
+								<!-- 2025.02.07 수정 // -->
+								<span>예약일 : 2024.07.08</span>
+								<!-- // 2025.02.07 수정 -->
+							</div>
+							<div class="info">
+								<p><i class="svgicon svgicon-customer"></i>이진숙<span><i class="svgicon svgicon-usercode"></i>MEM123</span><span><i class="svgicon svgicon-phone"></i>010-2545-2562 </span></p>
+							</div>
+						</div>
+						<div class="btn-area">
+							<button class="btn small line"><i class="svgicon svgicon-receipt"></i>견적서</button>
+						</div>
+					</div>
+
+					<div class="tour-info">
+						<ul>
+							<li>
+								여행기간
+								<p>2024.11.12 ~ 2024.11.20</p>
+							</li>
+							<li>
+								금액
+								<p>3,000,000원<span>(1,000,000원)</span></p>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								여행인원
+								<p>3명</p>
+							</li>
+							<li>
+								신청
+								<p>항공 골프 숙소 보험 티켓/입장권</p>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								여행지역
+								<p>카싼쿤탄</p>
+							</li>
+							<li>
+								회원권
+								<p>카싼쿤탄 VIP 외1 (위임포함)</p>
+							</li>
+						</ul>
+					</div>
+				</li>
+
+				<li>
+					<div class="customer-info">
+						<div class="state cancle">투어취소</div>
+						<div class="customer">
+							<p><strong>[베트남/달랏] 삼투엔람 골프 리조트 2024.11.12 (4박)</strong></p>
+							<div class="customer-detail">
+								<span>결제진행</span>
+								<span>REV202410250</span>
+								<!-- 2025.02.07 수정 // -->
+								<span>예약일 : 2024.07.08</span>
+								<!-- // 2025.02.07 수정 -->
+							</div>
+							<div class="info">
+								<p><i class="svgicon svgicon-customer"></i>이진숙<span><i class="svgicon svgicon-usercode"></i>MEM123</span><span><i class="svgicon svgicon-phone"></i>010-2545-2562 </span></p>
+							</div>
+						</div>
+						<div class="btn-area">
+							<button class="btn small line"><i class="svgicon svgicon-receipt"></i>견적서</button>
+						</div>
+					</div>
+
+					<div class="tour-info">
+						<ul>
+							<li>
+								여행기간
+								<p>2024.11.12 ~ 2024.11.20</p>
+							</li>
+							<li>
+								금액
+								<p>3,000,000원<span>(1,000,000원)</span></p>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								여행인원
+								<p>3명</p>
+							</li>
+							<li>
+								신청
+								<p>항공 골프 숙소 보험 티켓/입장권</p>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								여행지역
+								<p>카싼쿤탄</p>
+							</li>
+							<li>
+								회원권
+								<p>카싼쿤탄 VIP 외1 (위임포함)</p>
+							</li>
+						</ul>
+					</div>
+				</li>
+
+				<li>
+					<div class="customer-info">
+						<div class="state">예약중</div>
+						<div class="customer">
+							<p><strong>[베트남/달랏] 삼투엔람 골프 리조트 2024.11.12 (4박)</strong></p>
+							<div class="customer-detail">
+								<span>결제진행</span>
+								<span>REV202410250</span>
+								<!-- 2025.02.07 수정 // -->
+								<span>예약일 : 2024.07.08</span>
+								<!-- // 2025.02.07 수정 -->
+							</div>
+							<div class="info">
+								<p><i class="svgicon svgicon-customer"></i>이진숙<span><i class="svgicon svgicon-usercode"></i>MEM123</span><span><i class="svgicon svgicon-phone"></i>010-2545-2562 </span></p>
+							</div>
+						</div>
+						<div class="btn-area">
+							<button class="btn small line"><i class="svgicon svgicon-receipt"></i>견적서</button>
+						</div>
+					</div>
+
+					<div class="tour-info">
+						<ul>
+							<li>
+								여행기간
+								<p>2024.11.12 ~ 2024.11.20</p>
+							</li>
+							<li>
+								금액
+								<p>3,000,000원<span>(1,000,000원)</span></p>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								여행인원
+								<p>3명</p>
+							</li>
+							<li>
+								신청
+								<p>항공 골프 숙소 보험 티켓/입장권</p>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								여행지역
+								<p>카싼쿤탄</p>
+							</li>
+							<li>
+								회원권
+								<p>카싼쿤탄 VIP 외1 (위임포함)</p>
+							</li>
+						</ul>
+					</div>
+				</li>
+
+				<li>
+					<div class="customer-info">
+						<div class="state">예약중</div>
+						<div class="customer">
+							<p><strong>[베트남/달랏] 삼투엔람 골프 리조트 2024.11.12 (4박)</strong></p>
+							<div class="customer-detail">
+								<span>결제진행</span>
+								<span>REV202410250</span>
+								<!-- 2025.02.07 수정 // -->
+								<span>예약일 : 2024.07.08</span>
+								<!-- // 2025.02.07 수정 -->
+							</div>
+							<div class="info">
+								<p><i class="svgicon svgicon-customer"></i>이진숙<span><i class="svgicon svgicon-usercode"></i>MEM123</span><span><i class="svgicon svgicon-phone"></i>010-2545-2562 </span></p>
+							</div>
+						</div>
+						<div class="btn-area">
+							<button class="btn small line"><i class="svgicon svgicon-receipt"></i>견적서</button>
+						</div>
+					</div>
+
+					<div class="tour-info">
+						<ul>
+							<li>
+								여행기간
+								<p>2024.11.12 ~ 2024.11.20</p>
+							</li>
+							<li>
+								금액
+								<p>3,000,000원<span>(1,000,000원)</span></p>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								여행인원
+								<p>3명</p>
+							</li>
+							<li>
+								신청
+								<p>항공 골프 숙소 보험 티켓/입장권</p>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								여행지역
+								<p>카싼쿤탄</p>
+							</li>
+							<li>
+								회원권
+								<p>카싼쿤탄 VIP 외1 (위임포함)</p>
+							</li>
+						</ul>
+					</div>
+				</li>
+
+				<li>
+					<div class="customer-info">
+						<div class="state">예약중</div>
+						<div class="customer">
+							<p><strong>[베트남/달랏] 삼투엔람 골프 리조트 2024.11.12 (4박)</strong></p>
+							<div class="customer-detail">
+								<span>결제진행</span>
+								<span>REV202410250</span>
+								<!-- 2025.02.07 수정 // -->
+								<span>예약일 : 2024.07.08</span>
+								<!-- // 2025.02.07 수정 -->
+							</div>
+							<div class="info">
+								<p><i class="svgicon svgicon-customer"></i>이진숙<span><i class="svgicon svgicon-usercode"></i>MEM123</span><span><i class="svgicon svgicon-phone"></i>010-2545-2562 </span></p>
+							</div>
+						</div>
+						<div class="btn-area">
+							<button class="btn small line"><i class="svgicon svgicon-receipt"></i>견적서</button>
+						</div>
+					</div>
+
+					<div class="tour-info">
+						<ul>
+							<li>
+								여행기간
+								<p>2024.11.12 ~ 2024.11.20</p>
+							</li>
+							<li>
+								금액
+								<p>3,000,000원<span>(1,000,000원)</span></p>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								여행인원
+								<p>3명</p>
+							</li>
+							<li>
+								신청
+								<p>항공 골프 숙소 보험 티켓/입장권</p>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								여행지역
+								<p>카싼쿤탄</p>
+							</li>
+							<li>
+								회원권
+								<p>카싼쿤탄 VIP 외1 (위임포함)</p>
+							</li>
+						</ul>
+					</div>
+				</li>
+
+				<li>
+					<div class="customer-info">
+						<div class="state">예약중</div>
+						<div class="customer">
+							<p><strong>[베트남/달랏] 삼투엔람 골프 리조트 2024.11.12 (4박)</strong></p>
+							<div class="customer-detail">
+								<span>결제진행</span>
+								<span>REV202410250</span>
+								<!-- 2025.02.07 수정 // -->
+								<span>예약일 : 2024.07.08</span>
+								<!-- // 2025.02.07 수정 -->
+							</div>
+							<div class="info">
+								<p><i class="svgicon svgicon-customer"></i>이진숙<span><i class="svgicon svgicon-usercode"></i>MEM123</span><span><i class="svgicon svgicon-phone"></i>010-2545-2562 </span></p>
+							</div>
+						</div>
+						<div class="btn-area">
+							<button class="btn small line"><i class="svgicon svgicon-receipt"></i>견적서</button>
+						</div>
+					</div>
+
+					<div class="tour-info">
+						<ul>
+							<li>
+								여행기간
+								<p>2024.11.12 ~ 2024.11.20</p>
+							</li>
+							<li>
+								금액
+								<p>3,000,000원<span>(1,000,000원)</span></p>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								여행인원
+								<p>3명</p>
+							</li>
+							<li>
+								신청
+								<p>항공 골프 숙소 보험 티켓/입장권</p>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								여행지역
+								<p>카싼쿤탄</p>
+							</li>
+							<li>
+								회원권
+								<p>카싼쿤탄 VIP 외1 (위임포함)</p>
+							</li>
+						</ul>
+					</div>
+				</li>
+
+				<li>
+					<div class="customer-info">
+						<div class="state">예약중</div>
+						<div class="customer">
+							<p><strong>[베트남/달랏] 삼투엔람 골프 리조트 2024.11.12 (4박)</strong></p>
+							<div class="customer-detail">
+								<span>결제진행</span>
+								<span>REV202410250</span>
+								<!-- 2025.02.07 수정 // -->
+								<span>예약일 : 2024.07.08</span>
+								<!-- // 2025.02.07 수정 -->
+							</div>
+							<div class="info">
+								<p><i class="svgicon svgicon-customer"></i>이진숙<span><i class="svgicon svgicon-usercode"></i>MEM123</span><span><i class="svgicon svgicon-phone"></i>010-2545-2562 </span></p>
+							</div>
+						</div>
+						<div class="btn-area">
+							<button class="btn small line"><i class="svgicon svgicon-receipt"></i>견적서</button>
+						</div>
+					</div>
+
+					<div class="tour-info">
+						<ul>
+							<li>
+								여행기간
+								<p>2024.11.12 ~ 2024.11.20</p>
+							</li>
+							<li>
+								금액
+								<p>3,000,000원<span>(1,000,000원)</span></p>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								여행인원
+								<p>3명</p>
+							</li>
+							<li>
+								신청
+								<p>항공 골프 숙소 보험 티켓/입장권</p>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								여행지역
+								<p>카싼쿤탄</p>
+							</li>
+							<li>
+								회원권
+								<p>카싼쿤탄 VIP 외1 (위임포함)</p>
+							</li>
+						</ul>
+					</div>
+				</li>
+
+				<li>
+					<div class="customer-info">
+						<div class="state">예약중</div>
+						<div class="customer">
+							<p><strong>[베트남/달랏] 삼투엔람 골프 리조트 2024.11.12 (4박)</strong></p>
+							<div class="customer-detail">
+								<span>결제진행</span>
+								<span>REV202410250</span>
+								<!-- 2025.02.07 수정 // -->
+								<span>예약일 : 2024.07.08</span>
+								<!-- // 2025.02.07 수정 -->
+							</div>
+							<div class="info">
+								<p><i class="svgicon svgicon-customer"></i>이진숙<span><i class="svgicon svgicon-usercode"></i>MEM123</span><span><i class="svgicon svgicon-phone"></i>010-2545-2562 </span></p>
+							</div>
+						</div>
+						<div class="btn-area">
+							<button class="btn small line"><i class="svgicon svgicon-receipt"></i>견적서</button>
+						</div>
+					</div>
+
+					<div class="tour-info">
+						<ul>
+							<li>
+								여행기간
+								<p>2024.11.12 ~ 2024.11.20</p>
+							</li>
+							<li>
+								금액
+								<p>3,000,000원<span>(1,000,000원)</span></p>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								여행인원
+								<p>3명</p>
+							</li>
+							<li>
+								신청
+								<p>항공 골프 숙소 보험 티켓/입장권</p>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								여행지역
+								<p>카싼쿤탄</p>
+							</li>
+							<li>
+								회원권
+								<p>카싼쿤탄 VIP 외1 (위임포함)</p>
+							</li>
+						</ul>
+					</div>
+				</li>
+
+				<li>
+					<div class="customer-info">
+						<div class="state">예약중</div>
+						<div class="customer">
+							<p><strong>[베트남/달랏] 삼투엔람 골프 리조트 2024.11.12 (4박)</strong></p>
+							<div class="customer-detail">
+								<span>결제진행</span>
+								<span>REV202410250</span>
+								<!-- 2025.02.07 수정 // -->
+								<span>예약일 : 2024.07.08</span>
+								<!-- // 2025.02.07 수정 -->
+							</div>
+							<div class="info">
+								<p><i class="svgicon svgicon-customer"></i>이진숙<span><i class="svgicon svgicon-usercode"></i>MEM123</span><span><i class="svgicon svgicon-phone"></i>010-2545-2562 </span></p>
+							</div>
+						</div>
+						<div class="btn-area">
+							<button class="btn small line"><i class="svgicon svgicon-receipt"></i>견적서</button>
+						</div>
+					</div>
+
+					<div class="tour-info">
+						<ul>
+							<li>
+								여행기간
+								<p>2024.11.12 ~ 2024.11.20</p>
+							</li>
+							<li>
+								금액
+								<p>3,000,000원<span>(1,000,000원)</span></p>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								여행인원
+								<p>3명</p>
+							</li>
+							<li>
+								신청
+								<p>항공 골프 숙소 보험 티켓/입장권</p>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								여행지역
+								<p>카싼쿤탄</p>
+							</li>
+							<li>
+								회원권
+								<p>카싼쿤탄 VIP 외1 (위임포함)</p>
+							</li>
+						</ul>
+					</div>
+				</li>
+
+				<li>
+					<div class="customer-info">
+						<div class="state">예약중</div>
+						<div class="customer">
+							<p><strong>[베트남/달랏] 삼투엔람 골프 리조트 2024.11.12 (4박)</strong></p>
+							<div class="customer-detail">
+								<span>결제진행</span>
+								<span>REV202410250</span>
+								<!-- 2025.02.07 수정 // -->
+								<span>예약일 : 2024.07.08</span>
+								<!-- // 2025.02.07 수정 -->
+							</div>
+							<div class="info">
+								<p><i class="svgicon svgicon-customer"></i>이진숙<span><i class="svgicon svgicon-usercode"></i>MEM123</span><span><i class="svgicon svgicon-phone"></i>010-2545-2562 </span></p>
+							</div>
+						</div>
+						<div class="btn-area">
+							<button class="btn small line"><i class="svgicon svgicon-receipt"></i>견적서</button>
+						</div>
+					</div>
+
+					<div class="tour-info">
+						<ul>
+							<li>
+								여행기간
+								<p>2024.11.12 ~ 2024.11.20</p>
+							</li>
+							<li>
+								금액
+								<p>3,000,000원<span>(1,000,000원)</span></p>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								여행인원
+								<p>3명</p>
+							</li>
+							<li>
+								신청
+								<p>항공 골프 숙소 보험 티켓/입장권</p>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								여행지역
+								<p>카싼쿤탄</p>
+							</li>
+							<li>
+								회원권
+								<p>카싼쿤탄 VIP 외1 (위임포함)</p>
+							</li>
+						</ul>
+					</div>
+				</li>
+
+				<li>
+					<div class="customer-info">
+						<div class="state">예약중</div>
+						<div class="customer">
+							<p><strong>[베트남/달랏] 삼투엔람 골프 리조트 2024.11.12 (4박)</strong></p>
+							<div class="customer-detail">
+								<span>결제진행</span>
+								<span>REV202410250</span>
+								<!-- 2025.02.07 수정 // -->
+								<span>예약일 : 2024.07.08</span>
+								<!-- // 2025.02.07 수정 -->
+							</div>
+							<div class="info">
+								<p><i class="svgicon svgicon-customer"></i>이진숙<span><i class="svgicon svgicon-usercode"></i>MEM123</span><span><i class="svgicon svgicon-phone"></i>010-2545-2562 </span></p>
+							</div>
+						</div>
+						<div class="btn-area">
+							<button class="btn small line"><i class="svgicon svgicon-receipt"></i>견적서</button>
+						</div>
+					</div>
+
+					<div class="tour-info">
+						<ul>
+							<li>
+								여행기간
+								<p>2024.11.12 ~ 2024.11.20</p>
+							</li>
+							<li>
+								금액
+								<p>3,000,000원<span>(1,000,000원)</span></p>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								여행인원
+								<p>3명</p>
+							</li>
+							<li>
+								신청
+								<p>항공 골프 숙소 보험 티켓/입장권</p>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								여행지역
+								<p>카싼쿤탄</p>
+							</li>
+							<li>
+								회원권
+								<p>카싼쿤탄 VIP 외1 (위임포함)</p>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+			
+			<!-- pagination // -->
+			<div class="pagination-list">
+				<a href="#" class="btn-prev"><span class="blind">이전 페이지</span><i class="svgicon svgicon-pagearrowleft"></i></a>
+				<ol>
+					<li class="active"><a href="javascript:void(0);"><span class="blind">현재 페이지</span>1</a></li><!-- 활성화 class="active" -->
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+					<li><a href="#">5</a></li>
+					<li><a href="#">6</a></li>
+					<li><a href="#">7</a></li>
+					<li><a href="#">8</a></li>
+					<li><a href="#">9</a></li>
+					<li><a href="#">10</a></li>
+				</ol>
+				<a href="#" class="btn-next"><span class="blind">다음 페이지</span><i class="svgicon svgicon-pagearrowright"></i></a>
+			</div>
+			<!-- // pagination -->
+
+		</div>
+		<!-- // list -->
+
+		<!-- 팝업 : 골프장 지역 선택​ // -->
+		{{include('./components/popup.html', {
+			"prop": {
+				"id": "popupGolfLocationSelect",
+				"class": "popupgolflocationselect",
+				"tit": "골프장 지역 선택​",
+				"header": true,
+				"content": "./contents/popup/popupGolfLocationSelect.html"
+			}
+		})}}
+		<!-- // 팝업 : 골프장 지역 선택​ -->
+
+		<!-- 팝업 : 상세검색 // -->
+		{{include('./components/popup.html', {
+			"prop": {
+				"id": "popupSearchDetail",
+				"class": "popupsearchdetail",
+				"tit": "상세검색",
+				"header": true,
+				"content": "./contents/popup/popupSearchDetail.html"
+			}
+		})}}
+		<!-- // 팝업 : 상세검색 -->
+	</div>
+	<!-- // 본문 영역 -->
+</main>

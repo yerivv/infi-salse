@@ -1,0 +1,683 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"> -->
+    <meta name="viewport" content="width=960">
+
+    <meta name="format-detection" content="telephone=no, email=no, address=no">
+
+    <meta name="robots" content="index, nofollow">
+    <meta name="description" content="페이지 설명">
+    <meta name="keywords" content="키워드, 키워드">
+
+    <meta property="og:site_name" content="한케이골프">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="title">
+    <meta property="og:image" content="image">
+    <meta property="og:url" content="url입력">
+    <meta property="og:description" content="페이지 설명">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../imgs/sales/common/favicon.ico">
+    <link rel="apple-touch-icon" href="../../../imgs/sales/common/apple-touch-icon.png">
+
+    <!-- 공통 css, js -->
+    <link rel="stylesheet" href="../../../css/sales/lib/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../../css/sales/lib/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../../../css/sales/common.css">
+    <script src="../../../jscript/sales/lib/jquery-3.6.4.min.js"></script>
+    <script src="../../../jscript/sales/lib/jquery-ui.min.js"></script>
+    <script src="../../../jscript/sales/lib/jquery.ui.touch-punch.min.js"></script>
+    <script src="../../../jscript/sales/lib/swiper-bundle.min.js"></script>
+
+    <script src="../../../jscript/sales/lib/moment.min.js"></script>
+    <script src="../../../jscript/sales/lib/daterangepicker.js"></script>
+
+    <script src="../../../jscript/sales/function.ui.js"></script>
+    <script src="../../../jscript/sales/common.ui.js"></script>
+
+    <!-- 페이지별 css, js -->
+
+    <link rel="stylesheet" href="../../../css/sales/membership.css">
+    <link rel="stylesheet" href="../../../css/sales/override.css">
+
+
+
+
+
+    <title> 회원권 전체보기 - 한케이골프</title>
+
+
+</head>
+
+<body>
+
+<noscript>
+    이 사이트를 이용하기 위해서 자바스크립트를 활성화 시킬 필요가 있습니다.
+    <a href="http://www.enable-javascript.com/ko/" target="_blank">브라우저에서 자바스크립트를 활성화하는 방법</a>을 참고 하세요.
+</noscript>
+
+<div id="wrap">
+    <a href="#contents" class="skip">본문 영역으로 바로가기</a>
+
+    <!-- header // -->
+
+    <header id="header">
+        <div class="inner">
+            <h1 class="logo"><a href="#"><span class="blind">Han k Golf For Sales</span></a></h1>
+
+            <div class="tab-swiper">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+
+                        <!--
+                        .tab-swiper > .swiper-slide append, remove 후 swiper update를 위해 호출
+
+                        default(첫번째 버튼 활성화):  fn.headerTabSwiper();
+                        n번째 버튼 활성화: fn.headerTabSwiper(n-1);
+                    -->
+                        <div class="swiper-slide">
+                            <a href="#" class="active">회원권 소개</a><!-- 활성화 class="active" -->
+                            <button type="button" class="btn-close"><span class="blind">닫기</span><i class="svgicon svgicon-close"></i></button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="util">
+                <div class="toggle-area">
+                    <label class="check-toggle">
+                        <strong class="toggle-txt on">영업활동 ON</strong>
+                        <input type="checkbox" name="">
+                        <strong class="toggle-txt off">영업활동 OFF</strong>
+                    </label>
+                </div>
+                <button type="button" class="btn-masking" onclick="fn.toggleActive(this)"><span class="blind">마스킹해제</span></button><!-- 활성화 class="active" -->
+                <button type="button" class="btn-allmenu" onclick="fn.popup('open', '#popupAllMenu');"><span class="blind">전체 메뉴</span></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- // header -->
+
+    <!-- container // -->
+    <main id="container">
+        <!-- 본문 영역 // -->
+        <div id="contents" class="membership total new"> <!-- 해당 depth별로 class명 추가 -->
+
+            <div class="inner">
+                <div class="title-area">
+                    <h2 class="tit">회원권 전체보기</h2>
+                    <a href="#" class="btn small"><i class="svgicon svgicon-vip"></i>회원권 추천받기</a>
+                </div>
+                <div class="filter-area">
+                    <div class="form-select country">
+                        <div class="dropdown">
+                            <button type="button" class="current"><span class="select-ti">국가를 선택해주세요.</span></button>
+                            <ul class="list">
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="" value="value01" class="option">
+                                        <span class="option-txt">말레이시아</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="" value="value02" class="option">
+                                        <span class="option-txt">베트남</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="" value="value03" class="option">
+                                        <span class="option-txt">일본</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="" value="value04" class="option">
+                                        <span class="option-txt">중국</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="" value="value05" class="option">
+                                        <span class="option-txt">태국</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="" value="value06" class="option">
+                                        <span class="option-txt">필리핀</span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="form-select membership">
+                        <div class="dropdown">
+                            <button type="button" class="current"><span class="select-ti">회원권 구분을 선택해주세요.</span></button>
+                            <ul class="list">
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="" value="value01" class="option">
+                                        <span class="option-txt">기명</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="" value="value02" class="option">
+                                        <span class="option-txt">무기명</span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="form-select price">
+                            <div class="dropdown">
+                                <button type="button" class="current"><span class="select-ti">최소 가격을 선택해주세요.</span></button>
+                                <ul class="list">
+                                    <li>
+                                        <label>
+                                            <input type="radio" name="price" value="value01" class="option">
+                                            <span class="option-txt">500만원</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="radio" name="price" value="value02" class="option">
+                                            <span class="option-txt">1,000만원</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="radio" name="price" value="value03" class="option">
+                                            <span class="option-txt">1,500만원</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="radio" name="price" value="value04" class="option">
+                                            <span class="option-txt">2,000만원</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="radio" name="price" value="value05" class="option">
+                                            <span class="option-txt">2,500만원</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="radio" name="price" value="value06" class="option">
+                                            <span class="option-txt">3,000만원</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="radio" name="price" value="value06" class="option">
+                                            <span class="option-txt">3,500만원</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="radio" name="price" value="value06" class="option">
+                                            <span class="option-txt">4,000만원</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="radio" name="price" value="value06" class="option">
+                                            <span class="option-txt">4,500만원</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="radio" name="price" value="value06" class="option">
+                                            <span class="option-txt">5,000만원</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p>~</p>
+                        <div class="form-select price">
+                            <div class="dropdown">
+                                <button type="button" class="current"><span class="select-ti">최대 가격을 선택해주세요.</span></button>
+                                <ul class="list">
+                                    <li>
+                                        <label>
+                                            <input type="radio" name="price1" value="value01" class="option">
+                                            <span class="option-txt">500만원</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="radio" name="price1" value="value02" class="option">
+                                            <span class="option-txt">1,000만원</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="radio" name="price1" value="value03" class="option">
+                                            <span class="option-txt">1,500만원</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="radio" name="price1" value="value04" class="option">
+                                            <span class="option-txt">2,000만원</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="radio" name="price1" value="value05" class="option">
+                                            <span class="option-txt">2,500만원</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="radio" name="price1" value="value06" class="option">
+                                            <span class="option-txt">3,000만원</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="radio" name="price1" value="value06" class="option">
+                                            <span class="option-txt">3,500만원</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="radio" name="price1" value="value06" class="option">
+                                            <span class="option-txt">4,000만원</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="radio" name="price1" value="value06" class="option">
+                                            <span class="option-txt">4,500만원</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="radio" name="price1" value="value06" class="option">
+                                            <span class="option-txt">5,000만원</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="search-filter">
+                    <div class="total">총 <strong>16</strong>건</div>
+                    <div class="form-search">
+                        <input type="text" name="" title=" 회원권명 입력" placeholder="회원권명 입력">
+                        <button type="button" class="btn-delete"><span class="blind">삭제</span></button>
+                        <button type="button" class="btn-search"><span class="blind">검색</span><i class="svgicon svgicon-search"></i></button>
+                    </div>
+                </div>
+
+                <div class="list-area inner">
+                    <div class="membership-list2">
+                        <div class="wrap">
+                            <!-- 골프장 정보 -->
+                            <div class="golf">
+                                <dl class="inner">
+                                    <dt class="name">빈펄 나트랑</dt>
+                                    <dd class="thumb"><img src="../../../../static/imgs/sales/membership/membership_temp_bg.jpg" alt=""></dd>
+                                    <dd class="intro">베트남을 대표하는 <br />럭셔리 골프 리조트, 빈펄</dd>
+                                    <dd class="location">
+                                        <span>베트남</span>
+                                        <span>나트랑</span>
+                                    </dd>
+                                    <dd class="btns">
+                                        <a href="#" class="btn line small">자세히 보기</a>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <!-- 멤버십 리스트 -->
+                            <div class="list">
+                                <button type="button" class="swiper-button-prev"><span class="blind">이전</span><i class="svgicon svgicon-arrowright"></i></button>
+                                <button type="button" class="swiper-button-next"><span class="blind">다음</span><i class="svgicon svgicon-arrowright"></i></button>
+                                <div class="swiper membership-card">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide item">
+                                            <dl class="inner">
+                                                <dt>
+                                                    <div class="name">최대 2줄처리 빈펄 나트랑 VIP 빈펄 빈펄 나트랑 VIP 빈펄</div>
+                                                    <div class="copy">최대 2줄처리 호텔도 회원가로 같이 이용 가능한 회원권 호텔도 회원가로 같이 이용 가능한 </div>
+                                                </dt>
+                                                <dd>
+                                                    <div class="price-box">
+                                                        <stong class="price">30,000,000</stong>
+                                                        <span class="won">원</span>
+                                                        <span class="vat">(VAT 포함)</span>
+                                                    </div>
+                                                    <div class="etc">
+                                                        <ul class="info">
+                                                            <li class="noti">*개인만 입회 가능합니다.</li>
+                                                            <li>
+                                                                <sapn class="th">회원구분</sapn>
+                                                                <strong class="td">무기명 4인</strong>
+                                                            </li>
+                                                            <li>
+                                                                <sapn class="th">유효기간</sapn>
+                                                                <strong class="td">20년</strong>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="btns">
+                                                        <a href="#" class="btn line">비교하기</a>
+                                                        <a href="#" class="btn green">입회 신청하기</a>
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                        <div class="swiper-slide item combine"><!-- 결합일 경우 combine-->
+                                            <dl class="inner">
+                                                <dt>
+                                                    <div class="name">최대 2줄처리 빈펄 나트랑 VIP 빈펄 빈펄 나트랑 VIP 빈펄</div>
+                                                    <div class="copy">최대 4줄처리 베트남 중부 고도의 삼투엔람 VIP, 남부 해변가의 아나라 빈티엔 VIP 멤버십을 합리적인 가격에 이용할 수 있습니다.</div>
+                                                </dt>
+                                                <dd>
+                                                    <div class="price-box">
+                                                        <stong class="price">30,000,000</stong>
+                                                        <span class="won">원</span>
+                                                        <span class="vat">(VAT 포함)</span>
+                                                    </div>
+                                                    <div class="etc">
+                                                        <ul class="info">
+                                                            <li class="noti">*결합상품 입니다.</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="btns">
+                                                        <a href="#" class="btn line">자세히 보기</a>
+                                                        <a href="#" class="btn green">입회 신청하기</a>
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="wrap">
+                            <!-- 골프장 정보 -->
+                            <div class="golf">
+                                <dl class="inner">
+                                    <dt class="name">삼투엔람</dt>
+                                    <dd class="thumb"><img src="../../../../static/imgs/sales/membership/membership_temp_bg.jpg" alt=""></dd>
+                                    <dd class="intro">1년 365일 골프 성수기, <br />달랏 삼투엔람</dd>
+                                    <dd class="location">
+                                        <span>베트남</span>
+                                        <span>달랏</span>
+                                    </dd>
+                                    <dd class="btns">
+                                        <a href="#" class="btn line small">자세히 보기</a>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <!-- 멤버십 리스트 -->
+                            <div class="list">
+                                <button type="button" class="swiper-button-prev"><span class="blind">이전</span><i class="svgicon svgicon-arrowright"></i></button>
+                                <button type="button" class="swiper-button-next"><span class="blind">다음</span><i class="svgicon svgicon-arrowright"></i></button>
+                                <div class="swiper membership-card">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide item">
+                                            <dl class="inner">
+                                                <dt>
+                                                    <div class="name">최대 2줄처리 빈펄 나트랑 VIP 빈펄 빈펄 나트랑 VIP 빈펄</div>
+                                                    <div class="copy">최대 2줄처리 호텔도 회원가로 같이 이용 가능한 회원권 호텔도 회원가로 같이 이용 가능한 </div>
+                                                </dt>
+                                                <dd>
+                                                    <div class="price-box">
+                                                        <stong class="price">30,000,000</stong>
+                                                        <span class="won">원</span>
+                                                        <span class="vat">(VAT 포함)</span>
+                                                    </div>
+                                                    <div class="etc">
+                                                        <ul class="info">
+                                                            <li class="noti">*개인만 입회 가능합니다.</li>
+                                                            <li>
+                                                                <sapn class="th">회원구분</sapn>
+                                                                <strong class="td">무기명 4인</strong>
+                                                            </li>
+                                                            <li>
+                                                                <sapn class="th">유효기간</sapn>
+                                                                <strong class="td">20년</strong>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="btns">
+                                                        <a href="#" class="btn line">비교하기</a>
+                                                        <a href="#" class="btn green">입회 신청하기</a>
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                        <div class="swiper-slide item combine"><!-- 결합일 경우 combine-->
+                                            <dl class="inner">
+                                                <dt>
+                                                    <div class="name">최대 2줄처리 빈펄 나트랑 VIP 빈펄 빈펄 나트랑 VIP 빈펄</div>
+                                                    <div class="copy">최대 4줄처리 베트남 중부 고도의 삼투엔람 VIP, 남부 해변가의 아나라 빈티엔 VIP 멤버십을 합리적인 가격에 이용할 수 있습니다.</div>
+                                                </dt>
+                                                <dd>
+                                                    <div class="price-box">
+                                                        <stong class="price">30,000,000</stong>
+                                                        <span class="won">원</span>
+                                                        <span class="vat">(VAT 포함)</span>
+                                                    </div>
+                                                    <div class="etc">
+                                                        <ul class="info">
+                                                            <li class="noti">*결합상품 입니다.</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="btns">
+                                                        <a href="#" class="btn line">자세히 보기</a>
+                                                        <a href="#" class="btn green">입회 신청하기</a>
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recom-area">
+                    <h3>특별한 혜택을 담은 한케이골프의 또 하나의 회원권</h3>
+                    <button type="button" class="swiper-button-prev"><span class="blind">이전</span><i class="svgicon svgicon-arrowright"></i></button>
+                    <button type="button" class="swiper-button-next"><span class="blind">다음</span><i class="svgicon svgicon-arrowright"></i></button>
+                    <div class="swiper membership-card recom-list">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide item">
+                                <dl class="inner">
+                                    <dt>
+                                        <div class="name">최대 2줄처리 빈펄 나트랑 VIP 빈펄 빈펄 나트랑 VIP 빈펄</div>
+                                        <div class="copy">최대 2줄처리 호텔도 회원가로 같이 이용 가능한 회원권 호텔도 회원가로 같이 이용 가능한 </div>
+                                    </dt>
+                                    <dd>
+                                        <div class="price-box">
+                                            <stong class="price">30,000,000</stong>
+                                            <span class="won">원</span>
+                                            <span class="vat">(VAT 포함)</span>
+                                        </div>
+                                        <div class="etc">
+                                            <ul class="info">
+                                                <li class="noti">*개인만 입회 가능합니다.</li>
+                                                <li>
+                                                    <sapn class="th">회원구분</sapn>
+                                                    <strong class="td">무기명 4인</strong>
+                                                </li>
+                                                <li>
+                                                    <sapn class="th">유효기간</sapn>
+                                                    <strong class="td">20년</strong>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="btns">
+                                            <a href="#" class="btn line">비교하기</a>
+                                            <a href="#" class="btn green">입회 신청하기</a>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="swiper-slide item combine"><!-- 결합일 경우 combine-->
+                                <dl class="inner">
+                                    <dt>
+                                        <div class="name">최대 2줄처리 빈펄 나트랑 VIP 빈펄 빈펄 나트랑 VIP 빈펄</div>
+                                        <div class="copy">최대 4줄처리 베트남 중부 고도의 삼투엔람 VIP, 남부 해변가의 아나라 빈티엔 VIP 멤버십을 합리적인 가격에 이용할 수 있습니다.</div>
+                                    </dt>
+                                    <dd>
+                                        <div class="price-box">
+                                            <stong class="price">30,000,000</stong>
+                                            <span class="won">원</span>
+                                            <span class="vat">(VAT 포함)</span>
+                                        </div>
+                                        <div class="etc">
+                                            <ul class="info">
+                                                <li class="noti">*결합상품 입니다.</li>
+                                            </ul>
+                                        </div>
+                                        <div class="btns">
+                                            <a href="#" class="btn line">자세히 보기</a>
+                                            <a href="#" class="btn green">입회 신청하기</a>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btns bottom">
+                    <button type="button" class="btn green big" onclick="fn.popup('open', '#popupCompare');">회원권 비교함<em>2</em></button>
+                </div>
+            </div>
+
+        </div>
+        <script>
+            document.querySelectorAll('.membership-list2 .wrap').forEach((wrap, index) => {
+                const nextBtn = wrap.querySelector('.swiper-button-next');
+                const prevBtn = wrap.querySelector('.swiper-button-prev');
+                if (nextBtn) nextBtn.classList.add(`membership-nav-next-${index}`);
+                if (prevBtn) prevBtn.classList.add(`membership-nav-prev-${index}`);
+
+                new Swiper(wrap.querySelector('.swiper'), {
+                    slidesPerView: 'auto',
+                    spaceBetween: 10,
+                    navigation: {
+                        nextEl: `.membership-nav-next-${index}`,
+                        prevEl: `.membership-nav-prev-${index}`,
+                    },
+                });
+            });
+            const recomList = new Swiper('.recom-area .swiper', {
+                slidesPerView: 'auto',
+                spaceBetween: 16,
+                navigation: {
+                    nextEl: '.recom-area .swiper-button-next',
+                    prevEl: '.recom-area .swiper-button-prev',
+                },
+            });
+        </script>
+        <!-- // 본문 영역 -->
+    </main>
+
+    <!-- 팝업 : 회원권 비교하기​ // -->
+    <article id="popupCompare" class="popup  popupcompare">
+        <div class="inner">
+
+            <header class="header disabled">
+                <h2 class="tit">{{prop.tit}}</h2>
+            </header>
+
+            <div class="contents scrollbar">
+                <div class="scroll-content">
+                    <div class="cont">
+                        <div class="tit-area">
+                            <div class="num"><em>2</em></div>
+                            <strong>비교함에 담긴 회원권</strong>
+                            <p>최대 3개까지 비교하기 가능해요</p>
+                        </div>
+                        <!--// 2024-12-17 수정 -->
+                        <div class="list-area">
+                            <div class="compare-list">
+                                <ul>
+                                    <!-- 반복 영역 // -->
+                                    <li>
+                                        <div class="membership-cont">
+                                            <div class="membership-tit">
+                                                <p>VIETNAM</p>
+                                                <strong>삼투엔람</strong>
+                                                <span>GOLD</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!-- // 반복 영역 -->
+
+                                    <li>
+                                        <div class="membership-cont">
+                                            <div class="membership-tit">
+                                                <p>CHINA</p>
+                                                <strong>미션힐즈 하이커우</strong>
+                                                <span>MH LUXYRY</span>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <!-- nodata // -->
+                                    <li>
+                                        <p class="txt-nodata">
+                                            <span>3</span>
+                                            3개까지 비교하기 가능해요
+                                        </p>
+                                    </li>
+                                    <!-- // nodata -->
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- 2024-12-17 수정 //-->
+                    </div>
+
+                    <div class="btns bottom">
+                        <button type="button" class="btn line" onclick="fn.popup('close', this)">닫기</button>
+                        <!--// 2025-01-02 수정 -->
+                        <a href="./compare.html" class="btn">작성하기</a>
+                        <!-- 2025-01-02 수정 //-->
+                        <!-- <button type="button" class="btn">회원권 비교하기 <em>2</em></button> -->
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" class="btn-close" onclick="fn.popup('close', this);"><span class="blind">닫기</span><i class="svgicon svgicon-close"></i></button>
+        </div>
+    </article>
+    <hr id="popupCompare_end">
+    <!-- // 팝업 : 회원권 비교하기​ -->
+    <!-- // container -->
+
+    <!-- footer // -->
+    <footer id="footer"></footer>
+    <!-- // footer -->
+</div>
+
+</body>
+
+</html>

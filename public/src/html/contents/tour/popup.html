@@ -1,0 +1,55 @@
+<main id="container">
+	<!-- 본문 영역 // -->
+	<div id="contents" class="{{prop.depth1}} {{prop.depth2}} {{prop.depth3}}"> <!-- 해당 depth별로 class명 추가 -->
+
+		<div class="inner">
+			<button class="btn" onclick="fn.openWindow('{{dirRoot}}/static/html/sales/tour/estimate.html','_blank', 500, 600);">견적서</button>
+			<button class="btn" onclick="fn.openWindow('{{dirRoot}}/static/html/sales/tour/packageschedule.html','_blank', 500, 600);">패키지일정표</button>
+
+			<button class="btn" onclick="fn.popup('open', '#popupEstimate');">견적서</button>
+			<button class="btn" onclick="fn.popup('open', '#popupPackageSchedule');">패키지일정표</button>
+			<button class="btn" onclick="fn.popup('open', '#popupBookingConfirm');">예약확인증</button>
+		</div>
+	</div>
+	<!-- // 본문 영역 -->
+</main>
+
+<!-- 2025.02.10 수정 // -->
+<!-- 팝업 : 예약확인증  // -->
+{{include('./components/popup.html', {
+	"prop": {
+		"id": "popupBookingConfirm",
+		"class": "popupbookingconfirm",
+		"tit": "예약확인증",
+		"type": "tour",
+		"header": true,
+		"content": "./contents/popup/popupBookingConfirm.html"
+	}
+})}}
+<!-- // 팝업 : 예약확인증  -->
+<!-- 팝업 : 견적서  // -->
+{{include('./components/popup.html', {
+	"prop": {
+		"id": "popupEstimate",
+		"class": "popupestimate",
+		"tit": "견적서",
+		"type": "tour",
+		"header": true,
+		"content": "./contents/popup/popupEstimate.html"
+	}
+})}}
+<!-- // 팝업 : 견적서  -->
+
+	<!-- 팝업 : 패키지일정표 // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupPackageSchedule",
+			"class": "popuppackageschedule",
+			"tit": "패키지일정표",
+			"type": "tour",
+			"header": true,
+			"content": "./contents/popup/popupPackageSchedule.html"
+		}
+	})}}
+	<!-- // 팝업 : 패키지일정표 -->
+	<!-- // 2025.02.10 수정 -->

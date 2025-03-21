@@ -1,0 +1,512 @@
+/**
+* --------------------------------
+* activity
+* --------------------------------
+*/
+
+@import
+	"./abstracts/variables",
+	"./abstracts/functions",
+	"./abstracts/mixins";
+
+
+.activity {
+	> .inner {
+		background-color: $color10;
+	}
+	.title-area {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 30px 32px 20px;
+		background-color: $color2;
+
+		h2.tit {
+			@include font(24px, 36px, 700);
+		}
+
+		.btn {
+			@include svg-icon('date', 16, $url: 'common/icon_20.svg',$margin: 7px 4px 0 0, $color:$color2);
+
+			padding: 0 12px;
+			line-height: 30px;
+			border-radius: 999px;
+		}
+	}
+
+	>.activity-area {
+		.search-filter {
+			border-top: none;
+			padding:  0 32px;
+
+			.team-area {
+				display: flex;
+
+				
+				.activity-ti {
+					margin-right: 20px;
+
+					a {
+						position: relative;
+						display: inline-block;
+						padding: 0 10px;
+						color: $color4;
+						text-align: center;
+						font-size: 18px;
+						font-weight: 400;
+						line-height: 40px;
+
+						&.active {
+							color: $primary2;
+							font-weight: 700;
+						}
+					}
+				}
+
+				.select {
+					margin-right: 4px;
+					width: 121px;
+					height: 40px;
+
+					&:nth-of-type(3) {
+						width: 106px;
+						
+					}
+
+					&:nth-of-type(4) {
+						width: 133px;
+					}
+
+					.dropdown {
+						height: 40px;
+						line-height: 40px;
+
+						.icon-select {
+							height: 40px;
+						}
+					}
+				}
+			}
+
+			.sort {
+				.daterangepickers {
+					@include svg-icon('date', 16, $url: 'common/icon_20.svg',$margin: 0);
+	
+					position: relative;
+	
+					input[type="text"] {
+						border-color: $color7;
+						width: 165px;
+						margin: 0 4px 0 0;
+
+						&:read-only {
+							background-color: $color2;
+							-webkit-text-fill-color: $color1;
+						}
+					}
+	
+					.svgicon-date {
+						pointer-events: none;
+						position: absolute;
+						top: 50%;
+						transform: translateY(-50%);
+						right: 8px;
+					}
+				}
+
+				.btns {
+					width: 61px;
+				}
+			}
+		}
+
+		.activity-contents {
+			margin-top: 20px;
+
+			.inner {
+				padding: 30px 32px;
+			}
+
+			.calendar-date {
+				position: relative;
+				display: flex;
+				justify-content: center;
+				padding: 20px 32px;
+				width: 100%;
+				border-top: 1px solid $color9;
+				background: $color2;
+				box-shadow: 0px 6px 13px 0px rgba(0, 0, 0, 0.05);
+
+				.btn-prev {
+					position: absolute;
+					left: 32px;
+					top: 50%;
+					transform: translateY(-50%);
+					width: 32px;
+					height: 32px;
+					background: $color10;
+					border: 1px solid $color9;
+					border-radius: 50%;
+					text-align: center;
+					cursor: pointer;
+
+					&.disabled {
+						.svgicon-arrowright{
+							opacity: .2;
+						}
+					}
+				}
+
+				.btn-next {
+					position: absolute;
+					right: 32px;
+					top: 50%;
+					transform: translateY(-50%);
+					width: 32px;
+					height: 32px;
+					background: $color10;
+					border: 1px solid $color9;
+					border-radius: 50%;
+					text-align: center;
+					cursor: pointer;
+					&.disabled {
+						.svgicon-arrowright{
+							opacity: .2;
+						}
+					}
+				}
+
+				p {
+					width: calc(100% / 3);
+					text-align: center;
+					color: $color3;
+
+					span {
+						display: inline-block;
+						margin-right: 6px;
+						width: 44px;
+						color: $primary2;
+						line-height: 44px;
+						font-size: 18px;
+						text-align: center;
+						border-radius: 50%;
+						background-color: $color10;
+					}
+
+					&.today {
+						span {
+							color: $color2;
+							background-color: $primary3;
+						}
+					}
+				}
+			}
+
+			.calendar {
+				&.today {
+					.calendar-table {
+						.cal-content {
+							p {
+								color: $color1;
+							}
+						}
+					}
+				}
+
+			}
+			.calendar-table {
+				td {
+					@include clear();
+
+					width: 31.176%;
+					position: relative;
+					padding: 20px 16px;
+					border: 1px solid $color9;
+
+					&.left {
+						width: 34.412%;
+
+						.cal-content {
+							float: right;
+							width: calc(100% - 32px);
+						}
+					}
+
+					&.right {
+						width: 34.412%;
+
+						.cal-content {
+							width: calc(100% - 32px);
+						}
+					}
+				}
+
+				.cal-content {
+					border-radius: 6px;
+					width: 100%;
+					border: 1px solid $line-color;
+					overflow: hidden;
+
+					.cal-subject {
+						padding: 16px 16px;
+					}
+
+					.cal-manager {
+						display: flex;
+						align-items: center;
+						padding: 8px 16px;
+						background-color: $color2;
+
+						figure {
+							position: relative;
+							width: 40px;
+							height: 40px;
+							background-color: $color5;
+							border-radius: 50%;
+							overflow: hidden;
+							border: 4px solid $color5;
+							background-image: url($image-url+'/activity/activity_noimg.png');
+							background-size: contain;
+
+							img {
+								@include position-center();
+
+							}
+						}
+
+						p {
+							display: inline-block;
+							margin: 0 0 0 8px;
+							color: $primary1;
+							font-size: 12px;
+							font-weight: 700;
+							line-height: 20px;
+
+							span {
+								@include before-line(1px, 10px, 0, $color7);
+
+								display: inline-block;
+								color: $color3;
+								font-weight: 400;
+								padding-left: 9px;
+								margin-left: 8px;
+
+								&::before {
+									top: 50%;
+									transform: translate(0, -50%);
+									left: 0;
+								}
+							}
+						}
+
+						.status {
+							margin-left: auto;
+							color: $primary3;
+							font-size: 12px;
+							font-weight: 700;
+							line-height: 20px;
+						}
+					}
+
+					.label {
+						display: inline-block;
+						padding: 0 8px;
+						color: $primary1;
+						font-size: 10px;
+						font-weight: 500;
+						line-height: 20px;
+						height: 20px;
+						border-radius: 999px;
+
+						&:last-of-type {
+							color: $color3;
+							background-color: $disable3;
+						}
+					}
+
+					.modify-btn {
+						@include svg-icon('modify', $color: $color4);
+
+						position: absolute;
+						top: 14px;
+						right: 16px;
+					}
+
+					p {
+						margin-top: 12px;
+						color: $color4;
+						font-size: 14px;
+						font-weight: 600;
+						line-height: 22px; 
+						overflow:hidden;
+						text-overflow:ellipsis;
+						white-space:nowrap;
+					}
+
+					.date {
+						@include before-line(3px, 3px, 0 6px 0 0, $color4);
+
+						margin-top: 4px;
+						padding-left: 9px;
+						font-weight: 400;
+
+						&::before {
+							top: 50%;
+							transform: translateY(-50%);
+							border-radius: 50%;
+						}
+					}
+
+					&.disabled {
+						.cal-subject {
+							p {
+								text-decoration: line-through;
+							}
+						}
+
+						.cal-manager {
+							.status {
+								color: $color4;
+							}
+						}
+					}
+
+					&.consult {
+						background-color: #F8FCFF;
+						border: 1px solid #DDF0FF;
+
+						.label {
+							&:first-of-type{
+								background-color: #E3ECFD;
+								color: $primary3;
+							}
+						}
+					}
+
+					&.contract {
+						background-color: #F6FDFC;
+						border: 1px solid #D8F4F0;
+
+						.label {
+							&:first-of-type{
+								background-color: #DDF8E8;
+								color: $green4;
+							}
+						}
+					}
+
+					&.pickup {
+						background-color: #FEFBF8;
+						border: 1px solid #FCEEDF;
+
+						.label {
+							&:first-of-type{
+								color: #BF5D4E;
+								background-color: #FDF2E6;
+							}
+						}
+					}
+
+					&.edu {
+						background-color: #FDF7F9;
+						border: 1px solid #F7E6EC;
+
+						.label {
+							&:first-of-type{
+								color: #C4326C;
+								background-color: #F8E6EE;
+							}
+						}
+					}
+
+					&.event {
+						background-color: #FAF8FE;
+						border: 1px solid #EBE1FF;
+
+						.label {
+							&:first-of-type{
+								color: #6030AA;
+								background-color: #EFE8FD;
+							}
+						}
+					}
+
+					&.etc {
+						background-color: $color10;
+						border: 1px solid $color7;
+
+						.label {
+							&:first-of-type{
+								color: $color1;
+								background-color: #E9E9E9;
+							}
+						}
+					}
+				}
+			}
+		}
+
+
+		.tabs-filter {
+			padding: 0px 32px 30px;
+			background-color: $color2;
+
+			.sort {
+				display: flex;
+				gap: 6px;
+				height: 40px;
+	
+				.select {
+					width: 120px;
+	
+					.dropdown {
+						height: 40px;
+						line-height: 38px;
+	
+						.icon-select {
+							height: 40px;
+						}
+					}
+				}
+		
+				.tab-ti {
+					width: 100%;
+					border-radius: 4px;
+					border: 1px solid $color7;
+					background: $color2;
+	
+					a {
+						@include before-line(1px, 12px, 13px 0 0 0,$color7);
+	
+						width: calc(100% / 4);
+						line-height: 38px;
+	
+						&:first-of-type {
+							margin-left: 0;
+	
+							&::before {
+								display: none;
+							}
+						}
+					}
+				}
+	
+				.btns {
+					@include svg-icon('plus',$color: $color2);
+					width: 148px;
+
+					.svgicon-plus {
+						width: 16px;
+						height: 16px;
+						vertical-align: middle;
+					}
+				}
+			}
+		}
+
+		.activity-contents {
+	
+		}
+	}
+
+}

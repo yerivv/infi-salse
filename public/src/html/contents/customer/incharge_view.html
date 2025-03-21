@@ -1,0 +1,1167 @@
+<main id="container">
+	<!-- 본문 영역 // -->
+	<div id="contents" class="{{prop.depth1}} {{prop.depth2}} {{prop.depth3}}"> <!-- 해당 depth별로 class명 추가 -->
+
+		<div class="title-area">
+			<h2 class="tit">고객정보 상세보기</h2>
+			
+			<div class="btns">
+				<button type="button" class="btn small line"><i class="svgicon svgicon-menu"></i>목록으로가기</button>
+				<button type="button" class="btn small"><i class="svgicon svgicon-date"></i>미팅 일정잡기</button>
+				<button type="button" class="btn small"><i class="svgicon svgicon-plane"></i>투어현황 확인하기</button>
+				<button type="button" class="btn small fill"><i class="svgicon svgicon-session"></i>신규 입회하기</button>
+			</div>
+		</div>
+
+		<div class="inner">
+			<div class="customer">
+				<div class="detail">
+					<div class="customer-info">
+						<p><strong>김고객</strong><span>Kim Booking</span><em>오프라인 회원(개인)</em></p>
+						<div class="grade"><p>회원등급 <span>알바트로스</span></p><p>생년월일<span>1885.05.01</span></p></div>
+					</div>
+					<div>
+						<dl>
+							<dt>고객등록일</dt>
+							<dd>2024.01.01</dd>
+						</dl>
+						<dl>
+							<dt>최종수정일</dt>
+							<dd>2024.03.05</dd>
+						</dl>
+						<dl>
+							<dt>담당 영업사원</dt>
+							<dd>김영업</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="point-area">
+					<dl>
+						<dt><a href="#membershipArea"><i class="svgicon svgicon-vip"></i>보유한 회원권</a></dt>
+						<dd>20</dd>
+					</dl>
+					<dl onclick="fn.popup('open', '#popupPointHistory');">
+						<dt><i class="svgicon svgicon-point"></i>보유포인트</dt>
+						<dd>999,999</dd>
+					</dl>
+					<dl onclick="fn.popup('open', '#popupVoucherHistory');">
+						<dt><i class="svgicon svgicon-voucher"></i>보유바우처</dt>
+						<dd>20</dd>
+					</dl>
+					<dl onclick="fn.popup('open', '#popupCouponHistory');">
+						<dt><i class="svgicon svgicon-coupon"></i>보유쿠폰</dt>
+						<dd>20</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+
+		<div class="customer-detail">
+			<div class="detail-tit">
+				<strong>고객 정보</strong>
+				<p>필수항목</p>
+			</div>
+
+			<div class="detail-table">
+				<table>
+					<colgroup>
+					<col style="width: 138px;">
+					<col style="width: 310px;">
+					<col style="width: 138px;">
+					<col style="width: 310px;">
+					</colgroup>
+
+					<tr>
+						<th><p class="essential">아이디</p></th>
+						<td>
+							<div class="btn-wrap id">
+								<p>-</p>
+								<!--// 상태: 온라인 시 -->
+								<button type="button" class="btn line">임시비밀번호 생성</button>
+								<!-- 상태: 온라인 시 //-->
+							</div>
+						</td>
+						<th><p class="essential">연락처</p></th>
+						<td>
+							<div class="btn-wrap">
+								<div class="input-wrap">
+									<input type="number" title="연락처입력" placeholder="연락처" value="010112345678">
+									<!--// 2024-12-11 수정 -->
+									<div class="select-wrap">
+										<input type="number" title="추가연락처입력" placeholder="추가 연락처">
+										<div class="select small">
+											<select title="select 선택">
+												<option value="" class="select-ti">선택</option>
+												<option value="" selected>사무실</option>
+												<option value="">비서</option>
+												<option value="">자택</option>
+												<option value="">휴대폰2</option>
+											</select>
+										</div>
+									</div>
+									<!-- 2024-12-11 수정 //-->
+								</div>
+								<button type="button" class="btn line" onclick="fn.toastPopup('#toast1');" disabled>저장</button>
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<th><p>고객 회사/직급</p></th>
+						<td>
+							<div class="btn-wrap">
+								<div class="input-wrap">
+									<input type="text" title="고객 회사 입력" placeholder="고객 회사 입력" value="한식품(요식업)">
+									<div class="select small">
+										<select title="select 선택">
+											<option value="" class="select-ti">직급</option>
+											<option value="">대표</option>
+											<option value="">이사</option>
+											<option value="">부장</option>
+											<option value="">차장</option>
+											<option value="">과장</option>
+											<option value="">대리</option>
+											<option value="">사원</option>
+											<option value="">계약직</option>
+										</select>
+									</div>
+								</div>
+								<button type="button" class="btn line" onclick="fn.toastPopup('#toast1');" disabled>저장</button>
+							</div>
+						</td>
+						<th><p class="essential">이메일</p></th>
+						<td>
+							<div class="btn-wrap">
+								<div class="input-wrap">
+									<input type="text" title="메일 입력" placeholder="메일 입력" value="ownerkim@kakao.com">
+								</div>
+								<button type="button" class="btn line" onclick="fn.toastPopup('#toast1');" disabled>저장</button>
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<th><p>성별</p></th>
+						<td>
+							<div class="btn-wrap">
+								<div class="input-wrap">
+									<div class="select small">
+										<select title="select 선택">
+											<option value="" class="select-ti">성별</option>
+											<option value="">남성</option>
+											<option value="">여성</option>
+										</select>
+									</div>
+								</div>
+								<button type="button" class="btn line" onclick="fn.toastPopup('#toast1');" disabled>저장</button>
+							</div>
+						</td>
+						<th><p>연령대</p></th>
+						<td>
+							<div class="btn-wrap">
+								<div class="input-wrap">
+									<div class="select small">
+										<select title="select 선택">
+											<option value="" class="select-ti">연령대</option>
+											<option value="">20대 미만</option>
+											<option value="">20대</option>
+											<option value="">30대</option>
+											<option value="">40대</option>
+											<option value="">50대</option>
+											<option value="">60대</option>
+											<option value="">70대 이상</option>
+										</select>
+									</div>
+								</div>
+								<button type="button" class="btn line" onclick="fn.toastPopup('#toast1');" disabled>저장</button>
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<th><p>그룹코드</p></th>
+						<td colspan="3">
+							<div class="btn-wrap line1">
+								<div class="input-wrap">
+									<input type="text" title="그룹코드 입력" placeholder="그룹코드 입력" value="MMM1111" >
+								</div>
+								<button type="button" class="btn line" onclick="fn.toastPopup('#toast1');" disabled>저장</button>
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<th><p>주소</p></th>
+						<td colspan="3">
+							<div class="input-wrap address">
+								<input type="text" title="주소 입력" placeholder="주소 입력" value="(00000) 서울시 강남구 테헤란로 378" disabled >
+								<input type="text" title="주소 입력" placeholder="주소 입력" value="하나빌딩 1035호" disabled >
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th><p>회사주소</p></th>
+						<td colspan="3">
+							<div class="input-wrap address">
+								<input type="text" title="회사주소 입력" placeholder="회사주소 입력" value="(00000) 서울시 강남구 테헤란로 378" disabled >
+								<input type="text" title="회사주소 입력" placeholder="회사주소 입력" value="하나빌딩 1035호" disabled >
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<div class="list-accordion customer-detail">
+			<ul>
+				<!-- 2025.01.31 수정 // -->
+				<li class="active membership" id="membershipArea">
+					<button type="button" class="accordion-ti">
+						<p>
+							<strong>보유 회원권</strong>
+							<span>5</span>
+						</p>
+						<span class="accordion-arrow"><i class="svgicon svgicon-arrowbottom"></i></span>
+					</button>
+					<div class="accordion-cont">
+						<div class="membership-swiper inner">
+							<div class="swiper">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<figure>
+											<img src="{{dirRoot}}/static/imgs/sales/customer/customer_membership_bg.png" alt="">
+										</figure>
+										<div>
+											<strong class="title">빈펄 나트랑 VIP</strong>
+											<dl>
+												<dt>상태</dt>
+												<dd>보유</dd>
+											</dl>
+											<dl>
+												<dt>회원권 번호</dt>
+												<dd>1234567890</dd>
+											</dl>
+											<dl>
+												<dt>회원적용</dt>
+												<dd>기명 4인</dd>
+											</dl>
+											<dl>
+												<dt>입회날짜</dt>
+												<dd>2020.01.01</dd>
+											</dl>
+											<dl>
+												<dt>유효기간</dt>
+												<dd>2020.01.01</dd>
+											</dl>
+										</div>
+									</div>
+
+									<div class="swiper-slide">
+										<figure>
+											<img src="{{dirRoot}}/static/imgs/sales/customer/customer_membership_bg.png" alt="">
+										</figure>
+										<div>
+											<strong class="title">빈펄 나트랑 VIP</strong>
+											<dl>
+												<dt>상태</dt>
+												<dd>보유</dd>
+											</dl>
+											<dl>
+												<dt>회원권 번호</dt>
+												<dd>1234567890</dd>
+											</dl>
+											<dl>
+												<dt>회원적용</dt>
+												<dd>기명 4인</dd>
+											</dl>
+											<dl>
+												<dt>입회날짜</dt>
+												<dd>2020.01.01</dd>
+											</dl>
+											<dl>
+												<dt>유효기간</dt>
+												<dd>2020.01.01</dd>
+											</dl>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<!-- // 2025.01.31 수정 -->
+				<li class="active contract">
+					<button type="button" class="accordion-ti">
+						<p>
+							<strong>입회 및 계약현황</strong>
+							<span>5</span>
+						</p>
+						<span class="accordion-arrow"><i class="svgicon svgicon-arrowbottom"></i></span>
+					</button>
+					<div class="accordion-cont">
+						<div class="inner">
+							<div class="incharge-board">
+								<ul>
+									<!-- 반복 // -->
+									<li>
+										<a href="#">
+											<div class="subject">
+												<div class="state">신규입회</div>
+												<div class="incharge-customer">
+													<p><strong>김신청</strong><span>(P123456789)</span></p>
+													<div class="customer-info">
+														<span>김신청​, 김입회</span>
+														<span>공동구좌</span>
+														<span>100%</span>
+													</div>
+												</div>
+												<div class="badge-area">
+													<span class="badge meeting">미팅예정</span>
+													<span class="badge contract">계약중</span>
+													<span class="badge payment">결제완료</span>
+												</div>
+											</div>
+											<div class="customer-detail">
+												<div>
+													<p>상품명​ :<span>가싼쿤탄 VIP</span></p>
+													<p>골프장명 :<span>가싼쿤탄</span></p>
+													<p>회원권명 :<span>가싼쿤탄 VIP</span></p>
+												</div>
+												<div class="detail-view">
+													<p>상세보기<i class="svgicon svgicon-arrowright"></i></p>
+												</div>
+											</div>
+										</a>
+									</li>
+			
+									<li>
+										<a href="#">
+											<div class="subject">
+												<div class="state positive">양수입회</div>
+												<div class="incharge-customer">
+													<p><strong>김신청</strong><span>(P123456789)</span></p>
+													<div class="customer-info">
+														<span>김신청​, 김입회</span>
+														<span>공동구좌</span>
+														<span>100%</span>
+													</div>
+												</div>
+												<div class="badge-area">
+													<span class="badge meeting">미팅예정</span>
+													<span class="badge contract">계약중</span>
+													<span class="badge payment">결제완료</span>
+												</div>
+											</div>
+											<div class="customer-detail">
+												<div>
+													<p>상품명​ :<span>가싼쿤탄 VIP</span></p>
+													<p>골프장명 :<span>가싼쿤탄</span></p>
+													<p>회원권명 :<span>가싼쿤탄 VIP</span></p>
+												</div>
+												<div class="detail-view">
+													<p>상세보기<i class="svgicon svgicon-arrowright"></i></p>
+												</div>
+											</div>
+										</a>
+									</li>
+			
+									<li>
+										<a href="#">
+											<div class="subject">
+												<div class="state transfer">양도거래</div>
+												<div class="incharge-customer">
+													<p><strong>김신청</strong><span>(P123456789)</span></p>
+													<div class="customer-info">
+														<span>김신청​, 김입회</span>
+														<span>공동구좌</span>
+														<span>100%</span>
+													</div>
+												</div>
+												<div class="badge-area">
+													<span class="badge meeting">미팅예정</span>
+													<span class="badge contract">계약중</span>
+													<span class="badge payment">결제완료</span>
+												</div>
+											</div>
+											<div class="customer-detail">
+												<div>
+													<p>상품명​ :<span>가싼쿤탄 VIP</span></p>
+													<p>골프장명 :<span>가싼쿤탄</span></p>
+													<p>회원권명 :<span>가싼쿤탄 VIP</span></p>
+												</div>
+												<div class="detail-view">
+													<p>상세보기<i class="svgicon svgicon-arrowright"></i></p>
+												</div>
+											</div>
+										</a>
+									</li>
+
+									<li class="hide">
+										<a href="#">
+											<div class="subject">
+												<div class="state transfer">양도거래</div>
+												<div class="incharge-customer">
+													<p><strong>김신청</strong><span>(P123456789)</span></p>
+													<div class="customer-info">
+														<span>김신청​, 김입회</span>
+														<span>공동구좌</span>
+														<span>100%</span>
+													</div>
+												</div>
+												<div class="badge-area">
+													<span class="badge meeting">미팅예정</span>
+													<span class="badge contract">계약중</span>
+													<span class="badge payment">결제완료</span>
+												</div>
+											</div>
+											<div class="customer-detail">
+												<div>
+													<p>상품명​ :<span>가싼쿤탄 VIP</span></p>
+													<p>골프장명 :<span>가싼쿤탄</span></p>
+													<p>회원권명 :<span>가싼쿤탄 VIP</span></p>
+												</div>
+												<div class="detail-view">
+													<p>상세보기<i class="svgicon svgicon-arrowright"></i></p>
+												</div>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+
+							<div class="btns">
+								<a href="#" class="btn line small">더보기</a>
+							</div>
+						</div>
+					</div>
+				</li>
+
+				<li class=" tendency">
+					<button type="button" type="button" class="accordion-ti">
+						<p>
+							<strong>고객 해당 성향</strong>
+							<span>5</span>
+						</p>
+						<span class="accordion-arrow"><i class="svgicon svgicon-arrowbottom"></i></span>
+					</button>
+					<div class="accordion-cont">
+						<div class="inner">
+							<!--// 2024-12-11 수정 -->
+							<p>최종수정일 : 2024.01.01</p>
+							<div class="detail-table">
+								<table>
+									<colgroup>
+									<col style="width: 138px;">
+									<col style="width: 758px;">
+									</colgroup>
+	
+									<tr>
+										<th><p>고객 성품</p></th>
+										<td>
+											<div class="input-sorting line">
+												<label><input type="checkbox" name=""><span>영업친화</span></label>
+												<label><input type="checkbox" name="" checked=""><span>긍정</span></label>
+												<label><input type="checkbox" name=""><span>부정</span></label>
+												<label><input type="checkbox" name=""><span>예민</span></label>
+												<label><input type="checkbox" name=""><span>강성</span></label>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th><p>골프수준</p></th>
+										<td>
+											<div class="input-sorting line">
+												<label><input type="checkbox" name=""><span>초급</span></label>
+												<label><input type="checkbox" name=""><span>중급</span></label>
+												<label><input type="checkbox" name="" checked=""><span>고급</span></label>
+												<label><input type="checkbox" name=""><span>준프로</span></label>
+												<label><input type="checkbox" name=""><span>프로</span></label>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th><p>골프 타수</p></th>
+										<td>
+											<div class="input-sorting line">
+												<label><input type="checkbox" name=""><span>90 이상</span></label>
+												<label><input type="checkbox" name="" checked=""><span>80 이상</span></label>
+												<label><input type="checkbox" name=""><span>70 이상</span></label>
+												<label><input type="checkbox" name="" checked=""><span>싱글이하</span></label>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th><p>선호 라운드</p></th>
+										<td>
+											<div class="input-sorting line">
+												<label><input type="checkbox" name=""><span>친목</span></label>
+												<label><input type="checkbox" name=""><span>비즈니스</span></label>
+												<label><input type="checkbox" name=""><span>가족행사</span></label>
+												<label><input type="checkbox" name="" checked=""><span>취미</span></label>
+												<label><input type="checkbox" name=""><span>운동</span></label>
+												<label><input type="checkbox" name="" checked=""><span>대회</span></label>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th><p>선호 입회비</p></th>
+										<td>
+											<div class="input-sorting line">
+												<label><input type="checkbox" name=""><span>~1000만원</span></label>
+												<label><input type="checkbox" name=""><span>1000만원~</span></label>
+												<label><input type="checkbox" name=""><span>2000만원~</span></label>
+												<label><input type="checkbox" name=""><span>3000만원~</span></label>
+												<label><input type="checkbox" name="" checked=""><span>4000만원~</span></label>
+												<label><input type="checkbox" name=""><span>5000만원~</span></label>
+											</div>
+										</td>
+									</tr>
+									<tr class="hide">
+										<th><p>골프장 이용 빈도</p></th>
+										<td>
+											<div class="input-sorting line">
+												<label><input type="checkbox" name=""><span>주3회 이상</span></label>
+												<label><input type="checkbox" name=""><span>주1회 이상</span></label>
+												<label><input type="checkbox" name=""><span>월1회 이상 </span></label>
+												<label><input type="checkbox" name=""><span>반기1회 이상</span></label>
+												<label><input type="checkbox" name="" checked=""><span>분기1회 이상</span></label>
+												<label><input type="checkbox" name=""><span>연1회 이상</span></label>
+											</div>
+										</td>
+									</tr>
+	
+									<tr class="hide">
+										<th><p>선호 플레이</p></th>
+										<td>
+											<div class="input-sorting line">
+												<label><input type="checkbox" name=""><span>4명 이상</span></label>
+												<label><input type="checkbox" name=""><span>2인 선호</span></label>
+											</div>
+										</td>
+									</tr>
+	
+									<tr class="hide">
+										<th><p>골프 모임 성향</p></th>
+										<td>
+											<div class="input-sorting line">
+												<label><input type="checkbox" name=""><span>골프만</span></label>
+												<label><input type="checkbox" name=""><span>유흥</span></label>
+												<label><input type="checkbox" name=""><span>음주 </span></label>
+												<label><input type="checkbox" name="" checked=""><span>레저</span></label>
+												<label><input type="checkbox" name=""><span>가족여행</span></label>
+												<label><input type="checkbox" name=""><span>휴식</span></label>
+											</div>
+										</td>
+									</tr>
+	
+									<tr class="hide">
+										<th><p>모임 내 역할</p></th>
+										<td>
+											<div class="input-sorting line">
+												<label><input type="checkbox" name=""><span>모임장</span></label>
+												<label><input type="checkbox" name=""><span>총무</span></label>
+												<label><input type="checkbox" name="" checked=""><span>모임원 </span></label>
+											</div>
+										</td>
+									</tr>
+	
+									<tr class="hide">
+										<th><p>골프 모임 구성</p></th>
+										<td>
+											<div class="input-sorting line">
+												<label><input type="checkbox" name=""><span>가족</span></label>
+												<label><input type="checkbox" name=""><span>친구</span></label>
+												<label><input type="checkbox" name=""><span>지인</span></label>
+												<label><input type="checkbox" name="" checked=""><span>임직원</span></label>
+											</div>
+										</td>
+									</tr>
+	
+									<tr class="hide">
+										<th><p>직업</p></th>
+										<td>
+											<div class="input-sorting line">
+												<label><input type="checkbox" name=""><span>사업(오너)</span></label>
+												<label><input type="checkbox" name=""><span>전문직</span></label>
+												<label><input type="checkbox" name=""><span>사무직</span></label>
+												<label><input type="checkbox" name=""><span>기술직</span></label>
+												<label><input type="checkbox" name="" checked=""><span>영업직</span></label>
+												<label><input type="checkbox" name=""><span>자영업</span></label>
+												<label><input type="checkbox" name=""><span>단순노무</span></label>
+												<label><input type="checkbox" name=""><span>은퇴/무직</span></label>
+											</div>
+										</td>
+									</tr>
+	
+									<tr class="hide">
+										<th><p>타사 회원권 보유</p></th>
+										<td>
+											<div class="input-sorting line">
+												<label><input type="checkbox" name=""><span>국내</span></label>
+												<label><input type="checkbox" name="" checked=""><span>국외</span></label>
+												<label><input type="checkbox" name=""><span>기타</span></label>
+											</div>
+										</td>
+									</tr>
+	
+									<tr class="hide">
+										<th><p>회원권 선호</p></th>
+										<td>
+											<div class="input-sorting line">
+												<label><input type="checkbox" name="" checked=""><span>평생 선호</span></label>
+												<label><input type="checkbox" name=""><span>무관</span></label>
+											</div>
+										</td>
+									</tr>
+
+									<tr class="hide">
+										<th><p>알러지 유무</p></th>
+										<td>
+											<div class="input-sorting line">
+												<label><input type="checkbox" name=""><span>알러지 유</span></label>
+												<label><input type="checkbox" name=""><span>알러지 무</span></label>
+											</div>
+										</td>
+									</tr>
+	
+									<tr class="hide">
+										<th><p>투어 인원</p></th>
+										<td>
+											<div class="input-sorting line">
+												<label><input type="checkbox" name=""><span>8인 이상</span></label>
+												<label><input type="checkbox" name=""><span>4인 이상</span></label>
+												<label><input type="checkbox" name=""><span>2인</span></label>
+												<label><input type="checkbox" name=""><span>1인</span></label>
+											</div>
+										</td>
+									</tr>
+	
+									<tr class="hide">
+										<th><p>선호 숙박</p></th>
+										<td>
+											<div class="input-sorting line">
+												<label><input type="checkbox" name=""><span>저층 선호</span></label>
+												<label><input type="checkbox" name=""><span>고층 선호</span></label>
+												<label><input type="checkbox" name=""><span>마운틴뷰</span></label>
+												<label><input type="checkbox" name=""><span>오션뷰</span></label>
+											</div>
+										</td>
+									</tr>
+	
+									<tr class="hide">
+										<th><p>체류 기간</p></th>
+										<td>
+											<div class="input-sorting line">
+												<label><input type="checkbox" name=""><span>7일 미만</span></label>
+												<label><input type="checkbox" name=""><span>7일 이상</span></label>
+												<label><input type="checkbox" name=""><span>15일 이상</span></label>
+												<label><input type="checkbox" name=""><span>30일 미만</span></label>
+												<label><input type="checkbox" name="" checked=""><span>30일 이상</span></label>
+											</div>
+										</td>
+									</tr>
+	
+									<tr class="hide">
+										<th><p>일체류비 선호 금액</p></th>
+										<td>
+											<div class="input-sorting line">
+												<label><input type="checkbox" name=""><span>10만원 미만</span></label>
+												<label><input type="checkbox" name=""><span>15만원 미만</span></label>
+												<label><input type="checkbox" name=""><span>20만원 미만</span></label>
+												<label><input type="checkbox" name="" checked=""><span>20만원 이상</span></label>
+											</div>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<!-- 2024-12-11 수정 //-->
+							<div class="btns">
+								<button type="button" class="btn-more"><span>성향 더보기</span><i class="svgicon svgicon-arrowbottom"></i></button>
+							</div>
+						</div>
+					</div>
+				</li>
+
+				<li class="interest">
+					<button type="button" type="button" class="accordion-ti">
+						<p>
+							<strong>관심 골프장</strong>
+							<span>5</span>
+						</p>
+						<span class="accordion-arrow"><i class="svgicon svgicon-arrowbottom"></i></span>
+					</button>
+					<div class="accordion-cont">
+						<div class="inner">
+							<div class="detail-table">
+								<table>
+									<colgroup>
+										<col style="width: 172px;">
+										<col style="width: 276px;">
+										<col style="width: 172px;">
+										<col style="width: 276px;">
+									</colgroup>
+
+									<tr>
+										<th>
+											<label><input type="checkbox" name=""><span>남산</span></label>
+										</th>
+										<td><p>중국</p></td>
+										<th>
+											<label><input type="checkbox" name=""><span>미션힐스하이커우</span></label>
+										</th>
+										<td><p>중국</p></td>
+									</tr>
+
+									<tr>
+										<th>
+											<label><input type="checkbox" name=""><span>빈펄</span></label>
+										</th>
+										<td><p>베트남</p></td>
+										<th>
+											<label><input type="checkbox" name=""><span>치링</span></label>
+										</th>
+										<td><p>베트남</p></td>
+									</tr>
+									<tr>
+										<th>
+											<label><input type="checkbox" name=""><span>삼투옌람</span></label>
+										</th>
+										<td><p>베트남</p></td>
+										<th>
+											<label><input type="checkbox" name=""><span>레이테</span></label>
+										</th>
+										<td><p>필리핀</p></td>
+									</tr>
+									<tr>
+										<th>
+											<label><input type="checkbox" name=""><span>닐라이 스프링스</span></label>
+										</th>
+										<td><p>말레이시아</p></td>
+										<th>
+											<label><input type="checkbox" name=""><span>가싼쿤탄</span></label>
+										</th>
+										<td><p>태국</p></td>
+									</tr>
+									<tr>
+										<th>
+											<label><input type="checkbox" name=""><span>HK치구사</span></label>
+										</th>
+										<td colspan="3"><p>일본</p></td>
+									</tr>
+									<tr class="etc">
+										<th>
+											<!-- 기타 선택시 input 활성화 -->
+											<label><input type="checkbox" name=""><span>기타 (2)</span></label>
+										</th>
+										<td colspan="3">
+											<div>
+												<div class="btn-wrap">
+													<div class="input-wrap">
+														<input type="text" title="기타입력" placeholder="" disabled />
+														<button type="button" class="btn line"><i class="svgicon svgicon-minus"></i></button>
+													</div>
+													<div class="input-wrap">
+														<input type="text" title="기타입력" placeholder="" disabled />
+														<button type="button" class="btn line"><i class="svgicon svgicon-plus"></i></button>
+													</div>
+												</div>
+												<button type="button" class="btn line" onclick="fn.toastPopup('#toast1');" disabled>저장</button>
+											</div>
+										</td>
+											<!-- 기타 선택시 input, button 활성화 -->
+									</tr>
+								</table>
+							</div>
+							<div class="btns">
+								<button type="button" class="btn line">회원권 비교하기</button>
+								<button type="button" class="btn blue">회원권 소개하기</button>
+							</div>
+						</div>
+					</div>
+				</li>
+
+				<li class=" meeting">
+					<button type="button" class="accordion-ti">
+						<p>
+							<strong>미팅 일정</strong>
+							<span>3</span>
+						</p>
+						<span class="accordion-arrow"><i class="svgicon svgicon-arrowbottom"></i></span>
+					</button>
+					<div class="accordion-cont">
+						<div class="inner">
+							<ul class="list-board">
+								<!-- 2025.02.07 수정 //-->
+								<li onclick="fn.popup('open', '#popupCalendarView')">
+									<!--// 2025.02.07 수정 -->
+									<div class="badge progress">
+										<span>미팅예정</span>
+									</div>
+									<div class="subject">
+										<div class="title">
+											<em>상담</em>
+											<strong>
+												최선이 고객 3pm 신규 입회 미팅
+											</strong>
+											<span>
+												첫 투어 고객 인천공항 송영 서비스 진행 / 리무진 대여해서 송영함
+											</span>
+										</div>
+									</div>
+									<div class="membership"><p><span>공항</span>인천공항 VIP 라운지</p></div>
+									<div class="date"><p><span>2024.01.01</span>13:00:13</p></div>
+								</li>
+				
+								<li>
+									<div class="badge progress">
+										<span>미팅예정</span>
+									</div>
+									<div class="subject">
+										<div class="title">
+											<em>상담</em>
+											<strong>
+												최선이 고객 3pm 신규 입회 미팅
+											</strong>
+											<span>
+												첫 투어 고객 인천공항 송영 서비스 진행 / 리무진 대여해서 송영함
+											</span>
+										</div>
+									</div>
+									<div class="membership"><p><span>공항</span>인천공항 VIP 라운지</p></div>
+									<div class="date"><p><span>2024.01.01</span>13:00:13</p></div>
+								</li>
+				
+								<li class="end">
+									<div class="badge end">
+										<span>미팅종료</span>
+									</div>
+									<div class="subject">
+										<div class="title">
+											<em>상담</em>
+											<strong>
+												최선이 고객 3pm 신규 입회 미팅
+											</strong>
+											<span>
+												첫 투어 고객 인천공항 송영 서비스 진행 / 리무진 대여해서 송영함
+											</span>
+										</div>
+									</div>
+									<div class="membership"><p><span>공항</span>인천공항 VIP 라운지</p></div>
+									<div class="date"><p><span>2024.01.01</span>13:00:13</p></div>
+								</li>
+
+								<li class="hide">
+									<div class="badge">
+										<span>미팅종료</span>
+									</div>
+									<div class="subject">
+										<div class="title">
+											<em>상담</em>
+											<strong>
+												최선이 고객 3pm 신규 입회 미팅
+											</strong>
+											<span>
+												첫 투어 고객 인천공항 송영 서비스 진행 / 리무진 대여해서 송영함
+											</span>
+										</div>
+									</div>
+									<div class="membership"><p><span>공항</span>인천공항 VIP 라운지</p></div>
+									<div class="date"><p><span>2024.01.01</span>13:00:13</p></div>
+								</li>
+							</ul>
+
+							<div class="btns">
+								<a href="#" class="btn line small">더보기</a>
+							</div>
+						</div>
+					</div>
+				</li>
+
+				<!-- 2025.01.31 수정 // -->
+				<li class="active contact">
+					<button type="button" type="button" class="accordion-ti">
+						<p>
+							<strong>고객문의 관리</strong>
+							<span>3</span>
+						</p>
+						<span class="accordion-arrow"><i class="svgicon svgicon-arrowbottom"></i></span>
+					</button>
+					<div class="accordion-cont">
+						<div class="inner">
+							<ul class="list-board">
+								<li>
+									<div class="badge progress">
+										<span>상담중
+											<em class="old">답변2일경과</em></span>
+									</div>
+									<div class="subject">
+										<p class="title">
+											<em><span>Q0003124</span><span>회원권문의</span></em>
+											<strong>
+												VIP 10년 정식회원권 
+											</strong>
+											<span>
+												한케이골프 회원권 좋다고 해서 입회 상담 하려고요. 어디로 연락하면 되나요?
+											</span>
+										</p>
+									</div>
+								</li>
+				
+								<li>
+									<div class="badge end">
+										<span>상담완료</span>
+									</div>
+									<div class="subject">
+										<p class="title">
+											<em><span>Q0003124</span><span>회원권문의</span></em>
+											<strong>
+												삼투엔람 VIP
+											</strong>
+											<span>
+												한케이골프 회원권 좋다고 해서 입회 상담 하려고요. 어디로 연락하면 되나요?
+											</span>
+										</p>
+									</div>
+								</li>
+				
+								<li>
+									<div class="badge progress">
+										<span>상담접수</span>
+									</div>
+									<div class="subject">
+										<p class="title">
+											<em><span>Q0003124</span><span>회원권문의</span></em>
+											<strong>
+												MH GOLD
+											</strong>
+											<span>
+												한케이골프 회원권 좋다고 해서 입회 상담 하려고요. 어디로 연락하면 되나요?
+											</span>
+										</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<!-- // 2025.01.31 수정 -->
+
+				<li class="active tour">
+					<button type="button" class="accordion-ti">
+						<p>
+							<strong>투어 예약 내역</strong>
+							<span>6</span>
+						</p>
+						<span class="accordion-arrow"><i class="svgicon svgicon-arrowbottom"></i></span>
+					</button>
+					<div class="accordion-cont">
+						<div class="inner">
+							<ul class="list-board">
+								<li>
+									<div class="badge first">
+										<span>투어중</span>
+									</div>
+									<div class="subject">
+										<div class="title">
+											<em><span>예약완료</span><span>REV123456789</span></em>
+											<strong>
+												VIP 10년 정식회원권 
+											</strong>
+											<p>
+												<span>2024.04.10 ~ 2024.04.15</span><span>김예약님 외 3인</span>
+											</p>
+										</div>
+									</div>
+									<div class="dday"><strong>-</strong></div>
+								</li>
+
+								<li>
+									<div class="badge">
+										<span>예약완료</span>
+									</div>
+									<div class="subject">
+										<div class="title">
+											<em><span>결제완료</span><span>REV123456789</span></em>
+											<strong>
+												베트남 전통 마사지 이용권
+												<span>-</span>
+											</strong>
+											<p>
+												<span>-</span><span>4개</span>
+											</p>
+										</div>
+									</div>
+									<div class="dday"><strong>출발20일전</strong></div>
+								</li>
+
+								<li class="end">
+									<div class="badge cancle">
+										<span>투어취소</span>
+									</div>
+									<div class="subject">
+										<div class="title">
+											<em><span>결제완료</span><span>REV123456789</span></em>
+											<strong>
+												[베트남/나트랑] 빈펄 나트랑 2024.05.01 (4박)
+											</strong>
+											<p>
+												<span>2024.04.10 ~ 2024.04.15</span><span>김예약님 외 3인</span>
+											</p>
+										</div>
+									</div>
+									<div class="dday"><strong>-</strong></div>
+								</li>
+
+								<li>
+									<div class="badge end">
+										<span>투어완료</span>
+									</div>
+									<div class="subject">
+										<div class="title">
+											<em><span>결제완료</span><span>REV123456789</span></em>
+											<strong>
+												[베트남/나트랑] 빈펄 나트랑 2024.05.01 (4박)
+											</strong>
+											<p>
+												<span>2024.04.10 ~ 2024.04.15</span><span>김예약님 외 3인</span>
+											</p>
+										</div>
+									</div>
+									<div class="dday"><strong>-</strong></div>
+								</li>
+
+								<li class="hide">
+									<div class="badge end">
+										<span>투어완료</span>
+									</div>
+									<div class="subject">
+										<div class="title">
+											<em><span>결제완료</span><span>REV123456789</span></em>
+											<strong>
+												[베트남/나트랑] 빈펄 나트랑 2024.05.01 (4박)
+											</strong>
+											<p>
+												<span>2024.04.10 ~ 2024.04.15</span><span>김예약님 외 3인</span>
+											</p>
+										</div>
+									</div>
+									<div class="dday"><strong>-</strong></div>
+								</li>
+							</ul>
+							<div class="btns">
+								<a href="#" class="btn line small btn-more">더보기</a>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="btns">
+			<button type="button" class="btn line">목록으로 가기</button>
+			<button type="button" class="btn">미팅 일정잡기</button>
+			<button type="button" class="btn">투어현황 확인하기</button>
+			<button type="button" class="btn green">신규 입회하기</button>
+		</div>
+	</div>
+	<!-- // 본문 영역 -->
+</main> 
+
+<!-- 2025.02.07 수정 -->
+<!-- 팝업 : 포인트 내역 // -->
+{{include('./components/popup.html', {
+	"prop": {
+		"id": "popupPointHistory",
+		"class": "popuppointhistory",
+		"tit": "포인트 내역",
+		"header": true,
+		"content": "./contents/popup/popupPointHistory.html"
+	}
+})}}
+<!-- // 팝업 : 포인트 내역 -->
+
+<!-- 팝업 : 포인트 내역 - nodata // -->
+{{include('./components/popup.html', {
+	"prop": {
+		"id": "popupPointHistoryNodata",
+		"class": "popuppointhistory",
+		"tit": "포인트 내역",
+		"header": true,
+		"content": "./contents/popup/popupPointHistoryNodata.html"
+	}
+})}}
+<!-- // 팝업 : 포인트 내역 -->
+
+<!-- 팝업 : 바우처 내역 // -->
+{{include('./components/popup.html', {
+	"prop": {
+		"id": "popupVoucherHistory",
+		"class": "popupvoucherhistory",
+		"tit": "바우처 내역",
+		"header": true,
+		"content": "./contents/popup/popupVoucherHistory.html"
+	}
+})}}
+<!-- // 팝업 : 바우처 내역 -->
+
+<!-- 팝업 : 바우처 내역 // -->
+{{include('./components/popup.html', {
+	"prop": {
+		"id": "popupVoucherHistoryNodata",
+		"class": "popupvoucherhistory",
+		"tit": "바우처 내역",
+		"header": true,
+		"content": "./contents/popup/popupVoucherHistoryNodata.html"
+	}
+})}}
+<!-- // 팝업 : 바우처 내역 -->
+
+<!-- 팝업 : 쿠폰 내역 // -->
+{{include('./components/popup.html', {
+	"prop": {
+		"id": "popupCouponHistory",
+		"class": "popupvoucherhistory",
+		"tit": "쿠폰 내역",
+		"header": true,
+		"content": "./contents/popup/popupCouponHistory.html"
+	}
+})}}
+<!-- // 팝업 : 쿠폰 내역 -->
+
+<!-- 팝업 : 쿠폰 내역 // -->
+{{include('./components/popup.html', {
+	"prop": {
+		"id": "popupCouponHistoryNodata",
+		"class": "popupvoucherhistory",
+		"tit": "쿠폰 내역",
+		"header": true,
+		"content": "./contents/popup/popupCouponHistoryNodata.html"
+	}
+})}}
+<!-- // 팝업 : 쿠폰 내역 -->
+
+<!-- 팝업 : 일정상세 // -->
+{{include('./components/popup.html', {
+	"prop": {
+		"id": "popupCalendarView",
+		"class": "popupcalendarview",
+		"tit": "일정상세",
+		"header": true,
+		"content": "./contents/popup/popupCalendarView.html"
+	}
+})}}
+<!-- // 팝업 : 일정상세 -->
+
+<!-- 팝업 : 외부 일정 수정 // -->
+{{include('./components/popup.html', {
+	"prop": {
+		"id": "popupRegistercalendarEdit",
+		"class": "popupregistercalendar",
+		"tit": "일정수정",
+		"header": true,
+		"content": "./contents/popup/popupRegistercalendarEdit.html"
+	}
+})}}
+<!-- // 팝업 : 외부 일정 수정 -->
+
+<!-- 2025.02.07 수정 -->

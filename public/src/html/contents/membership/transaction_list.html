@@ -1,0 +1,441 @@
+<main id="container">
+	<!-- 본문 영역 // -->
+	<div id="contents" class="{{prop.depth1}} {{prop.depth2}} {{prop.depth3}}"> <!-- 해당 depth별로 class명 추가 -->
+		<div class="title-area">
+			<!-- 2025.02.04 수정 // -->
+			<h2 class="tit">양수도 거래관리</h2>
+			<!--// 2025.02.04 수정 -->
+			
+			<div class="btns">
+				<button class="btn small fill"><i class="svgicon svgicon-session"></i>신규 입회하기</button>
+			</div>
+		</div>
+		
+		<div class="inner">
+			<div class="sorting list-sort">
+				<div class="sorting-container">
+					<div class="input-sorting">
+						<!-- 2025.01.31 수정 //-->
+						<label><input type="checkbox" name=""><span>거래중<em>20</em></span></label>
+						<label><input type="checkbox" name=""><span>결제중<em>0</em></span></label>
+						<label><input type="checkbox" name=""><span>계약중<em>20</em></span></label>
+						<!--// 2025.01.31 수정 -->
+					</div>
+				</div>
+	
+				<div class="search-form">
+					<div class="select">
+						<select title="select 선택">
+							<option value="" class="select-ti">양수자명</option>
+							<option value="">양수자명</option>
+							<option value="">양도자명</option>
+							<option value="">회원권명</option>
+							<option value="">영업사원명</option>
+						</select>
+					</div>
+					<div class="form-search">
+						<input type="text" name="" title="검색어 입력" placeholder="검색어 입력">
+						<button type="button" class="btn-delete"><span class="blind">삭제</span></button>
+						<button type="button" class="btn-search"><span class="blind">검색</span></button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- list // -->
+		<div class="list-board">
+			<div class="sel-area">
+				<p>총<span>20</span>건</p>
+
+				<div class="select">
+					<select title="select 선택">
+						<option value="">최신순</option>
+						<option value="">오래된순</option>
+						<option value="">가나다순</option>
+					</select>
+				</div>
+			</div>
+
+			<div>
+				<ul class="transaction-list">
+					<!-- 반복 // -->
+					<!-- 2025.01.31 수정 // -->
+					<li>
+						<a href="#">
+							<div class="subject">
+								<div class="state">양수도<br>거래</div>
+								<div class="customer">
+									<p><strong>N12345678941234</strong></p>
+									<div class="customer-detail">
+										<span>양도자 : <em>김신청</em></span>
+										<span>양수자 : <em>김입회</em></span>
+										<span>거래가격 :<em>17,000,000원</em></span>
+									</div>
+								</div>
+								<div class="badge-area">
+									<span class="badge transaction">거래중</span>
+									<span class="badge payment">결제중</span>
+									<span class="badge contract">계약중</span>
+								</div>
+							</div>
+						</a>
+						<div class="product">
+							<div>
+								<p>상품명 :<span>치링</span></p>
+								<p>이용골프장 :<span>치링</span></p>
+								<p>회원권명 :<span>치링 MVP 이용치링 MVP 이용치링 MVP 이용치링 MVP 이용</span></p>
+							</div>
+							<div class="tooltip-wrap">
+								<p>공동구좌 :<span>100%</span></p>
+								<button class="btn-tooltip"><i class="svgicon svgicon-info"></i><span class="hide">공동구좌 보기</span></button>
+								<div class="tooltip">
+									<div class="tit">
+										<strong>공동구좌</strong>
+										<button class="btn-close"><i class="svgicon svgicon-close"></i></button>
+									</div>
+									<div class="cont">
+										<p>김영업/박과장/한중개/김부장​/김인턴/강전무/김영업/박과장/한중개/김부장</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<!-- // 2025.01.31 수정 -->
+					<li>
+						<a href="#">
+							<div class="subject">
+								<div class="state">양수도<br>거래</div>
+								<div class="customer">
+									<p><strong>N12345678941234</strong></p>
+									<div class="customer-detail">
+										<span>양도자 : <em>김신청</em></span>
+										<span>양수자 : <em>김입회</em></span>
+										<span>거래가격 :<em>17,000,000원</em></span>
+									</div>
+								</div>
+								<div class="badge-area">
+									<span class="badge contract">거래중</span>
+									<span class="badge payment">결제중</span>
+								</div>
+							</div>
+						</a>
+						<div class="product">
+							<div>
+								<p>상품명 :<span>치링</span></p>
+								<p>이용골프장 :<span>치링</span></p>
+								<p>회원권명 :<span>치링 MVP 이용치링 MVP 이용치링 MVP 이용치링 MVP 이용</span></p>
+							</div>
+							<div class="tooltip-wrap">
+								<p>공동구좌 :<span>100%</span></p>
+								<button class="btn-tooltip"><i class="svgicon svgicon-info"></i><span class="hide">공동구좌 보기</span></button>
+								<div class="tooltip">
+									<div class="tit">
+										<strong>공동구좌</strong>
+										<button class="btn-close"><i class="svgicon svgicon-close"></i></button>
+									</div>
+									<div class="cont">
+										<p>김영업/박과장/한중개/김부장​/김인턴/강전무/김영업/박과장/한중개/김부장</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<a href="#">
+							<div class="subject">
+								<div class="state">양수도<br>거래</div>
+								<div class="customer">
+									<p><strong>N12345678941234</strong></p>
+									<div class="customer-detail">
+										<span>양도자 : <em>김신청</em></span>
+										<span>양수자 : <em>김입회</em></span>
+										<span>거래가격 :<em>17,000,000원</em></span>
+									</div>
+								</div>
+								<div class="badge-area">
+									<span class="badge contract">거래중</span>
+									<span class="badge payment">결제중</span>
+								</div>
+							</div>
+						</a>
+						<div class="product">
+							<div>
+								<p>상품명 :<span>치링</span></p>
+								<p>이용골프장 :<span>치링</span></p>
+								<p>회원권명 :<span>치링 MVP 이용치링 MVP 이용치링 MVP 이용치링 MVP 이용</span></p>
+							</div>
+							<div class="tooltip-wrap">
+								<p>공동구좌 :<span>100%</span></p>
+								<button class="btn-tooltip"><i class="svgicon svgicon-info"></i><span class="hide">공동구좌 보기</span></button>
+								<div class="tooltip">
+									<div class="tit">
+										<strong>공동구좌</strong>
+										<button class="btn-close"><i class="svgicon svgicon-close"></i></button>
+									</div>
+									<div class="cont">
+										<p>김영업/박과장/한중개/김부장​/김인턴/강전무/김영업/박과장/한중개/김부장</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<a href="#">
+							<div class="subject">
+								<div class="state">양수도<br>거래</div>
+								<div class="customer">
+									<p><strong>N12345678941234</strong></p>
+									<div class="customer-detail">
+										<span>양도자 : <em>김신청</em></span>
+										<span>양수자 : <em>김입회</em></span>
+										<span>거래가격 :<em>17,000,000원</em></span>
+									</div>
+								</div>
+								<div class="badge-area">
+									<span class="badge contract">거래중</span>
+									<span class="badge payment">결제중</span>
+								</div>
+							</div>
+						</a>
+						<div class="product">
+							<div>
+								<p>상품명 :<span>치링</span></p>
+								<p>이용골프장 :<span>치링</span></p>
+								<p>회원권명 :<span>치링 MVP 이용치링 MVP 이용치링 MVP 이용치링 MVP 이용</span></p>
+							</div>
+							<div class="tooltip-wrap">
+								<p>공동구좌 :<span>100%</span></p>
+								<button class="btn-tooltip"><i class="svgicon svgicon-info"></i><span class="hide">공동구좌 보기</span></button>
+								<div class="tooltip">
+									<div class="tit">
+										<strong>공동구좌</strong>
+										<button class="btn-close"><i class="svgicon svgicon-close"></i></button>
+									</div>
+									<div class="cont">
+										<p>김영업/박과장/한중개/김부장​/김인턴/강전무/김영업/박과장/한중개/김부장</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<a href="#">
+							<div class="subject">
+								<div class="state">양수도<br>거래</div>
+								<div class="customer">
+									<p><strong>N12345678941234</strong></p>
+									<div class="customer-detail">
+										<span>양도자 : <em>김신청</em></span>
+										<span>양수자 : <em>김입회</em></span>
+										<span>거래가격 :<em>17,000,000원(명의개서료 포함)</em></span>
+									</div>
+								</div>
+								<div class="badge-area">
+									<span class="badge contract">거래중</span>
+									<span class="badge payment">결제중</span>
+								</div>
+							</div>
+						</a>
+						<div class="product">
+							<div>
+								<p>상품명 :<span>치링</span></p>
+								<p>이용골프장 :<span>치링</span></p>
+								<p>회원권명 :<span>치링 MVP 이용치링 MVP 이용치링 MVP 이용치링 MVP 이용</span></p>
+							</div>
+							<div class="tooltip-wrap">
+								<p>공동구좌 :<span>100%</span></p>
+								<button class="btn-tooltip"><i class="svgicon svgicon-info"></i><span class="hide">공동구좌 보기</span></button>
+								<div class="tooltip">
+									<div class="tit">
+										<strong>공동구좌</strong>
+										<button class="btn-close"><i class="svgicon svgicon-close"></i></button>
+									</div>
+									<div class="cont">
+										<p>김영업/박과장/한중개/김부장​/김인턴/강전무/김영업/박과장/한중개/김부장</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<a href="#">
+							<div class="subject">
+								<div class="state">양수도<br>거래</div>
+								<div class="customer">
+									<p><strong>N12345678941234</strong></p>
+									<div class="customer-detail">
+										<span>양도자 : <em>김신청</em></span>
+										<span>양수자 : <em>김입회</em></span>
+										<span>거래가격 :<em>17,000,000원(명의개서료 포함)</em></span>
+									</div>
+								</div>
+								<div class="badge-area">
+									<span class="badge contract">거래중</span>
+									<span class="badge payment">결제중</span>
+								</div>
+							</div>
+						</a>
+						<div class="product">
+							<div>
+								<p>상품명 :<span>치링</span></p>
+								<p>이용골프장 :<span>치링</span></p>
+								<p>회원권명 :<span>치링 MVP 이용치링 MVP 이용치링 MVP 이용치링 MVP 이용</span></p>
+							</div>
+							<div class="tooltip-wrap">
+								<p>공동구좌 :<span>100%</span></p>
+								<button class="btn-tooltip"><i class="svgicon svgicon-info"></i><span class="hide">공동구좌 보기</span></button>
+								<div class="tooltip">
+									<div class="tit">
+										<strong>공동구좌</strong>
+										<button class="btn-close"><i class="svgicon svgicon-close"></i></button>
+									</div>
+									<div class="cont">
+										<p>김영업/박과장/한중개/김부장​/김인턴/강전무/김영업/박과장/한중개/김부장</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<a href="#">
+							<div class="subject">
+								<div class="state">양수도<br>거래</div>
+								<div class="customer">
+									<p><strong>N12345678941234</strong></p>
+									<div class="customer-detail">
+										<span>양도자 : <em>김신청</em></span>
+										<span>양수자 : <em>김입회</em></span>
+										<span>거래가격 :<em>17,000,000원(명의개서료 포함)</em></span>
+									</div>
+								</div>
+								<div class="badge-area">
+									<span class="badge contract">거래중</span>
+									<span class="badge payment">결제중</span>
+								</div>
+							</div>
+						</a>
+						<div class="product">
+							<div>
+								<p>상품명 :<span>치링</span></p>
+								<p>이용골프장 :<span>치링</span></p>
+								<p>회원권명 :<span>치링 MVP 이용치링 MVP 이용치링 MVP 이용치링 MVP 이용</span></p>
+							</div>
+							<div class="tooltip-wrap">
+								<p>공동구좌 :<span>100%</span></p>
+								<button class="btn-tooltip"><i class="svgicon svgicon-info"></i><span class="hide">공동구좌 보기</span></button>
+								<div class="tooltip">
+									<div class="tit">
+										<strong>공동구좌</strong>
+										<button class="btn-close"><i class="svgicon svgicon-close"></i></button>
+									</div>
+									<div class="cont">
+										<p>김영업/박과장/한중개/김부장​/김인턴/강전무/김영업/박과장/한중개/김부장</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<a href="#">
+							<div class="subject">
+								<div class="state">양수도<br>거래</div>
+								<div class="customer">
+									<p><strong>N12345678941234</strong></p>
+									<div class="customer-detail">
+										<span>양도자 : <em>김신청</em></span>
+										<span>양수자 : <em>김입회</em></span>
+										<span>거래가격 :<em>17,000,000원(명의개서료 포함)</em></span>
+									</div>
+								</div>
+								<div class="badge-area">
+									<span class="badge contract">거래중</span>
+									<span class="badge payment">결제중</span>
+								</div>
+							</div>
+						</a>
+						<div class="product">
+							<div>
+								<p>상품명 :<span>치링</span></p>
+								<p>이용골프장 :<span>치링</span></p>
+								<p>회원권명 :<span>치링 MVP 이용치링 MVP 이용치링 MVP 이용치링 MVP 이용</span></p>
+							</div>
+							<div class="tooltip-wrap">
+								<p>공동구좌 :<span>100%</span></p>
+								<button class="btn-tooltip"><i class="svgicon svgicon-info"></i><span class="hide">공동구좌 보기</span></button>
+								<div class="tooltip">
+									<div class="tit">
+										<strong>공동구좌</strong>
+										<button class="btn-close"><i class="svgicon svgicon-close"></i></button>
+									</div>
+									<div class="cont">
+										<p>김영업/박과장/한중개/김부장​/김인턴/강전무/김영업/박과장/한중개/김부장</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<a href="#">
+							<div class="subject">
+								<div class="state">양수도<br>거래</div>
+								<div class="customer">
+									<p><strong>N12345678941234</strong></p>
+									<div class="customer-detail">
+										<span>양도자 : <em>김신청</em></span>
+										<span>양수자 : <em>김입회</em></span>
+										<span>거래가격 :<em>17,000,000원(명의개서료 포함)</em></span>
+									</div>
+								</div>
+								<div class="badge-area">
+									<span class="badge contract">거래중</span>
+									<span class="badge payment">결제중</span>
+								</div>
+							</div>
+						</a>
+						<div class="product">
+							<div>
+								<p>상품명 :<span>치링</span></p>
+								<p>이용골프장 :<span>치링</span></p>
+								<p>회원권명 :<span>치링 MVP 이용치링 MVP 이용치링 MVP 이용치링 MVP 이용</span></p>
+							</div>
+							<div class="tooltip-wrap">
+								<p>공동구좌 :<span>100%</span></p>
+								<button class="btn-tooltip"><i class="svgicon svgicon-info"></i><span class="hide">공동구좌 보기</span></button>
+								<div class="tooltip">
+									<div class="tit">
+										<strong>공동구좌</strong>
+										<button class="btn-close"><i class="svgicon svgicon-close"></i></button>
+									</div>
+									<div class="cont">
+										<p>김영업/박과장/한중개/김부장​/김인턴/강전무/김영업/박과장/한중개/김부장</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+	
+				</ul>
+				<!-- pagination // -->
+				<div class="pagination-list">
+					<a href="#" class="btn-prev"><span class="blind">이전 페이지</span><i class="svgicon svgicon-pagearrowleft"></i></a>
+					<ol>
+						<li class="active"><a href="javascript:void(0);"><span class="blind">현재 페이지</span>1</a></li><!-- 활성화 class="active" -->
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li><a href="#">6</a></li>
+						<li><a href="#">7</a></li>
+						<li><a href="#">8</a></li>
+						<li><a href="#">9</a></li>
+						<li><a href="#">10</a></li>
+					</ol>
+					<a href="#" class="btn-next"><span class="blind">다음 페이지</span><i class="svgicon svgicon-pagearrowright"></i></a>
+				</div>
+				<!-- // pagination -->
+			</div>
+		</div>
+		<!-- // list -->
+	</div>
+	<!-- // 본문 영역 -->
+</main>

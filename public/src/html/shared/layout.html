@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+	{{include('./shared/config.html', {
+		"prop": {
+			"depth1": "{{prop.depth1}}",
+			"depth2": "{{prop.depth2}}",
+			"depth3": "{{prop.depth3}}",
+			"depth2Name": "{{prop.depth2Name}}",
+			"depth3Name": "{{prop.depth3Name}}",
+		}
+	})}}
+</head>
+
+<body>
+
+	<noscript>
+		이 사이트를 이용하기 위해서 자바스크립트를 활성화 시킬 필요가 있습니다.
+		<a href="http://www.enable-javascript.com/ko/" target="_blank">브라우저에서 자바스크립트를 활성화하는 방법</a>을 참고 하세요.
+	</noscript>
+
+	<div id="wrap">
+		<a href="#contents" class="skip">본문 영역으로 바로가기</a>
+
+		<!-- header // -->
+		{{if (prop.depth1 !== 'error') {
+			{{include('./shared/header.html', {
+				"prop": {
+					"header": "{{prop.header}}",
+					"headertype": "{{prop.headertype}}",
+					"depth1": "{{prop.depth1}}",
+					"depth1Name": "{{prop.depth1Name}}",
+				}
+			})}}
+		}}}
+		<!-- // header -->
+
+		<!-- container // -->
+		{{include('{{prop.content}}', {
+			"prop": {
+				"depth1": "{{prop.depth1}}",
+				"depth2": "{{prop.depth2}}",
+				"depth3": "{{prop.depth3}}",
+				"depth2Name": "{{prop.depth2Name}}",
+				"depth3Name": "{{prop.depth3Name}}",
+				"depth3Info": "{{prop.depth3Info}}",
+			}
+		})}}
+		<!-- // container -->
+
+		<!-- footer // -->
+		{{include('./shared/footer.html', {
+			"prop": {
+				"footer": "{{prop.footer}}",
+				"depth1": "{{prop.depth1}}",
+			}
+		})}}
+		<!-- // footer -->
+	</div>
+
+</body>
+</html>

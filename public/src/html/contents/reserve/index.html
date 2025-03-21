@@ -1,0 +1,35 @@
+<main id="container">
+	<!-- 본문 영역 // -->
+	<div id="contents" class="{{prop.depth1}} {{prop.depth2}} {{prop.depth3}}"> <!-- 해당 depth별로 class명 추가 -->
+
+		<div class="inner">
+			<button class="btn" onclick="fn.popup('open', '#popupPackageSchedule');">패키지일정표</button>
+			<button class="btn" onclick="fn.popup('open', '#popupEstimate');">견적서</button>
+		</div>
+
+		<!-- 팝업 : 패키지일정표 // -->
+		{{include('./components/popup.html', {
+			"prop": {
+				"id": "popupPackageSchedule",
+				"class": "popuppackageschedule",
+				"tit": "패키지일정표",
+				"header": true,
+				"content": "./contents/popup/popupPackageSchedule.html"
+			}
+		})}}
+		<!-- // 팝업 : 패키지일정표 -->
+
+		<!-- 팝업 : 견적서서 // -->
+		{{include('./components/popup.html', {
+			"prop": {
+				"id": "popupEstimate",
+				"class": "popupestimate",
+				"tit": "견적서",
+				"header": true,
+				"content": "./contents/popup/popupEstimate.html"
+			}
+		})}}
+		<!-- // 팝업 : 견적서서 -->
+	</div>
+	<!-- // 본문 영역 -->
+</main>

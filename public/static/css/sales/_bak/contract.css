@@ -1,0 +1,512 @@
+/**
+* --------------------------------
+* contract
+* --------------------------------
+*/
+.contract > .inner { padding: 0 32px; }
+
+.contract .title-area { display: flex; align-items: center; justify-content: space-between; padding: 30px 32px 0; background-color: #ffffff; }
+
+.contract .title-area h2.tit { font-size: 24px; line-height: 36px; font-weight: 700; }
+
+.contract .title-area .btn { flex: none; padding: 0 12px; line-height: 30px; border-color: #eeeeee; border-radius: 999px; }
+
+.contract .title-area .btn .svgicon-session { display: inline-block; margin: 6px 4px 0 0; width: 16px; height: 16px; vertical-align: top; overflow: hidden; background: url("/static/imgs/sales/common/icon_16.svg#session"); background-size: 100% 100%; }
+
+.contract .title-area .btn .svgicon-card { display: inline-block; margin: 6px 4px 0 0; width: 16px; height: 16px; vertical-align: top; overflow: hidden; background: none; background-color: #ffffff; -webkit-mask-image: url("/static/imgs/sales/common/icon_16.svg#card"); mask-image: url("/static/imgs/sales/common/icon_16.svg#card"); }
+
+.contract .title-area .btn.fill { background-color: #4aae78; border-color: #4aae78; }
+
+.contract .list-sort { margin-top: 20px; }
+
+.contract .list-board { margin-top: 20px; border: none; padding: 30px 32px; background-color: #f7f7f7; }
+
+.contract .list-board .sel-area { display: flex; align-items: center; justify-content: space-between; }
+
+.contract .list-board .sel-area p { position: relative; padding: 0 8px; color: #596584; font-size: 14px; font-weight: 700; line-height: 22px; }
+
+.contract .list-board .sel-area p span { display: inline-block; margin: 0 2px 0 8px; color: #002394; }
+
+.contract .list-board .sel-area .select { height: 22px; }
+
+.contract .list-board .sel-area .select .dropdown { height: 22px; width: 112px; line-height: 22px; text-align: right; }
+
+.contract .list-board .sel-area .select .dropdown .current { text-align: left; border: none; padding-right: 20px; padding-left: 8px; background-color: #f7f7f7; }
+
+.contract .list-board .sel-area .select .dropdown .list { top: calc(100% + 8px); border: 1px solid #dddddd; background-color: rgba(247, 247, 247, 0.98); border-radius: 4px; }
+
+.contract .list-board .sel-area .select .dropdown .list .option { text-align: right; background-color: rgba(247, 247, 247, 0.98); padding: 6px 12px; text-align: center; }
+
+.contract .list-board .sel-area .select .dropdown.open .icon-select { transform: rotate(0); }
+
+.contract .list-board .sel-area .select .dropdown .icon-select { width: 12px; height: 22px; transform: rotate(180deg); right: 8px; }
+
+.contract .list-board .sel-area .select .dropdown .icon-select::after { background-position: -150px -100px; }
+
+.contract .list-board > ul, .contract .list-board .contract-list { margin-top: 20px; }
+
+.contract .list-board > ul li, .contract .list-board .contract-list li { border: 1px solid #e6ecf3; border-radius: 8px; overflow: hidden; }
+
+.contract .list-board > ul li + li, .contract .list-board .contract-list li + li { margin-top: 12px; display: flex; flex-direction: column; }
+
+.contract .list-board > ul li a .subject, .contract .list-board .contract-list li a .subject { display: flex; text-align: left; align-items: center; padding: 20px; background-color: #ffffff; }
+
+.contract .list-board > ul li a .subject .state, .contract .list-board .contract-list li a .subject .state { display: inline-flex; align-items: center; justify-content: center; width: 68px; height: 64px; color: #2550d8; font-size: 14px; font-weight: 700; line-height: 22px; background-color: #ffffff; border: 1px solid #e6ecf3; border-radius: 6px; }
+
+.contract .list-board > ul li a .subject .state.transaction, .contract .list-board .contract-list li a .subject .state.transaction { color: #092060; }
+
+.contract .list-board > ul li a .subject .state.positive, .contract .list-board .contract-list li a .subject .state.positive { color: #17918A; }
+
+.contract .list-board > ul li a .subject .customer, .contract .list-board .contract-list li a .subject .customer { margin-left: 16px; }
+
+.contract .list-board > ul li a .subject .customer p, .contract .list-board .contract-list li a .subject .customer p { font-size: 18px; font-weight: 500; line-height: 28px; }
+
+.contract .list-board > ul li a .subject .customer p strong, .contract .list-board .contract-list li a .subject .customer p strong { display: inline-block; margin-right: 3px; }
+
+.contract .list-board > ul li a .subject .customer .customer-detail, .contract .list-board .contract-list li a .subject .customer .customer-detail { margin-top: 4px; }
+
+.contract .list-board > ul li a .subject .customer .customer-detail span, .contract .list-board .contract-list li a .subject .customer .customer-detail span { position: relative; display: inline-block; padding-left: 11px; margin-left: 10px; color: #596584; font-size: 14px; font-weight: 400; line-height: 22px; }
+
+.contract .list-board > ul li a .subject .customer .customer-detail span::before, .contract .list-board .contract-list li a .subject .customer .customer-detail span::before { position: absolute; top: 0; left: 0; content: ''; width: 1px; height: 10px; background-color: #dddddd; vertical-align: top; }
+
+.contract .list-board > ul li a .subject .customer .customer-detail span em, .contract .list-board .contract-list li a .subject .customer .customer-detail span em { margin-left: 4px; color: #091b4d; font-weight: 500; }
+
+.contract .list-board > ul li a .subject .customer .customer-detail span::before, .contract .list-board .contract-list li a .subject .customer .customer-detail span::before { top: 50%; transform: translateY(-50%); left: 0; }
+
+.contract .list-board > ul li a .subject .customer .customer-detail span:first-of-type, .contract .list-board .contract-list li a .subject .customer .customer-detail span:first-of-type { color: #091b4d; font-weight: 500; padding-left: 0; margin-left: 0; }
+
+.contract .list-board > ul li a .subject .customer .customer-detail span:first-of-type::before, .contract .list-board .contract-list li a .subject .customer .customer-detail span:first-of-type::before { content: none; }
+
+.contract .list-board > ul li a .subject .customer .customer-detail span .btn, .contract .list-board .contract-list li a .subject .customer .customer-detail span .btn { margin-left: 6px; font-size: 10px; font-weight: 500; line-height: 18px; height: 20px; padding: 0px 8px; }
+
+.contract .list-board > ul li a .subject .badge-area, .contract .list-board .contract-list li a .subject .badge-area { display: flex; align-items: top; align-content: top; gap: 4px; margin-left: auto; margin-bottom: auto; }
+
+.contract .list-board > ul li a .subject .badge-area .badge, .contract .list-board .contract-list li a .subject .badge-area .badge { display: inline-block; padding: 0 10px; height: 24px; font-size: 11px; font-weight: 500; line-height: 22px; border: 1px solid #091b4d; border-radius: 999px; }
+
+.contract .list-board > ul li a .subject .badge-area .badge.continue, .contract .list-board .contract-list li a .subject .badge-area .badge.continue { color: #ffffff; border-color: #2550d8; background-color: #2550d8; }
+
+.contract .list-board > ul li a .subject .badge-area .badge.complete, .contract .list-board .contract-list li a .subject .badge-area .badge.complete { color: #ffffff; border-color: #091b4d; background-color: #091b4d; }
+
+.contract .list-board > ul li a .subject .badge-area .badge.meeting, .contract .list-board .contract-list li a .subject .badge-area .badge.meeting { color: #E4AC1B; border-color: #E4AC1B; background-color: #FFFBF1; }
+
+.contract .list-board > ul li a .subject .badge-area .badge.contract, .contract .list-board .contract-list li a .subject .badge-area .badge.contract { color: #17918A; border-color: #17918A; background-color: #F4FEF9; }
+
+.contract .list-board > ul li a .subject .badge-area .badge.payment, .contract .list-board .contract-list li a .subject .badge-area .badge.payment { color: #631ED2; border-color: #631ED2; background-color: #F6F2FD; }
+
+.contract .list-board > ul li a .subject .badge-area .badge.approve, .contract .list-board .contract-list li a .subject .badge-area .badge.approve { color: #091b4d; border-color: #dddddd; background-color: #F4F4F4; }
+
+.contract .list-board > ul li .product, .contract .list-board .contract-list li .product { padding: 16px 20px; display: flex; justify-content: space-between; background-color: #edf1f8; }
+
+.contract .list-board > ul li .product div:first-of-type p span, .contract .list-board .contract-list li .product div:first-of-type p span { display: -webkit-inline-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; max-width: 95px; vertical-align: top; text-align: left; }
+
+.contract .list-board > ul li .product div p, .contract .list-board .contract-list li .product div p { position: relative; display: inline-block; padding-left: 11px; margin-left: 10px; color: #596584; font-size: 14px; font-weight: 400; line-height: 22px; }
+
+.contract .list-board > ul li .product div p::before, .contract .list-board .contract-list li .product div p::before { position: absolute; top: 0; left: 0; content: ''; width: 1px; height: 10px; background-color: #dddddd; vertical-align: top; }
+
+.contract .list-board > ul li .product div p::before, .contract .list-board .contract-list li .product div p::before { top: 50%; transform: translateY(-50%); left: 0; }
+
+.contract .list-board > ul li .product div p:first-of-type, .contract .list-board .contract-list li .product div p:first-of-type { padding-left: 0; margin-left: 0; }
+
+.contract .list-board > ul li .product div p:first-of-type::before, .contract .list-board .contract-list li .product div p:first-of-type::before { content: none; }
+
+.contract .list-board > ul li .product div p span, .contract .list-board .contract-list li .product div p span { margin-left: 4px; color: #091b4d; font-weight: 500; line-height: 22px; }
+
+.contract .list-board > ul li .product .tooltip-wrap .svgicon-info, .contract .list-board .contract-list li .product .tooltip-wrap .svgicon-info { display: inline-block; width: 20px; height: 20px; vertical-align: top; overflow: hidden; background: url("/static/imgs/sales/common/icon_20.svg#info"); background-size: 100% 100%; }
+
+.contract .list-board > ul li .product .tooltip-wrap .hide, .contract .list-board .contract-list li .product .tooltip-wrap .hide { display: none; font-size: 0; }
+
+.contract .list-board > ul li .product .tooltip-wrap .btn-tooltip, .contract .list-board .contract-list li .product .tooltip-wrap .btn-tooltip { margin-top: 1px; margin-left: 6px; vertical-align: top; }
+
+.contract .list-board > ul li .product .tooltip-wrap .btn-tooltip::after, .contract .list-board .contract-list li .product .tooltip-wrap .btn-tooltip::after { content: none; }
+
+.contract .list-board > ul li .product .tooltip-wrap .tooltip, .contract .list-board .contract-list li .product .tooltip-wrap .tooltip { margin-bottom: 0; bottom: 0; padding: 16px; right: 26px; left: auto; border-radius: 12px; border: 1px solid #4673FF; box-shadow: 2px 2px 3px 0px rgba(11, 14, 64, 0.25); }
+
+.contract .list-board > ul li .product .tooltip-wrap .tooltip .tit, .contract .list-board .contract-list li .product .tooltip-wrap .tooltip .tit { font-size: 16px; font-weight: 700; line-height: 26px; text-align: left; }
+
+.contract .list-board > ul li .product .tooltip-wrap .tooltip .tit .btn-close, .contract .list-board .contract-list li .product .tooltip-wrap .tooltip .tit .btn-close { background: none; top: 19px; right: 14px; }
+
+.contract .list-board > ul li .product .tooltip-wrap .tooltip .tit .btn-close .svgicon-close, .contract .list-board .contract-list li .product .tooltip-wrap .tooltip .tit .btn-close .svgicon-close { display: inline-block; width: 16px; height: 16px; vertical-align: top; overflow: hidden; background: url("/static/imgs/sales/common/icon_20.svg#close"); background-size: 100% 100%; }
+
+.contract .list-board > ul li .product .tooltip-wrap .tooltip .cont p, .contract .list-board .contract-list li .product .tooltip-wrap .tooltip .cont p { color: #596584; font-size: 14px; font-weight: 400; line-height: 22px; text-align: left; }
+
+.contract.view .title-area { padding: 30px 32px; }
+
+.contract.view .title-area .btns .btn { border-color: #eeeeee; }
+
+.contract.view .title-area .btns .btn .svgicon-menu { display: inline-block; margin: 6px 4px 0 0; width: 16px; height: 16px; vertical-align: top; overflow: hidden; background: none; background-color: #092060; -webkit-mask-image: url("/static/imgs/sales/common/icon_16.svg#menu"); mask-image: url("/static/imgs/sales/common/icon_16.svg#menu"); }
+
+.contract.view .title-area .btns .btn .svgicon-save { display: inline-block; margin: 6px 4px 0 0; width: 16px; height: 16px; vertical-align: top; overflow: hidden; background: none; background-color: #092060; -webkit-mask-image: url("/static/imgs/sales/common/icon_16.svg#save"); mask-image: url("/static/imgs/sales/common/icon_16.svg#save"); }
+
+.contract.view .title-area .btns .btn .svgicon-cash { display: inline-block; margin: 6px 4px 0 0; width: 16px; height: 16px; vertical-align: top; overflow: hidden; background: none; background-color: #092060; -webkit-mask-image: url("/static/imgs/sales/common/icon_16.svg#cash"); mask-image: url("/static/imgs/sales/common/icon_16.svg#cash"); }
+
+.contract.view .title-area .btns .btn .svgicon-mail { display: inline-block; margin: 6px 4px 0 0; width: 16px; height: 16px; vertical-align: top; overflow: hidden; background: none; background-color: #ffffff; -webkit-mask-image: url("/static/imgs/sales/common/icon_16.svg#mail"); mask-image: url("/static/imgs/sales/common/icon_16.svg#mail"); }
+
+.contract.view .title-area .btns .btn .svgicon-session { display: inline-block; margin: 6px 4px 0 0; width: 16px; height: 16px; vertical-align: top; overflow: hidden; background: none; background-color: #ffffff; -webkit-mask-image: url("/static/imgs/sales/common/icon_16.svg#session"); mask-image: url("/static/imgs/sales/common/icon_16.svg#session"); }
+
+.contract.view .customer-info { display: flex; flex-direction: column; }
+
+.contract.view .customer-info .inner { padding: 32px 30px; background-color: #f7f7f7; }
+
+.contract.view .customer-info .subject { padding: 0 8px; display: flex; text-align: left; align-items: center; }
+
+.contract.view .customer-info .subject .state { display: inline-flex; align-items: center; justify-content: center; width: 68px; height: 40px; color: #2550d8; font-size: 14px; font-weight: 700; line-height: 22px; background-color: #ffffff; border: 1px solid #e6ecf3; border-radius: 6px; }
+
+.contract.view .customer-info .subject .state.positive { color: #17918A; }
+
+.contract.view .customer-info .subject .state.transaction { color: #092060; }
+
+.contract.view .customer-info .subject .customer { margin-left: 12px; }
+
+.contract.view .customer-info .subject .customer strong { display: inline-block; color: #091b4d; font-size: 20px; font-weight: 700; line-height: 30px; }
+
+.contract.view .customer-info .subject .customer p { margin-left: 16px; display: inline-block; color: #8f97b2; font-size: 16px; font-weight: 500; line-height: 26px; }
+
+.contract.view .customer-info .subject .customer p span { color: #091b4d; display: inline-block; margin-left: 8px; }
+
+.contract.view .customer-info .subject .customer-detail { margin-left: auto; }
+
+.contract.view .customer-info .subject .customer-detail p { position: relative; display: inline-block; padding-left: 11px; margin-left: 10px; color: #596584; font-size: 14px; font-weight: 400; line-height: 22px; }
+
+.contract.view .customer-info .subject .customer-detail p::before { position: absolute; top: 0; left: 0; content: ''; width: 1px; height: 10px; background-color: #dddddd; vertical-align: top; }
+
+.contract.view .customer-info .subject .customer-detail p::before { top: 50%; transform: translateY(-50%); left: 0; }
+
+.contract.view .customer-info .subject .customer-detail p:first-of-type { padding-left: 0; margin-left: 0; }
+
+.contract.view .customer-info .subject .customer-detail p:first-of-type::before { content: none; }
+
+.contract.view .customer-info .subject .customer-detail p span { display: inline-block; margin-left: 4px; color: #091b4d; font-weight: 500; }
+
+.contract.view .customer-info .customer-product { margin-top: 16px; padding: 32px 32px 8px; border-radius: 16px; background: linear-gradient(97deg, #5482FF 7.14%, #2550D8 94.09%); box-shadow: 16px 16px 24px 0px rgba(3, 15, 48, 0.14); position: relative; z-index: 1; }
+
+.contract.view .customer-info .customer-product .product-wrap { display: flex; justify-content: space-between; }
+
+.contract.view .customer-info .customer-product .product-wrap > p { width: 350px; color: rgba(255, 255, 255, 0.5); font-size: 14px; font-family: "EBGaramond"; font-weight: 400; line-height: 20px; }
+
+.contract.view .customer-info .customer-product .product-wrap > p img { width: 44px; }
+
+.contract.view .customer-info .customer-product .product-wrap > p img:last-of-type { width: 48px; }
+
+.contract.view .customer-info .customer-product .product-wrap > p strong { margin-top: 4px; display: block; font-family: "Pretendard"; color: #ffffff; font-size: 24px; font-weight: 700; line-height: 36px; }
+
+.contract.view .customer-info .customer-product .product-wrap > p + p { width: 254px; margin-left: 24px; }
+
+.contract.view .customer-info .customer-product .btn-area { display: flex; justify-content: center; align-items: center; height: 44px; color: #ffffff; padding-top: 8px; margin-top: 32px; border-top: 1px dashed rgba(255, 255, 255, 0.35); }
+
+.contract.view .customer-info .customer-product .btn-area.positive p { width: auto; }
+
+.contract.view .customer-info .customer-product .btn-area.positive p:first-of-type { padding-right: 20px; }
+
+.contract.view .customer-info .customer-product .btn-area.positive p:last-of-type { padding-right: 0px; padding-left: 20px; font-weight: 500; }
+
+.contract.view .customer-info .customer-product .btn-area p { position: relative; width: calc(100% / 3); }
+
+.contract.view .customer-info .customer-product .btn-area p::after { position: absolute; top: 0; left: auto; right: 0; content: ''; margin: 5px 0 0 0; width: 1px; height: 12px; background-color: rgba(255, 255, 255, 0.35); vertical-align: top; }
+
+.contract.view .customer-info .customer-product .btn-area p .svgicon-voucher { display: inline-block; margin: 1px 8px 0 0; width: 20px; height: 20px; vertical-align: top; overflow: hidden; background: none; background-color: #ffffff; -webkit-mask-image: url("/static/imgs/sales/common/icon_20.svg#voucher"); mask-image: url("/static/imgs/sales/common/icon_20.svg#voucher"); }
+
+.contract.view .customer-info .customer-product .btn-area p .svgicon-coupon { display: inline-block; margin: 1px 8px 0 0; width: 20px; height: 20px; vertical-align: top; overflow: hidden; background: none; background-color: #ffffff; -webkit-mask-image: url("/static/imgs/sales/common/icon_20.svg#coupon"); mask-image: url("/static/imgs/sales/common/icon_20.svg#coupon"); }
+
+.contract.view .customer-info .customer-product .btn-area p .svgicon-gift { display: inline-block; margin: 1px 8px 0 0; width: 20px; height: 20px; vertical-align: top; overflow: hidden; background: none; background-color: #ffffff; -webkit-mask-image: url("/static/imgs/sales/common/icon_20.svg#gift"); mask-image: url("/static/imgs/sales/common/icon_20.svg#gift"); }
+
+.contract.view .customer-info .customer-product .btn-area p .svgicon-benefit { display: inline-block; margin: 1px 8px 0 0; width: 20px; height: 20px; vertical-align: top; overflow: hidden; background: none; background-color: #ffffff; -webkit-mask-image: url("/static/imgs/sales/common/icon_20.svg#benefit"); mask-image: url("/static/imgs/sales/common/icon_20.svg#benefit"); }
+
+.contract.view .customer-info .customer-product .btn-area p:first-of-type { padding-right: 32px; }
+
+.contract.view .customer-info .customer-product .btn-area p:last-of-type { padding-left: 32px; }
+
+.contract.view .customer-info .customer-product .btn-area p:last-of-type::after { content: none; }
+
+.contract.view .customer-info .customer-product .btn-area p:last-of-type span { right: 0; }
+
+.contract.view .customer-info .customer-product .btn-area p:nth-of-type(2) { padding: 0 32px; }
+
+.contract.view .customer-info .customer-product .btn-area p span { position: absolute; top: 50%; right: 32px; transform: translateY(-50%); display: inline-block; font-weight: 700; }
+
+.contract.view .customer-info .customer-product .group { margin-left: auto; }
+
+.contract.view .customer-info .customer-product .group .svgicon-percent { display: inline-block; margin: 12px 0 0 2px; width: 16px; height: 16px; vertical-align: top; overflow: hidden; background: none; background-color: #ffffff; -webkit-mask-image: url("/static/imgs/sales/common/icon_16.svg#percent"); mask-image: url("/static/imgs/sales/common/icon_16.svg#percent"); }
+
+.contract.view .customer-info .customer-product .group p { color: rgba(255, 255, 255, 0.5); font-size: 14px; font-weight: 400; line-height: 20px; }
+
+.contract.view .customer-info .customer-product .group .tooltip-wrap .svgicon-info { display: inline-block; width: 20px; height: 20px; vertical-align: top; overflow: hidden; background: url("/static/imgs/sales/common/icon_20.svg#info"); background-size: 100% 100%; }
+
+.contract.view .customer-info .customer-product .group .tooltip-wrap > strong { color: #ffffff; display: inline-block; font-size: 28px; font-weight: 700; line-height: 36px; }
+
+.contract.view .customer-info .customer-product .group .tooltip-wrap .btn-tooltip { margin-top: 4px; margin-left: 10px; padding: 0 12px; height: 30px; color: #ffffff; font-size: 11px; font-weight: 500; line-height: 28px; vertical-align: top; border: 1px solid #eeeeee; border-radius: 999px; }
+
+.contract.view .customer-info .customer-product .group .tooltip-wrap .btn-tooltip .svgicon-customer { display: inline-block; margin: 6px 4px 0 0; width: 16px; height: 16px; vertical-align: top; overflow: hidden; background: none; background-color: #ffffff; -webkit-mask-image: url("/static/imgs/sales/common/icon_16.svg#customer"); mask-image: url("/static/imgs/sales/common/icon_16.svg#customer"); }
+
+.contract.view .customer-info .customer-product .group .tooltip-wrap .btn-tooltip::after { content: none; }
+
+.contract.view .customer-info .customer-product .group .tooltip-wrap .tooltip { margin-bottom: 0; top: calc(100% + 8px); padding: 16px; right: 0; left: auto; bottom: auto; border-radius: 12px; border: 1px solid #4673FF; box-shadow: 2px 2px 3px 0px rgba(11, 14, 64, 0.25); }
+
+.contract.view .customer-info .customer-product .group .tooltip-wrap .tooltip .tit { font-size: 16px; font-weight: 700; line-height: 26px; text-align: left; }
+
+.contract.view .customer-info .customer-product .group .tooltip-wrap .tooltip .tit .btn-close { background: none; top: 19px; right: 14px; }
+
+.contract.view .customer-info .customer-product .group .tooltip-wrap .tooltip .tit .btn-close .svgicon-close { display: inline-block; width: 16px; height: 16px; vertical-align: top; overflow: hidden; background: url("/static/imgs/sales/common/icon_20.svg#close"); background-size: 100% 100%; }
+
+.contract.view .customer-info .customer-product .group .tooltip-wrap .tooltip .cont p { color: #596584; font-size: 14px; font-weight: 400; line-height: 22px; text-align: left; }
+
+.contract.view .customer-info .customer-product .group span { margin-top: 4px; display: block; color: #ffffff; font-size: 12px; font-weight: 400; line-height: 20px; }
+
+.contract.view .customer-info .positive-area { margin-top: -11px; padding: 31px 32px 20px; border: 1px solid #eeeeee; background-color: #ffffff; border-radius: 0px 0px 16px 16px; }
+
+.contract.view .customer-info .positive-area .svgicon-document { display: inline-block; margin: 6px 2px 0 0; width: 16px; height: 16px; vertical-align: top; overflow: hidden; background: url("/static/imgs/sales/common/icon_16.svg#document"); background-size: 100% 100%; }
+
+.contract.view .customer-info .positive-area .btn { margin-left: 6px; padding: 0 8px; }
+
+.contract.view .customer-info .positive-area p { display: inline-block; }
+
+.contract.view .customer-info .positive-area p:has(strong) { font-size: 16px; font-weight: 500; line-height: 26px; }
+
+.contract.view .customer-info .positive-area p:has(span) { color: #596584; font-size: 14px; font-weight: 400; line-height: 22px; }
+
+.contract.view .customer-info .positive-area p strong { display: inline-block; margin-right: 2px; font-size: 18px; font-weight: 700; line-height: 28px; }
+
+.contract.view .customer-info .positive-area p span { display: inline-block; margin-left: 4px; color: #091b4d; font-size: 14px; font-weight: 500; line-height: 22px; }
+
+.contract.view .customer-info .positive-area p + p:has(span) { position: relative; margin-left: 12px; padding-left: 13px; }
+
+.contract.view .customer-info .positive-area p + p:has(span)::before { position: absolute; top: 0; left: 0; content: ''; margin: 5px 0 0 0; width: 1px; height: 12px; background-color: #dddddd; vertical-align: top; }
+
+.contract.view .customer-info .positive-area div { margin-top: 12px; }
+
+.contract.view .membership-list .membership-wrap { position: relative; background-color: #f7f7f7; }
+
+.contract.view .membership-list .membership-wrap::before { position: absolute; top: 0; left: 0; content: ''; margin: 0; width: 100%; height: 8px; background-color: #e6e9f2; vertical-align: top; }
+
+.contract.view .membership-list .membership-wrap::before { border-top: 2px solid #dddddd; }
+
+.contract.view .membership-list .membership-wrap .membership-item .item-title { padding: 0 8px; display: flex; justify-content: space-between; align-items: center; }
+
+.contract.view .membership-list .membership-wrap .membership-item .item-title > strong { display: inline-flex; align-items: center; font-size: 24px; font-weight: 700; line-height: 36px; }
+
+.contract.view .membership-list .membership-wrap .membership-item .item-title .badge { margin-left: 12px; display: inline-block; padding: 0 10px; height: 24px; font-size: 11px; font-weight: 500; line-height: 22px; border: 1px solid #091b4d; border-radius: 999px; }
+
+.contract.view .membership-list .membership-wrap .membership-item .item-title .badge.continue { color: #ffffff; border-color: #2550d8; background-color: #2550d8; }
+
+.contract.view .membership-list .membership-wrap .membership-item .item-title .badge.complete { color: #ffffff; border-color: #091b4d; background-color: #091b4d; }
+
+.contract.view .membership-list .membership-wrap .membership-item .item-title .badge.meeting { color: #E4AC1B; border-color: #E4AC1B; background-color: #FFFBF1; }
+
+.contract.view .membership-list .membership-wrap .membership-item .item-title .badge.contract { color: #17918A; border-color: #17918A; background-color: #F4FEF9; }
+
+.contract.view .membership-list .membership-wrap .membership-item .item-title .badge.payment { color: #631ED2; border-color: #631ED2; background-color: #F6F2FD; }
+
+.contract.view .membership-list .membership-wrap .membership-item .item-title .badge.approve { color: #091b4d; border-color: #dddddd; background-color: #F4F4F4; }
+
+.contract.view .membership-list .membership-wrap .membership-item .item-title p { display: inline-block; font-size: 20px; font-weight: 500; line-height: 30px; }
+
+.contract.view .membership-list .membership-wrap .membership-item .item-title p strong { display: inline-block; width: 132px; margin-right: 2px; font-size: 20px; font-weight: 700; line-height: 30px; text-align: right; }
+
+.contract.view .membership-list .membership-wrap .membership-item .item-title p span { display: inline-block; font-size: 18px; font-weight: 400; line-height: 28px; }
+
+.contract.view .membership-list .membership-wrap .membership-item .item-title p.expected { position: relative; margin-left: 20px; padding-left: 21px; color: #2550d8; }
+
+.contract.view .membership-list .membership-wrap .membership-item .item-title p.expected::before { position: absolute; top: 0; left: 0; content: ''; margin: 5px 0 0 0; width: 1px; height: 20px; background-color: #dddddd; vertical-align: top; }
+
+.contract.view .membership-list .membership-item { position: relative; padding: 30px 32px 30px; }
+
+.contract.view .membership-list .membership-item.contract-info .info-wrap .payment-info { overflow: visible; }
+
+.contract.view .membership-list .membership-item.contract-info .info-wrap .payment-info .table-head { justify-content: space-between; border-radius: 12px 12px 0 0; }
+
+.contract.view .membership-list .membership-item.contract-info .info-wrap .payment-info .table-head .svgicon-refresh { display: inline-block; margin: 2px 4px 0 0; width: 16px; height: 16px; vertical-align: top; overflow: hidden; background: none; background-color: #596584; -webkit-mask-image: url("/static/imgs/sales/common/icon_20.svg#refresh"); mask-image: url("/static/imgs/sales/common/icon_20.svg#refresh"); }
+
+.contract.view .membership-list .membership-item.contract-info .info-wrap .payment-info .table-head button { color: #596584; font-size: 12px; font-weight: 500; line-height: 20px; }
+
+.contract.view .membership-list .membership-item.contract-info .info-wrap .payment-info > li:not(.table-head) { flex-direction: column; align-items: flex-start; gap: 0; padding-bottom: 20px; }
+
+.contract.view .membership-list .membership-item.contract-info .info-wrap .payment-info > li:not(.table-head):last-of-type { padding-top: 20px; border-radius: 0 0 12px 12px; }
+
+.contract.view .membership-list .membership-item.contract-info .info-wrap .payment-info > li:not(.table-head) .select { margin-top: 16px; width: 100%; }
+
+.contract.view .membership-list .membership-item.contract-info .info-wrap .payment-info > li:not(.table-head) div + div::before { display: none; }
+
+.contract.view .membership-list .membership-item.contract-info .info-wrap .payment-info > li:not(.table-head) .inductees { width: 100%; display: flex; justify-content: space-between; align-items: center; margin-top: 16px; }
+
+.contract.view .membership-list .membership-item.contract-info .info-wrap .payment-info > li:not(.table-head) .inductees:last-of-type { margin-top: 14px; }
+
+.contract.view .membership-list .membership-item.contract-info .info-wrap .payment-info > li:not(.table-head) .inductees p { color: #596584; }
+
+.contract.view .membership-list .membership-item.contract-info .info-wrap .payment-info > li:not(.table-head) .inductees > div strong { font-size: 14px; font-weight: 700; line-height: 22px; display: inline-block; width: 56px; line-height: 30px; text-align: center; }
+
+.contract.view .membership-list .membership-item.contract-info .info-wrap .payment-info > li:not(.table-head) .inductees > div .btn { margin-left: 16px; width: 144px; height: 30px; color: #092060; line-height: 28px; font-size: 11px; }
+
+.contract.view .membership-list .membership-item + .membership-item::before { content: ''; display: block; width: 100%; height: 16px; position: absolute; top: -8px; left: 50%; transform: translateX(-50%); background-image: url("/static/imgs/sales/contract/contract_line_bg.png"); }
+
+.contract.view .membership-list .membership-item .membership-title { display: flex; align-items: center; justify-content: space-between; position: relative; padding: 20px 24px; background-color: #f7f7f7; border-radius: 12px; }
+
+.contract.view .membership-list .membership-item .membership-title.greenbg { background-color: #EFF8EF; }
+
+.contract.view .membership-list .membership-item .membership-title.greenbg p span { color: #091b4d; }
+
+.contract.view .membership-list .membership-item .membership-title p { font-size: 24px; font-weight: 400; line-height: 36px; }
+
+.contract.view .membership-list .membership-item .membership-title p span { position: relative; display: inline-block; padding-left: 17px; margin-left: 16px; color: #002394; font-size: 24px; font-weight: 700; line-height: 36px; }
+
+.contract.view .membership-list .membership-item .membership-title p span::before { position: absolute; top: 0; left: 0; content: ''; width: 1px; height: 12px; background-color: #8091C9; vertical-align: top; }
+
+.contract.view .membership-list .membership-item .membership-title p span::before { top: 50%; transform: translateY(-50%); left: 0; }
+
+.contract.view .membership-list .membership-item .membership-title p span .icon-vip { position: relative; display: inline-block; margin-right: 12px; width: 32px; height: 36px; vertical-align: bottom; }
+
+.contract.view .membership-list .membership-item .membership-title p span .icon-vip::after { background-image: url("/static/imgs/sales/common/icon.png"); display: inline-block; background-position: -300px -200px; background-repeat: no-repeat; background-size: 500px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); content: ''; width: 50px; height: 50px; }
+
+.contract.view .membership-list .membership-item .membership-title .badge-area { display: flex; gap: 4px; }
+
+.contract.view .membership-list .membership-item .membership-title .badge-area .badge { display: inline-block; padding: 0 10px; height: 24px; font-size: 11px; font-weight: 500; line-height: 24px; border: 1px solid #dddddd; border-radius: 999px; }
+
+.contract.view .membership-list .membership-item .membership-title .badge-area .badge.continue { color: #ffffff; border-color: #2550d8; background-color: #2550d8; }
+
+.contract.view .membership-list .membership-item .membership-title .badge-area .badge.complete { color: #ffffff; border-color: #091b4d; background-color: #091b4d; }
+
+.contract.view .membership-list .membership-item .membership-title .badge-area .badge.meeting { color: #E4AC1B; border-color: #E4AC1B; background-color: #FFFBF1; }
+
+.contract.view .membership-list .membership-item .membership-title .badge-area .badge.contract { color: #17918A; border-color: #17918A; background-color: #F4FEF9; }
+
+.contract.view .membership-list .membership-item .membership-title .badge-area .badge.payment { color: #631ED2; border-color: #631ED2; background-color: #F6F2FD; }
+
+.contract.view .membership-list .membership-item .membership-title .badge-area .badge.etc { color: #091b4d; border-color: #dddddd; background-color: #F4F4F4; }
+
+.contract.view .membership-list .membership-item .membership-title .badge-area .badge.approve { color: #091b4d; border-color: #dddddd; background-color: #F4F4F4; }
+
+.contract.view .membership-list .membership-item .info-list .sub-title { display: block; padding: 0 8px; margin-top: 30px; font-size: 18px; font-weight: 500; line-height: 28px; }
+
+.contract.view .membership-list .membership-item .info-list .info-item { margin-top: 16px; padding: 24px 32px; border-radius: 12px; border: 1px solid #dddddd; overflow: hidden; }
+
+.contract.view .membership-list .membership-item .info-list .info-item .info-wrap { display: flex; gap: 40px; }
+
+.contract.view .membership-list .membership-item .info-list .info-item .info-wrap + .info-wrap { border-top: 1px solid #eeeeee; margin-top: 20px; padding-top: 21px; }
+
+.contract.view .membership-list .membership-item .info-list .info-item:has(.info-title) { padding: 0; }
+
+.contract.view .membership-list .membership-item .info-list .info-item:has(.info-title) .info-title { padding: 12px 24px; font-size: 16px; font-weight: 700; line-height: 26px; background-color: #f7f7f7; }
+
+.contract.view .membership-list .membership-item .info-list .info-item:has(.info-title) .info-title span { margin-left: 4px; display: inline-block; color: #2550d8; font-size: 16px; font-weight: 700; line-height: 26px; }
+
+.contract.view .membership-list .membership-item .info-list .info-item:has(.info-title) .info-wrap { padding: 24px 32px; }
+
+.contract.view .membership-list .membership-item .info-list .info-item ul { width: calc(100% / 2); }
+
+.contract.view .membership-list .membership-item .info-list .info-item ul li { position: relative; display: flex; align-items: center; gap: 16px; }
+
+.contract.view .membership-list .membership-item .info-list .info-item ul li + li { margin-top: 10px; }
+
+.contract.view .membership-list .membership-item .info-list .info-item ul li .btn.doc { padding: 0 12px; margin-left: 8px; height: 30px; line-height: 28px; vertical-align: middle; }
+
+.contract.view .membership-list .membership-item .info-list .info-item ul li .btn.doc .svgicon-document { display: inline-block; margin: 6px 4px 0 0; width: 16px; height: 16px; vertical-align: top; overflow: hidden; background: url("/static/imgs/sales/common/icon_16.svg#document"); background-size: 100% 100%; }
+
+.contract.view .membership-list .membership-item .info-list .info-item ul li .btn.doc .svgicon-refresh { display: inline-block; margin: 6px 4px 0 0; width: 16px; height: 16px; vertical-align: top; overflow: hidden; background: url("/static/imgs/sales/common/icon_16.svg#refresh"); background-size: 100% 100%; }
+
+.contract.view .membership-list .membership-item .info-list .info-item ul li > span { display: inline-block; width: 66px; color: #596584; font-size: 14px; font-weight: 400; line-height: 26px; }
+
+.contract.view .membership-list .membership-item .info-list .info-item ul li > p, .contract.view .membership-list .membership-item .info-list .info-item ul li .btn-area { display: inline-block; color: #091b4d; font-size: 16px; font-weight: 500; line-height: 26px; text-align: left; }
+
+.contract.view .membership-list .membership-item .info-list .info-item ul li > p .btn, .contract.view .membership-list .membership-item .info-list .info-item ul li .btn-area .btn { height: 32px; line-height: 30px; padding: 0 16px; font-size: 12px; font-weight: 500; color: #596584; border-radius: 999px; }
+
+.contract.view .membership-list .membership-item .info-list .info-item ul li > p .btn .svgicon-arrowright1, .contract.view .membership-list .membership-item .info-list .info-item ul li .btn-area .btn .svgicon-arrowright1 { display: inline-block; margin: 9px 0 0 4px; width: 12px; height: 12px; vertical-align: top; overflow: hidden; background: url("/static/imgs/sales/common/icon_12.svg#arrowright1"); background-size: 100% 100%; }
+
+.contract.view .membership-list .membership-item .info-list .info-item ul li > p span, .contract.view .membership-list .membership-item .info-list .info-item ul li .btn-area span { color: #002394; }
+
+.contract.view .membership-list .membership-item .info-list .info-item ul li .clamp { display: flex; align-items: center; }
+
+.contract.view .membership-list .membership-item .info-list .info-item ul li .clamp span { -webkit-box-orient: vertical; color: #002394; max-width: 217px; font-size: 16px; font-weight: 500; line-height: 26px; display: -webkit-inline-box; -webkit-line-clamp: 1; overflow: hidden; }
+
+.contract.view .membership-list .membership-item .info-list .info-item ul li .tooltip-wrap .tooltip { margin-bottom: 0; top: 38px; left: 8px; bottom: auto; border-radius: 12px; border: 1px solid #4673FF; box-shadow: 2px 2px 3px 0px rgba(11, 14, 64, 0.25); }
+
+.contract.view .membership-list .membership-item .info-list .info-item ul li .tooltip-wrap .tooltip .tit { font-size: 16px; font-weight: 700; line-height: 26px; }
+
+.contract.view .membership-list .membership-item .info-list .info-item ul li .tooltip-wrap .tooltip .tit .btn-close { background: none; top: 19px; right: 14px; }
+
+.contract.view .membership-list .membership-item .info-list .info-item ul li .tooltip-wrap .tooltip .tit .btn-close .svgicon-close { display: inline-block; width: 16px; height: 16px; vertical-align: top; overflow: hidden; background: url("/static/imgs/sales/common/icon_20.svg#close"); background-size: 100% 100%; }
+
+.contract.view .membership-list .membership-item .info-list .info-item ul li .tooltip-wrap .tooltip .cont p { color: #596584; font-size: 14px; font-weight: 400; line-height: 22px; }
+
+.contract.view .membership-list .membership-item .info-list .info-item ul li .course-btn { margin-left: 8px; padding: 0 12px; height: 30px; font-size: 11px; font-weight: 500; line-height: 28px; border-radius: 99px; border: 1px solid #eeeeee; }
+
+.contract.view .membership-list .membership-item .info-list .info-item ul li .course-btn .svgicon-hole2 { display: inline-block; margin: 4px 4px 0 0; width: 16px; height: 16px; vertical-align: top; overflow: hidden; background: url("/static/imgs/sales/common/icon_16.svg#hole2"); background-size: 100% 100%; }
+
+.contract.view .membership-list .membership-item .info-list .info-item ul li .course-btn::after { display: none; }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info { margin-top: 30px; border-radius: 12px; overflow: hidden; border: 1px solid #dddddd; background-color: #ffffff; }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option) { position: relative; display: flex; gap: 12px; padding: 10px 32px; align-items: center; background-color: #ffffff; }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option).full span { width: calc(100% / 2); }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option).full > p { width: calc(100% / 2 - 12px); }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option) + li::before { position: absolute; top: 0; left: 50%; transform: translateX(-50%); content: ''; width: calc(100% - 64px); display: block; border-top: 1px dashed #dddddd; }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option):last-of-type { padding-bottom: 24px; }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option) + .table-head { margin-top: 12px; }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option).table-head { padding: 12px 32px; background-color: #eeeeee; border-top: none; }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option).table-head::before { content: none; }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option).table-head + .table-head { border-top: 1px solid #dddddd; margin-top: 0px; }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option).table-head > span { color: #091b4d; font-size: 16px; font-weight: 700; line-height: 26px; }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option).table-head > span strong { color: #2550d8; }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option).table-head > p { color: #2550d8; font-size: 18px; font-weight: 400; line-height: 28px; }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option).table-head > p strong { font-size: 20px; font-weight: 700; line-height: 30px; }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option).table-head + li { margin-top: 14px; }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option).table-head + li::before { content: none; }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option):has(.date) { gap: 0; }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option).point > span, .contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option).point > p { color: #17918A; }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option) > span { display: block; width: 160px; color: #596584; font-size: 14px; font-weight: 400; line-height: 22px; }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option) > p { width: calc(100% - 172px); color: #092060; font-size: 16px; font-weight: 400; line-height: 26px; text-align: right; }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option) > p span { display: inline-block; margin-right: 2px; font-weight: 700; }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option) > p strong { display: inline-block; font-weight: 700; }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option) > p strong + strong { margin-left: 12px; }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option) > p.remittance { color: #17918A; }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option) > div + div { position: relative; }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option) > div + div::before { position: absolute; top: 0; left: 0; content: ''; margin: 2px 0 0 0; width: 1px; height: 20px; background-color: #eeeeee; vertical-align: top; }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option) .amount { width: 265px; padding-right: 32px; margin-left: 18px; }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option) .amount p { color: #092060; font-size: 16px; font-weight: 400; line-height: 26px; text-align: right; }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option) .amount p strong { display: inline-block; font-weight: 700; margin-right: 2px; }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option) .status { display: flex; gap: 12px; padding: 0 32px; width: 216px; align-items: center; justify-content: center; }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option) .status p { font-size: 14px; font-weight: 700; line-height: 22px; }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option) .status button { height: 30px; line-height: 28px; padding: 0 8px; border-color: #8f97b2; font-size: 11px; font-weight: 500; }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option) .status button .svgicon-receiptdetail { display: inline-block; margin: 6px 4px 0 0; width: 16px; height: 16px; vertical-align: top; overflow: hidden; background: none; background-color: #092060; -webkit-mask-image: url("/static/imgs/sales/common/icon_16.svg#receiptdetail"); mask-image: url("/static/imgs/sales/common/icon_16.svg#receiptdetail"); }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option) .status button:disabled .svgicon-receiptdetail { display: inline-block; margin: 6px 4px 0 0; width: 16px; height: 16px; vertical-align: top; overflow: hidden; background: none; background-color: #aeb4c3; -webkit-mask-image: url("/static/imgs/sales/common/icon_16.svg#receiptdetail"); mask-image: url("/static/imgs/sales/common/icon_16.svg#receiptdetail"); }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option) .status.outstanding { color: #E4AC1B; }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option) .date { padding-left: 32px; width: 170px; }
+
+.contract.view .membership-list .membership-item .info-wrap .payment-info li:not(.option) .date span { color: #596584; font-size: 14px; font-weight: 400; line-height: 22px; }
+
+.contract.view .btns.bottom { padding: 16px 32px; background-color: #ffffff; }
+
+.contract.view.combine .customer-info .customer-product { background: linear-gradient(270deg, #3DB63B 0%, #6FCB6D 100%); }
+
+/*# sourceMappingURL=scssMaps/contract.css.map */

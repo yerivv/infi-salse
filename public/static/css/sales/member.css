@@ -1,0 +1,265 @@
+/**
+* --------------------------------
+* Member
+* --------------------------------
+*/
+#container:has(#contents.member) {
+  margin-top: 0;
+}
+
+.member {
+  padding-bottom: 30px;
+}
+.member.login#contents {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.member.login .login-area {
+  background-image: url("../../../static/imgs/sales/member/member_login_bg01.jpg");
+  display: inline-block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 45px 60px;
+  height: 100dvh;
+  transition: background 1.2s;
+}
+.member.login .login-area.active {
+  background-image: url("../../../static/imgs/sales/member/member_login_bg02.jpg");
+}
+.member.login .logo-area {
+  width: 440px;
+  text-align: center;
+}
+.member.login .logo-area .logo {
+  background-image: url("../../../static/imgs/sales/common/logo.png");
+  display: inline-block;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 500px;
+  margin: 0 auto;
+  width: 224px;
+  height: 44px;
+}
+.member.login .logo-area p {
+  font-size: 18px;
+  line-height: 28px;
+  color: #fff;
+  margin-top: 20px;
+}
+.member.login .inner {
+  margin: 0;
+  padding: 40px;
+  width: 400px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 16px 16px 24px 0px rgba(3, 15, 48, 0.14);
+}
+.member.login .inner .title-area {
+  text-align: center;
+}
+.member.login .inner .title-area h2 {
+  font-size: 24px;
+  line-height: 36px;
+  display: block;
+  color: #002394;
+}
+.member.login .inner .title-area p {
+  margin-top: 8px;
+  color: #092060;
+}
+.member.login .inner .tabs {
+  display: flex;
+  margin-top: 30px;
+  background-color: #DDE6EE;
+  border: 3px solid #DDE6EE;
+  border-radius: 4px;
+}
+.member.login .inner .tabs a {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 500;
+  flex-grow: 1;
+  padding: 8px 10px;
+  text-align: center;
+  color: #8f97b2;
+  border-radius: 4px;
+}
+.member.login .inner .tabs a.active {
+  color: #092060;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 2px 0px rgba(24, 37, 76, 0.1);
+}
+.member.login .inner .form-area .form-entry:nth-child(1) input {
+  height: 44px;
+  line-height: 42px;
+}
+.member.login .inner .form-area .form-entry:nth-child(2) {
+  margin-top: 8px;
+}
+.member.login .inner .form-area .form-entry:nth-child(2) input {
+  height: 44px;
+  line-height: 42px;
+}
+.member.login .inner .form-area .form-entry:nth-child(3) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.member.login .inner .form-area .form-entry:nth-child(3) label span {
+  font-size: 12px;
+  line-height: 24px;
+  color: #596584;
+}
+.member.login .inner .form-area .form-entry:nth-child(3) .txt-find a {
+  font-size: 12px;
+  line-height: 20px;
+  display: inline-block;
+  position: relative;
+  color: #596584;
+}
+.member.login .inner .form-area .form-entry:nth-child(3) .txt-find a:first-child {
+  padding-right: 12px;
+}
+.member.login .inner .form-area .form-entry:nth-child(3) .txt-find a + a {
+  padding-left: 12px;
+}
+.member.login .inner .form-area .form-entry:nth-child(3) .txt-find a + a::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+  content: "";
+  width: 1px;
+  height: 10px;
+  background-color: rgba(188, 206, 209, 0.5);
+}
+.member.login .inner .form-area .form-entry.form-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  padding: 16px 10px 13px;
+  border-top: 1px solid #dddddd;
+}
+.member.login .inner .form-area .form-entry.form-toggle .txt {
+  font-weight: 500;
+  color: #596584;
+}
+.member.login .inner .form-area:has(.form-toggle input:checked) .btn.blue {
+  background-color: #4aae78;
+  border-color: #4aae78;
+}
+.member.login .inner .form-area .btns .btn {
+  transition: border 0.3s, background 0.3s;
+}
+.member.login .inner .copy {
+  font-size: 11px;
+  line-height: 14px;
+  margin-top: 30px;
+  text-align: center;
+  color: #8f97b2;
+}
+.member.findid#contents {
+  min-height: 100dvh;
+}
+.member.findid .inner {
+  padding-top: 40px;
+}
+.member.findid .inner.pw .txt-area strong::before {
+  background-position: -300px -50px;
+}
+.member.findid .txt-area {
+  text-align: center;
+}
+.member.findid .txt-area strong {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 500;
+  display: inline-block;
+  position: relative;
+  padding-top: 88px;
+  color: #092060;
+}
+.member.findid .txt-area strong::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("../../../static/imgs/sales/common/icon.png");
+  display: inline-block;
+  background-position: 0 -50px;
+  background-size: 500px;
+  content: "";
+  width: 120px;
+  height: 68px;
+}
+.member.findid .txt-area strong::before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.member.findid .txt-area strong::after {
+  content: "";
+  display: inline-block;
+  margin-left: 4px;
+  margin-bottom: 6px;
+  width: 6px;
+  height: 6px;
+  vertical-align: bottom;
+  border-radius: 50%;
+  background-color: #2550d8;
+}
+.member.findid .txt-area p {
+  margin-top: 8px;
+}
+.member.findid .form-area {
+  margin: 20px auto 0;
+  width: 302px;
+}
+.member.findid .form-area .form-entry {
+  margin-top: 8px;
+}
+.member.findid .form-area .btns {
+  margin-top: 20px;
+}
+.member.findid .info {
+  font-size: 12px;
+  line-height: 20px;
+  margin-top: 16px;
+  text-align: center;
+  color: #596584;
+}
+.member.findid .result-area {
+  margin-top: 30px;
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 8px;
+  background-color: #f7f7f7;
+}
+.member.findid .result-area > p {
+  font-size: 18px;
+  line-height: 30px;
+  color: #596584;
+}
+.member.findid .result-area > p span {
+  font-weight: 700;
+  color: #092060;
+}
+.member.findid .result-area > p strong {
+  color: #2550d8;
+}
+.member.findid .result-area .btns {
+  margin-top: 30px;
+  padding: 0 30px;
+}
+.member.findid.result .inner {
+  width: 420px;
+}
+.member.findid.result .txt-area strong::before {
+  background-position: -150px -50px;
+}

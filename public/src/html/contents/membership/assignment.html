@@ -1,0 +1,441 @@
+<main id="container">
+	<!-- 본문 영역 // -->
+	<div id="contents" class="{{prop.depth1}} {{prop.depth2}} {{prop.depth3}}"> <!-- 해당 depth별로 class명 추가 -->
+
+		<div class="inner">
+			<div class="title-area">
+				<h2 class="tit">회원권 양도 목록</h2>
+				<div class="btns">
+					<!-- 2025.01.31 // -->
+					<button type="button" class="btn green small"><i class="svgicon svgicon-standby"></i>양수 대기 접수</button>
+					<!-- // 2025.01.31 -->
+				</div>
+			</div>
+			<!-- 2025.02.04 수정 // -->
+			<div class="filter-area">
+				<div class="form-select country">
+					<div class="dropdown">
+						<button type="button" class="current"><span class="select-ti">국가 선택</span></button>
+						<ul class="list">
+							<li>
+								<label>
+									<input type="checkbox" name="form-country" value="value01" class="option">
+									<span class="option-txt">대한민국</span>
+								</label>
+							</li>
+							<li>
+								<label>
+									<input type="checkbox" name="form-country" value="value02" class="option">
+									<span class="option-txt">중국</span>
+								</label>
+							</li>
+							<li>
+								<label>
+									<input type="checkbox" name="form-country" value="value03" class="option">
+									<span class="option-txt">일본</span>
+								</label>
+							</li>
+							<li>
+								<label>
+									<input type="checkbox" name="form-country" value="value04" class="option">
+									<span class="option-txt">태국</span>
+								</label>
+							</li>
+							<li>
+								<label>
+									<input type="checkbox" name="form-country" value="value05" class="option">
+									<span class="option-txt">필리핀</span>
+								</label>
+							</li>
+							<li>
+								<label>
+									<input type="checkbox" name="form-country" value="value06" class="option">
+									<span class="option-txt">말레이시아</span>
+								</label>
+							</li>
+							<li>
+								<label>
+									<input type="checkbox" name="form-country" value="value07" class="option">
+									<span class="option-txt">베트남</span>
+								</label>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="form-select membership">
+					<div class="dropdown">
+						<button type="button" class="current"><span class="select-ti">골프장 회원권</span></button>
+						<ul class="list">
+							<li>
+								<label>
+									<input type="checkbox" name="form-membership" value="value01" class="option">
+									<span class="option-txt">골프장 회원권</span>
+								</label>
+							</li>
+							<li>
+								<label>
+									<input type="checkbox" name="form-membership" value="value02" class="option">
+									<span class="option-txt">호텔/리조트 회원권</span>
+								</label>
+							</li>
+							<li>
+								<label>
+									<input type="checkbox" name="form-membership" value="value03" class="option">
+									<span class="option-txt">라운지 이용권</span>
+								</label>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- 2025.02.05 class명 수정 // -->
+				<div class="form-select categories">
+					<!-- // 2025.02.05 class명 수정 -->
+					<div class="dropdown">
+						<button type="button" class="current"><span class="select-ti">입회 구분</span></button>
+						<ul class="list">
+							<li>
+								<label>
+									<input type="checkbox" name="form-radio1" value="value01" class="option">
+									<span class="option-txt">법인</span>
+								</label>
+							</li>
+							<li>
+								<label>
+									<input type="checkbox" name="form-radio1" value="value02" class="option">
+									<span class="option-txt">개인</span>
+								</label>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!--// 2025.02.04 수정 -->
+
+			<div class="list-area">
+				<div class="search-filter">
+					<div class="total">총 <strong>16</strong>건</div>
+					<div class="select line">
+						<select title="select 선택">
+							<option value="" class="select-ti">최근등록일</option>
+							<option value="">최근등록일</option>
+							<option value="">오래된순</option>
+							<option value="">가나다순</option>
+						</select>
+					</div>
+					<div class="form-search">
+						<input type="text" name="" title="회원권명 입력" placeholder="회원권명 입력">
+						<button type="button" class="btn-delete"><span class="blind">삭제</span></button>
+						<button type="button" class="btn-search"><span class="blind">검색</span></button>
+					</div>
+				</div>
+
+				<!-- 2025.02.04 수정 // -->
+				<div class="assignment-list">
+					<ul>
+						<li>
+							<figure>
+								<img src="{{dirRoot}}/static/imgs/sales/temp/temp_membership_course_512x212.jpg" alt="">
+								<div class="label">
+									<span class="card prcode">[G0001-M0001]</span>
+									<span class="card personal"><span>HK 치구사</span></span>
+								</div>
+							</figure>
+							<div class="info">
+								<strong class="tit">HK Chigusa GOLD</strong>
+								<dl>
+									<dt>회원 구분</dt>
+									<dd>기명 1인 + 무기명 3인</dd>
+									<dt>유효기간</dt>
+									<dd>2032.08.01까지</dd>
+									<dt>위임횟수</dt>
+									<dd>2회</dd>
+								</dl>
+							</div>
+
+							<div class="guidetxt">
+								<ul>
+									<li>한케이골프 사용가능 바우처 2매</li>
+									<li>연회비 면제 성수기 이용 가능</li>
+									<li>법인 입회 가능</li>
+								</ul>
+								<div class="tooltip-wrap">
+									<button class="btn-tooltip"><i class="svgicon svgicon-info"></i></button>
+									<div class="tooltip">
+										<div class="tit">
+											<strong>회원권 혜택</strong>
+											<button class="btn-close"><i class="svgicon svgicon-close"></i></button>
+										</div>
+										<div class="cont">
+											<p>한케이골프 사용 가능 바우처 2매 지급 / 연회비 면제 / 성수기 이용 가능 / 일 체류비 100,000원 / 연박 할인 / 엑스트라베드 무료한케이골프 사용 가능 바우처 2매 지급</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="bottom">
+								<div class="price">
+									<p class="possible">가격조정가능</p>
+									<button type="button" onclick="fn.popup('open', '#popupAdjustPrice')"><i class="svgicon svgicon-moneychange"></i></button>
+									<p><strong>17,500,000</strong>원</p>
+								</div>
+								<p class="info-txt">(명의개서료, 중개수수료 포함)</p>
+								<div class="btns">
+									<button type="button" class="btn line">거래시세</button>
+									<button type="button" class="btn blue">양수 접수</button>
+								</div>
+								<div class="salesman">
+									<span class="name">김영업<span>TGS 1팀</span></span>
+									<span>010-0000-0000</span>
+								</div>
+							</div>
+						</li>
+
+						<li>
+							<figure>
+								<img src="{{dirRoot}}/static/imgs/sales/temp/temp_membership_course_512x212.jpg" alt="">
+								<div class="label">
+									<span class="card prcode">[G0001-M0001]</span>
+									<span class="card personal"><span>HK 치구사</span></span>
+								</div>
+							</figure>
+							<div class="info">
+								<strong class="tit">MH LUXURY</strong>
+								<dl>
+									<dt>회원 구분</dt>
+									<dd>기명 1인 + 무기명 3인</dd>
+									<dt>유효기간</dt>
+									<dd>2032.08.01까지</dd>
+									<dt>위임횟수</dt>
+									<dd>2회</dd>
+								</dl>
+							</div>
+
+							<div class="guidetxt">
+								<ul>
+									<li>일 체류비 30,000원</li>
+								</ul>
+								<div class="tooltip-wrap">
+									<button class="btn-tooltip"><i class="svgicon svgicon-info"></i></button>
+									<div class="tooltip">
+										<div class="tit">
+											<strong>회원권 혜택</strong>
+											<button class="btn-close"><i class="svgicon svgicon-close"></i></button>
+										</div>
+										<div class="cont">
+											<p>한케이골프 사용 가능 바우처 2매 지급 / 연회비 면제 / 성수기 이용 가능 / 일 체류비 100,000원 / 연박 할인 / 엑스트라베드 무료한케이골프 사용 가능 바우처 2매 지급</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="bottom">
+								<div class="price">
+									<p class="possible">가격조정가능</p>
+									<button type="button" onclick="fn.popup('open', '#popupAdjustPrice')"><i class="svgicon svgicon-moneychange"></i></button>
+									<p><strong>17,500,000</strong>원</p>
+								</div>
+								<p class="info-txt">(명의개서료, 중개수수료 포함)</p>
+								<div class="btns">
+									<button type="button" class="btn blue" disabled>거래중</button>
+								</div>
+								<div class="salesman">
+									<span class="name">김영업<span>TGS 1팀</span></span>
+									<span>010-0000-0000</span>
+								</div>
+							</div>
+						</li>
+
+						<li>
+							<figure>
+								<img src="{{dirRoot}}/static/imgs/sales/temp/temp_membership_course_512x212.jpg" alt="">
+								<div class="label">
+									<span class="card prcode">[G0001-M0001]</span>
+									<span class="card personal"><span>삼투엔람</span></span>
+								</div>
+							</figure>
+							<div class="info">
+								<strong class="tit">Sam Tuyen Lam GOLD</strong>
+								<dl>
+									<dt>회원 구분</dt>
+									<dd>무기명 4인</dd>
+									<dt>유효기간</dt>
+									<dd>2033.06.01까지</dd>
+									<dt>위임횟수</dt>
+									<dd>2회</dd>
+								</dl>
+							</div>
+
+							<div class="guidetxt">
+								
+							</div>
+
+							<div class="bottom">
+								<div class="price">
+									<p><strong>17,500,000</strong>원</p>
+								</div>
+								<p class="info-txt">(명의개서료, 중개수수료 포함)</p>
+								<div class="btns">
+									<button type="button" class="btn blue" disabled>거래중</button>
+								</div>
+								<div class="salesman">
+									<span class="name">한케이골프</span>
+									<span>010-0000-0000</span>
+								</div>
+							</div>
+						</li>
+
+						<li>
+							<figure>
+								<img src="{{dirRoot}}/static/imgs/sales/temp/temp_membership_course_512x212.jpg" alt="">
+								<div class="label">
+									<span class="card prcode">[G0001-M0001]</span>
+									<span class="card personal"><span>삼투엔람</span></span>
+								</div>
+							</figure>
+							<div class="info">
+								<strong class="tit">Nilai Springs VIP</strong>
+								<dl>
+									<dt>회원 구분</dt>
+									<dd>무기명 4인</dd>
+									<dt>유효기간</dt>
+									<dd>2033.06.01까지</dd>
+									<dt>위임횟수</dt>
+									<dd>2회</dd>
+								</dl>
+							</div>
+
+							<div class="guidetxt">
+								
+							</div>
+
+							<div class="bottom">
+								<div class="price">
+									<p><strong>17,500,000</strong>원</p>
+								</div>
+								<p class="info-txt">(명의개서료, 중개수수료 포함)</p>
+								<div class="btns">
+									<button type="button" class="btn blue" disabled>거래중</button>
+								</div>
+								<div class="salesman">
+									<span class="name">한케이골프</span>
+									<span>010-0000-0000</span>
+								</div>
+							</div>
+						</li>
+
+						<li>
+							<figure>
+								<img src="{{dirRoot}}/static/imgs/sales/temp/temp_membership_course_512x212.jpg" alt="">
+								<div class="label">
+									<span class="card prcode">[G0001-M0001]</span>
+									<span class="card personal"><span>삼투엔람</span></span>
+								</div>
+							</figure>
+							<div class="info">
+								<strong class="tit">Vinpearl Membership VIP</strong>
+								<dl>
+									<dt>회원 구분</dt>
+									<dd>무기명 4인</dd>
+									<dt>유효기간</dt>
+									<dd>2033.06.01까지</dd>
+									<dt>위임횟수</dt>
+									<dd>2회</dd>
+								</dl>
+							</div>
+
+							<div class="guidetxt">
+								
+							</div>
+
+							<div class="bottom">
+								<div class="price">
+									<p><strong>17,500,000</strong>원</p>
+								</div>
+								<p class="info-txt">(명의개서료, 중개수수료 포함)</p>
+								<div class="btns">
+									<button type="button" class="btn blue" disabled>거래중</button>
+								</div>
+								<div class="salesman">
+									<span class="name">한케이골프</span>
+									<span>010-0000-0000</span>
+								</div>
+							</div>
+						</li>
+
+						<li>
+							<figure>
+								<img src="{{dirRoot}}/static/imgs/sales/temp/temp_membership_course_512x212.jpg" alt="">
+								<div class="label">
+									<span class="card prcode">[G0001-M0001]</span>
+									<span class="card personal"><span>HK 치구사</span></span>
+								</div>
+							</figure>
+							<div class="info">
+								<strong class="tit">NanShan 남산99</strong>
+								<dl>
+									<dt>회원 구분</dt>
+									<dd>기명 1인 + 무기명 3인</dd>
+									<dt>유효기간</dt>
+									<dd>2032.08.01까지</dd>
+									<dt>위임횟수</dt>
+									<dd>2회</dd>
+								</dl>
+							</div>
+
+							<div class="guidetxt">
+								<ul>
+									<li>호텔 조식 이용권 2매</li>
+								</ul>
+								<div class="tooltip-wrap">
+									<button class="btn-tooltip"><i class="svgicon svgicon-info"></i></button>
+									<div class="tooltip">
+										<div class="tit">
+											<strong>회원권 혜택</strong>
+											<button class="btn-close"><i class="svgicon svgicon-close"></i></button>
+										</div>
+										<div class="cont">
+											<p>한케이골프 사용 가능 바우처 2매 지급 / 연회비 면제 / 성수기 이용 가능 / 일 체류비 100,000원 / 연박 할인 / 엑스트라베드 무료한케이골프 사용 가능 바우처 2매 지급</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="bottom">
+								<div class="price">
+									<p class="possible">가격조정가능</p>
+									<button type="button" onclick="fn.popup('open', '#popupAdjustPrice')"><i class="svgicon svgicon-moneychange"></i></button>
+									<p><strong>17,500,000</strong>원</p>
+								</div>
+								<p class="info-txt">(명의개서료, 중개수수료 포함)</p>
+								<div class="btns">
+									<!-- 2025.02.05 수정 -->
+									<button type="button" class="btn blue">양수 접수</button>
+									<!-- 2025.02.05 수정 -->
+								</div>
+								<div class="salesman">
+									<span class="name">김영업<span>TGS 1팀</span></span>
+									<span>010-0000-0000</span>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- // 2025.02.04 수정 -->
+			</div>
+		</div>
+
+	</div>
+	<!-- // 본문 영역 -->
+</main>
+
+<!-- 팝업 : 거래 가격 조정 // -->
+{{include('./components/popup.html', {
+	"prop": {
+		"id": "popupAdjustPrice",
+		"class": "popupadjustprice",
+		"tit": "거래 가격 조정",
+		"header": true,
+		"content": "./contents/popup/popupAdjustPrice.html"
+	}
+})}}
+<!-- // 팝업 : 거래 가격 조정  -->

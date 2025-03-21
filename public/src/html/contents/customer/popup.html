@@ -1,0 +1,98 @@
+<main id="container">
+	<!-- 본문 영역 // -->
+	<div id="contents" class="{{prop.depth1}} {{prop.depth2}} {{prop.depth3}}"> <!-- 해당 depth별로 class명 추가 -->
+
+		<button type="button" class="btn line" onclick="fn.popup('open', '#popupPointHistory');">포인트내역</button>
+		<button type="button" class="btn line" onclick="fn.popup('open', '#popupPointHistoryNodata');">포인트내역-Nodata</button>
+		<button type="button" class="btn line" onclick="fn.popup('open', '#popupVoucherHistory');">바우처 내역</button>
+		<button type="button" class="btn line" onclick="fn.popup('open', '#popupVoucherHistoryNodata');">바우처 내역 -Nodata</button>
+		<button type="button" class="btn line" onclick="fn.popup('open', '#popupCouponHistory');">쿠폰 내역</button>
+		<button type="button" class="btn line" onclick="fn.popup('open', '#popupCouponHistoryNodata');">쿠폰 내역 -Nodata</button>
+		<button type="button" class="btn line" onclick="fn.popup('open', '#popupProspectiveCustomerRegistration');">고객 정보 등록</button>
+	</div>
+
+	<!-- 팝업 : 포인트 내역 // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupPointHistory",
+			"class": "popuppointhistory",
+			"tit": "포인트 내역",
+			"header": true,
+			"content": "./contents/popup/popupPointHistory.html"
+		}
+	})}}
+	<!-- // 팝업 : 포인트 내역 -->
+
+	<!-- 팝업 : 포인트 내역 - nodata // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupPointHistoryNodata",
+			"class": "popuppointhistory",
+			"tit": "포인트 내역",
+			"header": true,
+			"content": "./contents/popup/popupPointHistoryNodata.html"
+		}
+	})}}
+	<!-- // 팝업 : 포인트 내역 -->
+
+	<!-- 팝업 : 바우처 내역 // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupVoucherHistory",
+			"class": "popupvoucherhistory",
+			"tit": "바우처 내역",
+			"header": true,
+			"content": "./contents/popup/popupVoucherHistory.html"
+		}
+	})}}
+	<!-- // 팝업 : 바우처 내역 -->
+
+	<!-- 팝업 : 바우처 내역 // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupVoucherHistoryNodata",
+			"class": "popupvoucherhistory",
+			"tit": "바우처 내역",
+			"header": true,
+			"content": "./contents/popup/popupVoucherHistoryNodata.html"
+		}
+	})}}
+	<!-- // 팝업 : 바우처 내역 -->
+
+	<!-- 팝업 : 쿠폰 내역 // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupCouponHistory",
+			"class": "popupvoucherhistory",
+			"tit": "쿠폰 내역",
+			"header": true,
+			"content": "./contents/popup/popupCouponHistory.html"
+		}
+	})}}
+	<!-- // 팝업 : 쿠폰 내역 -->
+
+	<!-- 팝업 : 쿠폰 내역 // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupCouponHistoryNodata",
+			"class": "popupvoucherhistory",
+			"tit": "쿠폰 내역",
+			"header": true,
+			"content": "./contents/popup/popupCouponHistoryNodata.html"
+		}
+	})}}
+	<!-- // 팝업 : 쿠폰 내역 -->
+
+	<!-- 팝업 : 고객 정보 등록 // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupProspectiveCustomerRegistration",
+			"class": "popupprospectivecustomerregistration",
+			"tit": "고객 정보 등록",
+			"header": true,
+			"content": "./contents/popup/popupProspectiveCustomerRegistration.html"
+		}
+	})}}
+	<!-- // 팝업 : 고객 정보 등록 -->
+	<!-- // 본문 영역 -->
+</main>

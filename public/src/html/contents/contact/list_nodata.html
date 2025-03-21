@@ -1,0 +1,96 @@
+<main id="container">
+	<!-- 본문 영역 // -->
+	<div id="contents" class="{{prop.depth1}} {{prop.depth2}} {{prop.depth3}}"> <!-- 해당 depth별로 class명 추가 -->
+
+		<div class="title-area">
+			<h2 class="tit">고객문의 관리</h2>
+			
+			<div class="btns">
+				<button class="btn small line"><i class="svgicon svgicon-card"></i>회원권소개</button>
+				<button class="btn small fill"><i class="svgicon svgicon-session"></i>신규 입회하기</button>
+				<!-- 2025.01.31 수정 // -->
+				<button class="btn small"><i class="svgicon svgicon-date"></i>일정 등록하기</button>
+				<!-- // 2025.01.31 수정 -->
+			</div>
+		</div>
+		<div class="inner">
+			<div class="sorting list-sort">
+				<div class="sorting-container">
+					<div class="input-sorting">
+						<!-- 2025.01.31 수정 -->
+						<label><input type="checkbox" name=""><span>상담접수<em>0</em></span></label>
+						<label><input type="checkbox" name=""><span>상담중<em>20</em></span></label>
+						<label><input type="checkbox" name=""><span>상담완료<em>0</em></span></label>
+						<!-- 2025.01.31 수정 -->
+					</div>
+				</div>
+
+				<div class="search-form">
+					<div class="select">
+						<select title="select 선택">
+							<option value="">문의자명</option>
+							<option value="">휴대폰번호</option>
+							<option value="">회원권명</option>
+							<option value="">내용</option>
+						</select>
+					</div>
+					<div class="form-search">
+						<input type="text" name="" title="검색어 입력" placeholder="검색어 입력">
+						<button type="button" class="btn-delete"><span class="blind">삭제</span></button>
+						<button type="button" class="btn-search"><span class="blind">검색</span></button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- list // -->
+		<div class="list-board">
+			
+			<div class="sel-area">
+				<p>전체<span>0</span>건</p>
+
+				<div class="select">
+					<select title="select 선택">
+						<option value="">최신순</option>
+						<option value="">오래된순</option>
+						<option value="">회원권순</option>
+					</select>
+				</div>
+			</div>
+			<!-- nodata // -->
+			<div class="nodata">
+				<p>
+					<i class="icon icon-nodata"></i>
+					<small>
+						등록된 고객 문의가 없어요.
+					</small>
+				</p>
+			</div>
+			<!-- // nodata -->
+
+			<!-- pagination // -->
+			<div class="pagination-list">
+				<a href="#" class="btn-prev"><span class="blind">이전 페이지</span><i class="svgicon svgicon-pagearrowleft"></i></a>
+				<ol>
+					<li class="active"><a href="javascript:void(0);"><span class="blind">현재 페이지</span>1</a></li><!-- 활성화 class="active" -->
+				</ol>
+				<a href="#" class="btn-next"><span class="blind">다음 페이지</span><i class="svgicon svgicon-pagearrowright"></i></a>
+			</div>
+			<!-- // pagination -->
+		</div>
+		<!-- // list -->
+	</div>
+	<!-- 팝업 : 상세검색 // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupSearchDetail",
+			"class": "popupsearchdetail",
+			"tit": "상세검색",
+			"header": true,
+			"content": "./contents/popup/popupSearchDetail.html"
+		}
+	})}}
+	<!-- // 팝업 : 상세검색 -->
+
+	<!-- // 본문 영역 -->
+</main>

@@ -1,0 +1,233 @@
+/**
+* --------------------------------
+* Header
+* --------------------------------
+*/
+
+#header {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	z-index: 30;
+
+	.inner {
+		@include background($url: $image-url + 'common/header_bg01.jpg', $size: cover);
+
+		display: flex;
+		align-items: center;
+		height: 34px;
+
+		.logo {
+			@include background($url: $image-url + 'common/header_logo_bg.png', $size: 100%);
+
+			width: 160px;
+			height: 34px;
+			border-top-right-radius: 8px;
+			overflow: hidden;
+
+			a {
+				position: relative;
+				display: block;
+				width: 160px;
+				height: 100%;
+
+				&::after {
+					@include position-center(50%, 16px, 0, -50%);
+					@include background(0, -50px, $url: $image-url-logo, $size: 500px);
+
+					content: '';
+					width: 104px;
+					height: 12px;
+				}
+			}
+		}
+
+		.util {
+			display: flex;
+			align-items: center;
+			width: 190px;
+			height: 34px;
+
+			.toggle-area {
+				@include before-line(1px, 34px, $color: rgba(155, 166, 202, 0.3));
+
+				padding: 0 10px;
+				height: 24px;
+
+				&::before {
+					top:  -5px;
+				}
+
+				.check-toggle {
+					width: 90px;
+					height: 24px;
+					border-color: $color7;
+					background-color: #9BA6CA;
+					transition: all 0.3s;
+
+					.toggle-txt {
+						@include font(10px, 22px, 700);
+						@include position(0, 25px);
+
+						transition: opacity 0s ease-out;
+
+						&.off {
+							color: $color2;
+							transition-duration: 0.5s;
+							transition-delay: 0.2s;
+						}
+
+						&.on {
+							left: auto;
+							right: 25px;
+							opacity: 0;
+						}
+					}
+
+					&::before {
+						width: 18px;
+						height: 18px;
+						background-color: $color2;
+						border: 1px solid $color10;
+						filter: drop-shadow(2px 2px 2px rgba(11, 14, 64, 0.25));
+						transition-duration: 0.4s;
+					}
+
+					&:has(input:checked) {
+						border-color: $color2;
+						background-color: $color10;
+
+						&::before {
+							transform: translateX(66px);
+							background-color: $primary3;
+							border: 1px solid $primary1;
+						}
+
+						.toggle-txt {
+							&.on {
+								opacity: 1;
+								transition-duration: 0.5s;
+								transition-delay: 0.2s;
+							}
+
+							&.off {
+								opacity: 0;
+								transition-duration: 0s;
+								transition-delay: 0s;
+							}
+						}
+					}
+				}
+			}
+
+			.btn-masking {
+				@include after-icon(-50px, 0);
+				@include before-line(1px, 34px, $color: rgba(155, 166, 202, 0.3));
+
+				padding: 0 10px;
+				flex-basis: 40px;
+				flex-shrink: 0;
+				height: 100%;
+				overflow: hidden;
+
+				&::after {
+					background-size: 500px;
+				}
+
+				&.active {
+					&::after {
+						background-position: -100px 0;
+					}
+				}
+			}
+
+			.btn-allmenu {
+				@include after-icon(0, 0);
+				@include before-line(1px, 34px, $color: rgba(155, 166, 202, 0.3));
+
+				flex-basis: 40px;
+				flex-shrink: 0;
+				height: 100%;
+				overflow: hidden;
+
+				&::after {
+					background-size: 500px;
+				}
+			}
+		}
+
+		.tab-swiper {
+			width: calc(100% - 350px);
+
+			.swiper-slide {
+				display: flex;
+				align-items: center;
+				width: auto;
+				height: 24px;
+				background-color: rgba(243, 247, 254, 0.8);				
+				border-radius: 12px;
+
+				&:has(.active) {
+					background-color: $primary3;
+				}
+
+				a {
+					@include font(10px, 24px, 500);
+
+					padding-left: 12px;
+					color: $color3;
+
+					&.active {
+						color: $color2;
+
+						// & + .btn-close {
+						// 	.svgicon-close {
+						// 		background-color: $color2;
+						// 	}
+						// }
+					}
+				}
+
+				.btn-close {
+					@include svg-icon('close', 8, $color4);
+
+					width: 26px;
+					height: 24px;
+
+					.svgicon-close {
+						vertical-align: middle;
+					}
+				}
+			}
+		}
+	}
+
+	&.type1 {
+		height: 46px;
+		text-align: center;
+		background-color: $color2;
+
+		&::after {
+			@include position(null, 0, null, 0);
+
+			content: '';
+			width: 100%;
+			height: 1px;
+			background-color: #eee;
+		}
+
+		h2.tit {
+			@include font(14px, 46px, 500);
+
+			color: $primary2;
+		}
+
+		.btn-prev {
+			@include position-center(50%, 10px, 0, -50%);
+
+			width: 40px;
+			height: 40px;
+		}
+	}
+}

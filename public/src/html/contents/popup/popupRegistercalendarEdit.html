@@ -1,0 +1,116 @@
+<div class="cont">
+	<form>
+		<!--// 2024-12-11 수정  -->
+		<div class="form-cont">
+			<div class="form-write">
+				<strong class="essential">영업활동 구분</strong>
+				<div class="input-sorting">
+					<label><input type="radio" name="active1" checked=""><span>상담​</span></label>
+					<label><input type="radio" name="active1" disabled><span>계약</span></label>
+					<label><input type="radio" name="active1" disabled><span>회원관리</span></label>
+					<label><input type="radio" name="active1" disabled><span>송영</span></label>
+					<label><input type="radio" name="active1" disabled><span>행사</span></label>
+					<label><input type="radio" name="active1" disabled><span>기타</span></label>
+				</div>
+			</div>
+
+			<div class="form-write">
+				<strong class="essential">제목</strong>
+				<input type="text" name="" title="제목 입력" placeholder="제목 입력" value="강수영고객님 소개로 친한 친구 소개 받음">
+			</div>
+			<div class="form-write">
+				<strong class="essential">시작/종료 시간</strong>
+				<div class="picker">
+					<span class="daterangepickers single"><input type="text" placeholder="YYYY.MM.DD" readonly><i class="svgicon svgicon-date"></i></span>
+					<span class="timepicker" onclick="fn.popup('open', '#popupTimePicker')">
+						<label>
+							<input type="text" id="editstartTime" placeholder="09:00" readonly />
+							<i class="svgicon svgicon-clock"></i>
+						</label>
+						<span>-</span>
+						<label>
+							<input type="text" id="editendTime" placeholder="09:30" readonly />
+							<i class="svgicon svgicon-clock"></i>
+						</label>
+					</span>
+				</div>
+			</div>
+			<!--// 2024-12-13 수정 -->
+			<div class="form-write">
+				<strong>출퇴근</strong>
+				<div class="commuting list-sort">
+					<label><input type="checkbox" name="" checked=""><span>직출</span></label>
+					<label><input type="checkbox" name=""><span>직퇴</span></label>
+				</div>
+			</div>
+			<!-- 2024-12-13 수정 //-->
+
+			<!--// 출퇴근 선택시 -->
+			<div class="form-write">
+				<strong>사유</strong>
+				<input type="text" title="사유 입력" placeholder="사유 입력" ></input>
+			</div>
+			<!-- 출퇴근 선택시 //-->
+	
+			<div class="form-write">
+				<strong class="essential">고객정보</strong>
+				<div class="phone-filter">
+					<div class="sort">
+						<input type="text" name="" title="고객명 입력" placeholder="고객명 입력​" value="김유선" readonly>
+						<input type="number" name="" title="휴대폰번호 입력" placeholder="휴대폰번호 입력" value="010-2458-1234" readonly>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-write">
+				<strong class="essential">위치</strong>
+				<div class="meeting-filter">
+					<div class="sort">
+						<div class="select">
+							<select title="select 선택">
+								<option value="">사무실</option>
+								<option value="">자택</option>
+								<option value="" class="select-ti">공항</option>
+								<option value="">행사장</option>
+								<option value="">기타</option>
+							</select>
+						</div>
+						<input type="text" name="" title="미팅 장소 입력" placeholder=" 미팅 장소 입력" value="기타일정">
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-write">
+				<strong>내용</strong>
+				<textarea title="내용 입력" placeholder="상담내용을 간략하게 입력해 주세요." >강수영 고객님의 지인분을 추천, 신규 회원권을 설명하기로 함​ 2차 설명 미팅</textarea>
+			</div>
+
+			<div class="form-write">
+				<!-- 2025.02.04 수정 // -->
+				<strong>상담 결과</strong>
+				<!-- 2025.02.04 수정 // -->
+				<div class="radio-area">
+					<label><input type="radio" name="radio" checked=""><span>입회보류</span></label>
+					<!-- 영업활동 구분 입회상담 시 노출 // -->
+					<label><input type="radio" name="radio" ><span>계약서 작성</span></label>
+					<label><input type="radio" name="radio" ><span>서류 전달</span></label>
+					<!-- // 영업활동 구분 입회상담 시 -->
+
+					<!-- 2025.02.03 추가 // -->
+					<!-- 영업활동 구분 계약 선택 시 노출 //-->
+					<!-- 
+						<label><input type="radio" name="radio" ><span>진행중</span></label>
+						<label><input type="radio" name="radio" ><span>계약완료</span></label> 
+					-->
+					<!--// 영업활동 구분 계약 선택 시 노출 -->
+					<!-- // 2025.02.03 추가 -->
+				</div>
+			</div>
+		</div>
+	</form>
+	<!--// 2024-12-11 수정  -->
+
+	<div class="btns bottom">
+		<button type="button" class="btn blue" onclick="fn.popup('close', this);">등록</button>
+	</div>
+</div>

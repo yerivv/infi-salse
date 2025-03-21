@@ -1,0 +1,631 @@
+/**
+* --------------------------------
+* business
+* --------------------------------
+*/
+
+@import
+	"./abstracts/variables",
+	"./abstracts/functions",
+	"./abstracts/mixins";
+
+
+.business {	
+	.title-area {
+		&:not(.header){
+			padding: 30px 32px 20px;
+			background-color: $color2;
+	
+			h2.tit {
+				@include font(24px, 36px, 700);
+			}
+		}
+
+		>div {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap : 8px;
+		}
+
+		.tit-area {
+			.btn {
+				@include svg-icon('leaderboard', 16, $margin: 7px 4px 0 0, $url: 'common/icon_16.svg', $color: $color2);
+
+				padding: 0 12px;
+				width: 106px;
+				font-weight: 500;
+				border-radius: 999px;
+			}
+		}
+
+		.month-sit {
+			margin-top: 20px;
+
+			p {
+				display: inline-block;
+				color: $primary2;
+				font-size: 18px;
+				font-weight: 700;
+				line-height: 28px;
+			}
+
+			.daterangepickers {
+				margin-left: 12px;
+				display: inline-block;
+				width: 165px;
+
+				.svgicon-date {
+					pointer-events: none;
+				}
+
+				input[type="text"] {
+					&:read-only {
+						-webkit-text-fill-color: $color1;
+						border: 1px solid $color7;
+						background-color: $color2;
+					}
+				}
+			}
+
+			.btn {
+				position: relative;
+				border: 2px solid var(--Secondary-LightBlue, #ACF);
+				background-color: $primary1;
+				padding: 0 20px 0 28px;
+				border-radius: 6px;
+				font-weight: 700;
+				overflow: visible;
+
+				.icon-rank {
+					@include background(-450px, 0, $url: $image-url-icon, $size: 500px);
+					@include position(50%, -32px, auto, auto);
+
+					width: 50px;
+					height: 50px;
+					transform: translateY(-50%);
+				}
+			}
+		}
+	}
+
+	.situation-tab {
+		margin-bottom: 24px;
+		padding: 0 0 24px 0 ;
+		border-bottom: 1px solid $color6;
+
+		>p {
+			.icon-ranking {
+				position: relative;
+				display: inline-block;
+				margin-right: 8px;
+				width: 28px;
+				height: 28px;
+				vertical-align: bottom;
+	
+				&::after {
+					@include background(-400px, 0, $url: $image-url-icon, $size: 500px);
+					@include position-center;
+	
+					content: '';
+					width: 50px;
+					height: 50px;
+				}
+			}
+
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 26px;
+			text-align: center;
+
+			strong {
+				@include after-line(1px, 12px, 6px 0 0 0, $color: $color7);
+				
+				display: inline-block;
+				padding-right: 13px;
+				margin-right: 12px;
+				color: $green4;
+			}
+		}
+	}
+
+	.situation-area {
+		padding: 24px 32px 40px;
+		background-color: $color11;
+
+		.sub-ti {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			strong {
+				color: $primary2;
+				font-size: 22px;
+				font-weight: 700;
+				line-height: 28px;
+			}
+
+			p {
+				color: $color3;
+				font-size: 14px;
+				font-weight: 500;
+				line-height: 22px;
+
+				span {
+					@include before-line(1px, 12px, 5px 0 0 0, $color: $color7);
+
+					display: inline-block;
+					margin-left: 10px;
+					padding-left: 11px;
+				}
+			}
+		}
+
+		.graph-area {
+			@include after-line(1px, 164px, 0, $color: $color9);
+
+			margin-top: 16px;
+			display: flex;
+			border: 1px solid $color8;
+			gap: 80px;
+			padding: 25px 32px 30px;
+			background-color: $color2;
+			border-radius: 12px;
+			box-shadow: 16px 16px 24px 0px rgba(3, 15, 48, 0.14);
+
+			&::after {
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+
+			.graph-item {
+				width: 50%;
+
+				.graph-ti {
+					@include clear;
+
+					p {
+						display: inline-block;
+						font-size: 18px;
+						font-weight: 500;
+						line-height: 28px;
+					}
+
+					strong {
+						float: right;
+						color: $primary1;
+						font-size: 18px;
+						font-weight: 700;
+						line-height: 28px;
+
+						span {
+							color: $color4;
+							font-weight: 400;
+						}
+					}
+				}
+
+				.graph-cont {
+					margin-top: 28px;
+					display: flex;
+					gap: 24px;
+
+					.full-chart {
+						@include background(center, center, $url: $image-url + 'business/business_chart_bg_01.png', $size: 105px 105px);
+
+						position: relative;
+						width: 108px;
+						height: 108px;
+
+						.chart-wrap {
+							width: 135px;
+							height: 135px;
+							
+							canvas {
+								margin-top: -18px;
+								margin-left: -13px;
+								pointer-events: none;
+			
+								&:not(.bg-chart) {
+									z-index: 1;
+								}
+							}
+						}
+
+
+						.txt-percentage {
+							@include position-center();
+							
+							color: $primary1;
+							font-size: 10px;
+							font-weight: 700;
+							line-height: 30px;
+
+							em {
+								font-size: 20px;
+								vertical-align: bottom;
+							}
+						}
+					}
+
+					ul {
+						width: calc(100% - 24px);
+
+						li {
+							@include clear;
+
+							padding: 10px 0;
+							border-top: 1px solid $color9;
+							font-size: 14px;
+							font-weight: 400;
+							line-height: 22px;
+
+							&:first-of-type {
+								padding-top: 0;
+								border-top: none;
+							}
+
+							&:last-of-type {
+								padding-bottom: 0;
+							}
+
+							strong {
+								float: right;
+								color: $primary1;
+								font-weight: 700;
+								text-align: right;
+							}
+						}
+					}
+				}
+
+				&:last-of-type {
+					.graph-ti {
+						@include clear;
+
+						strong {
+							color: $green4;
+						}
+					}
+
+					.graph-cont {
+						.full-chart {
+							.txt-percentage {
+								color: $green4;
+							}
+						}
+						ul {
+							li {
+								strong {
+									color: $green4;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.report-area {
+		@include before-line(100%, 8px, $color: $color8);
+
+		padding: 46px 32px 40px;
+		border-top: 2px solid $color7;
+
+		.sub-ti {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			p {
+				color: $color3;
+				font-size: 14px;
+				font-weight: 500;
+				line-height: 22px;
+
+				strong {
+					margin-right: 10px;
+					display: inline-block;
+					color: $color1;
+					font-size: 18px;
+					font-weight: 700;
+					line-height: 28px;
+					vertical-align: middle;
+				}
+
+				span {
+					@include before-line(1px, 12px, 5px 0 0 0, $color: $color7);
+
+					display: inline-block;
+					margin-left: 10px;
+					padding-left: 11px;
+				}
+			}
+
+			a {
+				display: inline-block;
+				font-size: 14px;
+				color: $color3;
+				font-weight: 400;
+
+				.icon-select {
+					display: inline-block;
+					padding-left: 20px;
+					width: 12px;
+					height: 22px;
+					vertical-align: bottom;
+					pointer-events: none;
+					transform: rotate(-90deg);
+		
+					&::after {
+						@include background(0, -100px, $url: $image-url-form, $size: 500px);
+						@include position-center;
+		
+						content: '';
+						background-position: -100px -100px;
+						width: 50px;
+						height: 50px;
+					}
+				}
+			}
+		}
+
+		&:has(.nodata) {
+			table {
+				border-radius: 6px 6px 0 0;
+			}
+		}
+
+		table {
+			margin-top: 16px;
+			border-radius: 6px;
+			border-style: hidden;
+			text-align: center;
+			box-shadow: 0 0 0 1px $color9;
+			font-weight: 400;
+
+			&.scroll {
+				display: block;
+
+				tbody {
+					display: block;
+					max-height: 306px;
+					overflow-y: auto;
+
+					tr {
+						display: table;
+						width: 100%;
+						table-layout: fixed;
+
+						&:last-of-type {
+							td {
+								border-bottom: none;
+							}
+						}
+					}
+				}
+
+				tfoot {
+					display: table;
+					width: 100%;
+					table-layout: fixed;
+
+					tr {
+						td {
+							border-top: 1px solid $color9;
+							border-left: 1px solid $color9;
+
+							&:first-of-type {
+								border-left: none;
+							}
+
+							span {
+								display: inline-block;
+								color: $primary3;
+							}
+
+							strong{ 
+								font-size: 18px;
+							}
+						}
+					}
+				}
+			}
+
+			th {
+				color: $color3;
+				font-size: 16px;
+				font-weight: 500;
+				line-height: 26px;
+				background-color: $color10;
+				border-left: 1px solid $color9;
+
+				&:first-of-type {
+					border-left: 0;
+					border-radius: 6px 0 0 0;
+				}
+
+				&:last-of-type {
+					border-radius: 0 6px 0 0;
+				}
+			}
+
+			th,td {
+				padding: 12px 0;
+			}
+
+			tbody {
+				tr {
+					td {
+						font-size: 16px;
+						font-weight: 400;
+						line-height: 26px; 
+						border-top: 1px solid $color9;
+						border-left: 1px solid $color9;
+
+						&:first-of-type {
+							border-left: 0;
+						}
+
+						span {
+							display: inline-block;
+							color: $primary3;
+
+							&.zero {
+								color: $color3;
+							}
+						}
+
+						strong{ 
+							font-size: 18px;
+						}
+					}
+
+					&:last-of-type{	
+						td {
+							border-bottom: 1px solid $color9;
+						}
+					}
+				}
+			}
+		}
+
+		.nodata {
+			margin-top: 1px;
+			padding: 60px 0;
+			border-radius: 0px 0px 6px 6px;
+			box-shadow: 0 0 0 1px $color9;
+			border-top: none;
+
+			p {
+				padding-top: 86px;
+
+				.icon-nodata {
+					&::after {
+						background-position: -100px -250px;
+					}
+				}
+			}
+		}
+
+		&:last-of-type {
+			padding-bottom: 30px;
+		}
+	}
+
+	&.registration {
+		.tabmenu .tab-ti {
+			padding: 40px 32px 0;
+
+			&::before {
+				width: calc(100% - 64px);
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			a.active {
+				color: $primary3;
+				border-bottom: 2px solid $primary3;
+			}
+		}
+
+		.inner {
+			padding-top: 40px;
+			width: 520px; 
+			padding-bottom: 30px;
+
+			p {
+				font-size: 20px;
+				font-weight: 500;
+				line-height: 30px;
+				text-align: center;
+
+				strong {
+					@include after-line(7px, 7px, $color: $primary1);
+
+					padding-right: 12px;
+					font-weight: 500;		
+					display: inline-block;
+	
+					&::after {
+						top: auto;
+						left: auto;
+						bottom: 7px;
+						right: 0;
+						border-radius: 50%;
+					}
+				}
+			}
+
+			table {
+				margin-top: 30px;
+				border-radius: 6px;
+				border-style: hidden;
+				box-shadow: 0 0 0 1px $color9;
+
+				th {
+					color: #596584;
+					font-size: 14px;
+					font-weight: 500;
+					line-height: 22px;
+					background-color: $color10;
+
+					&:first-of-type {
+						border-radius: 6px 0 0 0;
+					}
+
+					&:last-of-type {
+						border-radius: 0 6px 0 0;
+					}
+				}
+
+				th,td {
+					padding: 8px 16px;
+					border-top: 1px solid $color9;
+					border-left: 1px solid $color9;
+
+					&:last-of-type {
+						border-right: 1px solid $color9;
+					}
+				}
+
+				tr {
+					&:last-of-type{	
+						td {
+							border-bottom: 1px solid $color9;
+						}
+					}
+
+					td {
+						input {
+							text-align: center;
+							border-color: $color7;
+						}
+					}
+				}
+			}
+
+			.btns {
+				margin-top: 30px;
+
+				.btn {
+					width: 156px;
+					flex: initial;
+
+					&.gray {
+						background-color: $disable2;
+						border-color: $disable2;
+					}
+				}
+			}
+		}
+
+		&.work {
+			>.inner {
+				width: 680px;
+			}
+		}
+	}
+}

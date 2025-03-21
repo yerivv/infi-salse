@@ -1,0 +1,57 @@
+<main id="container">
+	<!-- 본문 영역 // -->
+	<div id="contents" class="{{prop.depth1}} {{prop.depth2}} {{prop.depth3}}"> <!-- 해당 depth별로 class명 추가 -->
+		<div class="inner">
+			<div class="title-area">
+				<h2 class="tit">공지사항</h2>
+			</div>
+			<!--// 2024-12-26 수정 -->
+			<form>
+				<fieldset>
+					<div class="search-filter">
+						<div class="total">전체 <strong>100</strong></div>
+						<div class="search-form">
+							<div class="select small">
+								<select title="select 선택">
+									<option value="" class="select-ti">전체</option>
+									<!-- 2025.01.13 수정 //-->
+									<option value="">전체</option>
+									<!--// 2025.01.13 수정 -->
+									<option value="">제목</option>
+									<option value="">내용</option>
+								</select>
+							</div>
+							<div class="form-search">
+								<input type="text" name="" title="검색어 입력" placeholder="검색어 입력">
+								<button type="button" class="btn-delete"><span class="blind">삭제</span></button>
+								<button type="button" class="btn-search"><span class="blind">검색</span></button>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+			<!-- 2024-12-26 수정 //-->
+	
+			<!-- nodata // -->
+			<div class="nodata">
+				<p>
+					<i class="icon icon-nodata"></i>
+					<small>검색결과가 없습니다.</small><!-- 검색결과 없을 시 -->
+					<!-- <small>자료가 없습니다.</small> --><!-- 자료 없을 시 -->
+				</p>
+			</div>
+			<!-- // nodata -->
+
+			<!-- pagination // -->
+			<div class="pagination-list">
+				<a href="#" class="btn-prev"><span class="blind">이전 페이지</span><i class="svgicon svgicon-pagearrowleft"></i></a>
+				<ol>
+					<li class="active"><a href="javascript:void(0);"><span class="blind">현재 페이지</span>1</a></li><!-- 활성화 class="active" -->
+				</ol>
+				<a href="#" class="btn-next"><span class="blind">다음 페이지</span><i class="svgicon svgicon-pagearrowright"></i></a>
+			</div>
+			<!-- // pagination -->
+		</div>
+	</div>
+	<!-- // 본문 영역 -->
+</main>

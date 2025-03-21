@@ -1,0 +1,181 @@
+/**
+* --------------------------------
+* tabmenu CSS
+* --------------------------------
+*/
+
+.tabmenu {
+	.tab-ti {
+		position: relative;
+		font-size: 0;
+
+		a {
+			@include font(18px, 28px, 400);
+
+			position: relative;
+			display: inline-block;
+			padding: 0 10px;
+			color: $color4;
+			text-align: center;
+
+			em {
+				display: inline-block;
+				margin-left: 4px;
+			}
+
+			&:first-of-type {
+				margin-left: -10px;
+			}
+
+			&.active {
+				color: $primary2;
+				font-weight: 700;
+			}
+		}
+
+		&.slide {
+			padding-top: 4px;
+
+			.swiper {
+				// max-width: $maxWidthCon;
+
+				@include before-line(100%, 1px);
+
+				&::before {
+					top: auto;
+					bottom: 0;
+				}
+
+				.swiper-slide {
+					width: auto;
+
+					a {
+						margin-right: 68px;
+						line-height: 50px;
+						font-size: 18px;
+
+						&.active {
+							color: $primary2;
+							font-weight: 700;
+							border-bottom: 2px solid $primary2;
+						}
+					}
+
+					&:last-of-type {
+						a {
+							margin-right: 0;
+						}
+					}
+				}
+			}
+
+			&.type2 {
+				padding-top: 24px;
+				border-top: 2px solid $color1;
+
+				.swiper {
+					&::before {
+						display: none;
+					}
+
+					.swiper-slide {
+						@include before-line;
+
+						&:before {
+							top: 8px;
+							left: -25px;
+							height: 20px;
+						}
+
+						&:first-child {
+							&::before {
+								display: none;
+							}
+						}
+
+						&:last-of-type {
+							a {
+								margin-right: 0;
+							}
+						}
+
+						a {
+							margin-right: 49px;
+							padding: 0;
+							line-height: 36px;
+							color: $primary2;
+							font-size: 24px;
+
+							&.active {
+								color: $primary2;
+								border-bottom: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&.round {
+			a {
+				padding: 10px 16px;
+				color: $color4;
+				border-radius: 32px;
+
+				&.active {
+					background-color: $primary2;
+					color: $color2;
+				}
+
+				& + a {
+					margin-left: 8px;
+				}
+			}
+		}
+
+		&.full {
+			display: flex;
+
+			@include before-line(100%, 1px, $color: #eee);
+
+			&::before {
+				top: auto;
+				bottom: 0;
+			}
+
+			a {
+				flex: 1;
+				padding-top: 2px;
+				padding-bottom: 8px;
+
+				&:first-child {
+					margin-left: 0;
+				}
+			}
+
+			&.line {
+				@include before-line(100%, 1px, $color: #eee);
+
+				&::before {
+					top: auto;
+					bottom: 0;
+				}
+
+				a {
+					&.active {
+						border-bottom: 2px solid $primary2;
+					}
+				}
+			}
+		}
+	}
+
+	.tab-contents {
+		display: none;
+		position: relative;
+
+		&.active {
+			display: block;
+		}
+	}
+}

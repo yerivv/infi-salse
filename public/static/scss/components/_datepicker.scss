@@ -1,0 +1,210 @@
+.datepicker {
+	input[type='text'] {
+		cursor: pointer;
+
+		&:read-only {
+			background: $disable3;
+			-webkit-text-fill-color: $color4;
+
+			&::placeholder {
+				-webkit-text-fill-color: $color4;
+			}
+		}
+	}
+}
+
+.ui-datepicker {
+	margin-top: -1px;
+	padding: 0;
+	width: 640px !important;
+	border-radius: 0;
+	border: 0;
+	text-align: center;
+	z-index: 1001 !important;
+
+	&-group {
+		padding: 10px 20px 30px;
+	}
+
+	&.ui-widget-content {
+		border-color: $color4;
+	}
+
+	.ui-datepicker-header {
+		background-color: $color2;
+		padding: 0;
+		width: 100%;
+		border: none;
+		display: inline-block;
+
+		.ui-datepicker-next, .ui-datepicker-prev {
+			top: 50%;
+			transform: translateY(-50%);
+			width: 40px;
+			height: 40px;
+			overflow: hidden;
+			cursor: pointer;
+
+			.ui-icon {
+				@include background(-150px, 0, $image-url-icon, $size: 500px);
+
+				width: 50px;
+				height: 50px;
+				transform: translate(-50%, -50%);
+				margin: 0;
+			}
+
+			&.ui-state-hover {
+				border: none;
+				background-color: $color2;
+			}
+		}
+
+		.ui-datepicker-next {
+			&.ui-datepicker-next-hover {
+				top: 50%;
+				right: 2px;
+			}
+
+			.ui-icon {
+				transform: translate(-50%, -50%) rotate(180deg);
+			}
+		}
+
+		.ui-datepicker-prev {
+			&.ui-datepicker-prev-hover {
+				top: 50%;
+				left: 2px;
+			}
+		}
+
+		.ui-datepicker-title {
+			padding-top: 20px;
+			padding-bottom: 24px;
+			margin: 0;
+			width: 100%;
+			font-family: $webfont-family1;
+			font-size: 18px;
+			line-height: 28px;
+			color: $color1;
+			font-weight: 700;
+		}
+	}
+
+	table {
+		margin: 12px 0 0 0;
+	}
+
+	tr {
+		margin-top: 4px;
+	}
+
+	th, td {
+		width: 40px;
+		height: 40px;
+	}
+
+	th {
+		font-family: $webfont-family1;
+		color: $color4;
+		font-size: 14px;
+		padding: 0;
+		line-height: 22px;
+		font-weight: 500;
+
+		span[title="Sunday"] {
+			color: $error-color;
+		}
+	}
+
+	td {
+		&.ui-state-disabled{
+			opacity: 1;
+
+			.ui-state-default {
+				color: $color4;
+			}
+		}
+
+		&.ui-state-highlight {
+			border: none;
+			background: transparent;
+			color: $color1;
+
+			a {
+				color: $color2;
+				background: $primary1;
+				font-weight: 700;
+			}
+
+			&+.ui-state-highlight {
+				position: relative;
+
+				&::before {
+					content: '';
+					display: block;
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					left: -7px;
+					height: 24px;
+					width: 14px;
+					background-color: $primary1;
+				}
+			}
+		}
+
+		&.ui-datepicker-week-end {
+			// a {
+			// 	color: $disable4;
+			// }
+
+			&.ui-state-highlight {
+				a {
+					color: $color2;
+				}
+			}
+		}
+
+		.ui-state-default {
+			margin: 0 auto;
+			padding: 0;
+			width: 40px;
+			height: 40px;
+			font-family: $webfont-family1;
+			font-size: 14px;
+			line-height: 40px;
+			font-weight: 500;
+			text-align: center;
+			border: none;
+			background-color: transparent;
+
+			&.ui-state-highlight {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				line-height: 20px;
+				// color: $primary1;
+				// background: $primary1;
+				// border-radius: 50%;
+
+				&::after {
+					@include font(10px, 14px, 400);
+
+					content: '오늘';
+					color: $primary1
+				}
+			}
+
+			&.ui-state-active {
+				color: $color2;
+				background: $primary1;
+				border-radius: 50%;
+
+				&::after {
+					display: none;
+				}
+			}
+		}
+	}
+}

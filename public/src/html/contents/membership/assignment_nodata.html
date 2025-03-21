@@ -1,0 +1,134 @@
+<main id="container">
+	<!-- 본문 영역 // -->
+	<div id="contents" class="{{prop.depth1}} {{prop.depth2}} {{prop.depth3}}"> <!-- 해당 depth별로 class명 추가 -->
+
+		<div class="inner">
+			<div class="title-area">
+				<h2 class="tit">회원권 양도 목록</h2>
+				<div class="btns">
+					<!-- 2024.12.13 // -->
+					<button type="button" class="btn green small"><i class="svgicon svgicon-standby"></i>양수 대기 접수</button>
+					<!-- // 2024.12.13 -->
+				</div>
+			</div>
+
+			<!-- 2025.02.04 수정 // -->
+			<div class="filter-area">
+				<div class="form-select country">
+					<div class="dropdown">
+						<button type="button" class="current"><span class="select-ti">국가 선택</span></button>
+						<ul class="list">
+							<li>
+								<label>
+									<input type="radio" name="form-country" value="value01" class="option">
+									<span class="option-txt">대한민국</span>
+								</label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="form-country" value="value02" class="option">
+									<span class="option-txt">중국</span>
+								</label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="form-country" value="value03" class="option">
+									<span class="option-txt">일본</span>
+								</label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="form-country" value="value04" class="option">
+									<span class="option-txt">태국</span>
+								</label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="form-country" value="value05" class="option">
+									<span class="option-txt">필리핀</span>
+								</label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="form-country" value="value06" class="option">
+									<span class="option-txt">말레이시아</span>
+								</label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="form-country" value="value07" class="option">
+									<span class="option-txt">베트남</span>
+								</label>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="form-select membership">
+					<div class="dropdown">
+						<button type="button" class="current"><span class="select-ti">골프장 회원권</span></button>
+						<ul class="list">
+							<li>
+								<label>
+									<input type="radio" name="form-membership" value="value01" class="option">
+									<span class="option-txt">골프장 회원권</span>
+								</label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="form-membership" value="value02" class="option">
+									<span class="option-txt">호텔/리조트 회원권</span>
+								</label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="form-membership" value="value03" class="option">
+									<span class="option-txt">라운지 이용권</span>
+								</label>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="form-select course">
+					<div class="dropdown">
+						<button type="button" class="current"><span class="select-ti">입회 구분</span></button>
+						<ul class="list">
+							<li>
+								<label>
+									<input type="radio" name="form-radio1" value="value01" class="option">
+									<span class="option-txt">법인</span>
+								</label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="form-radio1" value="value02" class="option">
+									<span class="option-txt">개인</span>
+								</label>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!--// 2025.02.04 수정 -->
+
+			<div class="list-area">
+				<div class="search-filter">
+					<div class="total">총 <strong>0</strong>건</div>
+					<div class="form-search">
+						<input type="text" name="" title="검색어 입력" placeholder="검색어 입력">
+						<button type="button" class="btn-delete"><span class="blind">삭제</span></button>
+						<button type="button" class="btn-search"><span class="blind">검색</span></button>
+					</div>
+				</div>
+
+				<div class="nodata">
+					<p>
+						<i class="icon icon-nodata"></i>
+						<small>현재 등록된 회원권이 없습니다.</small><!-- 등록된 회원권 없을 시 -->
+					</p>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!-- // 본문 영역 -->
+</main>

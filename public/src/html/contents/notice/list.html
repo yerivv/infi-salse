@@ -1,0 +1,145 @@
+<main id="container">
+	<!-- 본문 영역 // -->
+	<div id="contents" class="{{prop.depth1}} {{prop.depth2}} {{prop.depth3}}"> <!-- 해당 depth별로 class명 추가 -->
+
+		<div class="inner">
+			<div class="title-area">
+				<h2 class="tit">공지사항</h2>
+			</div>
+			<!--// 2024-12-26 수정 -->
+			<form>
+				<fieldset>
+					<div class="search-filter">
+						<div class="total">전체 <strong>100</strong></div>
+						<div class="search-form">
+							<div class="select small">
+								<select title="select 선택">
+									<option value="" class="select-ti">전체</option>
+									<!-- 2025.01.13 수정 //-->
+									<option value="">전체</option>
+									<!--// 2025.01.13 수정 -->
+									<option value="">제목</option>
+									<option value="">내용</option>
+								</select>
+							</div>
+							<div class="form-search">
+								<input type="text" name="" title="검색어 입력" placeholder="검색어 입력">
+								<button type="button" class="btn-delete"><span class="blind">삭제</span></button>
+								<button type="button" class="btn-search"><span class="blind">검색</span></button>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+			<!-- 2024-12-26 수정 //-->
+			<!-- list // -->
+			<table class="list-board">
+				<caption class="blind">공지사항 글 목록</caption>
+				<colgroup>
+					<col style="width:76px;">
+					<col>
+					<col style="width:72px;">
+					<col style="width:100px;">
+				</colgroup>
+				<thead>
+				<tr>
+					<!-- 2025.01.13 수정 //-->
+					<th scope="col">NO</th>
+					<th scope="col">제목</th>
+					<th scope="col">첨부파일</th>
+					<th scope="col">등록일</th>
+					<!--// 2025.01.13 수정 -->
+				</tr>
+				</thead>
+				<tbody>
+					<!-- 반복 // -->
+					<tr>
+						<td class="badge"><span class="card important">중요</span></td>
+						<td class="subject"><a href="#">공지사항 제목이 노출됩니다.</a></td>
+						<!-- 2025.01.13 수정 //-->
+						<td class="file"><button type="button" class="btn-download"><i class="svgicon svgicon-file"><span class="blind">첨부 파일 다운로드</span></i></button></td>
+						<!--// 2025.01.13 수정 -->
+						<td class="date">2024.04.04</td>
+					</tr>
+					<!-- // 반복 -->
+					<tr>
+						<td class="badge"><span class="card important">중요</span></td>
+						<td class="subject"><a href="#">공지사항 제목이 노출됩니다.</a></td>
+							<!-- 2025.01.13 수정 //-->
+						<td class="file"><button type="button" class="btn-download"><i class="svgicon svgicon-file"><span class="blind">첨부 파일 다운로드</span></i></button></td>
+						<!--// 2025.01.13 수정 -->
+						<td class="date">2024.04.04</td>
+					</tr>
+					<tr>
+						<td class="number">7</td>
+						<td class="subject"><a href="#">공지사항 제목이 노출됩니다.</a></td>
+						<td class="file"></td>
+						<td class="date">2024.04.04</td>
+					</tr>
+					<tr>
+						<td class="number">6</td>
+						<td class="subject"><a href="#">공지사항 제목이 노출됩니다.</a></td>
+						<td class="file"></td>
+						<td class="date">2024.04.04</td>
+					</tr>
+					<tr>
+						<td class="number">5</td>
+						<td class="subject"><a href="#">공지사항 제목이 노출됩니다.</a></td>
+						<td class="file"></td>
+						<td class="date">2024.04.04</td>
+					</tr>
+					<tr>
+						<td class="number">4</td>
+						<td class="subject"><a href="#">공지사항 제목이 노출됩니다.</a></td>
+						<!-- 2025.01.13 수정 //-->
+						<td class="file"><button type="button" class="btn-download"><i class="svgicon svgicon-file"><span class="blind">첨부 파일 다운로드</span></i></button></td>
+						<!--// 2025.01.13 수정 -->
+						<td class="date">2024.04.04</td>
+					</tr>
+					<tr>
+						<td class="number">3</td>
+						<td class="subject"><a href="#">공지사항 제목이 노출됩니다.</a></td>
+						<!-- 2025.01.13 수정 //-->
+						<td class="file"><button type="button" class="btn-download"><i class="svgicon svgicon-file"><span class="blind">첨부 파일 다운로드</span></i></button></td>
+						<!--// 2025.01.13 수정 -->
+						<td class="date">2024.04.04</td>
+					</tr>
+					<tr>
+						<td class="number">2</td>
+						<td class="subject"><a href="#">공지사항 제목이 노출됩니다.</a></td>
+						<td class="file"></td>
+						<td class="date">2024.04.04</td>
+					</tr>
+					<tr>
+						<td class="number">1</td>
+						<td class="subject"><a href="#">공지사항 제목이 노출됩니다.</a></td>
+						<td class="file"></td>
+						<td class="date">2024.04.04</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- // list -->
+	
+			<!-- pagination // -->
+			<div class="pagination-list">
+				<a href="#" class="btn-prev"><span class="blind">이전 페이지</span><i class="svgicon svgicon-pagearrowleft"></i></a>
+				<ol>
+					<li class="active"><a href="javascript:void(0);"><span class="blind">현재 페이지</span>1</a></li><!-- 활성화 class="active" -->
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+					<li><a href="#">5</a></li>
+					<li><a href="#">6</a></li>
+					<li><a href="#">7</a></li>
+					<li><a href="#">8</a></li>
+					<li><a href="#">9</a></li>
+					<li><a href="#">10</a></li>
+				</ol>
+				<a href="#" class="btn-next"><span class="blind">다음 페이지</span><i class="svgicon svgicon-pagearrowright"></i></a>
+			</div>
+			<!-- // pagination -->
+		</div>
+
+	</div>
+	<!-- // 본문 영역 -->
+</main>

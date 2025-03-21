@@ -1,0 +1,322 @@
+/**
+* --------------------------------
+* Member
+* --------------------------------
+*/
+
+@import
+	"./abstracts/variables",
+	"./abstracts/functions",
+	"./abstracts/mixins";
+
+#container:has(#contents.member) {
+	margin-top: 0;
+}
+
+.member {
+	padding-bottom: 30px;
+
+	&.login {
+		&#contents {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+
+		.login-area {
+			@include background(center, center, $url: $image-url + 'member/member_login_bg01.jpg', $size: cover);
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 45px 60px;
+			height: 100dvh;
+			transition: background 1.2s;
+
+			&.active {
+				background-image: url($image-url + 'member/member_login_bg02.jpg');
+			}
+		}
+
+		.logo-area {
+			width: 440px;
+			text-align: center;
+
+			.logo {
+				@include background(0, 0, $url: $image-url-logo, $size: 500px);
+
+				margin: 0 auto;
+				width: 224px;
+				height: 44px;
+			}
+
+			p {
+				@include font(18px, 28px);
+
+				color: #fff;
+				margin-top: 20px;
+			}
+		}
+
+		.inner {
+			margin: 0;
+			padding: 40px;
+			width: 400px;
+			border-radius: 10px;
+			background-color: rgba(255, 255, 255, 0.9);
+			box-shadow: 16px 16px 24px 0px rgba(3, 15, 48, 0.14);
+
+			.title-area {
+				text-align: center;
+
+				h2 {
+					@include font(24px, 36px);
+
+					display: block;
+					color: $primary3;
+				}
+
+				p {
+					margin-top: 8px;
+					color: $primary2;
+				}
+			}
+
+			.tabs {
+				display: flex;
+				margin-top: 30px;
+				background-color: #DDE6EE;
+				border: 3px solid #DDE6EE;
+				border-radius: 4px;
+
+				a {
+					@include font(12px, 18px, 500);
+
+					flex-grow: 1;
+					padding: 8px 10px;
+					text-align: center;
+					color: $color4;
+					border-radius: 4px;
+
+					&.active {
+						color: $primary2;
+						background-color: #ffffff;
+						box-shadow: 2px 2px 2px 0px rgba(24, 37, 76, 0.10);
+					}
+				}
+			}
+
+			.form-area {
+				.form-entry {
+					&:nth-child(1) {
+						input {
+							height: 44px;
+							line-height: 42px;
+						}
+					}
+
+					&:nth-child(2) {
+						margin-top: 8px;
+
+						input {
+							height: 44px;
+							line-height: 42px;
+						}
+					}
+
+					&:nth-child(3) {
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+
+						label {
+							span {
+								@include font(12px, 24px);
+
+								color: $color3;
+							}
+						}
+
+						.txt-find {
+							a {
+								@include font(12px, 20px);
+
+								display: inline-block;
+								position: relative;
+								color: $color3;
+
+								&:first-child {
+									padding-right: 12px;
+								}
+
+								& + a {
+									padding-left: 12px;
+
+									&::before {
+										@include position-center(50%, 0, 0, -50%);
+
+										content: '';
+										width: 1px;
+										height: 10px;
+										background-color: rgba(188, 206, 209, 0.5);
+									}
+								}
+							}
+						}
+					}
+
+					&.form-toggle {
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+						margin-top: 30px;
+						padding: 16px 10px 13px;
+						border-top: 1px solid $color7;
+
+						.txt {
+							font-weight: 500;
+							color: $color3;
+						}
+					}
+				}
+
+				&:has(.form-toggle input:checked) {
+					.btn.blue {
+						background-color: $green1;
+						border-color: $green1;
+					}
+				}
+
+				.btns {
+					.btn {
+						transition: border .3s, background .3s;
+					}
+				}
+			}
+
+			.copy {
+				@include font(11px, 14px);
+
+				margin-top: 30px;
+				text-align: center;
+				color: $color4;
+			}
+		}
+	}
+
+	&.findid {
+		&#contents {
+			min-height: 100dvh;
+		}
+
+		.inner {
+			padding-top: 40px;
+
+			&.pw {
+				.txt-area {
+					strong {
+						&::before {
+							background-position: -300px -50px;
+						}
+					}
+				}
+			}
+		}
+
+		.txt-area {
+			text-align: center;
+
+			strong {
+				@include before-icon(0, -50px, 120px, 68px, $size: 500px);
+				@include font(20px, 30px, 500);
+
+				display: inline-block;
+				position: relative;
+				padding-top: 88px;
+				color: $primary2;
+
+				&::before {
+					@include position-center(0, 50%, -50%, 0);
+				}
+
+				&::after {
+					content: '';
+					display: inline-block;
+					margin-left: 4px;
+					margin-bottom: 6px;
+					width: 6px;
+					height: 6px;
+					vertical-align: bottom;
+					border-radius: 50%;
+					background-color: $primary1;
+				}
+			}
+
+			p {
+				margin-top: 8px;
+			}
+		}
+
+		.form-area {
+			margin: 20px auto 0;
+			width: 302px;
+
+			.form-entry {
+				margin-top: 8px;
+			}
+
+			.btns {
+				margin-top: 20px;
+			}
+		}
+
+		.info {
+			@include font(12px, 20px);
+
+			margin-top: 16px;
+			text-align: center;
+			color: $color3;
+		}
+
+		.result-area {
+			margin-top: 30px;
+			padding: 30px 20px;
+			text-align: center;
+			border-radius: 8px;
+			background-color: $color10;
+
+			> p {
+				@include font(18px, 30px);
+
+				color: $color3;
+
+				span {
+					font-weight: 700;
+					color: $primary2;
+				}
+
+				strong {
+					color: $primary1;
+				}
+			}
+
+			.btns {
+				margin-top: 30px;
+				padding: 0 30px;
+			}
+		}
+
+		&.result {
+			.inner {
+				width: 420px;
+			}
+
+			.txt-area {
+				strong {
+					&::before {
+						background-position: -150px -50px;
+					}
+				}
+			}
+		}
+	}
+}

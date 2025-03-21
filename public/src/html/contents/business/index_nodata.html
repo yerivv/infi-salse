@@ -1,0 +1,260 @@
+<main id="container">
+	<!-- 본문 영역 // -->
+	<div id="contents" class="{{prop.depth1}} {{prop.depth2}} {{prop.depth3}}"> <!-- 해당 depth별로 class명 추가 -->
+
+		<div class="title-area">
+			<div class="tit-area">
+				<h2 class="tit">영업활동분석</h2>
+				<button class="btn small" onclick="fn.popup('open', '#popupLeaderBoard')"><i class="svgicon svgicon-leaderboard"></i>리더보드 보기</button>
+			</div>
+			<div class="month-sit">	
+				<div>
+					<p>월 현황</p>
+					<span class="daterangepickers single"><input type="text" placeholder="YYYY.MM.DD(D)" readonly><i class="svgicon svgicon-date"></i></span>
+				</div>
+				<button class="btn"><i class="icon icon-rank"></i>당월 시상후보</button>
+			</div>
+		</div>
+
+		
+		<div class="situation-area">
+			<div class="situation-tab">
+				<p><strong><i class="icon icon-ranking"></i>목표</strong>하루에 2명이상 미팅 및 상담 잡고 신입TGS는 최대한 상품 숙지 및 TM활성화를 몸에 익힌다.</p>
+			</div>
+			<div class="sub-ti">
+				<strong>당월 영업현황</strong>
+
+				<p>반영 기준 : 2024. 08. 07 12:00<span>단위 : 원​</span></p>
+			</div>
+
+			<div class="graph-area">
+				<div class="graph-item">
+					<div class="graph-ti">
+						<p>총 완납구좌 수</p>
+						<strong>5.0<span> / 25.5</span></strong>
+					</div>
+					<div class="graph-cont">
+						<div class="full-chart paymentchart">
+							<div class="chart-wrap"><canvas id="myCharts"></canvas></div>
+							<div class="txt-percentage"><em>50</em>%</div>
+						</div>
+						<script>
+							fn.doughnutChart('.paymentchart', '#2550D8');
+						</script>
+						<ul>
+							<li>
+								완납구좌
+								<strong>5</strong>
+							</li>
+							<li>
+								목표구좌
+								<strong>6</strong>
+							</li>
+							<li>
+								목표달성율
+								<strong>50%</strong>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="graph-item">
+					<div class="graph-ti">
+						<p>총 매출액(원)</p>
+						<strong>170,300,000<span> / 353,700,000</span></strong>
+					</div>
+					<div class="graph-cont">
+						<div class="full-chart saleschart">
+							<div class="chart-wrap"><canvas id="myCharts"></canvas></div>
+							<div class="txt-percentage"><em>25</em>%</div>
+						</div>
+						<script>
+							fn.doughnutChart('.saleschart', '#4aae78');
+						</script>
+						<ul>
+							<li>
+								실적금액​(계약금포함)
+								<strong>0</strong>
+							</li>
+							<li>
+								목표금액
+								<strong>170,400,000</strong>
+							</li>
+							<li>
+								매출달성율
+								<strong>0.00%</strong>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="report-area">
+			<!-- 2025.02.03 수정 // -->
+			<div class="sub-ti">
+				<p><strong>당월 실적 보고</strong></p>
+
+				<p>기준 : 2024.08.01 ~ 2024.08.07<span>단위 : 원​</span></p>
+			</div>
+			<!-- // 2025.02.03 수정 -->
+			
+			<table class="scroll">
+				<colgroup>
+					<col style="width: 224px;">
+					<col style="width: 224px;">
+					<col style="width: 224px;">
+					<col style="width: 224px;">
+				</colgroup>
+				<thead>
+					<tr>
+						<th>회원권명</th>
+						<th>목표</th>
+						<th>완납구좌</th>
+						<!-- 2025.02.04 수정 //-->
+						<th>실적금액​(계약금포함)</th>
+						<!--// 2025.02.04 수정 -->
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>남산</td>
+						<td>2</td>
+						<td>2</td>
+						<td><span>10,300,000</span></td>
+					</tr>
+					<tr>
+						<td>미션힐스 MH LUXURY</td>
+						<td>1</td>
+						<td>1</td>
+						<td><span>9,300,000</span></td>
+					</tr>
+					<tr>
+						<td>미션힐스 MH GOLD</td>
+						<td>3</td>
+						<td>1</td>
+						<td><span>8,300,000</span></td>
+					</tr>
+					<tr>
+						<td>빈펄 VIP</td>
+						<td>2</td>
+						<td>2</td>
+						<td><span>6,300,000</span></td>
+					</tr>
+					<tr>
+						<td>빈펄 GOLD</td>
+						<td>3</td>
+						<td>2</td>
+						<td><span>10,300,000</span></td>
+					</tr>
+					<tr>
+						<td>양수/양도</td>
+						<td>0</td>
+						<td>0</td>
+						<td><span>0</span></td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td><strong>합  계</strong></td>
+						<td><strong>11</strong></td>
+						<td><strong>11</strong></td>
+						<td><span><strong>34,200,000</strong></span></td>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+
+		<div class="report-area">
+			<!-- 2025.02.03 수정 // -->
+			<div class="sub-ti">
+				<p><strong>일일 예상구좌 현황​</strong></p>
+
+				<p>기준 : 2024.08.07 08:00<span><a href="#">예상구좌 등록<i class="icon icon-select"></i></a></span></p>
+			</div>
+			<!-- // 2025.02.03 수정 -->
+			<table>
+				<colgroup>
+					<col style="width: 298px;">
+					<col style="width: 298px;">
+					<col style="width: 298px;">
+				</colgroup>
+				<thead>
+					<tr>
+						<th>회원권명</th>
+						<th>완납구좌</th>
+						<th>구좌 추진사항</th>
+					</tr>
+				</thead>
+			</table>
+
+			<!-- nodata // -->
+			<div class="nodata">
+				<p>
+					<i class="icon icon-nodata"></i>
+					<small>
+						예상구좌를 작성 해주세요.
+					</small>
+				</p>
+			</div>
+			<!-- // nodata -->
+		</div>
+
+		<div class="report-area">
+			<!-- 2025.02.03 수정 // -->
+			<div class="sub-ti">
+				<p><strong>일일활동업무​</strong></p>
+
+				<p>기준 : 2024.08.07 08:00<span><a href="#">활동업무 등록<i class="icon icon-select"></i></a></span></p>
+			</div>
+			<!-- // 2025.02.03 수정 -->
+			<table>
+				<colgroup>
+					<col style="width: 127px;">
+					<col style="width: 127px;">
+					<col style="width: 127px;">
+					<col style="width: 127px;">
+					<col style="width: 127px;">
+					<col style="width: 127px;">
+					<col style="width: 127px;">
+				</colgroup>
+				<thead>
+					<tr>
+						<th>TM</th>
+						<th>응답</th>
+						<th>카톡유입</th>
+						<th>블로그</th>
+						<th>문자발송</th>
+						<th>DB획득</th>
+						<th>미팅</th>
+					</tr>
+				</thead>
+			</table>
+
+			<!-- nodata // -->
+			<div class="nodata">
+				<p>
+					<i class="icon icon-nodata"></i>
+					<small>
+						오늘 활동업무를 작성해주세요.
+					</small>
+				</p>
+			</div>
+			<!-- // nodata -->
+		</div>
+
+		<!-- 팝업 : 8월 영업실적 리더보드​ // -->
+		{{include('./components/popup.html', {
+			"prop": {
+				"id": "popupLeaderBoard",
+				"class": "popupleaderboard",
+				"tit": "8월 영업실적 리더보드​",
+				"header": true,
+				"content": "./contents/popup/popupLeaderBoard.html"
+			}
+		})}}
+		<!-- // 팝업 : 8월 영업실적 리더보드​​ -->
+
+
+	</div>
+	<!-- // 본문 영역 -->
+</main>

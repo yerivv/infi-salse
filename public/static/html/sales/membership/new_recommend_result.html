@@ -1,0 +1,528 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"> -->
+    <meta name="viewport" content="width=960">
+
+    <meta name="format-detection" content="telephone=no, email=no, address=no">
+
+    <meta name="robots" content="index, nofollow">
+    <meta name="description" content="페이지 설명">
+    <meta name="keywords" content="키워드, 키워드">
+
+    <meta property="og:site_name" content="한케이골프">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="title">
+    <meta property="og:image" content="image">
+    <meta property="og:url" content="url입력">
+    <meta property="og:description" content="페이지 설명">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../imgs/sales/common/favicon.ico">
+    <link rel="apple-touch-icon" href="../../../imgs/sales/common/apple-touch-icon.png">
+
+    <!-- 공통 css, js -->
+    <link rel="stylesheet" href="../../../css/sales/lib/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../../css/sales/lib/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../../../css/sales/common.css">
+    <script src="../../../jscript/sales/lib/jquery-3.6.4.min.js"></script>
+    <script src="../../../jscript/sales/lib/jquery-ui.min.js"></script>
+    <script src="../../../jscript/sales/lib/jquery.ui.touch-punch.min.js"></script>
+    <script src="../../../jscript/sales/lib/swiper-bundle.min.js"></script>
+
+    <script src="../../../jscript/sales/lib/moment.min.js"></script>
+    <script src="../../../jscript/sales/lib/daterangepicker.js"></script>
+
+    <script src="../../../jscript/sales/function.ui.js"></script>
+    <script src="../../../jscript/sales/common.ui.js"></script>
+
+    <!-- 페이지별 css, js -->
+
+    <link rel="stylesheet" href="../../../css/sales/membership.css">
+    <link rel="stylesheet" href="../../../css/sales/override.css">
+
+
+
+
+
+    <title> 회원권 추천하기 결과 - 한케이골프</title>
+
+
+</head>
+
+<body>
+
+<noscript>
+    이 사이트를 이용하기 위해서 자바스크립트를 활성화 시킬 필요가 있습니다.
+    <a href="http://www.enable-javascript.com/ko/" target="_blank">브라우저에서 자바스크립트를 활성화하는 방법</a>을 참고 하세요.
+</noscript>
+
+<div id="wrap">
+    <a href="#contents" class="skip">본문 영역으로 바로가기</a>
+
+    <!-- header // -->
+
+    <header id="header">
+        <div class="inner">
+            <h1 class="logo"><a href="#"><span class="blind">Han k Golf For Sales</span></a></h1>
+
+            <div class="tab-swiper">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+
+                        <!--
+                        .tab-swiper > .swiper-slide append, remove 후 swiper update를 위해 호출
+
+                        default(첫번째 버튼 활성화):  fn.headerTabSwiper();
+                        n번째 버튼 활성화: fn.headerTabSwiper(n-1);
+                    -->
+                        <div class="swiper-slide">
+                            <a href="#" class="active">회원권 소개</a><!-- 활성화 class="active" -->
+                            <button type="button" class="btn-close"><span class="blind">닫기</span><i class="svgicon svgicon-close"></i></button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="util">
+                <div class="toggle-area">
+                    <label class="check-toggle">
+                        <strong class="toggle-txt on">영업활동 ON</strong>
+                        <input type="checkbox" name="">
+                        <strong class="toggle-txt off">영업활동 OFF</strong>
+                    </label>
+                </div>
+                <button type="button" class="btn-masking" onclick="fn.toggleActive(this)"><span class="blind">마스킹해제</span></button><!-- 활성화 class="active" -->
+                <button type="button" class="btn-allmenu" onclick="fn.popup('open', '#popupAllMenu');"><span class="blind">전체 메뉴</span></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- // header -->
+
+    <!-- container // -->
+    <main id="container">
+        <!-- 본문 영역 // -->
+        <div id="contents" class="membership total result-new"> <!-- 해당 depth별로 class명 추가 -->
+
+            <div class="inner">
+                <div class="title-area">
+                    <h2 class="tit">회원권 추천 결과</h2>
+                    <a href="new_total.html" class="btn small"><i class="svgicon svgicon-listallview"></i>회원권 전체보기</a>
+                </div>
+                <div class="filter-area">
+                    <div class="user">
+                        <p class="txt-dot"><strong><span>최선이</span> 고객님</strong>을 위한 맞춤 회원권을 소개해드립니다</p>
+                    </div>
+                    <div class="box">
+                        <button type="button" class="btn" onclick="fn.popup('open', '#popupRecommendFilter');">필터</button>
+                        <span onClick="filterOpen('1');">해외 골프 경험</span>
+                        <span onClick="filterOpen('2');">희망 예산</span>
+                        <span onClick="filterOpen('3');">이용 인원</span>
+                        <span onClick="filterOpen('4');">선호 국가</span>
+                        <span onClick="filterOpen('5');">선호 기간</span>
+                        <span onClick="filterOpen('6');">선호 골프 유형</span>
+                        <span onClick="filterOpen('7');">골프 구력</span>
+                        <span onClick="filterOpen('8');">코스 난이도</span>
+                    </div>
+                </div>
+
+                <div class="search-filter">
+                    <div class="total">총 <strong>16</strong>건</div>
+                </div>
+
+                <div class="list-area inner">
+                    <div class="recommends">
+                        <!-- item -->
+                        <div class="item">
+                            <div class="thumb-box">
+                                <div class="thumb">
+                                    <img src="../../../imgs/sales/temp/membership-card01-gold.png" alt="삼투엔람 GOLD" class="img" />
+
+                                    <div class="box">
+                                        <span class="badge">개인</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info-box">
+                                <h4 class="name"><span class="text">삼투엔람 골프 리조트를 이용할 수 있는 GOLD 등급 회원권 GOLD 등급 회원권</span></h4>
+                                <div class="price-box">
+                                    <stong class="price">15,000,000</stong>
+                                    <span class="won">원</span>
+                                    <span class="vat">(VAT 포함)</span>
+                                </div>
+                                <div class="btn-box">
+                                    <label class="btn small line check">
+                                        <input type="checkbox" name="selectCompare">
+                                        <span>비교하기</span>
+                                    </label>
+                                    <a href="#" class="btn small green">입회 신청하기</a>
+                                </div>
+                                <div class="tooltip-wrap">
+                                    <button class="btn-tooltip"><i class="svgicon svgicon-warning"></i>일치</button>
+                                    <div class="tooltip">
+                                        <div class="tit">
+                                            <strong>일치</strong>
+                                            <button class="btn-close"><i class="svgicon svgicon-close"></i></button>
+                                        </div>
+                                        <div class="cont">
+                                            <p>한케이의 회원권 추천 로직에 의해 추천 회원권 결과를 제공합니다.<br>
+                                                •일치 : 질문 항목의 답변에 회원권 특징이 모두 만족<br>
+                                                •부분일치 : 질문 항목의 답변에 회원권 특징이 부분 만족</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // item -->
+                        <!-- item : 결합 -->
+                        <div class="item combine">
+                            <div class="thumb-box">
+                                <div class="thumb">
+                                    <img src="../../../imgs/sales/temp/membership-card02-vip.png" alt="삼투엔람 GOLD" class="img" />
+                                </div>
+                                <div class="box">
+                                    <span class="badge combine">결합</span>
+                                </div>
+                            </div>
+                            <div class="info-box">
+                                <h4 class="name"><span class="text">가싼쿤탄 SMART</span></h4>
+                                <div class="price-box">
+                                    <stong class="price">15,000,000</stong>
+                                    <span class="won">원</span>
+                                </div>
+                                <div class="btn-box">
+                                    <a href="new_intro.html" class="btn small line">자세히 보기</a>
+                                    <a href="#" class="btn small green">입회 신청하기</a>
+                                </div>
+                                <div class="tooltip-wrap partial">
+                                    <button class="btn-tooltip"><i class="svgicon svgicon-warning"></i>부분일치</button>
+                                    <div class="tooltip">
+                                        <div class="tit">
+                                            <strong>부분일치</strong>
+                                            <button class="btn-close"><i class="svgicon svgicon-close"></i></button>
+                                        </div>
+                                        <div class="cont">
+                                            <p>한케이의 회원권 추천 로직에 의해 추천 회원권 결과를 제공합니다.<br>
+                                                •일치 : 질문 항목의 답변에 회원권 특징이 모두 만족<br>
+                                                •부분일치 : 질문 항목의 답변에 회원권 특징이 부분 만족(부분일치 항목 : 희망 예산/이용 인원/선호 국가)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // item : 결합 -->
+                        <!-- item -->
+                        <div class="item">
+                            <div class="thumb-box">
+                                <div class="thumb">
+                                    <img src="../../../imgs/sales/temp/membership-card01-gold.png" alt="삼투엔람 GOLD" class="img" />
+
+                                    <div class="box">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info-box">
+                                <h4 class="name"><span class="text">삼투엔람 골프 리조트를 이용할 수 있는 GOLD 등급 회원권 GOLD 등급 회원권</span></h4>
+                                <div class="price-box">
+                                    <stong class="price">15,000,000</stong>
+                                    <span class="won">원</span>
+                                    <span class="vat">(VAT 포함)</span>
+                                </div>
+                                <div class="btn-box">
+                                    <label class="btn small line check">
+                                        <input type="checkbox" name="selectCompare">
+                                        <span>비교하기</span>
+                                    </label>
+                                    <a href="#" class="btn small green">입회 신청하기</a>
+                                </div>
+                                <div class="tooltip-wrap">
+                                    <button class="btn-tooltip"><i class="svgicon svgicon-warning"></i>일치</button>
+                                    <div class="tooltip">
+                                        <div class="tit">
+                                            <strong>일치</strong>
+                                            <button class="btn-close"><i class="svgicon svgicon-close"></i></button>
+                                        </div>
+                                        <div class="cont">
+                                            <p>한케이의 회원권 추천 로직에 의해 추천 회원권 결과를 제공합니다.<br>
+                                                •일치 : 질문 항목의 답변에 회원권 특징이 모두 만족<br>
+                                                •부분일치 : 질문 항목의 답변에 회원권 특징이 부분 만족</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // item -->
+                        <!-- item : 결합 -->
+                        <div class="item combine">
+                            <div class="thumb-box">
+                                <div class="thumb">
+                                    <img src="../../../imgs/sales/temp/membership-card02-vip.png" alt="삼투엔람 GOLD" class="img" />
+                                </div>
+                                <div class="box">
+                                    <span class="badge">개인</span>
+                                    <span class="badge combine">결합</span>
+                                </div>
+                            </div>
+                            <div class="info-box">
+                                <h4 class="name"><span class="text">가싼쿤탄 SMART</span></h4>
+                                <div class="price-box">
+                                    <stong class="price">15,000,000</stong>
+                                    <span class="won">원</span>
+                                </div>
+                                <div class="btn-box">
+                                    <a href="new_intro.html" class="btn small line">자세히 보기</a>
+                                    <a href="#" class="btn small green">입회 신청하기</a>
+                                </div>
+                                <div class="tooltip-wrap partial">
+                                    <button class="btn-tooltip"><i class="svgicon svgicon-warning"></i>부분일치</button>
+                                    <div class="tooltip">
+                                        <div class="tit">
+                                            <strong>부분일치</strong>
+                                            <button class="btn-close"><i class="svgicon svgicon-close"></i></button>
+                                        </div>
+                                        <div class="cont">
+                                            <p>한케이의 회원권 추천 로직에 의해 추천 회원권 결과를 제공합니다.<br>
+                                                •일치 : 질문 항목의 답변에 회원권 특징이 모두 만족<br>
+                                                •부분일치 : 질문 항목의 답변에 회원권 특징이 부분 만족(부분일치 항목 : 희망 예산/이용 인원/선호 국가)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // item : 결합 -->
+                    </div>
+                </div>
+                <div class="btns bottom">
+                    <button type="button" class="btn big" onclick="fn.popup('open', '#popupCompare');">회원권 비교하기<em>2</em></button>
+                </div>
+            </div>
+
+        </div>
+        <script>
+            // 비교하기 버튼
+            document.addEventListener("DOMContentLoaded", function () {
+                const checkboxes = document.querySelectorAll('input[name="selectCompare"]');
+                checkboxes.forEach(checkbox => {
+                    checkbox.addEventListener("change", function () {
+                        const checkedCount = document.querySelectorAll('input[name="selectCompare"]:checked').length;
+
+                        if (checkedCount > 3) {
+                            alert("비교하기는 3개까지 선택 할 수 있어요.");
+                            //fn.popup('open', '#popupAlert', 'alert', '비교하기는 3개까지 선택 할 수 있어요.');
+                            this.checked = false;
+                        } else if (this.checked) {
+                            alert("선택하신 회원권이\n비교함에 추가되었습니다.");
+                            //fn.popup('open', '#popupAlert', 'alert', '선택하신 회원권이\n비교함에 추가되었습니다.');
+                        }
+                    });
+                });
+            });
+
+            const filterOpen = (tab) => {
+                const popup = document.querySelector('#popupRecommendFilter');
+                fn.popup('open', '#popupRecommendFilter');
+                if (popup) {
+                    popup.setAttribute('data-tab', tab); // data-tab 속성 추가
+                }
+            }
+        </script>
+        <!-- // 본문 영역 -->
+    </main>
+
+    <!-- 팝업 : 회원권 비교하기​ // -->
+    <article id="popupCompare" class="popup popupcompare popupcompare2">
+        <div class="inner">
+
+            <header class="header disabled">
+                <h2 class="tit">{{prop.tit}}</h2>
+            </header>
+
+            <div class="contents scrollbar">
+                <div class="scroll-content">
+                    <div class="cont">
+                        <div class="tit-area">
+                            <div class="num"></div>
+                            <strong>비교함에 담긴 회원권</strong>
+                            <p>최대 3개까지 비교하기 가능해요</p>
+                        </div>
+                        <!--// 2024-12-17 수정 -->
+                        <div class="list-area">
+                            <div class="compare-list">
+                                <ul>
+                                    <!-- 반복 영역 // -->
+                                    <li>
+                                        <div class="membership-cont">
+                                            <div class="membership-tit">
+                                                <p>VIETNAM</p>
+                                                <strong>삼투엔람</strong>
+                                                <span>GOLD</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!-- // 반복 영역 -->
+
+                                    <li>
+                                        <div class="membership-cont">
+                                            <div class="membership-tit">
+                                                <p>CHINA</p>
+                                                <strong>미션힐즈 하이커우</strong>
+                                                <span>MH LUXYRY</span>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <!-- nodata // -->
+                                    <li>
+                                        <p class="txt-nodata">
+                                            <span>3</span>
+                                            3개까지 비교하기 가능해요
+                                        </p>
+                                    </li>
+                                    <!-- // nodata -->
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- 2024-12-17 수정 //-->
+                    </div>
+
+                    <div class="btns bottom">
+                        <button type="button" class="btn line" onclick="fn.popup('close', this)">닫기</button>
+                         <button type="button" class="btn bt-compare">회원권 비교하기 <em>2</em></button>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" class="btn-close" onclick="fn.popup('close', this);"><span class="blind">닫기</span><i class="svgicon svgicon-close"></i></button>
+        </div>
+        <script>
+            // 비교하기 버튼
+            const compareButton = document.querySelector('.bt-compare');
+            compareButton.addEventListener("click", function () {
+                if (confirm("비교하기 페이지로 이동할까요?")) {
+                    location.href='compare.html';
+                } else {
+                }
+
+                // fn.popupConfirm('open', '#popupConfirm', 'confirm', '비교하기 페이지로 이동할까요?', '확인', function(result) {
+                //     if (result) {
+                //         //비교하기 페이지 이동
+                //     } else {
+                //         // 취소 버튼 동작
+                //     }
+                // });
+            });
+        </script>
+    </article>
+    <hr id="popupCompare_end">
+    <!-- // 팝업 : 회원권 비교하기​ -->
+
+    <!-- 팝업 : 회원권 추천 필터 // -->
+    <article id="popupRecommendFilter" class="popup popupRecommendFilter" data-tab="">
+        <div class="inner">
+            <header class="header">
+                <h2 class="tit">다시 추천하기</h2>
+            </header>
+            <div class="contents scrollbar">
+                <div class="scroll-content">
+                    <div class="cont">
+                        <div class="tabmenu">
+                            <!-- tab-ti // -->
+                            <div class="tab-ti full line">
+                                <a href="#filterCont1" data-index="1" class="active">해외 골프 경험</a> <!-- 활성화 class="active" -->
+                                <a href="#filterCont2" data-index="2" class="">희망 예산</a>
+                                <a href="#filterCont3" data-index="3" class="">이용 인원</a>
+                                <a href="#filterCont4" data-index="4" class="">선호 국가</a>
+                                <a href="#filterCont5" data-index="5" class="">선호 기간</a>
+                                <a href="#filterCont6" data-index="6" class="">선호 골프 유형</a>
+                                <a href="#filterCont7" data-index="7" class="">골프 구력</a>
+                                <a href="#filterCont8" data-index="8" class="">코스 난이도</a>
+                            </div>
+                            <!-- // tab-ti -->
+                            <br>
+                            <!-- tab-contents // -->
+                            <div id="filterCont1" data-index="1" class="tab-contents active">가망고객 조회 컨텐츠</div> <!-- 활성화 class="active" -->
+                            <div id="filterCont2" data-index="2" class="tab-contents">담당고객 조회 컨텐츠</div>
+                            <div id="filterCont3" data-index="3" class="tab-contents">33</div>
+                            <div id="filterCont4" data-index="4" class="tab-contents">44</div>
+                            <div id="filterCont5" data-index="5" class="tab-contents">55</div>
+                            <div id="filterCont6" data-index="6" class="tab-contents">66</div>
+                            <div id="filterCont7" data-index="7" class="tab-contents">77</div>
+                            <div id="filterCont8" data-index="8" class="tab-contents">88</div>
+                            <!-- // tab-contents -->
+                        </div>
+                    </div>
+
+                    <div class="btns bottom">
+                        <button type="button" class="btn line" onclick="fn.popup('close', this)">닫기</button>
+                        <button type="button" class="btn line bt-reset">초기화</button>
+                        <button type="button" class="btn bt-submit">적용하기</button>
+                    </div>
+                </div>
+            </div>
+
+<!--            <button type="button" class="btn-close" onclick="fn.popup('close', this);"><span class="blind">닫기</span><i class="svgicon svgicon-close"></i></button>-->
+
+            <script>
+                // 탭 활성화 함수
+                const popup = document.querySelector("#popupRecommendFilter");
+
+                //if (!popup) return;
+
+                // MutationObserver 설정
+                const observer = new MutationObserver(() => {
+                    if (popup.classList.contains("active")) {
+                        const tabValue = popup.getAttribute("data-tab");
+                        if (tabValue) {
+                            activateTab(tabValue);
+                        }
+                    }
+                });
+
+                // 감시 대상: class 속성 변경 감지
+                observer.observe(popup, { attributes: true, attributeFilter: ["class"] });
+
+                // 탭 활성화 함수
+                function activateTab(tab) {
+                    const tabs = popup.querySelectorAll(".tab");
+                    const contents = popup.querySelectorAll(".tab-content");
+
+                    tabs.forEach(tabEl => {
+                        if (tabEl.getAttribute("data-index") === tab) {
+                            tabEl.classList.add("active");
+                        } else {
+                            tabEl.classList.remove("active");
+                        }
+                    });
+
+                    contents.forEach(contentEl => {
+                        if (contentEl.getAttribute("data-index") === tab) {
+                            contentEl.classList.add("active");
+                        } else {
+                            contentEl.classList.remove("active");
+                        }
+                    });
+                }
+            </script>
+        </div>
+    </article>
+    <hr id="popupRecommendFilter_end">
+    <!-- // 팝업 : 회원권 추천 필터 -->
+
+    <!-- // container -->
+
+    <!-- footer // -->
+    <footer id="footer"></footer>
+    <!-- // footer -->
+</div>
+
+</body>
+
+</html>

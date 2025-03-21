@@ -1,0 +1,739 @@
+<main id="container">
+	<!-- 본문 영역 // -->
+	<div id="contents" class="{{prop.depth1}} {{prop.depth2}} {{prop.depth3}}"> <!-- 해당 depth별로 class명 추가 -->
+
+		<div class="inner">
+			<div class="title-area">
+				<h2 class="tit">입회신청서</h2>
+				<p class="sub-tit">입회신청서 작성을 위한 정보를 입력해 주세요.</p>
+				<div class="btns">
+					<button type="button" class="btn line small"><i class="svgicon svgicon-trash"></i>취소하기</button>
+					<!-- 2024.12.13 // -->
+					<button type="button" class="btn small"><i class="svgicon svgicon-save"></i>임시저장</button>
+					<button type="button" class="btn green small"><i class="svgicon svgicon-pen"></i>작성하기</button>
+					<!-- // 2024.12.13 -->
+				</div>
+			</div>
+
+			<form>
+				<fieldset>
+					<div class="form-area">
+						<div class="info-area inner">
+							<!--// 2025.01.03  수정 -->
+							<h3>구분</h3>
+							<div class="select">
+								<select title="구분 선택">
+									<option value="" class="select-ti">신규입회</option>
+									<option value="">신규입회</option>
+									<option value="">양수입회</option>
+									<option value="" selected>승급입회</option>
+								</select>
+							</div>
+							<!-- 2025.01.03 수정 //-->
+							<!-- 2024.12.13 //  -->
+							<h3>
+								승급 정보 
+								<button type="button" onclick="fn.popup('open', '#popupCustomerLookup')">고객 조회 <i class="svgicon svgicon-arrowright2"></i></button>
+							</h3>
+							<div class="application-info">
+								<div class="form-group">
+									<input type="text" title="" placeholder="신청자명" value="김신청">
+									<input type="text" title="" placeholder="신청자 휴대폰번호" value="010-1234-1234">
+									<input type="text" title="" placeholder="신청자 이메일" value="abcd123@aaa.co.kr">
+								</div>
+							</div>
+							<!-- 
+							<div class="subject">
+								<div class="customer">
+									<span class="card">신규입회</span>
+									<strong>김신청</strong>
+									<span>010-1234-1234</span>
+								</div>
+								<p>계약번호 <strong>AD123545678966344</strong></p>
+							</div> 
+							-->
+							<!-- // 2024.12.13 -->
+
+							<div class="info">
+								<!-- 2024.12.13 -->
+								<h3>상품 정보</h3>
+								<!-- // 2024.12.13 -->
+
+								<div class="product-info induction">
+									<div>
+										<div class="select big round">
+											<span class="badge blue">보유</span>
+											<select title="골프장 선택">
+												<option value="" class="select-ti">골프장 선택</option>
+												<option value="">가싼쿤탄MVP</option>
+												<option value="">가싼쿤탄MVP</option>
+												<option value="">가싼쿤탄MVP</option>
+											</select>
+										</div>
+										<div class="cont">
+											<dl>
+												<dt>회원구분</dt>
+												<dd>기명 1명+무기명 2명</dd>
+											</dl>
+											<dl>
+												<dt>골프장</dt>
+												<dd>가싼쿤탄</dd>
+											</dl>
+											<dl>
+												<dt>입회금</dt>
+												<dd>100,000,000 원</dd>
+											</dl>
+											<dl>
+												<dt>유효기간</dt>
+												<dd>2024.12.01~2034.12.01</dd>
+											</dl>
+										</div>
+									</div>
+
+									<div>
+										<div class="select round">
+											<span class="badge green">승급</span>
+											<select title="회원권 선택">
+												<option value="" class="select-ti">회원권 선택</option>
+												<option value="">가싼쿤탄VVP</option>
+												<option value="">가싼쿤탄VVP</option>
+												<option value="">가싼쿤탄VVP</option>
+											</select>
+										</div>
+										<div class="cont">
+											<dl>
+												<dt>회원구분</dt>
+												<dd>무기명 4명</dd>
+											</dl>
+											<dl>
+												<dt>골프장</dt>
+												<dd>가싼쿤탄</dd>
+											</dl>
+											<dl>
+												<dt>입회금</dt>
+												<dd>150,000,000 원</dd>
+											</dl>
+											<dl>
+												<dt>유효기간</dt>
+												<dd>2024.12.01~2034.12.01</dd>
+											</dl>
+										</div>
+									</div>
+								</div>
+
+								<div class="contract-info blue">
+									<div class="left">
+										<div class="contract-tit">
+											<strong>입회 계약 정보</strong>
+										</div>
+
+										<div class="contract-cont">
+											<dl class="membership">
+												<dt><img src="{{dirRoot}}/static/imgs/sales/membership/membership_application_txt01.png" alt="Membership"></dt>
+												<dd>VIP 10년 정식회원권</dd>
+											</dl>
+											<dl class="club">
+												<dt><img src="{{dirRoot}}/static/imgs/sales/membership/membership_application_txt02.png" alt="GC · CC"></dt>
+												<dd>미션힐스 하이커우</dd>
+											</dl>
+										</div>
+									</div>
+
+									<div class="right">
+										<dl class="coverage">
+											<dt><img src="{{dirRoot}}/static/imgs/sales/membership/membership_application_txt04.png" alt="Coverage"></dt>
+											<dd>
+												<span>기명 <em>1</em></span>
+												<span>준회원 <em>2</em></span>
+											</dd>
+										</dl>
+										<dl class="price">
+											<dt><img src="{{dirRoot}}/static/imgs/sales/membership/membership_application_txt03.png" alt="Price"></dt>
+											<dd><strong>170,500,000</strong>원</dd>
+										</dl>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-set inner">
+							<h3>계약서 작성 방식</h3>
+							<div class="form-group write">
+								<div class="select small">
+									<select title="계약서 작성 방식 선택">
+										<option value="" class="select-ti">계약서 작성 방식 선택</option>
+										<option value="">전자 계약서 작성</option>
+										<option value="">서면 계약서 작성</option>
+									</select>
+								</div>
+								<div class="select small">
+									<!-- 2024.12.13 // --> 
+									<select title="입회자 구분 선택" disabled><!-- 계약서 작성 방식 선택 시 disabled false -->
+										<option value="" class="select-ti">입회자 구분 선택</option>
+										<option value="">개인</option>
+										<option value="">법인</option>
+									</select>
+									<!-- // 2024.12.13 --> 
+								</div>
+							</div>
+							<!--// 2025.02.14 수정 -->
+							<h3>서명 유형</h3>
+							<div class="form-group radio">
+								<label><input type="radio" name="radio1"><span>대면 서명</span></label>
+								<label><input type="radio" name="radio1"><span>이메일 서명</span></label>
+								<label><input type="radio" name="radio1"><span>알림톡 서명</span></label>
+							</div>
+							<!-- 2025.02.14 수정 //-->
+							<div class="cont-area">
+								<div class="tit-area">
+									<h4>입회자 <em>1</em></h4>
+									<!-- 2025.01.31 삭제 // -->
+										<!-- <button type="button" class="btn line small" disabled onclick="fn.popup('open', '#popupCustomerLookup')">고객 조회 <i class="svgicon svgicon-arrowright"></i></button> -->
+									<!-- // 2025.01.31 삭제  -->
+								</div>
+
+								<div class="cont inner">
+									<!-- 2024.12.13 : 삭제 // -->
+									<!-- <div class="guidetxt dot">
+										<ul>
+											<li>신청자는 실제 입회자의 정보와 상이할 수 있습니다. </li>
+											<li>가망/담당 고객으로 등록된 회원만 고객 정보를 조회 할 수 있습니다. </li>
+											<li>등록된 고객 정보를 조회하려면 [고객 조회] 버튼을 선택해 주세요. </li>
+											<li>법인 고객은 법인 상호명을 입력해 주세요.</li>
+											<li>조회되는 고객정보가 없다면 직접 입회 정보를 입력해 주세요.</li>
+										</ul>
+									</div> -->
+									<!-- 2024.12.13 : 삭제 -->
+									<!-- 2025.01.31 추가 // -->
+									<div class="form-entry gray">
+										<strong>입회자 유형</strong>
+										<div class="select">
+											<select title="입회자 유형 선택">
+												<option value="" class="select-ti">입회자 유형 선택</option>
+												<option value="">입회자1</option>
+												<option value="">입회자2</option>
+											</select>
+										</div>
+									</div>
+									<!-- // 2025.01.31 추가 -->
+									<!-- 2024.12.13 // -->
+									<div class="form-entry gray">
+										<strong>입회 신청 정보</strong>
+										<div class="form-group entrant">
+											<input type="text" title="이름(국문) 입력" placeholder="이름(국문) 입력">
+											<input type="text" title="이름(영문) 입력" placeholder="이름(영문) 입력">
+											<input type="text" title="생년월일 입력" placeholder="생년월일 입력">
+											<input type="text" title="여권번호 입력" placeholder="여권번호 입력">
+											<input type="text" title="주소 입력" placeholder="주소 입력">
+											<input type="text" title="연락처 입력" placeholder="연락처 입력">
+											<input type="text" title="이메일 입력" placeholder="이메일 입력">
+										</div>
+										<!-- // 2024.12.13 -->
+									</div>
+
+									<!--// 2025.02.14 삭제-->
+									<!-- <div class="form-entry gray beforeline">
+										<strong>전자 서명</strong>
+										<div class="sorting">
+											<div class="input-sorting">
+												<label><input type="radio" name="sign"><span>알림톡 발송하기</span></label>
+												<label><input type="radio" name="sign"><span>이메일 발송하기</span></label>
+											</div>
+										</div>
+									</div> -->
+									<!-- 2025.02.14 수정 //-->
+								</div>
+							</div>
+
+							<div class="cont-area">
+								<div class="tit-area">
+									<h4>입회자 <em>2</em></h4>
+									<!-- 2025.01.31 삭제 // -->
+										<!-- <button type="button" class="btn line small" disabled onclick="fn.popup('open', '#popupCustomerLookup')">고객 조회 <i class="svgicon svgicon-arrowright"></i></button> -->
+									<!-- // 2025.01.31 삭제  -->
+								</div>
+
+								<div class="cont inner">
+									<!-- 2024.12.13 : 삭제 // -->
+									<!-- <div class="guidetxt dot">
+										<ul>
+											<li>신청자는 실제 입회자의 정보와 상이할 수 있습니다. </li>
+											<li>가망/담당 고객으로 등록된 회원만 고객 정보를 조회 할 수 있습니다. </li>
+											<li>등록된 고객 정보를 조회하려면 [고객 조회] 버튼을 선택해 주세요. </li>
+											<li>법인 고객은 법인 상호명을 입력해 주세요.</li>
+											<li>조회되는 고객정보가 없다면 직접 입회 정보를 입력해 주세요.</li>
+										</ul>
+									</div> -->
+									<!-- 2024.12.13 : 삭제 -->
+									<!-- 2025.01.31 추가 // -->
+									<div class="form-entry gray">
+										<strong>입회자 유형</strong>
+										<div class="select">
+											<select title="입회자 유형 선택">
+												<option value="" class="select-ti">입회자 유형 선택</option>
+												<option value="">입회자1</option>
+												<option value="">입회자2</option>
+											</select>
+										</div>
+									</div>
+									<!-- // 2025.01.31 추가 -->
+									<!-- 2024.12.13 // -->
+									<div class="form-entry gray">
+										<strong>입회 신청 정보</strong>
+										<div class="form-group entrant">
+											<input type="text" title="이름(국문) 입력" placeholder="이름(국문) 입력">
+											<input type="text" title="이름(영문) 입력" placeholder="이름(영문) 입력">
+											<input type="text" title="생년월일 입력" placeholder="생년월일 입력">
+											<input type="text" title="여권번호 입력" placeholder="여권번호 입력">
+											<input type="text" title="주소 입력" placeholder="주소 입력">
+											<input type="text" title="연락처 입력" placeholder="연락처 입력">
+											<input type="text" title="이메일 입력" placeholder="이메일 입력">
+										</div>
+										<!-- // 2024.12.13 -->
+									</div>
+
+									<!--// 2025.02.14 삭제-->
+									<!-- <div class="form-entry gray beforeline">
+										<strong>전자 서명</strong>
+										<div class="sorting">
+											<div class="input-sorting">
+												<label><input type="radio" name="sign"><span>알림톡 발송하기</span></label>
+												<label><input type="radio" name="sign"><span>이메일 발송하기</span></label>
+											</div>
+										</div>
+									</div> -->
+									<!-- 2025.02.14 수정 //-->
+								</div>
+							</div>
+						</div>
+
+						<div class="info-area inner beforeline">
+							<div class="info">
+								<div class="contract-info green">
+									<div class="left">
+										<div class="contract-tit">
+											<strong>결합회원권</strong>
+										</div>
+
+										<div class="contract-cont">
+											<dl class="membership">
+												<dt><img src="{{dirRoot}}/static/imgs/sales/membership/membership_application_txt01.png" alt="Membership"></dt>
+												<dd>옌중 평생회원권</dd>
+											</dl>
+											<dl class="club">
+												<dt><img src="{{dirRoot}}/static/imgs/sales/membership/membership_application_txt02.png" alt="GC · CC"></dt>
+												<dd>치링 / 옌중</dd>
+											</dl>
+										</div>
+									</div>
+
+									<div class="right">
+										<dl class="coverage">
+											<dt><img src="{{dirRoot}}/static/imgs/sales/membership/membership_application_txt04.png" alt="Coverage"></dt>
+											<dd>
+												<span>기명 <em>1</em></span>
+												<span>준회원 <em>2</em></span>
+											</dd>
+										</dl>
+										<dl class="price">
+											<dt><img src="{{dirRoot}}/static/imgs/sales/membership/membership_application_txt03.png" alt="Price"></dt>
+											<dd><strong>999,999,000</strong>원</dd>
+										</dl>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-set inner">
+							<h3>계약서 작성 방식</h3>
+							<div class="form-group write">
+								<div class="select small">
+									<select title="계약서 작성 방식 선택">
+										<option value="" class="select-ti">계약서 작성 방식 선택</option>
+										<option value="">전자 계약서 작성</option>
+										<option value="">서면 계약서 작성</option>
+									</select>
+								</div>
+								<div class="select small">
+									<select title="입회자 구분 선택">
+										<option value="" class="select-ti">입회자 구분 선택</option>
+										<option value="">개인</option>
+										<option value="">법인</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="cont-area">
+								<div class="tit-area">
+									<h4>입회자 <em>1</em></h4>
+									<button type="button" class="btn line small" disabled onclick="fn.popup('open', '#popupCustomerLookup')">고객 조회 <i class="svgicon svgicon-arrowright"></i></button>
+								</div>
+
+								<div class="cont inner">
+									<!-- 2024.12.13 : 삭제 // -->
+									<!-- <div class="guidetxt dot">
+										<ul>
+											<li>신청자는 실제 입회자의 정보와 상이할 수 있습니다. </li>
+											<li>가망/담당 고객으로 등록된 회원만 고객 정보를 조회 할 수 있습니다. </li>
+											<li>등록된 고객 정보를 조회하려면 [고객 조회] 버튼을 선택해 주세요. </li>
+											<li>법인 고객은 법인 상호명을 입력해 주세요.</li>
+											<li>조회되는 고객정보가 없다면 직접 입회 정보를 입력해 주세요.</li>
+										</ul>
+									</div> -->
+									<!-- 2024.12.13 : 삭제 -->
+
+									<!-- 2024.12.13 // -->
+									<div class="form-entry gray">
+										<strong>입회 신청 정보</strong>
+										<div class="form-group entrant">
+											<input type="text" title="이름(국문) 입력" placeholder="이름(국문) 입력">
+											<input type="text" title="이름(영문) 입력" placeholder="이름(영문) 입력">
+											<input type="text" title="생년월일 입력" placeholder="생년월일 입력">
+											<input type="text" title="여권번호 입력" placeholder="여권번호 입력">
+											<input type="text" title="주소 입력" placeholder="주소 입력">
+											<input type="text" title="연락처 입력" placeholder="연락처 입력">
+											<input type="text" title="이메일 입력" placeholder="이메일 입력">
+											<input type="text" title="상호명(국문) 입력" placeholder="상호명(국문) 입력">
+											<input type="text" title="상호명(영문) 입력" placeholder="상호명(영문) 입력">
+											<input type="text" title="사업자등록번호 입력" placeholder="사업자등록번호 입력">
+											<input type="text" title="담당자 이름 입력" placeholder="담당자 이름 입력">
+											<input type="text" title="담당자 연락처 입력" placeholder="담당자 연락처 입력">
+										</div>
+										<!-- // 2024.12.13 -->
+									</div>
+
+									<div class="form-entry beforeline">
+										<label><input type="checkbox" name=""><span>입회 서류 작성이 완료 되었습니다.</span></label>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-set inner beforeline">
+							<h3>입회 금액 설정</h3>
+
+							<!-- 2024.12.13 // -->
+							<div class="cont-area point-area">
+								<div class="tit-area">
+									<h4>고객님의 보유 포인트 사용</h4>
+									<div class="price"><em>1,000,000</em>P</div>
+								</div>
+
+								<div class="cont">
+									<div class="form-entry gray">
+										<strong>잔여 <span><em>50,000</em>P</span></strong>
+										<input type="text" title="포인트 입력" placeholder="포인트 입력">
+									</div>
+								</div>
+							</div>
+							<!-- // 2024.12.13 -->
+						</div>
+
+						<div class="form-set inner beforeline">
+							<h3>결제 방식 설정</h3>
+							<div class="btns payment">
+								<label class="btn line"><input type="radio" name="payment"><span>무통장 입금</span></label>
+								<label class="btn line"><input type="radio" name="payment" class="virtual-radio"><span>가상계좌</span></label>
+								<label class="btn line"><input type="radio" name="payment" class="fullpayment-radio"><span>완납</span></label>
+							</div>
+
+							<div class="cont-area payment-area">
+								<div class="tit-area">
+									<h4>은행</h4>
+								</div>
+
+								<div class="cont">
+									<div class="form-btn">
+										<div class="select small">
+											<select title="은행 선택">
+												<option value="" class="select-ti">은행 선택</option>
+												<option value="">신한은행</option>
+												<option value="">신한은행</option>
+												<option value="">신한은행</option>
+											</select>
+										</div>
+
+										<button type="button" class="btn blue btn-account">계좌 생성하기</button>
+									</div>
+
+									<dl class="txt">
+										<dt>계좌번호</dt>
+										<dd>867737-04-002092</dd>
+									</dl>
+
+									<dl class="txt">
+										<dt>예금주</dt>
+										<dd>(주)한케이골프</dd>
+									</dl>
+								</div>
+							</div>
+
+							<div class="cont-area payment-area">
+								<div class="tit-area">
+									<!-- 2024.12.13 // -->
+									<h4>결제금액</h4>
+									<!-- // 2024.12.13 -->
+									<div class="price"><em>1,000,000</em>원</div>
+								</div>
+
+								<div class="form-entry gray cont">
+									<!-- 2024.12.13 // -->
+									<strong>계약금</strong>
+									<div class="form-btn">
+										<input type="text" title="숫자만 입력" placeholder="숫자만 입력">
+									</div>
+									<!-- // 2024.12.13 -->
+								</div>
+
+								<div class="form-entry gray cont">
+									<!-- 2025.01.03 수정 // -->
+									<strong>중도금(1차)</strong>
+									<div class="form-btn">
+										<input type="text" title="숫자만 입력" placeholder="숫자만 입력">
+									</div>
+									<!-- // 2025.01.03 수정 -->
+								</div>
+
+								<div class="form-entry gray cont">
+									<!-- 2024.12.13 // -->
+									<strong>중도금(2차)</strong>
+									<div class="form-btn">
+										<input type="text" title="숫자만 입력" placeholder="숫자만 입력">
+										<button type="button" class="btn-remove"><i class="svgicon svgicon-minus"></i></button>
+									</div>
+									<!-- // 2024.12.13 -->
+								</div>
+
+								<div class="form-entry gray cont">
+									<!-- 2025.01.03 수정 // -->
+									<strong>중도금(3차)</strong>
+									<div class="form-btn">
+										<input type="text" title="숫자만 입력" placeholder="숫자만 입력">
+										<button type="button" class="btn-add"><i class="svgicon svgicon-plus"></i></button>
+									</div>
+									<!-- // 2025.01.03 수정 -->
+								</div>
+
+								<!-- 2024.12.13 // -->
+								<div class="form-entry gray cont">
+									<strong>잔금</strong>
+									<div class="form-btn">
+										<input type="text" title="숫자만 입력" placeholder="숫자만 입력" value="5,000,000" readonly>
+									</div>
+								</div>
+								<!-- // 2024.12.13 -->
+
+								<div class="form-entry gray cont">
+									<strong>입금기한</strong>
+									<!-- 2024.12.13 // -->
+									<div class="daterangepickers single">
+										<input type="text" placeholder="YYYY.MM.DD" readonly>
+										<i class="svgicon svgicon-date"></i>
+									</div>
+									<!-- // 2024.12.13 -->
+								</div>
+							</div>
+
+							<!-- 2024.12.13 : 삭제 // -->
+							<!-- <div class="cont-area payment-area">
+								<div class="tit-area">
+									<h4>고객님의 보유 포인트 사용</h4>
+									<div class="price"><em>1,000,000</em>원</div>
+								</div>
+
+								<div class="form-entry gray cont">
+									<strong>잔여 포인트 <span class="txt-point"><em>50,000</em>P</span></strong>
+									<input type="number" title="" placeholder="" value="10000">
+								</div>
+							</div> -->
+							<!-- // 2024.12.13 : 삭제 -->
+
+							<!-- 2024.12.13 // -->
+							<div class="cont-area fullpayment-area">
+								<div class="tit-area">
+									<label><input type="checkbox" name="" id=""><span>김고객 님으로 입금된 입회금이 확인 되었습니다.</span></label>
+								</div>
+							</div>
+							<!-- // 2024.12.13 -->
+						</div>
+
+						<!-- 2025.01.31 수정 // -->
+						<div class="form-set inner beforeline">
+							<h3>입회 정보 </h3>
+
+							<div class="cont-area">
+								<div class="tit-area">
+									<h4>입회금</h4>
+									<div class="price"><em>11,000,000</em>원</div>
+								</div>
+
+								<div class="cont">
+									<dl class="txt">
+										<dt>포인트</dt>
+										<dd><strong>10,000</strong>P</dd>
+									</dl>
+								</div>
+							</div>
+
+							<div class="cont-area">
+								<div class="tit-area">
+									<h4>결제금액</h4>
+									<div class="price"><em>9,900,000</em>원</div>
+								</div>
+
+								<!-- <div class="cont payment-area">
+									<dl class="txt">
+										<dt>계약금</dt>
+										<dd><strong>1,000,000</strong>원</dd>
+									</dl>
+
+									<dl class="txt">
+										<dt>중도금(1차)</dt>
+										<dd><strong>1,000,000</strong>원</dd>
+									</dl>
+
+									<dl class="txt">
+										<dt>중도금(2차)</dt>
+										<dd><strong>1,000,000</strong>원</dd>
+									</dl>
+
+									<dl class="txt">
+										<dt>중도금(3차)</dt>
+										<dd><strong>1,000,000</strong>원</dd>
+									</dl>
+
+									<dl class="txt">
+										<dt>중도금(4차)</dt>
+										<dd><strong>1,000,000</strong>원</dd>
+									</dl>
+
+									<dl class="txt">
+										<dt>중도금(5차)</dt>
+										<dd><strong>1,000,000</strong>원</dd>
+									</dl>
+
+									<dl class="txt">
+										<dt>중도금(6차)</dt>
+										<dd><strong>1,000,000</strong>원</dd>
+									</dl>
+
+									<dl class="txt">
+										<dt>중도금(7차)</dt>
+										<dd><strong>1,000,000</strong>원</dd>
+									</dl>
+
+									<dl class="txt">
+										<dt>중도금(8차)</dt>
+										<dd><strong>1,000,000</strong>원</dd>
+									</dl>
+
+									<dl class="txt">
+										<dt>잔금</dt>
+										<dd><strong>990,000</strong>원</dd>
+									</dl>
+								</div> -->
+							</div>
+
+							<!-- 2024.12.13 : 삭제 // -->
+							<!-- <div class="cont-area fullpayment-area">
+								<div class="tit-area">
+									<label><input type="checkbox" name="" id=""><span>김고객 님으로 입금된 입회금이 확인 되었습니다.</span></label>
+								</div>
+							</div> -->
+							<!-- // 2024.12.13 : 삭제 -->
+
+							<!-- 2024.12.13 : 삭제 // -->
+							<!-- <div class="cont-area">
+								<div class="tit-area">
+									<h4>계약 정보</h4>
+									<p>
+										치링MVP - 전자계약 <br>
+										옌중 평생 회원권 - 수기계약
+									</p>
+								</div>
+
+								<div class="tit-area">
+									<h4>입금 정보</h4>
+									<p>(신한은행) 110-1111-11111 ㈜한케이골프</p>
+								</div>
+							</div> -->
+							<!-- // 2024.12.13 : 삭제 -->
+
+							<!-- 2024.12.13 // -->
+							<div class="cont-area">
+								<div class="tit-area">
+									<h4>계약 정보</h4>
+								</div>
+
+								<div class="cont">
+									<dl class="txt">
+										<dt>VIP 10년 정식 회원권</dt>
+										<!-- 2024.12.13 // -->
+										<dd>전자계약</dd>
+										<!-- // 2024.12.13 -->
+									</dl>
+									<dl class="txt">
+										<dt>옌중 MVP 무기명 회원권</dt>
+										<!-- 2024.12.13 // -->
+										<dd>서면계약</dd>
+										<!-- // 2024.12.13 -->
+									</dl>
+								</div>
+							</div>
+
+							<div class="cont-area">
+								<div class="tit-area">
+									<h4>입금 정보</h4>
+									<p class="payment-area"><strong>무통장입금</strong></p>
+									<p class="fullpayment-area"><strong>완납</strong></p>
+								</div>
+
+								<div class="cont">
+									<dl class="txt">
+										<dt>은행</dt>
+										<!-- 2024.12.13 // -->
+										<dd>국민은행</dd>
+										<!-- // 2024.12.13 -->
+									</dl>
+									<dl class="txt">
+										<dt>계좌번호</dt>
+										<!-- 2024.12.13 // -->
+										<dd>867737-04-002092</dd>
+										<!-- // 2024.12.13 -->
+									</dl>
+									<dl class="txt">
+										<dt>예금주</dt>
+										<!-- 2024.12.13 // -->
+										<dd>㈜한케이골프</dd>
+										<!-- // 2024.12.13 -->
+									</dl>
+								</div>
+							</div>
+							<!-- // 2024.12.13 -->
+						</div>
+						<!-- // 2025.01.31 수정 -->
+
+						<div class="btns inner">
+							<button type="button" class="btn line">취소하기</button>
+							<button type="button" class="btn">임시저장</button>
+							<button type="button" class="btn green">작성하기</button>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+
+	</div>
+	<!-- // 본문 영역 -->
+</main>
+<!-- 팝업 : 고객 조회 - nodata // -->
+{{include('./components/popup.html', {
+	"prop": {
+		"id": "popupCustomerLookup",
+		"class": "popupcustomerlookup",
+		"tit": "고객 조회",
+		"header": true,
+		"content": "./contents/popup/popupCustomerLookup.html"
+	}
+})}}
+<!-- // 팝업 : 고객 조회 - nodata -->

@@ -1,0 +1,67 @@
+// --------------------------------
+// Variables
+// --------------------------------
+
+// url
+$base-url: '../../../';
+$front-fonts-url: $base-url + 'static/fonts/front/';
+$fonts-url: $base-url + 'static/fonts/sales/';
+$image-url: $base-url + 'static/imgs/sales/';
+$image-url-form: $image-url + 'common/form.png';
+$image-url-icon: $image-url + 'common/icon.png';
+$image-url-logo: $image-url + 'common/logo.png';
+
+// svg url
+$svg20: 'common/icon_20.svg';
+$svg16: 'common/icon_16.svg';
+$svg12: 'common/icon_12.svg';
+
+// width
+$maxWidth: 960px;
+// $maxWidthCon: 100%;
+// $maxWidthConWide: calc(100% - 40px); // padding: 0 20px; 과 같이 사용 / 여백
+
+// fonts
+$webfont-family1: 'Pretendard';
+$webfont-family2: 'EBGaramond';
+$font-family1: $webfont-family1, 'Malgun Gothic', '맑은 고딕', Dotum, '돋움', sans-serif;
+$font-size: 14px;
+$font-weight: 400;
+$line-height: 22px;
+$letter-spacing: 0;
+
+// color
+$color0: #000000;
+$color1: #091b4d;
+$color2: #ffffff;
+$color3: #596584;
+$color4: #8f97b2;
+$color5: #edf1f8;
+$color6: #e7ebf6;
+$color7: #dddddd;
+$color8: #e6e9f2;
+$color9: #eeeeee;
+$color10: #f7f7f7;
+$color11: #f7f7fa;
+
+$primary1: #2550d8;
+$primary2: #092060;
+$primary3: #002394;
+$primary4: #4673FF;
+$primary5: #aaccff;
+
+$green1: #4aae78;
+$green2: #EFF8EF;
+$green3: #7DDDB3;
+$green4: #17918A;
+$green5: #53c38b;
+
+$disable1: #afb6cb;
+$disable2: #c5cad7;
+$disable3: #e8ebf3;
+$disable4: #aeb4c3;
+
+$line-color: #e6ecf3;
+$line-color2: #8091C9;
+
+$error-color: #e04747;

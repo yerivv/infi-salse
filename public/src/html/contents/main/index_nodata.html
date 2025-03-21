@@ -1,0 +1,664 @@
+<main id="container">
+	<!-- 본문 영역 // -->
+	<div id="contents" class="{{prop.depth1}} {{prop.depth2}} {{prop.depth3}}"> <!-- 해당 depth별로 class명 추가 -->
+
+		<!-- 영업사원 정보 // -->
+		<div class="myinfo inner">
+			<!-- 프로필 // -->
+			<section class="profile-area">
+				<!-- 2025.02.03 수정 // -->
+				<!-- noimg 일 때 -->
+				<div class="thumb">
+					<button class="plus-btn">
+						<i class="svgicon svgicon-plus"></i>
+					</button>
+					<div>
+						<figure>
+							<!-- <img src="{{dirRoot}}/static/imgs/sales/temp/temp_profile_200x200.jpg" alt=""> -->
+						</figure>
+						<p>등록해주세요</p>
+					</div>
+				</div>
+				<!-- // 2025.02.03 수정 -->
+
+				<div class="info">
+					<strong>한바다</strong>
+					<p>영업2팀 대리</p>
+					<a href="#" class="btn-call"><i class="svgicon svgicon-phone"></i>010-2545-2562</a>
+				</div>
+
+				<div class="btns">
+					<button type="button" class="btn small">외부 일정 등록</button>
+				</div>
+			</section>
+			<!-- // 프로필 -->
+
+			<!-- 나의 일정 // -->
+			<section class="schedule-area">
+				<div class="title-area"> 
+					<h2 class="tit">나의 일정</h2>
+					<a href="#" class="btn-all">전체보기<i class="svgicon svgicon-arrowright"></i></a>
+				</div>
+
+				<div class="cont">
+					<p class="txt-nodata">
+						오늘의 활동 업무를 <br>
+						등록해보세요.
+					</p>
+
+					<div class="btns">
+						<button type="button" class="btn line small btn-schedule"><i class="svgicon svgicon-plus"></i>일정등록</button>
+					</div>
+				</div>
+			</section>
+			<!-- // 나의 일정 -->
+
+			<!-- 고객관리 // -->
+			<section class="customer-area">
+				<div class="title-area">
+					<h2 class="tit">고객관리 <em>0</em></h2>
+				</div>
+
+				<div class="cont">
+					<div class="customer-info">
+						<a href="#">
+							<strong>0</strong>
+							<p>가망고객 <i class="svgicon svgicon-arrowright"></i></p>
+						</a>
+
+						<a href="#">
+							<strong>0</strong>
+							<p>보유고객 <i class="svgicon svgicon-arrowright"></i></p>
+						</a>
+					</div>
+
+					<div class="btns">
+						<!-- 2025.01.31 수정 //-->
+						<button type="button" class="btn line small btn-schedule"><i class="svgicon svgicon-plus"></i>고객정보등록</button>
+						<!--// 2025.01.31 수정 -->
+					</div>
+				</div>
+			</section>
+			<!-- // 고객관리 -->
+
+			<!-- 회원투어현황 // -->
+			<section class="tour-area">
+				<div class="title-area">
+					<h2 class="tit">회원투어현황</h2>
+					<a href="#" class="btn-all">전체보기<i class="svgicon svgicon-arrowright"></i></a>
+				</div>
+
+				<div class="cont">
+					<div>	
+						<p>예약접수/완료 기준 : <span>2024년 8월</span></p>
+						<dl>
+							<dt>예약접수</dt>
+							<dd><em>0</em>명</dd>
+						</dl>
+						<dl>
+							<dt>예약완료</dt>
+							<dd><em>0</em>명</dd>
+						</dl>
+						<!-- 2025.02.03 추가 //-->
+						<dl>
+							<dt>예약변경</dt>
+							<dd><em>0</em>명</dd>
+						</dl>
+						<!--// 2025.02.03 추가 -->
+					</div>
+					<!-- 2025.02.03 삭제 // -->
+					<!-- <div>
+						<dl>
+							<dt><a href="#">투어활동이 없는 회원 <i class="svgicon svgicon-arrowright"></i></a></dt>
+							<dd><em>5</em>명</dd>
+						</dl>
+					</div> -->
+					<!-- // 2025.02.03 삭제 -->
+				</div>
+			</section>
+			<!-- // 회원투어현황 -->
+		</div>
+		<!-- // 영업사원 정보 -->
+
+		<!-- 실적 정보 // -->
+		<div class="performance inner">
+			<!-- 목표대비실적 // -->
+			<div class="title-area">
+				<h2 class="tit">목표대비실적</h2>
+				<span class="txt-date">2024년 12월</span>
+				<button type="button" class="btn blue small btn-board"><i class="svgicon svgicon-leaderboard"></i> 리더보드 보기</button>
+			</div>
+
+			<!-- 나의 실적 // -->
+			<section class="performance-area my">
+				<div class="tit-area">
+					<!-- 2025.01.06 수정 // -->
+					<h3 class="tit">
+						나의 실적<span>목표금액을 설정해주세요.</span><br>
+						<p class="txt">완납구좌 <em class="current">0</em><span>/<em class="total">5</em> 건</span></p>
+					</h3>
+					<!-- // 2025.01.06 수정 -->
+				</div>
+
+				<!-- 
+					차트 함수 호출: fn.doughnutChart(차트 영역 class명, 배경색);
+					.txt-percentage > em 만큼 % 채워짐.
+				-->
+				<!-- 차트 영역 // -->
+				<div class="d-chart mychart">
+					<div class="chart-wrap"><canvas id="myCharts"></canvas></div>
+					<div class="txt-percentage"><em>0</em><i class="svgicon svgicon-percent"></i></div>
+					<div class="txt">
+						<span class="min"><em>0</em></span>
+						<span class="max"><em>5,000</em>만원</span>
+					</div>
+				</div>
+
+				<script>
+					fn.doughnutChart('.mychart', '#2550D8');
+				</script>
+				<!-- // 차트 영역 -->
+
+				<div class="state">
+					<div class="subtitle-area">
+						<h3 class="tit">예상구좌 현황</h3>
+						<a href="#" class="btn-more">더보기<i class="svgicon svgicon-arrowright"></i></a>
+					</div>
+					<!-- 2025.02.03 수정　// -->
+					<div class="state-list">
+						<a href="#">
+							<dl>
+								<dt>당일예상</dt>
+								<dd>0</dd>
+							</dl>
+						</a>
+						<a href="#">
+							<dl>
+								<dt>익일예상</dt>
+								<dd>0</dd>
+							</dl>
+						</a>
+						<!--　// 2025.02.03 수정 -->
+						<div class="account">
+							<button type="button" class="btn-account">
+								익일 예상 구좌 등록 해주세요<i class="svgicon svgicon-plus"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- // 나의 실적 -->
+
+			<!-- 팀 실적 // -->
+			<section class="performance-area team">
+				<!-- 2025.01.06 수정 // -->
+				<div class="tabmenu">
+					<div class="tab-ti">
+						<h3 class="tit">
+							팀 실적
+						</h3>
+						<a href="#tabAccounts" class="active">구좌수 기준</a><!-- 활성화 class="active" -->
+						<a href="#tabAmount">실적금액 기준</a>
+					</div>
+					<div id="tabAccounts" class="tab-contents tab-account active">
+	
+						<div class="subtit-area">
+							<p class="txt">완납구좌 <em class="current">0</em><span>/<em class="total">25</em> 건</span></p>
+							<p class="txt">월 실적대비 목표금액(원) <em>0</em>원 / <span><em>34,200,000</em>원</span></p>
+						</div>
+						<!-- swiper 초기화: fn.graphSwiper() -->
+						<div class="graph-swiper">
+							<button type="button" class="swiper-button-prev"><span class="blind">이전</span></button>
+							<button type="button" class="swiper-button-next"><span class="blind">다음</span></button>
+		
+							<div class="swiper">
+								<div class="swiper-wrapper">
+									<!-- 반복 영역 // -->
+									<!--
+										<span class="progress"></span>에 height로 퍼센트 표시.
+										가장 많은 건수 순서대로 노출.
+										가장 많은 건수를 100%로 기준 잡아 % 계산.
+		
+										nodata 경우 <span class="progress">에 class="per-nodata" 추가.
+									-->
+									<div class="swiper-slide">
+										<div class="bar">
+											<!-- <span class="progress">에 height를 %로 넣어주시면 그래프 높이값으로 설정 됩니다.-->
+											<div class="progress-wrap"><span class="progress per-nodata" style="height: 0;"></span></div>
+											<div class="tit">
+												<span>빈펄 VIP</span>
+												<span><strong>0</strong>건</span>
+											</div>
+										</div>
+									</div>
+									<!-- // 반복 영역 -->
+									<div class="swiper-slide">
+										<div class="bar">
+											<!-- <span class="progress">에 height를 %로 넣어주시면 그래프 높이값으로 설정 됩니다. -->
+											<div class="progress-wrap"><span class="progress per-nodata" style="height: 0;"></span></div>
+											<div class="tit">
+												<span>삼투엔람 VIP</span>
+												<span><strong>0</strong>건</span>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="bar">
+											<!-- <span class="progress">에 height를 %로 넣어주시면 그래프 높이값으로 설정 됩니다. -->
+											<div class="progress-wrap"><span class="progress per-nodata" style="height: 0;"></span></div>
+											<div class="tit">
+												<span>미션힐즈 LUXURY</span>
+												<span><strong>0</strong>건</span>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="bar">
+											<!-- <span class="progress">에 height를 %로 넣어주시면 그래프 높이값으로 설정 됩니다. -->
+											<div class="progress-wrap"><span class="progress per-nodata" style="height: 0;"></span></div>
+											<div class="tit">
+												<span>치링 4-STAR</span>
+												<span><strong>0</strong>건</span>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="bar">
+											<!-- <span class="progress">에 height를 %로 넣어주시면 그래프 높이값으로 설정 됩니다. -->
+											<div class="progress-wrap"><span class="progress per-nodata" style="height: 0;"></span></div>
+											<div class="tit">
+												<span>남산99</span>
+												<span><strong>0</strong>건</span>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="bar">
+											<!-- <span class="progress">에 height를 %로 넣어주시면 그래프 높이값으로 설정 됩니다. -->
+											<div class="progress-wrap"><span class="progress per-nodata" style="height: 0;"></span></div>
+											<div class="tit">
+												<span>삼투엔람 GOLD</span>
+												<span><strong>0</strong>건</span>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="bar">
+											<!-- <span class="progress">에 height를 %로 넣어주시면 그래프 높이값으로 설정 됩니다. -->
+											<div class="progress-wrap"><span class="progress per-nodata" style="height: 0;"></span></div>
+											<div class="tit">
+												<span>빈펄 VIP</span>
+												<span><strong>0</strong>건</span>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="bar">
+											<!-- <span class="progress">에 height를 %로 넣어주시면 그래프 높이값으로 설정 됩니다. -->
+											<div class="progress-wrap">
+												<span class="progress per-nodata" style="height: 0;"></span>
+											</div>
+											<div class="tit">
+												<span>치링 4-STAR</span>
+												<span><strong>0</strong>건</span>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="bar">
+											<!-- <span class="progress">에 height를 %로 넣어주시면 그래프 높이값으로 설정 됩니다. -->
+											<div class="progress-wrap"><span class="progress per-nodata" style="height: 0;"></span></div>
+											<div class="tit">
+												<span>빈펄 VIP</span>
+												<span><strong>0</strong>건</span>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="bar">
+											<!-- <span class="progress">에 height를 %로 넣어주시면 그래프 높이값으로 설정 됩니다. -->
+											<div class="progress-wrap"><span class="progress per-nodata" style="height: 0;"></span></div>
+											<div class="tit">
+												<span>미션힐스 LUXURY</span>
+												<span><strong>0</strong>건</span>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="bar">
+											<!-- <span class="progress">에 height를 %로 넣어주시면 그래프 높이값으로 설정 됩니다. -->
+											<div class="progress-wrap"><div class="progress-wrap"><span class="progress per-nodata" style="height: 0;"></span></div></div>
+											<div class="tit">
+												<span>빈펄 VIP</span>
+												<span><strong>0</strong>건</span>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="bar">
+											<!-- <span class="progress">에 height를 %로 넣어주시면 그래프 높이값으로 설정 됩니다. -->
+											<div class="progress-wrap"><div class="progress-wrap"><span class="progress per-nodata" style="height: 0;"></span></div></div>
+											<div class="tit">
+												<span>빈펄 VIP</span>
+												<span><strong>0</strong>건</span>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="bar">
+											<!-- <span class="progress">에 height를 %로 넣어주시면 그래프 높이값으로 설정 됩니다. -->
+											<div class="progress-wrap"><div class="progress-wrap"><span class="progress per-nodata" style="height: 0;"></span></div></div>
+											<div class="tit">
+												<span>빈펄 VIP</span>
+												<span><strong>0</strong>건</span>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="bar">
+											<!-- <span class="progress">에 height를 %로 넣어주시면 그래프 높이값으로 설정 됩니다. -->
+											<div class="progress-wrap"><div class="progress-wrap"><span class="progress per-nodata" style="height: 0;"></span></div></div>
+											<div class="tit">
+												<span>빈펄 VIP</span>
+												<span><strong>0</strong>건</span>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="bar">
+											<!-- <span class="progress">에 height를 %로 넣어주시면 그래프 높이값으로 설정 됩니다. -->
+											<div class="progress-wrap"><div class="progress-wrap"><span class="progress per-nodata" style="height: 0;"></span></div></div>
+											<div class="tit">
+												<span>빈펄 VIP</span>
+												<span><strong>0</strong>건</span>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="bar">
+											<!-- <span class="progress">에 height를 %로 넣어주시면 그래프 높이값으로 설정 됩니다. -->
+											<div class="progress-wrap"><div class="progress-wrap"><span class="progress per-nodata" style="height: 0;"></span></div></div>
+											<div class="tit">
+												<span>빈펄 VIP</span>
+												<span><strong>0</strong>건</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="tabAmount" class="tab-contents tab-amount">
+	
+						<div class="subtit-area">
+							<p class="txt">완납구좌 <em class="current">0</em><span>/<em class="total">25</em> 건</span></p>
+							<p class="txt">월 실적대비 목표금액(원) <em>0</em>원 / <span><em>34,200,000</em>원</span></p>
+						</div>
+						<!-- swiper 초기화: fn.graphSwiper() -->
+						<div class="graph-swiper">
+							<button type="button" class="swiper-button-prev"><span class="blind">이전</span></button>
+							<button type="button" class="swiper-button-next"><span class="blind">다음</span></button>
+		
+							<div class="swiper">
+								<div class="swiper-wrapper">
+									<!-- 반복 영역 // -->
+									<!--
+										<span class="progress"></span>에 height로 퍼센트 표시.
+										가장 많은 건수 순서대로 노출.
+										가장 많은 건수를 100%로 기준 잡아 % 계산.
+		
+										nodata 경우 <span class="progress">에 class="per-nodata" 추가.
+									-->
+									<div class="swiper-slide">
+										<div class="bar">
+											<!-- <span class="progress">에 height를 %로 넣어주시면 그래프 높이값으로 설정 됩니다.-->
+											<div class="progress-wrap"><span class="progress per-nodata" style="height: 0;"></span></div>
+											<div class="tit">
+												<span>빈펄 VIP</span>
+												<span><strong>0</strong>건</span>
+											</div>
+										</div>
+									</div>
+									<!-- // 반복 영역 -->
+									<div class="swiper-slide">
+										<div class="bar">
+											<!-- <span class="progress">에 height를 %로 넣어주시면 그래프 높이값으로 설정 됩니다. -->
+											<div class="progress-wrap"><span class="progress per-nodata" style="height: 0;"></span></div>
+											<div class="tit">
+												<span>삼투엔람 VIP</span>
+												<span><strong>0</strong>건</span>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="bar">
+											<!-- <span class="progress">에 height를 %로 넣어주시면 그래프 높이값으로 설정 됩니다. -->
+											<div class="progress-wrap"><span class="progress per-nodata" style="height: 0;"></span></div>
+											<div class="tit">
+												<span>미션힐즈 LUXURY</span>
+												<span><strong>0</strong>건</span>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="bar">
+											<!-- <span class="progress">에 height를 %로 넣어주시면 그래프 높이값으로 설정 됩니다. -->
+											<div class="progress-wrap"><span class="progress per-nodata" style="height: 0;"></span></div>
+											<div class="tit">
+												<span>치링 4-STAR</span>
+												<span><strong>0</strong>건</span>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="bar">
+											<!-- <span class="progress">에 height를 %로 넣어주시면 그래프 높이값으로 설정 됩니다. -->
+											<div class="progress-wrap"><span class="progress per-nodata" style="height: 0;"></span></div>
+											<div class="tit">
+												<span>남산99</span>
+												<span><strong>0</strong>건</span>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="bar">
+											<!-- <span class="progress">에 height를 %로 넣어주시면 그래프 높이값으로 설정 됩니다. -->
+											<div class="progress-wrap"><span class="progress per-nodata" style="height: 0;"></span></div>
+											<div class="tit">
+												<span>삼투엔람 GOLD</span>
+												<span><strong>0</strong>건</span>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="bar">
+											<!-- <span class="progress">에 height를 %로 넣어주시면 그래프 높이값으로 설정 됩니다. -->
+											<div class="progress-wrap"><span class="progress per-nodata" style="height: 0;"></span></div>
+											<div class="tit">
+												<span>빈펄 VIP</span>
+												<span><strong>0</strong>건</span>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="bar">
+											<!-- <span class="progress">에 height를 %로 넣어주시면 그래프 높이값으로 설정 됩니다. -->
+											<div class="progress-wrap">
+												<span class="progress per-nodata" style="height: 0;"></span>
+											</div>
+											<div class="tit">
+												<span>치링 4-STAR</span>
+												<span><strong>0</strong>건</span>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="bar">
+											<!-- <span class="progress">에 height를 %로 넣어주시면 그래프 높이값으로 설정 됩니다. -->
+											<div class="progress-wrap"><span class="progress per-nodata" style="height: 0;"></span></div>
+											<div class="tit">
+												<span>빈펄 VIP</span>
+												<span><strong>0</strong>건</span>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="bar">
+											<!-- <span class="progress">에 height를 %로 넣어주시면 그래프 높이값으로 설정 됩니다. -->
+											<div class="progress-wrap"><span class="progress per-nodata" style="height: 0;"></span></div>
+											<div class="tit">
+												<span>미션힐스 LUXURY</span>
+												<span><strong>0</strong>건</span>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="bar">
+											<!-- <span class="progress">에 height를 %로 넣어주시면 그래프 높이값으로 설정 됩니다. -->
+											<div class="progress-wrap"><div class="progress-wrap"><span class="progress per-nodata" style="height: 0;"></span></div></div>
+											<div class="tit">
+												<span>빈펄 VIP</span>
+												<span><strong>0</strong>건</span>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="bar">
+											<!-- <span class="progress">에 height를 %로 넣어주시면 그래프 높이값으로 설정 됩니다. -->
+											<div class="progress-wrap"><div class="progress-wrap"><span class="progress per-nodata" style="height: 0;"></span></div></div>
+											<div class="tit">
+												<span>빈펄 VIP</span>
+												<span><strong>0</strong>건</span>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="bar">
+											<!-- <span class="progress">에 height를 %로 넣어주시면 그래프 높이값으로 설정 됩니다. -->
+											<div class="progress-wrap"><div class="progress-wrap"><span class="progress per-nodata" style="height: 0;"></span></div></div>
+											<div class="tit">
+												<span>빈펄 VIP</span>
+												<span><strong>0</strong>건</span>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="bar">
+											<!-- <span class="progress">에 height를 %로 넣어주시면 그래프 높이값으로 설정 됩니다. -->
+											<div class="progress-wrap"><div class="progress-wrap"><span class="progress per-nodata" style="height: 0;"></span></div></div>
+											<div class="tit">
+												<span>빈펄 VIP</span>
+												<span><strong>0</strong>건</span>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="bar">
+											<!-- <span class="progress">에 height를 %로 넣어주시면 그래프 높이값으로 설정 됩니다. -->
+											<div class="progress-wrap"><div class="progress-wrap"><span class="progress per-nodata" style="height: 0;"></span></div></div>
+											<div class="tit">
+												<span>빈펄 VIP</span>
+												<span><strong>0</strong>건</span>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="bar">
+											<!-- <span class="progress">에 height를 %로 넣어주시면 그래프 높이값으로 설정 됩니다. -->
+											<div class="progress-wrap"><div class="progress-wrap"><span class="progress per-nodata" style="height: 0;"></span></div></div>
+											<div class="tit">
+												<span>빈펄 VIP</span>
+												<span><strong>0</strong>건</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- // 2025.01.06 수정 -->
+
+			</section>
+			<!-- // 팀 실적 -->
+
+			<!-- 대면상담/문의내역/계약진행/투어독려 // -->
+			<section class="list-area inner">
+				<div class="tabmenu">
+					<div class="tab-ti">
+						<a href="#tabCounsel" class="active">대면상담 <em>0</em></a><!-- 활성화 class="active" -->
+						<a href="#tabInquiry">문의내역 <em>0</em></a>
+						<a href="#tabContract">계약진행 <em>0</em></a>
+						<a href="#tabTour">투어독려 <em>0</em></a>
+					</div>
+
+					<div id="tabCounsel" class="tab-contents tab-counsel active">
+						<a href="#" class="btn-all">전체일정보기<i class="svgicon svgicon-arrowright"></i></a>
+
+						<p class="txt-cont">・당월 기준에 상담 미팅 일정 이력 건을 조회하여 보여주고 있습니다.</p>
+
+						<div class="nodata">
+							<p>
+								<i class="icon icon-nodata"></i>
+								<small>오늘의 활동 업무를 등록해보세요.</small>
+							</p>
+
+							<div class="btns">
+								<button type="button" class="btn line small"><i class="svgicon svgicon-plus"></i>일정등록</button>
+							</div>
+						</div>
+					</div>
+
+					<div id="tabInquiry" class="tab-contents tab-inquiry">
+						<a href="#" class="btn-all">전체일정보기<i class="svgicon svgicon-arrowright"></i></a>
+
+						<p class="txt-cont">・당일기준 1개월 내 상담진행 이력 건을 조회하여 보여주고 있습니다.</p>
+
+						<div class="nodata">
+							<p>
+								<i class="icon icon-nodata"></i>
+								<small>문의 내역을 확인해보세요.</small>
+							</p>
+							<div class="btns">
+								<button type="button" class="btn line small">문의내역 보기</button>
+							</div>
+						</div>
+					</div>
+
+					<div id="tabContract" class="tab-contents tab-contract">
+						<a href="#" class="btn-all">전체일정보기<i class="svgicon svgicon-arrowright"></i></a>
+
+						<p class="txt-cont">・당일기준 1개월 계약진행 이력 건을 조회하여 보여주고 있습니다.</p>
+
+						<div class="nodata">
+							<p>
+								<i class="icon icon-nodata"></i>
+								<small>계약진행을 확인해보세요.</small>
+							</p>
+							<div class="btns">
+								<button type="button" class="btn line small">계약진행 보기</button>
+							</div>
+						</div>
+					</div>
+
+					<div id="tabTour" class="tab-contents tab-tour">
+						<a href="#" class="btn-all">전체일정보기<i class="svgicon svgicon-arrowright"></i></a>
+
+						<p class="txt-cont">・회원권 입회 후 투어를 한번도 하지 않았어요. 직접 방문하여 투어를 독려해 주세요.</p>
+
+						<div class="nodata">
+							<p>
+								<i class="icon icon-nodata"></i>
+								<small>모든 회원들이 활발히 투어활동을 하고 있어요.</small>
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- // 대면상담/문의내역/계약진행/투어독려 -->
+		</div>
+		<!-- // 실적 정보 -->
+
+	</div>
+	<!-- // 본문 영역 -->
+</main>

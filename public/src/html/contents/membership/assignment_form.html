@@ -1,0 +1,112 @@
+<main id="container">
+	<!-- 본문 영역 // -->
+	<div id="contents" class="{{prop.depth1}} {{prop.depth2}} {{prop.depth3}}"> <!-- 해당 depth별로 class명 추가 -->
+		<div class="title-area header">
+			<button type="button" class="btn-prev"><i class="svgicon svgicon-prev"><span class="blind">이전</span></i></button>
+			<!-- 2024.12.13 // -->
+			<h2 class="tit">회원권 양수 접수</h2>
+			<!-- // 2024.12.13 -->
+		</div>
+
+		<form>
+			<fieldset>
+				<div class="form-area">
+					<div class="filter-area inner">
+						<h3 class="tit">1 접수 회원권 정보를 확인해 주세요</h3>
+
+						<div class="form-set">
+							<div class="form-group">
+								<div class="form-entry">
+									<!-- 2024.12.13 // -->
+									<strong>국가</strong>
+									<!-- // 2024.12.13 -->
+									<div class="select country">
+										<select title="국가 선택">
+											<option value="" class="select-ti">국가 선택</option>
+											<option value="">국가 2</option>
+											<option value="">국가 3</option>
+											<option value="">국가 4</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-entry">
+									<!-- 2024.12.13 // -->
+									<strong>골프장</strong>
+									<!-- // 2024.12.13 -->
+									<div class="select course">
+										<select title="골프장 선택">
+											<option value="" class="select-ti">골프장 선택</option>
+											<option value="">골프장 2</option>
+											<option value="">골프장 3</option>
+											<option value="">골프장 4</option>
+										</select>
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="form-entry">
+									<!-- 2024.12.13 // -->
+									<strong>회원권</strong>
+									<!-- // 2024.12.13 -->
+									<div class="select membership">
+										<select title="회원권 선택">
+											<option value="" class="select-ti">회원권 선택</option>
+											<option value="">회원권 1</option>
+											<option value="">회원권 2</option>
+											<option value="">회원권 3</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-entry gray">
+									<strong>거래가격</strong>
+									<div class="form-price">
+										<input type="text" title="거래가격 입력" placeholder="0"><span class="txt-unit">원</span>
+										<button type="button" class="btn-delete"><span class="blind">삭제</span></button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="customer-area inner beforeline">
+						<h3 class="tit">2 양수 고객 정보를 확인해 주세요</h3>
+
+						<div class="form-set">
+							<strong>고객정보</strong>
+								<div class="guidetxt dot">
+									<ul>
+										<li>가망/담당 고객으로 등록된 회원만 고객 정보를 조회 할 수 있습니다.</li>
+										<li>등록된 고객 정보를 조회하려면 [고객 조회] 버튼을 선택해 주세요.</li>
+										<li>조회되는 고객정보가 없다면 직접 입회 정보를 입력해 주세요.</li>
+									</ul>
+								</div>
+
+								<button type="button" class="btn line small btn-customer">고객 조회<i class="svgicon svgicon-arrowright"></i></button>
+								<!-- 2025.01.06  수정 -->
+								<div class="form-group line">
+								<!-- 2025.01.06  수정 -->
+									<div class="form-entry gray">
+										<strong>고객명</strong>
+										<input type="text" title="고객명 입력" placeholder="고객명 입력">
+									</div>
+									<div class="form-entry gray">
+										<strong>휴대폰번호</strong>
+										<input type="text" title="휴대폰번호 입력" placeholder="휴대폰번호 입력">
+									</div>
+								</div>
+						</div>
+					</div>
+
+					<div class="btns">
+						<button type="button" class="btn line">취소하기</button>
+						<!-- 2024.12.13 // -->
+						<button type="button" class="btn">접수하기</button>
+						<!-- // 2024.12.13 -->
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+	<!-- // 본문 영역 -->
+</main>

@@ -1,0 +1,53 @@
+/**
+* --------------------------------
+* Fonts
+* --------------------------------
+*/
+
+@font-face {
+	font-family: $webfont-family1;
+	font-weight: 400;
+	src: local($webfont-family1 + ' Regular'),
+	url($front-fonts-url + 'Pretendard-Regular.woff2') format('woff2'),
+	url($front-fonts-url + 'Pretendard-Regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: $webfont-family1;
+	font-weight: 500;
+	src: local($webfont-family1 + ' Medium'),
+	url($front-fonts-url + 'Pretendard-Medium.woff2') format('woff2'),
+	url($front-fonts-url + 'Pretendard-Medium.woff') format('woff');
+}
+
+@font-face {
+	font-family: $webfont-family1;
+	font-weight: 600;
+	src: local($webfont-family1 + ' SemiBold'),
+	url($front-fonts-url + 'Pretendard-SemiBold.woff2') format('woff2'),
+	url($front-fonts-url + 'Pretendard-SemiBold.woff') format('woff');
+}
+
+@font-face {
+	font-family: $webfont-family1;
+	font-weight: 700;
+	src: local($webfont-family1 + ' Bold'),
+	url($fonts-url + 'Pretendard-Bold.woff2') format('woff2'),
+	url($fonts-url + 'Pretendard-Bold.woff') format('woff');
+}
+
+@font-face {
+	font-family: $webfont-family2;
+	font-weight: 400;
+	src: local($webfont-family2 + ' Regular'),
+	url($front-fonts-url + 'EBGaramond-Regular.woff2') format('woff2'),
+	url($front-fonts-url + 'EBGaramond-Regular.ttf') format('ttf');
+}
+
+@font-face {
+	font-family: $webfont-family2;
+	font-weight: 500;
+	src: local($webfont-family2 + ' Medium'),
+	url($front-fonts-url + 'EBGaramond-Medium.woff2') format('woff2'),
+	url($front-fonts-url + 'EBGaramond-Medium.ttf') format('ttf');
+}

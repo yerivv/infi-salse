@@ -1,0 +1,655 @@
+<main id="container">
+	<!-- 본문 영역 // -->
+	<div id="contents" class="{{prop.depth1}} {{prop.depth2}} {{prop.depth3}}"> <!-- 해당 depth별로 class명 추가 -->
+
+		<div class="title-area">
+			<h2 class="tit">거래관리 상세보기​ </h2>
+			<div class="btns">
+				<button class="btn small line"><i class="svgicon svgicon-menu"></i>목록으로가기</button>
+				<button class="btn small"><i class="svgicon svgicon-pen"></i>입회신청서 작성하기​</button>
+				<button class="btn small"><i class="svgicon svgicon-del2"></i>거래 취소하기</button>
+				<!-- 2025.01.31 삭제 //-->
+				<!-- <button class="btn small"><i class="svgicon svgicon-saveprice"></i>판매가 승인하기</button> -->
+				<!--// 2025.01.31 삭제 -->
+			</div>
+		</div>
+
+		<!-- 2025.01.31 수정 //-->
+		<div class="customer-info">
+			<div class="inner">
+				<div>
+					<p class="number">N12345678941234 <span class="badge transaction">거래중</span></p>
+					<div class="group">
+						<div class="tooltip-wrap">
+								<p>공동구좌 <span>60%</span></p>
+								<button class="btn-tooltip btn line"><i class="svgicon svgicon-customer"></i>공동구좌보기</button>
+								<div class="tooltip">
+									<div class="tit">
+										<strong>공동구좌</strong>
+										<button class="btn-close"><i class="svgicon svgicon-close"></i></button>
+									</div>
+									<div class="cont">
+											<p>김영업/박과장/한중개/김부장/김인턴/강전무/김영업/박과장/한중개/김부장</p>
+									</div>
+								</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="subject">
+					<div class="state transaction">양수도<br>거래</div>
+					<div class="positive-area">
+						<div>
+							<p>양도자 :<span>오양도</span></p>
+							<p>휴대폰 번호 :<span>010-1234-1234</span></p>
+							<p>이메일 :<span>aaa@abc.co.kr</span></p>
+							<p>담당 영업사원 :<span>김영업</span></p>
+						</div>
+						<div>
+							<p>양수자 :<span>(주)명인기업</span></p>
+							<p>휴대폰 번호 :<span>-</span></p>
+							<p>이메일 :<span>-</span></p>
+							<p>담당 영업사원 :<span>김영업</span></p>
+						</div>
+					</div>
+				</div>
+				<div class="product">
+					<figure>
+						<img src="{{dirRoot}}/static/imgs/sales/membership/contract_transaction_bg.jpg" alt="">
+					</figure>
+					<div>
+						<p class="product-number">G0001-M0001</p>
+						<p>
+							HK 치구사
+							<strong>치구사 SILVER 저렴하게 판매합니다.</strong>
+						</p>
+						<p>
+							<span>김영업</span>
+							<span>TGS 2팀 010-0000-0000</span>
+						</p>
+					</div>
+				</div>
+
+				<div class="product-area">
+					<div class="product-detail">
+						<div>
+							<dl>
+								<dt>국가</dt>
+								<dd>일본</dd>
+							</dl>
+							<dl>
+								<dt>회원권 구분</dt>
+								<dd>골프장 회원권</dd>
+							</dl>
+							<dl>
+								<dt>입회 구분</dt>
+								<dd>법인, 개인</dd>
+							</dl>
+						</div>
+						<div>
+							<dl>
+								<dt>회원 구분</dt>
+								<dd>기명 1인 + 무기명 3인</dd>
+							</dl>
+							<dl>
+								<dt>유효기간</dt>
+								<dd>2032.08.01까지</dd>
+							</dl>
+							<dl>
+								<dt>위임횟수</dt>
+								<dd>2회</dd>
+							</dl>
+						</div>
+						<div>
+							<dl>
+								<dt>부가정보</dt>
+								<dd>한케이골프 사용가능 바우처 2매 / 연회비 면제 / 성수기 이용 가능 / 법인 입회 가능/ 일 체류비 50,000원</dd>
+							</dl>
+						</div>
+					</div>
+
+					<div class="price">
+						<p>거래가격</p>
+						<p>
+							<strong>1,000,000</strong>원
+							<span>(명의개서료, 중개수수료 포함)</span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--// 2025.01.31 수정 -->
+
+		<div class="membership-list">
+			<div class="membership-item">
+				<div class="membership-title">
+					<p>
+						거래정보<span><i class="icon icon-vip"></i>VIP 10년 정식 회원권​</span>
+					</p>
+				</div>
+
+				<div class="info-list">
+					<strong class="sub-title">회원권 정보</strong>
+					<div class="info-item">
+						<div class="info-wrap">
+							<ul>
+								<li>
+									<span>골프장</span>
+									<div class="clamp">
+										<span>치링</span>
+									</div>
+								</li>
+								<li>
+									<span>회원적용</span>
+									<p><span>기명 1인 + 무기명 2인</span></p>
+								</li>
+								<li>
+									<span>명의개서료</span>
+									<p><span>300,000원</span></p>
+								</li>
+							</ul>
+							<ul>
+								<li>
+									<span>입회금</span>
+									<p><span>5,000,000원</span></p>
+								</li>
+								<li>
+									<span>연회비</span>
+									<p><span>1,000,000원 (VAT 100,000원)</span></p>
+								</li>
+								<li>
+									<span>유효기간</span>
+									<p><span>제한없음</span></p>
+								</li>
+							</ul>
+						</div>
+						<div class="info-wrap">
+							<ul>
+								<li>
+									<span>판매상태</span>
+									<p>
+										판매중 (2024.12.01~9999.12.31)
+									</p>
+								</li>
+								<li>
+									<span>양도제한</span>
+									<p>3회(입회 후 3년부터 가능, 양도 후 2년부터 가능 / <br>
+										양도 잔여횟수 1회)</p>
+								</li>
+							</ul>
+							<ul>
+								<li>
+									<span>위임여부</span>
+									<p>제한없음</p>
+								</li>
+								<li>
+									<span>입회제한</span>
+									<p>제한없음</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="membership-wrap">
+				<div class="membership-item">
+					<div class="item-title">
+						<strong>
+							거래 서류 정보
+							<span class="badge contract">계약중</span>
+						</strong>
+						<button type="button" class="btn line"><i class="svgicon svgicon-refresh"></i></button>
+					</div>
+
+					<div class="info-wrap">
+						<ul class="payment-info contract">
+							<li class="table-head">
+								<span>계약서 내역</span>
+							</li>
+							<li>
+								<!-- 2025.02.17 수정 // -->
+								<div class="wrap">
+									<span>양도/양수 신청서</span>
+									<div class="right">
+										<div class="select small">
+											<select title="계약방식 선택">
+												<option value="" class="select-ti">선택</option>
+												<option value="" selected>전자계약</option>
+												<option value="">서면계약</option>
+											</select>
+										</div>
+										<div>
+											<strong>&nbsp;</strong>
+											<!-- 2025.01.31 수정 //-->
+											<button type="button" class="btn line samll" onclick="fn.popup('open', '#popupSignContract')">재발송</button>
+											<!--// 2025.01.31 수정 -->
+										</div>
+									</div>
+								</div>
+								<div class="wrap">
+									<span><i class="svgicon svgicon-rightangle"></i>양도자</span>
+
+									<div class="right">
+										<div>
+											<strong>작성완료</strong>
+											<button type="button" class="btn line samll" onclick="fn.popup('open', '#popupElectronicContract');">서류보기</button>
+										</div>
+									</div>
+								</div>
+								<div class="wrap">
+									<span><i class="svgicon svgicon-rightangle"></i>양수자</span>
+
+									<div class="right">
+										<div>
+											<strong>작성중</strong>
+											<button type="button" class="btn line samll" onclick="fn.popup('open', '#popupSignContract')">발송하기</button>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<span>양도 위임장</span>
+								<div class="right">
+									<div class="select small">
+										<select title="계약방식 선택" disabled>
+											<option value="" class="select-ti">선택</option>
+											<option value="">전자계약</option>
+											<option value="" selected>서면계약</option>
+										</select>
+									</div>
+									<div>
+										<strong>작성중</strong>
+										<!-- 2025.01.31 수정 //-->
+										<button type="button" class="btn line samll" onclick="fn.popup('open', '#popupSignContract')">재발송</button>
+										<!--// 2025.01.31 수정 -->
+									</div>
+								</div>
+							</li>
+							<li>
+								<span>(선택) 분실확인서</span>
+								<div class="right">
+									<div class="select small">
+										<select title="계약방식 선택">
+											<option value="" class="select-ti">선택</option>
+											<option value="">전자계약</option>
+											<option value="">서면계약</option>
+										</select>
+									</div>
+									<div>
+										<strong class="outstanding">미작성</strong>
+										<button type="button" class="btn line samll" onclick="fn.popup('open', '#popupSignContract')">발송하기</button>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<!-- // 2025.02.17 수정 -->
+
+			<!-- 2025.01.31 삭제 // -->
+			<!-- <div class="membership-wrap">
+				<div class="membership-item">
+					<div class="item-title">
+						<strong>
+							결제 방식 설정
+						</strong>
+					</div>
+					<div class="btns payment">
+						<label class="btn line"><input type="radio" name="payment" checked=""><span>무통장 입금</span></label>
+						<label class="btn line"><input type="radio" name="payment" class="virtual-radio"><span>가상계좌</span></label>
+						<label class="btn line"><input type="radio" name="payment" class="fullpayment-radio"><span>완납</span></label>
+					</div>
+	
+					<div class="cont-area payment-area">
+						<div class="tit-area">
+							<h4>무통장입금</h4>
+						</div>
+
+						<div class="tit-area virtual">
+							<h4>가상계좌</h4>
+						</div>
+	
+						<div class="cont">
+							<div class="form-btn">
+								<div class="select small">
+									<select title="은행 선택">
+										<option value="" class="select-ti">은행 선택</option>
+										<option value="">신한은행</option>
+										<option value="">신한은행</option>
+										<option value="">신한은행</option>
+									</select>
+								</div>
+	
+								<button type="button" class="btn blue btn-account">계좌 생성하기</button>
+							</div>
+	
+							<dl class="txt">
+								<dt>계좌번호</dt>
+								<dd>867737-04-002092</dd>
+							</dl>
+	
+							<dl class="txt">
+								<dt>예금주</dt>
+								<dd>㈜한케이골프 - 김입회</dd>
+							</dl>
+						</div>
+					</div>
+
+					<div class="cont-area fullpayment-area">
+						<div class="tit-area">
+							<label><input type="checkbox" name="" id=""><span>김고객 님으로 입금된 양수금이 확인 되었습니다.</span></label>
+						</div>
+					</div>
+				</div>
+			</div> -->
+			<!-- // 2025.01.31 삭제 -->
+
+			<!-- 2025.01.13 삭제 // -->
+			<!-- 
+			<div class="membership-wrap">
+				<div class="membership-item">
+					<div class="item-title">
+						<strong>
+							희망 양수 금액 설정
+						</strong>
+					</div>
+
+					<div class="info-wrap">
+						<ul class="payment-info payment">
+							<li class="table-head">
+								<span>희망 양수 금액</span>
+								<p><strong>10,000,000</strong>원</p>
+							</li>
+							<li>
+								<div class="form-entry gray cont">
+									<strong>양도가</strong>
+									<div class="form-btn">
+										<input type="text" title="숫자만 입력" placeholder="숫자만 입력">
+										<p>원</p>
+									</div>
+								</div>
+								<div class="form-entry gray cont">
+									<strong>명의개서료</strong>
+									<div class="form-btn">
+										<input type="text" title="숫자만 입력" placeholder="숫자만 입력">
+										<p>원</p>
+									</div>
+								</div>
+								<div class="form-entry gray cont">
+									<strong>중개수수료</strong>
+									<div class="form-btn">
+										<input type="text" title="숫자만 입력" placeholder="숫자만 입력">
+										<p>원</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div> -->
+			<!-- 2025.01.31 수정 // -->
+			<div class="membership-wrap">
+				<div class="membership-item">
+					<div class="item-title">
+						<strong>
+							거래 가격 정보
+						</strong>
+					</div>
+
+					<div class="info-wrap">
+						<div class="list-accordion">
+							<ul>
+								<li class="">
+									<h4><button type="button" class="accordion-ti">거래가격<div class="price"><em>8,000,000</em>원</div><i class="svgicon svgicon-arrowbottom"></i></button></h4>
+									<div class="accordion-cont">
+										<div class="accordion-wrap">
+											<ul>
+												<li>
+													<span>양도가</span>
+													<p><span>9,000,000</span>원</p>
+												</li>
+												<li>
+													<span>명의개서료</span>
+													<p><span>900,000</span>원</p>
+												</li>
+												<li>
+													<span>중개수수료</span>
+													<p><span>100,000</span>원</p>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- // 2025.01.31 수정 -->
+
+			<div class="membership-wrap">
+				<div class="membership-item">
+					<div class="item-title">
+						<strong>
+							양수금 결제 정보
+							<span class="badge payment">결제중</span>
+						</strong>
+						<div>
+							<p>결제금액<strong>4,500,000</strong><span>원</span></p>
+							<p class="expected">결제예정금액<strong>5,990,000</strong><span>원</span></p>
+						</div>
+					</div>
+					<div class="btns">
+						<button class="btn small">결제 금액 조정하기</button>
+					</div>
+
+					<div class="info-wrap">
+						<ul class="payment-info">
+							<li class="table-head">
+								<span>결제 완료 내역</span>
+							</li>
+							<li>
+								<span>계약금</span>
+								<div class="amount">
+									<p><strong>4,500,000</strong>원</p>
+								</div>
+								<div class="status">
+									<p>결제완료</p>
+								</div>
+								<div class="date">
+									<span>2024.10.20 13:00:00</span>
+								</div>
+							</li>
+							<li>
+								<span>중도금(1차)</span>
+								<div class="amount">
+									<p><strong>4,500,000</strong>원</p>
+								</div>
+								<div class="status">
+									<p>결제완료</p>
+								</div>
+								<div class="date">
+									<span>2024.10.20 13:00:00</span>
+								</div>
+							</li>
+							<li>
+								<span>중도금(2차)</span>
+								<div class="amount">
+									<p><strong>4,500,000</strong>원</p>
+								</div>
+								<div class="status">
+									<p>결제완료</p>
+								</div>
+								<div class="date">
+									<span>2024.10.20 13:00:00</span>
+								</div>
+							</li>
+							<li class="table-head">
+								<span>결제 예정 내역</span>
+							</li>
+							<li>
+								<span>중도금(3차)</span>
+								<div class="amount">
+									<p><strong>1,000,000</strong>원</p>
+								</div>
+								<div class="status outstanding">
+									<p>미결제</p>
+								</div>
+								<div class="date">
+									<span>2024.10.20 13:00:00</span>
+								</div>
+							</li>
+							<li>
+								<span>중도금(4차)</span>
+								<div class="amount">
+									<p><strong>1,000,000</strong>원</p>
+								</div>
+								<div class="status outstanding">
+									<p>미결제</p>
+								</div>
+								<div class="date">
+									<span>2024.10.20 13:00:00</span>
+								</div>
+							</li>
+							<li>
+								<span>중도금(5차)</span>
+								<div class="amount">
+									<p><strong>1,000,000</strong>원</p>
+								</div>
+								<div class="status outstanding">
+									<p>미결제</p>
+								</div>
+								<div class="date">
+									<span>2024.10.20 13:00:00</span>
+								</div>
+							</li>
+							<li>
+								<span>중도금(6차)</span>
+								<div class="amount">
+									<p><strong>1,000,000</strong>원</p>
+								</div>
+								<div class="status outstanding">
+									<p>미결제</p>
+								</div>
+								<div class="date">
+									<span>2024.10.20 13:00:00</span>
+								</div>
+							</li>
+							<li>
+								<span>중도금(7차)</span>
+								<div class="amount">
+									<p><strong>1,000,000</strong>원</p>
+								</div>
+								<div class="status outstanding">
+									<p>미결제</p>
+								</div>
+								<div class="date">
+									<span>2024.10.20 13:00:00</span>
+								</div>
+							</li>
+							<li>
+								<span>중도금(8차)</span>
+								<div class="amount">
+									<p><strong>1,000,000</strong>원</p>
+								</div>
+								<div class="status outstanding">
+									<p>미결제</p>
+								</div>
+								<div class="date">
+									<span>2024.10.20 13:00:00</span>
+								</div>
+							</li>
+							<li>
+								<span>잔금</span>
+								<div class="amount">
+									<p><strong>990,000</strong>원</p>
+								</div>
+								<div class="status outstanding">
+									<p>미결제</p>
+								</div>
+								<div class="date">
+									<span>2024.10.20 13:00:00</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="btns bottom">
+			<a href="./transaction_list.html" class="btn line">목록으로 가기​</a>
+			<button class="btn">입회신청서 작성하기</button>
+			<button class="btn">거래 취소하기</button>
+			<!-- 2025.01.31 삭제 //-->
+			<!-- <button class="btn">판매가 승인하기</button> -->
+			<!--// 2025.01.31 삭제 -->
+		</div>
+	</div>
+
+	<!-- // 본문 영역 -->
+
+	<!-- 팝업 : 서면 계약서 부본​ // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupWrittenContract",
+			"class": "popupwrittencontract",
+			"tit": "서면 계약서 부본​",
+			"header": true,
+			"content": "./contents/popup/popupWrittenContract.html"
+		}
+	})}}
+	<!-- // 팝업 : 서면 계약서 부본​ -->
+
+	<!-- 팝업 : 서면 계약서 부본​ - Nodata// -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupWrittenContractNodata",
+			"class": "popupwrittencontract",
+			"tit": "서면 계약서 부본​",
+			"header": true,
+			"content": "./contents/popup/popupWrittenContractNodata.html"
+		}
+	})}}
+	<!-- // 팝업 : 서면 계약서 부본​ -->
+
+	<!-- 팝업 : 전자 계약서 발송 // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupTransactionSend",
+			"class": "popuptransaction send",
+			"tit": "전자 계약서 발송",
+			"header": true,
+			"content": "./contents/popup/popupTransactionSend.html"
+		}
+	})}}
+	<!-- // 팝업 : 전자 계약서 발송 -->
+
+	<!-- 팝업 : 전자 계약서 부본 // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupElectronicContract",
+			"class": "popupelectroniccontract",
+			"tit": "전자 계약서 부본",
+			"header": true,
+			"content": "./contents/popup/popupElectronicContract.html"
+		}
+	})}}
+	<!-- // 팝업 : 전자 계약서 부본 -->
+
+	
+	<!-- 팝업 : 전자계약서 서명하기​ // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupSignContract",
+			"class": "popupsigncontract",
+			"tit": "전자계약서 서명하기​",
+			"header": true,
+			"content": "./contents/popup/popupSignContract.html"
+		}
+	})}}
+	<!-- // 팝업 : 전자계약서 서명하기​ -->
+</main> 

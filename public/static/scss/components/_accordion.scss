@@ -1,0 +1,138 @@
+/**
+* --------------------------------
+* Accordion CSS
+* --------------------------------
+*/
+
+.list-accordion {
+	.accordion-ti {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		padding: 14px 68px 14px 20px;
+		width: 100%;
+		color: $color1;
+		text-align: left;
+		border-radius: 8px;
+		border: 1px solid #f1f5fd;
+		cursor: pointer;
+
+		.badge {
+			margin-top: 3px;
+			vertical-align: top;
+		}
+
+		p {
+			@include font(16px, 26px, 500);
+		}
+
+		.txt-date {
+			@include font(11px, 26px);
+
+			padding-left: 20px;
+			color: #7f8bb1;
+		}
+
+		.accordion-arrow {
+			@include position(12px, null, 0);
+			@include svg-icon('arrowbottom', 16, $color: $color5);
+
+			right: 20px;
+			width: 32px;
+			height: 32px;
+			border-radius: 4px;
+			background-color: #f1f5fd;
+
+			.svgicon {
+				@include position(50%, 50%);
+
+				transform: translate(-50%, -50%) rotate(0deg);
+				transition: all .2s ease-in-out;
+			}
+		}
+
+		// @include after-btn(-450px, 0);
+
+		// &::after {
+		// 	@include position(50%, auto, 20px);
+
+		// 	transform: translate(0, -50%) rotate(0);
+		// 	margin-top: 1px;`
+		// 	transition: all .2s ease-in-out;
+		// }
+	}
+
+	.accordion-cont {
+		position: relative;
+		line-height: $line-height;
+		color: #15161A;
+		background-color: #F7F7FA;
+		max-height: 0;
+		border-bottom-left-radius: 8px;
+		border-bottom-right-radius: 8px;
+		overflow: hidden;
+		transition: max-height .2s ease-out;
+
+		> .scroll-content {
+			padding: 24px 60px 24px 64px;
+			// max-height: 280px;
+		}
+	}
+
+	> ul {
+		> li {
+			position: relative;
+
+			& + li {
+				margin-top: 8px;
+			}
+
+			&.active {
+				.accordion-ti {
+					// font-weight: 700;
+					border-bottom-left-radius: 0;
+					border-bottom-right-radius: 0;
+
+					.accordion-arrow {
+						.svgicon {
+							transform: translate(-50%, -50%) rotate(180deg);
+						}
+					}
+				}
+				.accordion-cont {
+					max-height: 280px;
+				}
+			}
+		}
+	}
+
+	&.faq {
+		border-top: 1px solid $line-color;
+
+		.accordion-ti {
+			padding-left: 83px;
+
+			@include before-icon(-300px, -50px);
+
+			&:before {
+				top: 19px;
+				left: 20px;
+				transform: translate(0, 0);
+			}
+		}
+
+		.accordion-cont {
+			@include before-icon(-350px, -50px);
+
+			&:before {
+				top: 19px;
+				left: 19px;
+				transform: translate(0, 0);
+			}
+
+			.scroll-content {
+				padding-left: 79px;
+			}
+		}
+	}
+}

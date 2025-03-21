@@ -1,0 +1,19 @@
+{
+  "name": "hankgolf",
+  "version": "1.0.0",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass-so": "sass public/static/scss/:public/static/css/sales/ --no-source-map --style=expanded",
+    "sass-so-watch": "npm run sass-so -- --watch",
+    "sass-so-clear": "rm -rf public/static/css/sales/*.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "sass": "^1.75.0"
+  }
+}

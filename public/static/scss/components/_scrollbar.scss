@@ -1,0 +1,18 @@
+/**
+* --------------------------------
+* Scrollbar CSS
+* --------------------------------
+*/
+
+.scrollbar {
+	padding-right: 4px;
+	// line-height: $line-height;
+
+	.scroll-content {
+		@include scrollbar;
+
+		max-height: 160px;
+		overflow-x: hidden;
+		overflow-y: scroll;
+	}
+}

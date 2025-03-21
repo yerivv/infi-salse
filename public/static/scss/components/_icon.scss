@@ -1,0 +1,36 @@
+/**
+* --------------------------------
+* Icon CSS
+* --------------------------------
+*/
+// svg
+// @include svg-icon('download', $color: '#ff00ff');
+// @include svg-icon('doubleright', 40);
+@include svg-icon('arrowleft' );
+@include svg-icon('arrowright');
+@include svg-icon('arrowtop');
+@include svg-icon('arrowbottom');
+@include svg-icon('plus');
+@include svg-icon('minus', $url: $svg16);
+@include svg-icon('close');
+@include svg-icon('prev');
+@include svg-icon('search');
+@include svg-icon('preview', $color: $color7);
+@include svg-icon('previewon', $color: $color7);
+@include svg-icon('pagearrowleft', 16);
+@include svg-icon('pagearrowright', 16);
+@include svg-icon('logout', 20);
+@include svg-icon('download', $color: $color3, $url: $svg16);
+@include svg-icon('file', 16, $color: $color4, $url: $svg16);
+@include svg-icon('filedelete', 16, $url: $svg16);
+@include svg-icon('phone', 12, $color: $color7, $url: $svg12);
+@include svg-icon('trash', 16, $url: $svg16);
+@include svg-icon('save', 16, $url: $svg16);
+@include svg-icon('pen', 16, $color: $color2, $url: $svg16);
+@include svg-icon('detailsearch', 16, $color: $color2, $url: $svg16);
+@include svg-icon('inputbutton', 12, $color: $color3, $url: $svg12);
+@include svg-icon('receipt', 16, $url: $svg16);
+@include svg-icon('reservationlist', 16, $color: $color2, $url: $svg16);
+@include svg-icon('date');
+@include svg-icon('refresh');
+@include svg-icon('notice');

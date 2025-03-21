@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Markup URL - hankgolf SO</title>
+
+		<link rel="stylesheet" href="{{dirRoot}}/static/css/sales/common.css">
+
+		<style>
+			.markupurl header h1 {position: relative;padding: 40px 20px;color: #111;text-align: center;}
+			.markupurl header h1::before {width: 8px;height: 18px;}
+			.markupurl header h1::after,
+			.markupurl header h1::before {content: '';position: absolute;top: 20px;left: calc(50% - 260px);background-color: #ff6e11;}
+			.markupurl header h1::after {width: 18px;height: 8px;}
+			.markupurl h2 {position: relative;padding: 10px;font-size: 16px;font-weight: 400;border-top: 2px solid #111;background-color: #f6f6f6;cursor: pointer;}
+			.markupurl .folderbox {padding: 20px;}
+			.markupurl .folderbox table {border: 1px solid #d4d4d4;}
+			.markupurl .folderbox table th {color: #111;font-weight: 400;background: #f6f6f6;}
+			.markupurl .folderbox table th,
+			.markupurl .folderbox table td {padding: 5px 10px;min-height: 26px;line-height: 1.2;font-size: 13px;border-right: 1px solid #d4d4d4;border-top: 1px solid #d4d4d4;}
+
+			.markupurl .folderbox.progress table td {text-align: center;}
+			.markupurl .folderbox.progress table td.left {text-align: left;}
+			.markupurl .folderbox.progress .graph {position: relative;padding-left: 120px;}
+			.markupurl .folderbox.progress .graph strong {position: absolute;top: 0;left: 5px;line-height: 20px;}
+			.markupurl .folderbox.progress .graph strong em {display: inline-block;margin-left: 10px;font-size: 12px;}
+			.markupurl .folderbox.progress .graph .bar {display: block;margin: 5px;height: 20px;background-color: #efefef;text-align: left;}
+			.markupurl .folderbox.progress .graph .bar span {display: inline-block;height: 20px;background-color: darkgray;}
+			.markupurl .folderbox.progress .graph.send .bar span {background-color: #ffa870;}
+
+			.markupurl .nav {position: sticky;top: 0;width: 100%;background-color: #111;text-align: left;z-index: 1;}
+			.markupurl .nav a {position: relative;display: block;line-height: 30px;color: #fff;font-size: 12px;text-align: center;}
+			.markupurl .nav table td {border-left: 1px solid rgba(255, 255, 255, .2);}
+			.markupurl .nav table td:first-child {border-left: 0;}
+
+			.markupurl .folderbox.url .filter {display: flex;flex-wrap: wrap;justify-content: flex-end;gap: 5px;padding-bottom: 20px;}
+			.markupurl .folderbox.url .filter .btn.wait {color: #111;background-color: #fff;}
+			.markupurl .folderbox.url .filter .btn.ing {color: #111;background-color: #fff;}
+			.markupurl .folderbox.url .filter .btn.end {color: #111;border-color: #dcdcdc;background-color: #dcdcdc;}
+			.markupurl .folderbox.url .filter .btn.send {color: #111;border-color: #ffa870;background-color: #ffa870;}
+			.markupurl .folderbox.url table thead {border-bottom: 1px solid #d4d4d4;}
+			.markupurl .folderbox.url table td {border-right-color: #eee;border-top-color: #eee;}
+			.markupurl .folderbox.url table tbody tr:first-child td {border-top: 0;}
+			.markupurl .folderbox.url table tbody tr td:last-child {border-right-color: #d4d4d4;}
+			.markupurl .folderbox.url table tbody + tbody {border-top: 1px solid #d4d4d4;}
+			.markupurl .folderbox.url table tbody tr:hover td {background: #efefef;}
+			.markupurl .folderbox.url table tbody tr.end:hover td {background-color: rgba(212, 212, 212, .5);}
+			.markupurl .folderbox.url table tbody tr.send:hover td {background-color: rgba(255, 168, 112, .5);}
+			.markupurl .folderbox.url table thead th:first-child,
+			.markupurl .folderbox.url table .col-num {width: 60px; text-align: center;}
+			.markupurl .folderbox.url table .col-1depth,
+			.markupurl .folderbox.url table .col-2depth {width: 10%;}
+			.markupurl .folderbox.url table .col-3depth {width: 15%;}
+			.markupurl .folderbox.url table .col-url {width: auto;}
+			.markupurl .folderbox.url table .col-progress {width: 80px; text-align: center;}
+			.markupurl .folderbox.url table .col-senddate {width: 100px;text-align: center;}
+			.markupurl .folderbox.url table .col-modidate {width: auto; color: #2465ec;}
+			.markupurl .folderbox.url table .col-url a {border-bottom: 1px solid #111;}
+			.markupurl .folderbox.url table tr.hide {display: none;}
+			.markupurl .folderbox.url table tr.end td {background-color: #dcdcdc;}
+			.markupurl .folderbox.url table tr.send td {background-color: #ffa870;}
+			.markupurl .folderbox.url table tr.del td {text-decoration: line-through;}
+
+			@media (max-width: 1024px) {
+				.markupurl .folderbox.url {overflow-x: auto;}
+				.markupurl .folderbox.url table {min-width: 1024px;}
+			}
+		</style>
+
+		<script src="{{dirRoot}}/static/jscript/sales/lib/jquery-3.6.4.min.js"></script>
+
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				const 
+					iaTotal = document.querySelectorAll('.url .col-num').length,
+					iaWait = document.querySelectorAll('.url [data-progress="대기"]').length,
+					iaIng = document.querySelectorAll('.url [data-progress="진행"]').length,
+					iaEnd = document.querySelectorAll('.url [data-progress="검수"]').length,
+					iaSend = document.querySelectorAll('.url [data-progress="완료"]').length;
+
+				// 진행률
+				document.querySelector('.progress td.total').innerHTML = iaTotal;
+				document.querySelector('.progress td.end').innerHTML = iaEnd + iaSend;
+				document.querySelector('.progress td.wait').innerHTML = iaWait;
+				document.querySelector('.progress td.send').innerHTML = iaSend;
+				document.querySelector('.progress .graph.end strong em').innerHTML = (((iaEnd + iaSend) / iaTotal) * 100).toFixed(2);
+				document.querySelector('.progress .graph.end .bar span').style.width = (((iaEnd + iaSend) / iaTotal) * 100).toFixed(2) + '%';
+				document.querySelector('.progress .graph.send strong em').innerHTML = ((iaSend / iaTotal) * 100).toFixed(2);
+				document.querySelector('.progress .graph.send .bar span').style.width = ((iaSend / iaTotal) * 100).toFixed(2) + '%';
+
+				document.querySelector('.url .filter .btn.all em').textContent = iaTotal;
+				document.querySelector('.url .filter .btn.wait em').textContent = iaWait;
+				document.querySelector('.url .filter .btn.ing em').textContent = iaIng;
+				document.querySelector('.url .filter .btn.end em').textContent = iaEnd;
+				document.querySelector('.url .filter .btn.send em').textContent = iaSend;
+
+				// 번호
+				document.querySelectorAll('.url td.col-progress').forEach(function(el, index) {
+					const colNumEl = el.parentElement.querySelector('.col-num');
+					colNumEl.textContent = index + 1;
+
+					const progressValue = el.getAttribute('data-progress');
+					if (progressValue !== '대기') {
+						el.textContent = progressValue;
+					}
+				});
+
+				// url
+				document.querySelectorAll('.url td.col-url').forEach(function(el) {
+					const url = el.textContent;
+					el.innerHTML = `<a href="..${url}" target="_blank">${url}</a>`;
+				});
+
+				// 진행상태 class
+				if (document.querySelectorAll('.url [data-progress="검수"]').length > 0) {
+					document.querySelectorAll('.url [data-progress="검수"]').forEach(function(el) {
+						el.parentElement.classList.add('end');
+					});
+				}
+
+				if (document.querySelectorAll('.url [data-progress="완료"]').length > 0) {
+					document.querySelectorAll('.url [data-progress="완료"]').forEach(function(el) {
+						el.parentElement.classList.add('send');
+					});
+				}
+
+				// click
+				document.querySelectorAll('h2').forEach(function(el) {
+					el.addEventListener('click', function() {
+						const folderbox = this.nextElementSibling;
+						if (window.getComputedStyle(folderbox).display === 'none') {
+							folderbox.style.display = 'block';
+						} else {
+							folderbox.style.display = 'none';
+						}
+					});
+				});
+			});
+
+			function filter(state) {
+				document.querySelectorAll('.url td.col-progress').forEach(function(el, index) {
+					el.parentElement.classList.remove('hide');
+
+					if (state === '전체') {
+						el.parentElement.querySelector('.col-num').textContent = index + 1;
+					} else {
+						if (el.getAttribute('data-progress') !== state) {
+							el.parentElement.classList.add('hide');
+						}
+
+						const filteredEls = document.querySelectorAll('.url [data-progress="' + state + '"]');
+						filteredEls.forEach(function(filteredEl, filteredIndex) {
+							filteredEl.parentElement.querySelector('.col-num').textContent = filteredIndex + 1;
+						});
+					}
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<div class="markupurl">
+			<header>
+				<h1>Markup URL - 한케이골프 SO</h1>
+			</header>
+
+			<h2>- Markup 진행률</h2>
+			<div class="folderbox progress">
+				<table>
+					<colgroup><col width="10%"><col width="10%"><col width="10%"><col width="10%"><col width="*"></colgroup>
+
+					<thead>
+						<tr>
+							<th>파일수</th>
+							<th>대기</th>
+							<th>퍼블완료</th>
+							<th>개발전달</th>
+							<th>작업률</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<td class="total">0</td>
+							<td class="wait">0</td>
+							<td class="end">0</td>
+							<td class="send">0</td>
+							<td class="left">
+								<div class="graph end"><strong>퍼블완료 : <em>0%</em>%</strong><span class="bar"><span></span></span></div>
+								<div class="graph send"><strong>개발전달 : <em>0%</em>%</strong><span class="bar"><span></span></span></div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="nav">
+				<table>
+					<tbody>
+						<tr>
+							<td><a href="#Nav0" class="Nav0">Markup Guide</a></td>
+							<td><a href="#Nav1" class="Nav1">영업관리</a></td>
+							<td><a href="#Nav2" class="Nav2">회원권소개</a></td>
+							<td><a href="#Nav3" class="Nav3">고객관리</a></td>
+							<td><a href="#Nav4" class="Nav4">영업활동</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<h2>- Markup List</h2>
+			<div class="folderbox url">
+				<div class="filter">
+					<button typ="button" class="btn small all" onclick="filter('전체')">전체: <em></em> 건</button>
+					<button typ="button" class="btn small wait" onclick="filter('대기')">대기: <em></em> 건</button>
+					<button typ="button" class="btn small ing" onclick="filter('진행')">진행: <em></em> 건</button>
+					<button typ="button" class="btn small end" onclick="filter('검수')">검수: <em></em> 건</button>
+					<button typ="button" class="btn small send" onclick="filter('완료')">완료: <em></em> 건</button>
+				</div>
+				<table>
+					<caption class="blind">URL 목록</caption>
+					<thead>
+						<tr>
+							<th scope="col">번호</th>
+							<th scope="col" class="col-1depth">1Depth</th>
+							<th scope="col" class="col-2depth">2Depth</th>
+							<th scope="col" class="col-3depth">3Depth</th>
+							<th scope="col" class="col-url">URL</th>
+							<th scope="col" class="col-progress">진행상태</th>
+							<th scope="col" class="col-senddate">완료일</th>
+							<th scope="col" class="col-modidate">수정일</th>
+						</tr>
+					</thead>
+					<tbody id="Nav0">
+						<tr><!-- 삭제 class="del" -->
+							<td class="col-num"></td>
+							<td class="col-1depth">Guide</td>
+							<td class="col-2depth">Markup Guide</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/guide/markupguide.html</td>
+							<td class="col-progress" data-progress="진행"></td><!-- data-progress 대기, 진행, 검수, 완료 -->
+							<td class="col-senddate"></td>
+							<td class="col-modidate"></td>
+						</tr>
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth">GNB</td>
+							<td class="col-2depth">Layout Guide</td>
+							<td class="col-3depth">header<br> (팝업: 전체메뉴, 마스킹 해제, <br>오픈소스 라이선스, APP권한사용알림)</td>
+							<td class="col-url">/guide/layout.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.11.13</td>
+							<td class="col-modidate">2024.12.13 2024.12.30 2025.01.03 2025.01.07 2025.02.06</td>
+						</tr>
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth">공통</td>
+							<td class="col-2depth">에러페이지</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/error/index.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2025.01.03</td>
+							<td class="col-modidate"></td>
+						</tr>
+					</tbody>
+
+					<tbody id="Nav1">
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth">로그인</td>
+							<td class="col-2depth">로그인</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/member/login.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.11.08</td>
+							<td class="col-modidate">2024.12.13 2024.12.19 2025.01.31</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth"></td>
+							<td class="col-3depth">팝업: 비밀번호 변경안내, 로그인 연장</td>
+							<td class="col-url">/member/login_popup.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.11.08</td>
+							<td class="col-modidate">2024.12.13</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth">아이디 찾기</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/member/find_id.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.11.08</td>
+							<td class="col-modidate">2024.12.13</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth"></td>
+							<td class="col-3depth">아이디 찾기 결과</td>
+							<td class="col-url">/member/result_id.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.11.08</td>
+							<td class="col-modidate">2024.12.13</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth">비밀번호 찾기</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/member/find_pw.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.11.08</td>
+							<td class="col-modidate">2024.12.13</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth">메인</td>
+							<td class="col-2depth">대시보드</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/main/index.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.06</td>
+							<td class="col-modidate">2024.12.09 2025.01.06 2025.01.13 2025.01.31 2025.02.03 2025.02.06 2025.02.07</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth">대시보드 - nodata</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/main/index_nodata.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.06</td>
+							<td class="col-modidate">2025.01.31 2025.02.03</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth">VIP 대시보드</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/main/index_vip.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2025.01.15</td>
+							<td class="col-modidate">2025.01.20 2025.02.13</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth">중기/말 목표보기</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/main/objectives.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2025.01.15</td>
+							<td class="col-modidate">2025.01.20</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth">공지사항</td>
+							<td class="col-2depth">목록</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/notice/list.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.11.13</td>
+							<td class="col-modidate">2024.12.26 2025.01.13</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth">목록 - nodata</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/notice/list_nodata.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.11.13</td>
+							<td class="col-modidate">2024.12.26 2025.01.13</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth">상세</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/notice/view.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.11.13</td>
+							<td class="col-modidate"></td>
+						</tr>
+					</tbody>
+
+					<tbody id="Nav2">
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth">회원권소개</td>
+							<td class="col-2depth">메인 (팝업: 고객정보입력)</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/membership/index.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.11</td>
+							<td class="col-modidate">2024.12.20 2025.02.05</td>
+						</tr>
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth">메인-b</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/membership/index_b.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2025.02.05 </td>
+							<td class="col-modidate">2025.02.06</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth">회원권 추천</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/membership/recommend.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.04</td>
+							<td class="col-modidate">2024.12.13 2024.12.17 2025.01.02</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth"></td>
+							<td class="col-3depth">회원권 추천 결과 <br>(팝업: 회원권 비교하기)</td>
+							<td class="col-url">/membership/recommend_result.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.04</td>
+							<td class="col-modidate">2024.12.20 2025.01.02 2025.02.05</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth">회원권 비교하기</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/membership/compare.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.04</td>
+							<td class="col-modidate">2024.12.17 2025.01.02</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth">회원권 전체보기</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/membership/total.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.04</td>
+							<td class="col-modidate">2024.12.09 2024.12.17 2024.12.20 2025.01.02 2025.02.05</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth">회원권 검색 결과 - nodata</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/membership/result_nodata.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.04</td>
+							<td class="col-modidate">2025.01.02</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth">회원권 Intro</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/membership/intro.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.10</td>
+							<td class="col-modidate"></td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth">회원권 상세</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/membership/view.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.10</td>
+							<td class="col-modidate">2024.12.17</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth">회원권 양도 목록</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/membership/assignment.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.06</td>
+							<td class="col-modidate">2024.12.11, 2024.12.13 2025.01.06 2025.01.13 2025.02.04</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth">회원권 양도 목록 - nodata</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/membership/assignment_nodata.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.06</td>
+							<td class="col-modidate">2024.12.11, 2024.12.13 2025.02.04</td>
+						</tr>
+						
+						<!-- 페이지 삭제 -->
+						<!-- <tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth"></td>
+							<td class="col-3depth">회원권 양수 접수</td>
+							<td class="col-url">/membership/assignment_form.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.06</td>
+							<td class="col-modidate">2024.12.13</td>
+						</tr> -->
+						
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth"></td>
+							<td class="col-3depth">회원권 양수 대기 접수</td>
+							<td class="col-url">/membership/assignment_waiting_form.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.06</td>
+							<td class="col-modidate">2024.12.13  2025.01.06 2025.01.13 2025.02.04</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth"></td>
+							<td class="col-3depth">회원권 양수 대기 접수완료</td>
+							<td class="col-url">/membership/assignment_waiting_complete.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.06</td>
+							<td class="col-modidate">2025.01.06</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth">회원권 양수 관리 목록</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/membership/management_list.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.06</td>
+							<td class="col-modidate">2024.12.09, 2024.12.13 2025.01.06 2025.01.13 2025.01.31 2025.02.04 2025.02.14</td>
+						</tr>
+						
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth">회원권 양수 관리 목록 - nodata</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/membership/management_list_nodata.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.06</td>
+							<td class="col-modidate">2025.01.06 2025.01.13 2025.02.14</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth"></td>
+							<td class="col-3depth">회원권 양수 접수</td>
+							<td class="col-url">/membership/management_form.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.06</td>
+							<td class="col-modidate">2024.12.13 2025.01.06 2025.01.08 2025.01.13 2025.02.04</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth"></td>
+							<td class="col-3depth">팝업: 고객조회, 거래조회, 회원권 조회, 상세검색, 전자계약서 서명하기</td>
+							<td class="col-url">/membership/assignment_popup.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.06</td>
+							<td class="col-modidate">2025.01.03 2025.01.13 2025.02.04 2025.02.05 2025.02.14</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth">거래관리</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/membership/transaction_list.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2025.01.06</td>
+							<td class="col-modidate">2025.01.13 2025.01.31</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth">거래관리-nodata</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/membership/transaction_list_nodata.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2025.02.05</td>
+							<td class="col-modidate"></td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth"></td>
+							<td class="col-3depth">상세</td>
+							<td class="col-url">/membership/transaction_view.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2025.01.06</td>
+							<td class="col-modidate">2025.01.13 2025.01.31</td>
+						</tr>
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth">입회신청서</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/membership/application_form.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.03</td>
+							<td class="col-modidate">2024.12.13 2025.01.03 2025.01.31 2025.02.14 2025.02.17</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth"></td>
+							<td class="col-3depth">양수입회</td>
+							<td class="col-url">/membership/application_form_positive.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2025.01.03</td>
+							<td class="col-modidate">2025.01.31 2025.02.14</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth"></td>
+							<td class="col-3depth">승급입회</td>
+							<td class="col-url">/membership/application_form_transfer.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2025.01.03</td>
+							<td class="col-modidate">2025.01.31 2025.02.14</td>
+						</tr>
+
+						<!-- <tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth">입회 신청 완료</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/membership/contract_complete.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.03</td>
+							<td class="col-modidate">2024.12.13</td>
+						</tr> -->
+					</tbody>
+
+					<tbody id="Nav3">
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth">고객관리</td>
+							<td class="col-2depth">가망고객 - 목록 <br>(팝업: 고객정보등록)</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/customer/prospective.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.06 2025.01.13</td>
+							<td class="col-modidate">2025.01.31 2025.02.04 2025.02.07</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth">가망고객- Nodata - 목록 </td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/customer/prospective_nodata.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.06</td>
+							<td class="col-modidate">2025.01.31</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth">가망고객 - 상세</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/customer/prospective_view.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.06</td>
+							<td class="col-modidate">2025.02.07</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth">고객관리</td>
+							<td class="col-2depth">담당고객 - 목록</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/customer/incharge.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.06</td>
+							<td class="col-modidate">2025.02.07</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth">담당고객 - Nodata - 목록</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/customer/incharge_nodata.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.06</td>
+							<td class="col-modidate"></td>
+						</tr>
+
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth">담당고객 - 상세 - 개인</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/customer/incharge_view.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.06</td>
+							<td class="col-modidate">2025.02.07</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth">담당고객 - 상세 - 사업자</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/customer/incharge_business_view.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.06</td>
+							<td class="col-modidate">2025.02.07</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth"></td>
+							<td class="col-3depth">고객관리 - 팝업</td>
+							<td class="col-url">/customer/popup.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.06</td>
+							<td class="col-modidate"></td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth">계약관리</td>
+							<td class="col-2depth">목록</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/contract/list.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.06	</td>
+							<td class="col-modidate">2024.12.26 2025.02.03</td>
+						</tr>
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth">목록-nodata</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/contract/list_nodata.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2025.02.05</td>
+							<td class="col-modidate"></td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth"></td>
+							<td class="col-3depth">상세</td>
+							<td class="col-url">/contract/view.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.06	</td>
+							<td class="col-modidate">2024.12.26 2025.01.31 2025.02.17</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth"></td>
+							<td class="col-3depth">상세 - 결합</td>
+							<td class="col-url">/contract/view_combine.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.06	</td>
+							<td class="col-modidate">2024.12.26 2025.01.31 2025.02.17</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth"></td>
+							<td class="col-3depth">상세 - 양수입회</td>
+							<td class="col-url">/contract/view_positive.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.06	</td>
+							<td class="col-modidate">2024.12.26 2025.01.31 2025.02.17</td>
+						</tr>
+						
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth"></td>
+							<td class="col-3depth">상세 - 양도입회</td>
+							<td class="col-url">/contract/view_assignment.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.06	</td>
+							<td class="col-modidate">2024.12.26 2025.01.31 2025.02.17</td>
+						</tr>
+						
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth"></td>
+							<td class="col-3depth">상세 - 팝업</td>
+							<td class="col-url">/contract/popup.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.06	</td>
+							<td class="col-modidate">2025.01.31 2025.02.04 2025.02.05</td>
+						</tr>
+					</tbody>
+
+					<tbody id="Nav4">
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth">투어현황관리</td>
+							<td class="col-2depth">목록</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/tour/list.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.03</td>
+							<td class="col-modidate">2025.02.03 2025.02.07</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth">목록 - nodata</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/tour/list_nodata.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.03</td>
+							<td class="col-modidate">2025.02.03</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth"></td>
+							<td class="col-3depth">팝업(견적서, 예약확인증, 패키지 일정표)</td>
+							<td class="col-url">/tour/popup.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.26</td>
+							<td class="col-modidate">2025.02.07 2025.02.10</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth">영업활동</td>
+							<td class="col-2depth">영업활동분석</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/business/index.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.04</td>
+							<td class="col-modidate">2025.01.13 2025.02.03 2025.02.04</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth">영업활동분석 - Nodata</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/business/index_nodata.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.04</td>
+							<td class="col-modidate">2025.02.03 2025.02.04</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth"></td>
+							<td class="col-3depth">일일예상구좌 등록​</td>
+							<td class="col-url">/business/registration.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.04</td>
+							<td class="col-modidate">2025.02.03</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth"></td>
+							<td class="col-3depth">일일활동업무 등록​</td>
+							<td class="col-url">/business/registration_work.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.04</td>
+							<td class="col-modidate"></td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth">일정관리</td>
+							<td class="col-2depth">전체일정관리 :개인</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/activity/individual.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.11.29</td>
+							<td class="col-modidate">2024.12.02 2025.01.13 2025.02.03</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth">전체일정관리 :팀(내일정)</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/activity/team_indi.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.11.29</td>
+							<td class="col-modidate">2024.12.02</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth">전체일정관리 :팀(팀일정)</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/activity/team.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.11.29</td>
+							<td class="col-modidate">2024.12.02</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth"></td>
+							<td class="col-3depth">전체일정관리(팝업)</td>
+							<td class="col-url">/activity/popup.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.11.29</td>
+							<td class="col-modidate">2024.12.02 2025.01.03 2025.02.03</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth">고객문의 관리</td>
+							<td class="col-2depth">고객문의 관리</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/contact/list.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.05</td>
+							<td class="col-modidate">2024.12.26 2025.01.31</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth">고객문의 관리-nodata</td>
+							<td class="col-3depth"></td>
+							<td class="col-url">/contact/list_nodata.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.26</td>
+							<td class="col-modidate"> 2025.01.31</td>
+						</tr>
+
+						<tr>
+							<td class="col-num"></td>
+							<td class="col-1depth"></td>
+							<td class="col-2depth"></td>
+							<td class="col-3depth">고객문의 상세</td>
+							<td class="col-url">/contact/view.html</td>
+							<td class="col-progress" data-progress="완료"></td>
+							<td class="col-senddate">2024.12.05</td>
+							<td class="col-modidate">2024.12.26 2025.01.03 2025.01.31</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>

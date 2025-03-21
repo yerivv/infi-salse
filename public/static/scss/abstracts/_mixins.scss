@@ -1,0 +1,244 @@
+// --------------------------------
+// Mixins
+// --------------------------------
+
+// font
+@mixin font($size: $font-size, $lineHeight: $line-height, $weight: null, $family: null) {
+	font-size: $size;
+	line-height: $lineHeight;
+	font-weight: $weight;
+	font-family: $family;
+}
+
+// svg icon
+@mixin svg-icon($name: null, $size: 20, $color: null, $url: null, $margin: null) {
+	.svgicon-#{$name} {
+		display: inline-block;
+		margin: $margin;
+		width: #{$size}px;
+		height: #{$size}px;
+		vertical-align: top;
+		overflow: hidden;
+
+		@if $url == null {
+			$url: 'common/icon_20.svg';
+		}
+
+		@if $color != null {
+			background: none;
+			background-color: #{$color};
+			-webkit-mask-image: url($image-url + $url + '#' + $name);
+			mask-image: url($image-url + $url + '#' + $name);
+		}
+
+		@else {
+			background: url($image-url + $url + '#' + $name);
+			background-size: 100% 100%;
+		}
+	}
+}
+
+// image
+@mixin background($x: 0, $y: 0, $url: null, $repeat: no-repeat, $color: null, $size: null) {
+	@if $url {
+		background-image: url($url);
+	}
+
+	display: inline-block;
+	background-position: $x $y;
+	background-repeat: $repeat;
+	background-color: $color;
+	background-size: $size;
+}
+
+// image icon
+@mixin background-icon($name: null, $x: 0, $y: 0, $width: 50px, $height: 50px, $margin: null, $icon-width: 50px, $icon-height: 50px, $url: $image-url-icon, $size: 500px) {
+	.icon-#{$name} {
+		position: relative;
+		display: inline-block;
+		margin: $margin;
+		width: $width;
+		height: $height;
+		vertical-align: top;
+		overflow: hidden;
+
+		&::after {
+			@include background($x, $y, $url, $size: $size);
+			@include position-center;
+
+			content: '';
+			width: $icon-width;
+			height: $icon-height;
+		}
+	}
+}
+
+@mixin before-icon($x: 0, $y: 0, $width: 50px, $height: 50px, $margin: null, $size: 500px) {
+	&::before {
+		@include position-center;
+		@include background($x, $y, $image-url-icon, null, null, $size);
+
+		content: '';
+		margin: $margin;
+		width: $width;
+		height: $height;
+	}
+}
+
+@mixin after-icon($x: 0, $y: 0, $width: 50px, $height: 50px, $margin: null, $size: 500px) {
+	&::after {
+		@include position-center;
+		@include background($x, $y, $image-url-icon, null, null, $size);
+
+		content: '';
+		margin: $margin;
+		width: $width;
+		height: $height;
+	}
+}
+
+@mixin before-btn($x: 0, $y: 0, $width: 50px, $height: 50px, $margin: null, $size: 500px) {
+	&::before {
+		@include position-center;
+		@include background($x, $y, $image-url-icon, null, null, $size);
+
+		content: '';
+		margin: $margin;
+		width: $width;
+		height: $height;
+	}
+}
+
+@mixin after-btn($x: 0, $y: 0, $width: 50px, $height: 50px, $margin: null, $size: 500px) {
+	&::after {
+		@include position-center;
+		@include background($x, $y, $image-url-icon, null, null, $size);
+
+		content: '';
+		margin: $margin;
+		width: $width;
+		height: $height;
+	}
+}
+
+@mixin before-line($width: 1px, $height: 16px, $margin: null, $color: $color4) {
+	position: relative;
+
+	&::before {
+		@include position(0, 0);
+
+		content: '';
+		margin: $margin;
+		width: $width;
+		height: $height;
+		background-color: $color;
+		vertical-align: top;
+	}
+}
+
+@mixin after-line($width: 1px, $height: 16px, $margin: null, $color: $color4) {
+	position: relative;
+
+	&::after {
+		@include position(0, auto, 0);
+
+		content: '';
+		margin: $margin;
+		width: $width;
+		height: $height;
+		background-color: $color;
+		vertical-align: top;
+	}
+}
+
+// clear
+@mixin clear {
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+}
+
+// ellipsis
+@mixin ellipsis($lines: null) {
+	@if ($lines==null) {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	@else {
+		display: block;
+		display: -webkit-box;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		-webkit-line-clamp: $lines;
+		-webkit-box-orient: vertical;
+	}
+}
+
+// position
+@mixin position($top: null, $left: null, $right: null, $bottom: null) {
+	position: absolute;
+	top: $top;
+	left: $left;
+	right: $right;
+	bottom: $bottom;
+}
+
+@mixin position-center($top: 50%, $left: 50%, $x: -50%, $y: -50%) {
+	position: absolute;
+	top: $top;
+	left: $left;
+	transform: translate($x, $y);
+}
+
+//scrollbar
+@mixin scrollbar($thumb: $color4, $track: transparent, $size: 4px){
+	&::-webkit-scrollbar {
+		width: $size;
+	}
+
+  &::-webkit-scrollbar-track {
+		margin: 4px 0;
+		background-color: $track;
+	}
+
+  &::-webkit-scrollbar-thumb {
+		background-color: $thumb;
+		border-radius: $size / 2;
+	}
+}
+
+// ani
+@mixin fadein($direction, $length: 0) {
+	@if $direction == active {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+
+	@else {
+		opacity: 0;
+		transition-duration: 0.4s;
+		transition-timing-function: ease-in-out;
+
+		@if ($length > 0) {
+			@for $i from 1 through $length {
+				&:nth-child(#{$i}) {
+					transition-delay: ($i * 0.1) + 0.2s;
+				}
+			}
+		}
+
+		@if $direction == up {
+			transform: translateY(50px);
+		} @else if $direction == down {
+			transform: translateY(-50px);
+		}  @else if $direction == left {
+			transform: translateX(-50px);
+		} @else if $direction == right {
+			transform: translateX(50px);
+		}
+	}
+}

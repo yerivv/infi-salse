@@ -1,0 +1,181 @@
+<main id="container">
+	<!-- 본문 영역 // -->
+	<div id="contents" class="{{prop.depth1}} {{prop.depth2}} {{prop.depth3}}"> <!-- 해당 depth별로 class명 추가 -->
+		<div class="inner">
+			<br><br><br><br>
+			<button type="button" class="btn" onclick="fn.popup('open', '#popupMembershipSearch')">회원권 조회 팝업 열기</button><br><br>
+			<button type="button" class="btn" onclick="fn.popup('open', '#popupMembershipSearchNodata')">회원권 조회 Nodata 팝업 열기</button><br><br>
+			<button type="button" class="btn" onclick="fn.popup('open', '#popupCustomerLookup')">고객조회 팝업 열기</button><br><br>
+			<button type="button" class="btn" onclick="fn.popup('open', '#popupCustomerLookupNodata')">고객조회 Nodata 팝업 열기</button><br><br>
+			<button type="button" class="btn" onclick="fn.popup('open', '#popupTransactionsLookup')">거래조회 팝업 열기</button><br><br>
+			<button type="button" class="btn" onclick="fn.popup('open', '#popupTransactionsLookupNodata')">거래조회 Nodata 팝업 열기</button><br><br>
+			<button type="button" class="btn" onclick="fn.popup('open', '#popupManagementSearch')">상세검색 팝업 열기</button>
+			<button type="button" class="btn" onclick="fn.popup('open', '#popupWrittenContract')">서면 계약서 부본​ 팝업 열기</button>
+			<button type="button" class="btn" onclick="fn.popup('open', '#popupWrittenContractNodata')">서면 계약서 부본​ Nodata 팝업 열기</button>
+			<button type="button" class="btn" onclick="fn.popup('open', '#popupTransactionSend')">전자 계약서 발송 팝업 열기</button>
+			<button type="button" class="btn" onclick="fn.popup('open', '#popupTradeQuotes')">거래 시세 팝업 열기</button>
+			<button type="button" class="btn" onclick="fn.popup('open', '#popupAdjustPrice')">거래 가격 조정 팝업 열기</button>
+			<button type="button" class="btn" onclick="fn.popup('open', '#popupSignContract')">전자계약서 서명하기​ 팝업 열기</button>
+		</div>
+	</div>
+	<!-- // 본문 영역 -->
+</main>
+
+<!-- 팝업 : 전자 계약서 발송 // -->
+{{include('./components/popup.html', {
+	"prop": {
+		"id": "popupTransactionSend",
+		"class": "popuptransaction send",
+		"tit": "전자 계약서 발송",
+		"header": true,
+		"content": "./contents/popup/popupTransactionSend.html"
+	}
+})}}
+<!-- // 팝업 : 전자 계약서 발송 -->
+
+<!-- 팝업 : 서면 계약서 부본​ // -->
+{{include('./components/popup.html', {
+	"prop": {
+		"id": "popupWrittenContract",
+		"class": "popupwrittencontract",
+		"tit": "서면 계약서 부본​",
+		"header": true,
+		"content": "./contents/popup/popupWrittenContract.html"
+	}
+})}}
+<!-- // 팝업 : 서면 계약서 부본​ -->
+
+<!-- 팝업 : 서면 계약서 부본​ - Nodata// -->
+{{include('./components/popup.html', {
+	"prop": {
+		"id": "popupWrittenContractNodata",
+		"class": "popupwrittencontract",
+		"tit": "서면 계약서 부본​",
+		"header": true,
+		"content": "./contents/popup/popupWrittenContractNodata.html"
+	}
+})}}
+<!-- // 팝업 : 서면 계약서 부본​ -->
+
+<!-- 팝업 : 상세검색 // -->
+{{include('./components/popup.html', {
+	"prop": {
+		"id": "popupManagementSearch",
+		"class": "popupmanagementsearch",
+		"tit": "상세검색",
+		"header": true,
+		"content": "./contents/popup/popupManagementSearch.html"
+	}
+})}}
+<!-- // 팝업 : 상세검색 -->
+
+<!-- 팝업 : 회원권 조회 // -->
+{{include('./components/popup.html', {
+	"prop": {
+		"id": "popupMembershipSearch",
+		"class": "popupmembershipsearch",
+		"tit": "회원권 조회",
+		"header": true,
+		"content": "./contents/popup/popupMembershipSearch.html"
+	}
+})}}
+<!-- // 팝업 : 회원권 조회 -->
+
+<!-- 팝업 : 회원권 조회 - nodata // -->
+{{include('./components/popup.html', {
+	"prop": {
+		"id": "popupMembershipSearchNodata",
+		"class": "popupmembershipsearch",
+		"tit": "회원권 조회",
+		"header": true,
+		"content": "./contents/popup/popupMembershipSearchNodata.html"
+	}
+})}}
+<!-- // 팝업 : 회원권 조회 - nodata -->
+
+<!-- 팝업 : 고객 조회  // -->
+{{include('./components/popup.html', {
+	"prop": {
+		"id": "popupCustomerLookup",
+		"class": "popupcustomerlookup",
+		"tit": "고객 조회",
+		"header": true,
+		"content": "./contents/popup/popupCustomerLookup.html"
+	}
+})}}
+<!-- // 팝업 : 고객 조회  -->
+
+<!-- 팝업 : 고객 조회 - nodata // -->
+{{include('./components/popup.html', {
+	"prop": {
+		"id": "popupCustomerLookupNodata",
+		"class": "popupcustomerlookup",
+		"tit": "고객 조회",
+		"header": true,
+		"content": "./contents/popup/popupCustomerLookupNodata.html"
+	}
+})}}
+<!-- // 팝업 : 고객 조회 - nodata -->
+
+<!-- 팝업 : 거래 조회  // -->
+{{include('./components/popup.html', {
+	"prop": {
+		"id": "popupTransactionsLookup",
+		"class": "popuptransactionslookup",
+		"tit": "거래 조회",
+		"header": true,
+		"content": "./contents/popup/popupTransactionsLookup.html"
+	}
+})}}
+<!-- // 팝업 : 거래 조회 -->
+
+<!-- 팝업 : 거래 조회 - nodata // -->
+{{include('./components/popup.html', {
+	"prop": {
+		"id": "popupTransactionsLookupNodata",
+		"class": "popuptransactionslookup",
+		"tit": "거래 조회",
+		"header": true,
+		"content": "./contents/popup/popupTransactionsLookupNodata.html"
+	}
+})}}
+<!-- // 팝업 : 거래 조회 - nodata -->
+
+<!-- 2025.02.04 추가 //-->
+<!-- 팝업 : 거래 시세 조회 - nodata // -->
+{{include('./components/popup.html', {
+	"prop": {
+		"id": "popupTradeQuotes",
+		"class": "popuptradequotes",
+		"tit": "거래 시세",
+		"header": true,
+		"content": "./contents/popup/popupTradeQuotes.html"
+	}
+})}}
+<!-- // 팝업 : 거래 시세 조회 - nodata -->
+
+<!-- 팝업 : 거래 가격 조정 // -->
+{{include('./components/popup.html', {
+	"prop": {
+		"id": "popupAdjustPrice",
+		"class": "popupadjustprice",
+		"tit": "거래 가격 조정",
+		"header": true,
+		"content": "./contents/popup/popupAdjustPrice.html"
+	}
+})}}
+<!-- // 팝업 : 거래 가격 조정  -->
+
+<!--// 2025.02.04 추가  -->
+
+	<!-- 팝업 : 전자계약서 서명하기​ // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupSignContract",
+			"class": "popupsigncontract",
+			"tit": "전자계약서 서명하기​",
+			"header": true,
+			"content": "./contents/popup/popupSignContract.html"
+		}
+	})}}
+	<!-- // 팝업 : 전자계약서 서명하기​ -->

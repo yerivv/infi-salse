@@ -1,0 +1,120 @@
+<main id="container">
+	<!-- 본문 영역 // -->
+	<div id="contents" class="{{prop.depth1}} {{prop.depth2}} {{prop.depth3}}"> <!-- 해당 depth별로 class명 추가 -->
+		<div class="title-area">
+			<h2 class="tit">고객문의 상세보기</h2>
+			
+			<!--// 2024-12-26 수정 -->
+			<div class="btns">
+				<a href="#" class="btn small line"><i class="svgicon svgicon-menu"></i>목록으로 가기</a>
+				<button class="btn small line"><i class="svgicon svgicon-save"></i>상담 저장하기</button>
+				<!-- 2025.01.31 수정 // -->
+				<button class="btn small"><i class="svgicon svgicon-date"></i>일정 등록하기</button>
+				<!-- // 2025.01.31 수정 -->
+			</div>
+		</div>
+			
+		<div class="inner">
+			<div class="view-board">
+				<div class="view-detail">
+					<div class="view-title">
+						<div class="badge">
+							<span>
+								상담중
+								<!-- 2025.01.31 추가 //-->
+								<em class="old">답변2일경과</em>
+								<!--// 2025.01.31 추가 -->
+							</span>
+						</div>
+						<div class="subject">
+							<p class="title">
+								삼투엔람 VIP
+								<span>희망 양수금액 : 10,000,000원 ~ 50,000,000원</span>
+							</p>
+							<!--// 2025-01-03 양수문의 회원권 다수 정의 추가 희망 양수금액 추가 -->
+							<p class="title">
+								빈펄 프리미엄 VVIP
+								<span>희망 양수금액 : 제한없음</span>
+							</p>
+							<!-- 2025-01-03 추가 //-->
+						</div>
+						<div class="membership"><p><span>Q0003124</span>회원권문의</p></div>
+						<div class="member"><p><span>(주)코너스톤인터 랙티브</span></p></div>
+						<div class="date"><p><span>2024.01.01</span>13:00:13</p></div>
+					</div>
+					<div class="customer-info">
+						<p>
+							<i class="svgicon svgicon-phone2"></i>
+							휴대폰번호
+							<span>010-1234-1234</span>
+						</p>
+						<p>
+							<i class="svgicon svgicon-mail"></i>
+							이메일
+							<span>hank@cstone.co.kr</span>
+						</p>
+						<!-- 2025.01.31 추가 //-->
+						<!-- 양도문의 시 삭제 -->
+						<div class="optional">
+							<p>
+								법인 입회 여부
+								<span>Y</span>
+							</p>
+							<!-- 양수 문의 시 삭제 -->
+							<p>
+								양수도 관심
+								<span>Y</span>
+							</p>
+						</div>
+						<!--// 2025.01.31 추가 -->
+					</div>
+				</div>
+
+				<div class="board-area">
+					<p>
+						한케이골프 회원권 좋다고해서 입회 상담 하려고요.<br>
+						빈펄 회원권 입회 관련 문의 드립니다.<br>
+						빈펄 회원권 구매 절차가 궁금합니다.<br>
+						그리고 브로셔나 다른 정보를 확인할 수 있는 정보가 있을까요?<br>
+						블로그를 확인하다 아래 첨부한 이미지와 같은 정보를 확인했습니다.<br>
+						동일한 혜택을 받을 수 있는지도 함께 확인 부탁드립니다.
+					</p>
+				</div>
+				
+				<div class="state-area">
+					<div class="select small">
+						<!-- 2025.01.31 수정 // -->
+						<select title="select 선택">
+							<option value="" class="select-ti">빠른답변선택</option>
+							<option value="">유선 상담 완료</option>
+							<option value="">미팅 예정</option>
+							<option value="">연락 예정</option>
+							<option value="">안내완료</option>
+							<option value="">재문의 안내</option>
+						</select>
+						<!-- // 2025.01.31 수정 -->
+					</div>
+
+					<div class="radio-area">
+						<p>상담상태</p>
+						<label><input type="radio" name="radio1" ><span>상담중</span></label>
+						<label><input type="radio" name="radio1"><span>상담완료</span></label>
+					</div>
+
+					<div class="form-write">
+						<textarea title="내용 입력" placeholder="고객님 문의의 답변을 입력해 주세요." ></textarea>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="btns ">
+			<a href="#" class="btn line">목록으로 가기</a>
+			<!-- 2025.01.31 수정 // -->
+			<button class="btn line">상담 저장하기</button>
+			<button class="btn ">일정 등록하기</button>
+			<!-- // 2025.01.31 수정 -->
+		</div>
+		<!-- 2024-12-26 수정 //-->
+	</div>
+	<!-- // 본문 영역 -->
+</main>

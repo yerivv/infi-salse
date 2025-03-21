@@ -1,0 +1,261 @@
+<main id="container">
+	<!-- 본문 영역 // -->
+	<div id="contents" class="{{prop.depth1}} {{prop.depth2}} {{prop.depth3}}"> <!-- 해당 depth별로 class명 추가 -->
+
+		<div class="title-area">
+			<h2 class="tit">가망고객 관리</h2>
+			
+			<div class="btns">
+				<!-- 2025.01.31 수정 //-->
+				<button type="button" class="btn small " onclick="fn.popup('open', '#popupProspectiveCustomerRegistration');"><i class="svgicon svgicon-prospective"></i>고객정보등록</button>
+				<!--// 2025.01.31 수정 -->
+				<button type="button" class="btn small fill"><i class="svgicon svgicon-session"></i>신규 입회하기</button>
+			</div>
+		</div>
+
+		<div class="inner">
+			<div class="sorting list-sort">
+				<div class="sorting-container">
+					<div class="input-sorting">
+						<label><input type="checkbox" name="" checked=""><span>연락예정<em>20</em></span></label>
+						<label><input type="checkbox" name=""><span>미팅예정<em>0</em></span></label>
+						<label><input type="checkbox" name=""><span>입회 검토중<em>0</em></span></label>
+						<label><input type="checkbox" name=""><span>자료 송부 완료<em>20</em></span></label>
+						<label><input type="checkbox" name=""><span>연락거절<em>0</em></span></label>
+						<label><input type="checkbox" name=""><span>입회보류<em>0</em></span></label>
+						<label><input type="checkbox" name=""><span>타 사원 관리중<em>10</em></span></label>
+					</div>
+					<button type="button" class="input-btn"><i class="svgicon svgicon-inputbutton"></i></button>
+				</div>
+
+				<div class="search-form">
+					<div class="select">
+						<select title="select 선택">
+							<option value="">고객명</option>
+							<option value="">휴대폰번호</option>
+						</select>
+					</div>
+					<div class="form-search">
+						<input type="text" name="" title="검색어 입력" placeholder="검색어 입력">
+						<button type="button" class="btn-delete"><span class="blind">삭제</span></button>
+						<button type="button" class="btn-search"><span class="blind">검색</span></button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="list-content">
+			<div class="inner">
+				<div class="sel-area">
+					<p>전체<span>20</span>명</p>
+
+					<div class="select">
+						<select title="select 선택">
+							<option value="">최신순</option>
+							<option value="">오래된순</option>
+							<option value="">가나다순</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="list-area">
+					<div class="list-header">
+						<div class="list-header-item">상태</div>
+						<div class="list-header-item">고객명</div>
+						<div class="list-header-item">연락처</div>
+						<div class="list-header-item">관심 골프장</div>
+						<div class="list-header-item">거주지역</div>
+						<!-- 2025.02.07 수정 //-->
+						<div class="list-header-item">고객등록일</div>
+						<!--// 2025.02.07 수정 -->
+					</div>
+					<ul class="customer-list">
+						<li class="list-item">
+							<a href="./prospective_view.html">
+								<div class="badge">
+									<span>미팅예정</span>
+								</div>
+								<div class="customer-name">
+									<strong>홍사랑</strong>
+								</div>
+								<div class="customer-number">
+									<!-- 2025.02.07 수정 // -->
+									<p>010-9234-1408</p>
+									<!-- // 2025.02.07 수정 -->
+								</div>
+								<div class="interest">
+									<p>관심골프장<em>11</em></p>
+								</div>
+								<div class="location">
+									<p>서울특별시</p>
+								</div>
+								<!-- 2025.02.07 수정 //-->
+								<div class="date">
+									<p>
+										2025.01.03
+										<span>3일 후 만료</span>
+									</p>
+								</div>
+								<!-- //2025.02.07 수정 -->
+								<i class="svgicon svgicon-arrowright"></i>
+							</a>
+						</li>
+						<li class="list-item">
+							<a href="./prospective_view.html">
+								<div class="badge complete">
+									<span>자료송부<br>완료</span>
+								</div>
+								<div class="customer-name">
+									<strong>홍사랑</strong>
+								</div>
+								<div class="customer-number">
+									<!-- 2025.02.07 수정 // -->
+									<p>010-9234-1408</p>
+									<!-- // 2025.02.07 수정 -->
+								</div>
+								<div class="interest">
+									<p>관심골프장<em>11</em></p>
+								</div>
+								<div class="location">
+									<p>서울특별시</p>
+								</div>
+								<!-- 2025.02.07 수정 //-->
+								<div class="date">
+									<p>
+										2025.01.03
+										<span>3일 후 만료</span>
+									</p>
+								</div>
+								<!-- //2025.02.07 수정 -->
+								<i class="svgicon svgicon-arrowright"></i>
+							</a>
+						</li>
+						<li class="list-item">
+							<a href="#">
+								<div class="badge refusal">
+									<span>연락거절</span>
+								</div>
+								<div class="customer-name">
+									<strong>김선호</strong>
+								</div>
+								<div class="customer-number">
+									<!-- 2025.02.07 수정 // -->
+									<p>010-9234-1408</p>
+									<!-- // 2025.02.07 수정 -->
+								</div>
+								<div class="interest">
+									<p>관심골프장<em>0</em></p>
+								</div>
+								<div class="location">
+									<p>-</p>
+								</div>
+								<!-- 2025.02.07 수정 //-->
+								<div class="date">
+									<p>
+										2025.01.03
+										<span>3일 후 만료</span>
+									</p>
+								</div>
+								<!-- //2025.02.07 수정 -->
+								<i class="svgicon svgicon-arrowright"></i>
+							</a>
+						</li>
+						<li class="list-item">
+							<a href="#">
+								<div class="badge other">
+									<span>타 사원<br>관리중</span>
+								</div>
+								<div class="customer-name">
+									<strong>박블랙</strong>
+								</div>
+								<div class="customer-number">
+									<!-- 2025.02.07 수정 // -->
+									<p>010-9234-1408</p>
+									<!-- // 2025.02.07 수정 -->
+								</div>
+								<div class="interest">
+									<p>관심골프장<em>1</em></p>
+								</div>
+								<div class="location">
+									<p>강원특별자치도</p>
+								</div>
+								
+								<!-- 2025.02.07 수정 //-->
+								<div class="date">
+									<p>
+										2025.01.03
+									</p>
+								</div>
+								<!-- //2025.02.07 수정 -->
+								<i class="svgicon svgicon-arrowright"></i>
+							</a>
+						</li>
+						<li class="list-item">
+							<a href="#">
+								<div class="badge">
+									<span>연락예정</span>
+								</div>
+								<div class="customer-name">
+									<strong>㈜코너스톤인터랙티브</strong>
+								</div>
+								<div class="customer-number">
+									<!-- 2025.02.07 수정 // -->
+									<p>010-9234-1408</p>
+									<!-- // 2025.02.07 수정 -->
+								</div>
+								<div class="interest">
+									<p>관심골프장<em>2</em></p>
+								</div>
+								<div class="location">
+									<p>세종특별자치시</p>
+								</div>
+								
+								<!-- 2025.02.07 수정 //-->
+								<div class="date">
+									<p>
+										2025.01.03
+									</p>
+								</div>
+								<!-- //2025.02.07 수정 -->
+								<i class="svgicon svgicon-arrowright"></i>
+							</a>
+						</li>
+					</ul>
+
+					<!-- pagination // -->
+					<div class="pagination-list">
+						<a href="#" class="btn-prev"><span class="blind">이전 페이지</span><i class="svgicon svgicon-pagearrowleft"></i></a>
+						<ol>
+							<li class="active"><a href="javascript:void(0);"><span class="blind">현재 페이지</span>1</a></li><!-- 활성화 class="active" -->
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">5</a></li>
+							<li><a href="#">6</a></li>
+							<li><a href="#">7</a></li>
+							<li><a href="#">8</a></li>
+							<li><a href="#">9</a></li>
+							<li><a href="#">10</a></li>
+						</ol>
+						<a href="#" class="btn-next"><span class="blind">다음 페이지</span><i class="svgicon svgicon-pagearrowright"></i></a>
+					</div>
+					<!-- // pagination -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- // 본문 영역 -->
+
+	
+	<!-- 팝업 : 고객 정보 등록 // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupProspectiveCustomerRegistration",
+			"class": "popupprospectivecustomerregistration",
+			"tit": "고객 정보 등록",
+			"header": true,
+			"content": "./contents/popup/popupProspectiveCustomerRegistration.html"
+		}
+	})}}
+	<!-- // 팝업 : 고객 정보 등록 -->
+</main>

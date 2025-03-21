@@ -1,0 +1,316 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"> -->
+    <meta name="viewport" content="width=960">
+
+    <meta name="format-detection" content="telephone=no, email=no, address=no">
+
+    <meta name="robots" content="index, nofollow">
+    <meta name="description" content="페이지 설명">
+    <meta name="keywords" content="키워드, 키워드">
+
+    <meta property="og:site_name" content="한케이골프">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="title">
+    <meta property="og:image" content="image">
+    <meta property="og:url" content="url입력">
+    <meta property="og:description" content="페이지 설명">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../imgs/sales/common/favicon.ico">
+    <link rel="apple-touch-icon" href="../../../imgs/sales/common/apple-touch-icon.png">
+
+    <!-- 공통 css, js -->
+    <link rel="stylesheet" href="../../../css/sales/lib/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../../css/sales/lib/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../../../css/sales/common.css">
+    <script src="../../../jscript/sales/lib/jquery-3.6.4.min.js"></script>
+    <script src="../../../jscript/sales/lib/jquery-ui.min.js"></script>
+    <script src="../../../jscript/sales/lib/jquery.ui.touch-punch.min.js"></script>
+    <script src="../../../jscript/sales/lib/swiper-bundle.min.js"></script>
+
+    <script src="../../../jscript/sales/lib/moment.min.js"></script>
+    <script src="../../../jscript/sales/lib/daterangepicker.js"></script>
+
+    <script src="../../../jscript/sales/function.ui.js"></script>
+    <script src="../../../jscript/sales/common.ui.js"></script>
+
+    <!-- 페이지별 css, js -->
+
+    <link rel="stylesheet" href="../../../css/sales/membership.css">
+    <link rel="stylesheet" href="../../../css/sales/override.css">
+
+
+
+
+
+    <title> 회원권 소개 상세 - 한케이골프</title>
+
+
+</head>
+
+<body>
+
+<noscript>
+    이 사이트를 이용하기 위해서 자바스크립트를 활성화 시킬 필요가 있습니다.
+    <a href="http://www.enable-javascript.com/ko/" target="_blank">브라우저에서 자바스크립트를 활성화하는 방법</a>을 참고 하세요.
+</noscript>
+
+<div id="wrap">
+    <a href="#contents" class="skip">본문 영역으로 바로가기</a>
+
+    <!-- header :: 실 개발소스는 iframe이므로 주석 // -->
+<!--    <header id="header">-->
+<!--        <div class="inner">-->
+<!--            <h1 class="logo"><a href="#"><span class="blind">Han k Golf For Sales</span></a></h1>-->
+
+<!--            <div class="tab-swiper">-->
+<!--                <div class="swiper">-->
+<!--                    <div class="swiper-wrapper">-->
+
+<!--                        &lt;!&ndash;-->
+<!--                        .tab-swiper > .swiper-slide append, remove 후 swiper update를 위해 호출-->
+
+<!--                        default(첫번째 버튼 활성화):  fn.headerTabSwiper();-->
+<!--                        n번째 버튼 활성화: fn.headerTabSwiper(n-1);-->
+<!--                    &ndash;&gt;-->
+<!--                        <div class="swiper-slide">-->
+<!--                            <a href="#" class="active">회원권 소개</a>&lt;!&ndash; 활성화 class="active" &ndash;&gt;-->
+<!--                            <button type="button" class="btn-close"><span class="blind">닫기</span><i class="svgicon svgicon-close"></i></button>-->
+<!--                        </div>-->
+
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="util">-->
+<!--                <div class="toggle-area">-->
+<!--                    <label class="check-toggle">-->
+<!--                        <strong class="toggle-txt on">영업활동 ON</strong>-->
+<!--                        <input type="checkbox" name="">-->
+<!--                        <strong class="toggle-txt off">영업활동 OFF</strong>-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--                <button type="button" class="btn-masking" onclick="fn.toggleActive(this)"><span class="blind">마스킹해제</span></button>&lt;!&ndash; 활성화 class="active" &ndash;&gt;-->
+<!--                <button type="button" class="btn-allmenu" onclick="fn.popup('open', '#popupAllMenu');"><span class="blind">전체 메뉴</span></button>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </header>-->
+    <!-- // header -->
+
+    <!-- container // -->
+    <main id="contents_container">
+        <!-- 본문 영역 // -->
+        <div id="contents" class="membership view-new "> <!-- 해당 depth별로 class명 추가 -->
+
+            <div class="view-area">
+                <div class="tab-area">
+                    <div class="view-select">
+                        <div class="select" id="selectGolf1">
+                            <select title="골프장 선택" id="">
+                                <option value="value01">삼투엔람 골프 리조트</option>
+                                <option value="value02">삼투엔람 골프 리조트2</option>
+                                <option value="value03">삼투엔람 골프 리조트4</option>
+                            </select>
+                        </div>
+                        <!-- <div class="select" id="selectGolf2">
+                            <select title="select 선택">
+                                <option value="value01">나트랑</option>
+                                <option value="value02">하이퐁</option>
+                                <option value="value03">남호이안</option>
+                            </select>
+                        </div> -->
+                    </div>
+                    <div class="view-tab">
+                        <button type="button" class="swiper-button-prev"><span class="blind">이전</span><i class="svgicon svgicon-arrowright"></i></button>
+                        <button type="button" class="swiper-button-next"><span class="blind">다음</span><i class="svgicon svgicon-arrowright"></i></button>
+
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <span class="btn-tab">선택의 이유 TOP 3</span>
+                                </div>
+                                <div class="swiper-slide">
+                                    <span class="btn-tab">TOP 1 접근성</span>
+                                </div>
+                                <div class="swiper-slide">
+                                    <span class="btn-tab">TOP 2 기후조건</span>
+                                </div>
+                                <div class="swiper-slide">
+                                    <span class="btn-tab">TOP 3 코스난이도</span>
+                                </div>
+                                <div class="swiper-slide">
+                                    <span class="btn-tab">코스 소개</span>
+                                </div>
+                                <div class="swiper-slide">
+                                    <span class="btn-tab">삼홀딩스 소개</span>
+                                </div>
+                                <div class="swiper-slide">
+                                    <span class="btn-tab">AWARDS</span>
+                                </div>
+                                <div class="swiper-slide">
+                                    <span class="btn-tab">호텔정보</span>
+                                </div>
+                                <div class="swiper-slide">
+                                    <span class="btn-tab">현지투어 추천</span>
+                                </div>
+                                <div class="swiper-slide">
+                                    <span class="btn-tab">셔틀버스</span>
+                                </div>
+                                <div class="swiper-slide">
+                                    <span class="btn-tab">이용자 후기</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail-area">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="img"><img src="../../../imgs/sales/temp/view-detail01.jpg" alt="이미지" /></div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="img"><img src="../../../imgs/sales/temp/view-detail02.jpg" alt="이미지" /></div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="img"><img src="../../../imgs/sales/temp/view-detail03.jpg" alt="이미지" /></div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="img"><img src="../../../imgs/sales/temp/view-detail04.jpg" alt="이미지" /></div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="img"><img src="../../../imgs/sales/temp/view-detail05.png" alt="이미지" /></div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="img"><img src="../../../imgs/sales/temp/view-detail06-1.png" alt="이미지" /></div>
+                                <div class="img"><img src="../../../imgs/sales/temp/view-detail06-2.png" alt="이미지" /></div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="img"><img src="../../../imgs/sales/temp/view-detail07-1.png" alt="이미지" /></div>
+                                <div class="img"><img src="../../../imgs/sales/temp/view-detail07-2.png" alt="이미지" /></div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="img"><img src="../../../imgs/sales/temp/view-detail08.png" alt="이미지" /></div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="img"><img src="../../../imgs/sales/temp/view-detail09.png" alt="이미지" /></div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="img"><img src="../../../imgs/sales/temp/view-detail10.png" alt="이미지" /></div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="img"><img src="../../../imgs/sales/temp/view-detail11.jpg" alt="이미지" /></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="btn big bt-application">입회신청서 작성하기</a>
+            </div>
+            <script>
+                // 상단 탭영역 너비 계산
+                const widthCalc = () => {
+                    const selectBox = document.querySelector('.view-select');
+                    const box = document.querySelector('.view-tab');
+
+                    if (!selectBox || !box) return;
+
+                    const selectWidth = selectBox.offsetWidth;
+                    box.style.width = `calc(100% - ${selectWidth}px)`;
+                };
+                // 컨텐츠 스와이퍼
+                const tabContainer = document.querySelector('.tab-area');
+                let tabSwiper = new Swiper(tabContainer.querySelector('.swiper'), {
+                    slidesPerView: 'auto',
+                    navigation: {
+                        nextEl: tabContainer.querySelector('.swiper-button-next'),
+                        prevEl: tabContainer.querySelector('.swiper-button-prev'),
+                    },
+                    //freeMode: true,
+                    watchSlidesProgress: true,
+                });
+
+                const detailContainer = document.querySelector('.detail-area');
+                let detailSwiper = new Swiper(detailContainer.querySelector('.swiper'), {
+                    autoHeight: true,
+                    thumbs: {
+                        swiper: tabSwiper,
+                    },
+                    on: {
+                        slideChangeTransitionEnd: () => {
+                            window.scrollTo(0, 0);
+                        }
+                    }
+                });
+
+                // select 변경 시 Swiper 초기화 함수
+                const resetSwipers = () => {
+                    if (tabSwiper) tabSwiper.destroy(true, true);
+                    if (detailSwiper) detailSwiper.destroy(true, true);
+
+                    // 다시 Swiper 생성
+                    tabSwiper = new Swiper(tabContainer.querySelector('.swiper'), {
+                        slidesPerView: 'auto',
+                        navigation: {
+                            nextEl: tabContainer.querySelector('.swiper-button-next'),
+                            prevEl: tabContainer.querySelector('.swiper-button-prev'),
+                        },
+                        a11y: {
+                            enabled: false
+                        },
+                        ariaLive: 'off',
+                        freeMode: true,
+                        watchSlidesProgress: true,
+                    });
+
+                    detailSwiper = new Swiper(detailContainer.querySelector('.swiper'), {
+                        autoHeight: true,
+                        thumbs: {
+                            swiper: tabSwiper,
+                        },
+                        a11y: {
+                            enabled: false
+                        },
+                        ariaLive: 'off',
+                        on: {
+                            slideChangeTransitionEnd: () => {
+                                window.scrollTo(0, 0);
+                            }
+                        }
+                    });
+                };
+                //detailSwiper.controller.control = tabSwiper;
+                const selectSwiper = () => {
+                    const selects = document.querySelectorAll('.tab-area select');
+                    selects.forEach(select => {
+                        select.addEventListener('change', () => {
+                            //widthCalc();
+                            resetSwipers();
+                        });
+                    });
+                }
+                document.addEventListener("DOMContentLoaded", () => {
+                    //setTimeout(widthCalc, 1000);
+                    selectSwiper();
+                });
+            </script>
+        </div>
+        <!-- // 본문 영역 -->
+    </main>
+    <!-- // container -->
+
+    <!-- footer // -->
+    <footer id="footer"></footer>
+    <!-- // footer -->
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<main id="container">
+	<!-- 본문 영역 // -->
+	<div id="contents" class="{{prop.depth1}} {{prop.depth2}} {{prop.depth3}}"> <!-- 해당 depth별로 class명 추가 -->
+		<div class="title-area">
+			<h2 class="tit">전체일정관리</h2>
+		</div>
+
+		<button class="btn line" onclick="fn.popup('open', '#popupRegistercalendar'); fn.timePickerInit('#startTime', '#endTime')" >일정등록​</button>
+		<button class="btn line" onclick="fn.popup('open', '#popupRegistercalendarEdit'); fn.timePickerInit('#startTime', '#endTime')">외부 일정 수정</button>
+		<button class="btn line" onclick="fn.popup('open', '#popupCalendarView')">일정상세 -고객정보추가</button>
+		<button class="btn line" onclick="fn.popup('open', '#popupCustomerLookup')">고객조회</button>
+		<button class="btn line" onclick="fn.popup('open', '#popupCustomerLookupNodata')">고객조회-NoData</button>
+		<button class="btn line" onclick="fn.popup('open', '#popupTimePicker')">시간선택</button>
+
+		
+	</div>
+	<!-- 팝업 : 일정등록​ // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupRegistercalendar",
+			"class": "popupregistercalendar",
+			"tit": "일정등록​",
+			"header": true,
+			"content": "./contents/popup/popupRegistercalendar.html"
+		}
+	})}}
+	<!-- // 팝업 : 일정등록​ -->
+
+	<!-- 팝업 : 외부 일정 수정 // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupRegistercalendarEdit",
+			"class": "popupregistercalendar",
+			"tit": "일정수정",
+			"header": true,
+			"content": "./contents/popup/popupRegistercalendarEdit.html"
+		}
+	})}}
+	<!-- // 팝업 : 외부 일정 수정 -->
+
+	<!-- 팝업 : 일정상세 // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupCalendarView",
+			"class": "popupcalendarview",
+			"tit": "일정상세",
+			"header": true,
+			"content": "./contents/popup/popupCalendarView.html"
+		}
+	})}}
+	<!-- // 팝업 : 일정상세 -->
+
+	<!-- 팝업 : 시간선택 // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupTimePicker",
+			"class": "popuptimepicker",
+			"tit": "시간선택",
+			"header": true,
+			"content": "./contents/popup/popupTimePicker.html"
+		}
+	})}}
+	<!-- // 팝업 : 시간선택 -->
+
+	<!-- 팝업 : 고객조회 // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupCustomerLookup",
+			"class": "popupcustomerlookup",
+			"tit": "고객조회",
+			"header": true,
+			"content": "./contents/popup/popupCustomerLookup.html"
+		}
+	})}}
+	<!-- // 팝업 : 고객조회 -->
+
+	<!-- 팝업 : 고객조회 // -->
+	{{include('./components/popup.html', {
+		"prop": {
+			"id": "popupCustomerLookupNodata",
+			"class": "popupcustomerlookup",
+			"tit": "고객조회",
+			"header": true,
+			"content": "./contents/popup/popupCustomerLookupNodata.html"
+		}
+	})}}
+	<!-- // 팝업 : 고객조회 -->
+
+</main>

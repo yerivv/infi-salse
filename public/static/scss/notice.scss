@@ -1,0 +1,54 @@
+/**
+* --------------------------------
+* Notice
+* --------------------------------
+*/
+
+@import
+	"./abstracts/variables",
+	"./abstracts/functions",
+	"./abstracts/mixins";
+
+
+.notice {
+	padding-bottom: 30px;
+
+	.inner {
+		padding: 0 20px;
+	}
+
+	.search-form {
+		display: flex;
+		gap: 4px;
+		
+		.form-search {
+			width: 160px;
+		}
+	}
+
+	.title-area {
+		padding: 30px 0 20px;
+
+		h2.tit {
+			@include font(24px, 36px, 700);
+		}
+	}
+
+	.list-board {
+		@include svg-icon('file', 16, $color: $color3, $url: $svg16);
+
+		thead {
+			display: table-header-group;
+			height: 30px;
+			background-color: $color5;
+
+			th {
+				color: $color3;
+				font-size: 12px;
+				font-weight: 500;
+				line-height: 20px;
+			}
+		}
+	}
+
+}

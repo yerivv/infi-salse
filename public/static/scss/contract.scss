@@ -1,0 +1,1533 @@
+/**
+* --------------------------------
+* contract
+* --------------------------------
+*/
+
+@import
+	"./abstracts/variables",
+	"./abstracts/functions",
+	"./abstracts/mixins";
+
+
+.contract {	
+	>.inner {
+		padding: 0 32px;
+	}
+
+	.title-area {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 30px 32px 0;
+		background-color: $color2;
+
+		h2.tit {
+			@include font(24px, 36px, 700);
+		}
+
+		.btn {
+			@include svg-icon('session', 16, $url: 'common/icon_16.svg' ,$margin: 6px 4px 0 0);
+			@include svg-icon('card', 16, $url: 'common/icon_16.svg' ,$margin: 6px 4px 0 0, $color: $color2);
+
+			flex: none;
+			padding: 0 12px;
+			line-height: 30px;
+			border-color: $color9;
+			border-radius: 999px;
+
+			&.fill {
+				background-color: $green1;
+				border-color: $green1;
+			}
+		}
+	}
+
+	.list-sort {
+		margin-top: 20px;
+	}
+
+	.list-board {
+		margin-top: 20px;
+		border: none;
+		padding: 30px 32px;
+		background-color: $color10;
+
+		.sel-area {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			p {
+				position: relative;
+				padding: 0 8px;
+				color: $color3;
+				font-size: 14px;
+				font-weight: 700;
+				line-height: 22px;
+
+				span {
+					display: inline-block;
+					margin: 0 2px 0 8px;
+					color: $primary3;
+				}
+			}
+
+			.select {
+				height: 22px;
+
+				.dropdown {
+					height: 22px;
+					width: 112px;
+					line-height: 22px;
+					text-align: right;
+
+					.current {
+						text-align: left;
+						border: none;
+						padding-right: 20px;
+						padding-left: 8px;
+						background-color: $color10;
+					}
+	
+					.list {
+						top: calc(100% + 8px);
+						border: 1px solid $color7;
+						background-color: rgba($color: $color10, $alpha: 0.98);
+						border-radius: 4px;
+						
+						.option {
+							text-align: right;
+							background-color: rgba($color: $color10, $alpha: 0.98);
+							padding: 6px 12px;
+							text-align: center;
+						}
+					}
+	
+					&.open {
+						.icon-select {
+							transform: rotate(0);
+						}
+					}
+	
+					.icon-select { 
+						width: 12px;
+						height: 22px;
+						transform: rotate(180deg);
+						right: 8px;
+	
+						&::after {
+							background-position: -150px -100px;
+						}
+					}
+				}
+			}
+		}
+
+		>ul,.contract-list {
+			margin-top: 20px;
+
+			li {
+				border: 1px solid $line-color;
+				border-radius: 8px;
+				overflow: hidden;
+
+				&+li {
+					margin-top: 12px;
+					display: flex;
+					flex-direction: column;
+				}
+
+				a {
+					.subject {
+						display: flex;
+						text-align: left;
+						align-items: center;
+						padding: 20px;
+						background-color: $color2;
+	
+						.state {
+							display: inline-flex;
+							align-items: center;
+							justify-content: center;
+							width: 68px;
+							height: 64px;
+							color: $primary1;
+							font-size: 14px;
+							font-weight: 700;
+							line-height: 22px;
+							background-color: $color2;
+							border: 1px solid $line-color;
+							border-radius: 6px;
+
+							&.transaction {
+								color: $primary2;
+							}
+
+							&.positive  {
+								color: $green4;
+							}
+						}
+	
+						.customer {
+							margin-left: 16px;
+
+							p {
+								font-size: 18px;
+								font-weight: 500;
+								line-height: 28px;
+	
+								strong {
+									display: inline-block;
+									margin-right: 3px;
+								}
+							}
+
+							.customer-detail {
+								margin-top: 4px;
+
+								span {
+									@include before-line(1px, 10px,$color: $color7);
+
+									display: inline-block;
+									padding-left: 11px;
+									margin-left: 10px;
+									color: $color3;
+									font-size: 14px;
+									font-weight: 400;
+									line-height: 22px;
+
+									em {
+										margin-left: 4px;
+										color: $color1;
+										font-weight: 500;
+									}
+
+									&::before {
+										top: 50%;
+										transform: translateY(-50%);
+										left: 0;
+									}
+
+									&:first-of-type {
+										color: $color1;
+										font-weight: 500;
+										padding-left: 0;
+										margin-left: 0;
+
+										&::before {
+											content: none;
+										}
+									}
+
+									.btn {
+										margin-left: 6px;
+										font-size: 10px;
+										font-weight: 500;
+										line-height: 18px;
+										height: 20px;
+										padding: 0px 8px;
+									}
+								}
+							}
+						}
+
+						.badge-area {
+							display: flex;
+							align-items: top;
+							align-content: top;
+							gap: 4px;
+							margin-left: auto;
+							margin-bottom: auto;
+
+							.badge {
+								display: inline-block;
+								padding: 0 10px;
+								height: 24px;
+								font-size: 11px;
+								font-weight: 500;
+								line-height: 22px;
+								border: 1px solid $color1;
+								border-radius: 999px;
+
+								&.continue{
+									color: $color2;
+									border-color: $primary1;
+									background-color: $primary1;
+								}
+
+								&.complete {
+									color: $color2;
+									border-color: $color1;
+									background-color: $color1;
+								}
+
+								&.meeting {
+									color: #E4AC1B;
+									border-color: #E4AC1B;
+									background-color: #FFFBF1;
+								}
+
+								&.contract {
+									color: $green4;
+									border-color: $green4;
+									background-color: #F4FEF9;
+								}
+
+								&.payment {
+									color: #631ED2;
+									border-color: #631ED2;
+									background-color: #F6F2FD;
+								}
+
+								&.approve {
+									color: $color1;
+									border-color: $color7;
+									background-color: #F4F4F4;
+								}
+							}
+						}
+					}
+
+				}
+
+				.product{
+					padding: 16px 20px;
+					display: flex;
+					justify-content: space-between;
+					background-color: $color5;
+
+					div {
+						&:first-of-type {
+							p {
+								span {
+									display: -webkit-inline-box;
+									-webkit-line-clamp: 1;
+									-webkit-box-orient: vertical;
+									overflow: hidden;
+									max-width: 95px;
+									vertical-align: top;
+									text-align: left;
+								}
+							}
+						}
+
+						p {
+							@include before-line(1px, 10px,$color: $color7);
+
+							display: inline-block;
+							padding-left: 11px;
+							margin-left: 10px;
+							color: $color3;
+							font-size: 14px;
+							font-weight: 400;
+							line-height: 22px;
+
+							&::before {
+								top: 50%;
+								transform: translateY(-50%);
+								left: 0;
+							}
+
+							&:first-of-type {
+								padding-left: 0;
+								margin-left: 0;
+
+								&::before {
+									content: none;
+								}
+							}
+
+							span {
+								margin-left: 4px;
+								color: $color1;
+								font-weight: 500;
+								line-height: 22px;
+							}
+						}
+					}
+
+					.tooltip-wrap {
+						@include svg-icon('info', 20, $url: 'common/icon_20.svg');
+
+						.hide {
+							display: none;
+							font-size: 0;
+						}
+
+						.btn-tooltip {
+							margin-top: 1px;
+							margin-left: 6px;
+							vertical-align: top;
+
+							&::after {
+								content: none;
+							}
+						}
+
+						.tooltip {
+							margin-bottom: 0;
+							bottom: 0;
+							padding: 16px;
+							right: 26px;
+							left: auto;
+							border-radius: 12px;
+							border: 1px solid $primary4;
+							box-shadow: 2px 2px 3px 0px rgba(11, 14, 64, 0.25);
+
+							.tit{
+								font-size: 16px;
+								font-weight: 700;
+								line-height: 26px; 
+								text-align: left;
+
+								.btn-close {
+									@include svg-icon('close', 16, $url: 'common/icon_20.svg');
+
+									background: none;
+									top: 19px;
+									right: 14px;
+								}
+							}
+
+							.cont {
+								p {
+									color: $color3;
+									font-size: 14px;
+									font-weight: 400;
+									line-height: 22px;
+									text-align: left;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+	}
+
+	&.view {
+		.title-area {
+			padding: 30px 32px;
+
+			.btns {
+				.btn {
+					@include svg-icon('menu', 16, $url: 'common/icon_16.svg',$margin: 6px 4px 0 0, $color:$primary2);
+					@include svg-icon('save', 16, $url: 'common/icon_16.svg',$margin: 6px 4px 0 0, $color:$primary2);
+					@include svg-icon('cash', 16, $url: 'common/icon_16.svg',$margin: 6px 4px 0 0, $color:$primary2);
+					@include svg-icon('mail', 16, $url: 'common/icon_16.svg',$margin: 6px 4px 0 0, $color:$color2);
+					@include svg-icon('session', 16, $url: 'common/icon_16.svg',$margin: 6px 4px 0 0, $color:$color2);
+
+					
+					border-color: $color9;
+				}
+			}
+		}
+
+		.customer-info {
+			display: flex;
+			flex-direction: column;
+
+			.inner {
+				padding: 32px 30px;
+				background-color: $color10;
+			}
+
+			.subject {
+				padding: 0 8px;
+				display: flex;
+				text-align: left;
+				align-items: center;
+
+				.state {
+					display: inline-flex;
+					align-items: center;
+					justify-content: center;
+					width: 68px;
+					height: 40px;
+					color: $primary1;
+					font-size: 14px;
+					font-weight: 700;
+					line-height: 22px;
+					background-color: $color2;
+					border: 1px solid $line-color;
+					border-radius: 6px;
+
+					&.positive {
+						color: $green4;
+					}
+
+					&.transaction {
+						color: $primary2;
+					}
+				}
+
+				.customer {
+					margin-left: 12px;
+
+					strong {
+						display: inline-block;
+						color: $color1;
+						font-size: 20px;
+						font-weight: 700;
+						line-height: 30px;
+					}
+
+					p {
+						margin-left: 16px;
+						display: inline-block;
+						color: $color4;
+						font-size: 16px;
+						font-weight: 500;
+						line-height: 26px; 
+
+						span {
+							color: $color1;
+							display: inline-block;
+							margin-left: 8px;
+						}
+					}
+				}
+
+				.customer-detail {
+					margin-left: auto;
+
+					p {
+						@include before-line(1px, 10px,$color: $color7);
+
+						display: inline-block;
+						padding-left: 11px;
+						margin-left: 10px;
+						color: $color3;
+						font-size: 14px;
+						font-weight: 400;
+						line-height: 22px;
+
+						&::before {
+							top: 50%;
+							transform: translateY(-50%);
+							left: 0;
+						}
+
+						&:first-of-type {
+							padding-left: 0;
+							margin-left: 0;
+
+							&::before {
+								content: none;
+							}
+						}
+
+						span {
+							display: inline-block;
+							margin-left: 4px;
+							color: $color1;
+							font-weight: 500;
+						}
+					}
+				}
+			}
+
+			.customer-product {
+				margin-top: 16px;
+				padding: 32px 32px 8px;
+				border-radius: 16px;
+				background: linear-gradient(97deg, #5482FF 7.14%, #2550D8 94.09%);
+				box-shadow: 16px 16px 24px 0px rgba(3, 15, 48, 0.14);
+				position: relative;
+				z-index: 1;
+
+				.product-wrap {
+					display: flex;
+					justify-content: space-between;
+					> p {
+						width: 350px;
+						color: rgba($color: $color2, $alpha: 0.5);
+						font-size: 14px;
+						font-family: $webfont-family2;
+						font-weight: 400;
+						line-height: 20px; 
+	
+						img {
+							width: 44px;
+							&:last-of-type{
+								width: 48px;
+							}
+						}
+	
+						strong {
+							margin-top: 4px;
+							display: block;
+							font-family: $webfont-family1;
+							color: $color2;
+							font-size: 24px;
+							font-weight: 700;
+							line-height: 36px; 
+						}
+	
+						&+p {
+							width: 254px;
+							margin-left: 24px
+						}
+					}
+				}
+
+				.btn-area {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					height: 44px;
+					color: $color2;
+					padding-top: 8px;
+					margin-top: 32px;
+					border-top: 1px dashed rgba($color: $color2, $alpha: 0.35);
+
+					&.positive {
+						p {
+							width: auto;
+
+							&:first-of-type {
+								padding-right: 20px;
+							}
+							&:last-of-type {
+								padding-right: 0px;
+								padding-left: 20px;
+								font-weight: 500;
+							}
+						}
+					}
+
+					p {
+						@include after-line(1px, 12px, $color: rgba($color: $color2, $alpha: 0.35), $margin: 5px 0 0 0);
+						@include svg-icon('voucher', 20, $margin: 1px 8px 0 0 ,$color: $color2);
+						@include svg-icon('coupon', 20, $margin: 1px 8px 0 0 ,$color: $color2);
+						@include svg-icon('gift', 20, $margin: 1px 8px 0 0 ,$color: $color2);
+						@include svg-icon('benefit', 20, $margin: 1px 8px 0 0 ,$color: $color2);
+
+						width: calc(100% / 3);
+
+						&:first-of-type {
+							padding-right: 32px;
+						}
+	
+						&:last-of-type {
+							padding-left: 32px;
+
+							&::after {
+								content: none;
+							}
+
+							span {
+								right: 0;
+							}
+						}
+
+						&:nth-of-type(2) {
+							padding: 0 32px;
+						}
+
+						span {
+							position: absolute;
+							top: 50%;
+							right: 32px;
+							transform: translateY(-50%);
+							display: inline-block;
+							font-weight: 700;
+						}
+					}
+				}
+
+
+				.group {
+					margin-left: auto;
+
+					@include svg-icon('percent', 16, $url: 'common/icon_16.svg',$margin: 12px 0 0 2px, $color: $color2);
+
+					p {
+						color: rgba($color: $color2, $alpha: 0.5);
+						font-size: 14px;
+						font-weight: 400;
+						line-height: 20px; 
+					}
+
+					.tooltip-wrap {
+						@include svg-icon('info', 20, $url: 'common/icon_20.svg');
+
+						>strong {
+							color: $color2;
+							display: inline-block;
+							font-size: 28px;
+							font-weight: 700;
+							line-height: 36px;
+						}
+
+						.btn-tooltip {
+							@include svg-icon('customer', 16, $url: 'common/icon_16.svg',$margin: 6px 4px 0 0,$color : $color2);
+							margin-top: 4px;
+							margin-left: 10px;
+							padding: 0 12px;
+							height: 30px;
+							color: $color2;
+							font-size: 11px;
+							font-weight: 500;
+							line-height: 28px;
+							vertical-align: top;
+							border: 1px solid $color9;
+							border-radius: 999px;
+
+							&::after {
+								content: none;
+							}
+						}
+
+						.tooltip {
+							margin-bottom: 0;
+							top: calc(100% + 8px);
+							padding: 16px;
+							right: 0;
+							left: auto;
+							bottom: auto;
+							border-radius: 12px;
+							border: 1px solid $primary4;
+							box-shadow: 2px 2px 3px 0px rgba(11, 14, 64, 0.25);
+
+							.tit{
+								font-size: 16px;
+								font-weight: 700;
+								line-height: 26px; 
+								text-align: left;
+
+								.btn-close {
+									@include svg-icon('close', 16, $url: 'common/icon_20.svg');
+
+									background: none;
+									top: 19px;
+									right: 14px;
+								}
+							}
+
+							.cont {
+								p {
+									color: $color3;
+									font-size: 14px;
+									font-weight: 400;
+									line-height: 22px;
+									text-align: left;
+								}
+							}
+						}
+					}
+
+					span {
+						margin-top: 4px;
+						display: block;
+						color: $color2;
+						font-size: 12px;
+						font-weight: 400;
+						line-height: 20px;
+					}
+				}
+			}
+
+			.positive-area {
+				@include svg-icon('document', 16, $url: 'common/icon_16.svg',$margin: 6px 2px 0 0);
+
+				margin-top: -11px;
+				padding: 31px 32px 20px;
+				border: 1px solid $color9;
+				background-color: $color2;
+				border-radius: 0px 0px 16px 16px;
+
+				.btn {
+					margin-left: 6px;
+					padding: 0 8px;
+				}
+
+				p {
+					display: inline-block;
+					&:has(strong) {
+						font-size: 16px;
+						font-weight: 500;
+						line-height: 26px;
+					}
+
+					&:has(span) {
+						color: $color3;
+						font-size: 14px;
+						font-weight: 400;
+						line-height: 22px; 
+					}
+
+					strong {
+						display: inline-block;
+						margin-right: 2px;
+						font-size: 18px;
+						font-weight: 700;
+						line-height: 28px; 
+					}
+
+					span {
+						display: inline-block;
+						margin-left: 4px;
+						color: $color1;
+						font-size: 14px;
+						font-weight: 500;
+						line-height: 22px;
+					}
+
+					&+p:has(span) {
+						@include before-line(1px, 12px,$margin: 5px 0 0 0, $color: $color7);
+
+						margin-left: 12px;
+						padding-left: 13px;
+					}
+				}
+
+				div {
+					margin-top: 12px
+				}
+			}
+		}
+
+		.membership-list {
+			.membership-wrap {
+				@include before-line(100%, 8px, 0, $color8);
+
+				background-color: $color10;
+
+				&::before {
+					border-top: 2px solid $color7
+				}
+
+				.membership-item {
+					.item-title {
+						padding: 0 8px;
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+
+						>strong {
+							display: inline-flex;
+							align-items: center;
+							font-size: 24px;
+							font-weight: 700;
+							line-height: 36px
+						}
+
+						.badge {
+							margin-left: 12px;
+							display: inline-block;
+							padding: 0 10px;
+							height: 24px;
+							font-size: 11px;
+							font-weight: 500;
+							line-height: 22px;
+							border: 1px solid $color1;
+							border-radius: 999px;
+
+							&.continue{
+								color: $color2;
+								border-color: $primary1;
+								background-color: $primary1;
+							}
+
+							&.complete {
+								color: $color2;
+								border-color: $color1;
+								background-color: $color1;
+							}
+
+							&.meeting {
+								color: #E4AC1B;
+								border-color: #E4AC1B;
+								background-color: #FFFBF1;
+							}
+
+							&.contract {
+								color: $green4;
+								border-color: $green4;
+								background-color: #F4FEF9;
+							}
+
+							&.payment {
+								color: #631ED2;
+								border-color: #631ED2;
+								background-color: #F6F2FD;
+							}
+
+							&.approve {
+								color: $color1;
+								border-color: $color7;
+								background-color: #F4F4F4;
+							}
+						}
+
+						p {
+							display: inline-block;
+							font-size: 20px;
+							font-weight: 500;
+							line-height: 30px;
+
+							strong {
+								display: inline-block;
+								width: 132px;
+								margin-right: 2px;
+								font-size: 20px;
+								font-weight: 700;
+								line-height: 30px;
+								text-align: right;
+							}
+
+							span {
+								display: inline-block;
+								font-size: 18px;
+								font-weight: 400;
+								line-height: 28px;
+							}
+
+							&.expected {
+								@include before-line(1px, 20px,$margin: 5px 0 0 0, $color: $color7);
+
+								margin-left: 20px;
+								padding-left: 21px;
+								color: $primary1;
+							}
+						}
+					}
+				}
+			}
+
+			.membership-item {
+				position: relative;
+				padding: 30px 32px 30px;
+
+				&.contract-info {
+					.info-wrap {
+						.payment-info {
+							overflow: visible;
+
+							.table-head {
+								@include svg-icon('refresh',16,$margin : 2px 4px 0 0, $color: $color3);
+
+								justify-content: space-between;
+								border-radius: 12px 12px 0 0;
+
+								button {
+									color: $color3;
+									font-size: 12px;
+									font-weight: 500;
+									line-height: 20px;
+								}
+							}
+
+							> li:not(.table-head) {
+								flex-direction: column;
+								align-items: flex-start;
+								gap: 0;
+								padding-bottom: 20px;
+
+								&:last-of-type {
+									padding-top: 20px;
+									border-radius: 0 0 12px 12px;
+								}
+
+								.select {
+									margin-top: 16px;
+									width: 100%;
+								}
+
+								div {
+									&+div {
+										&::before {
+											display: none;
+										}
+									}
+								}
+
+								.inductees {
+									width: 100%;
+									display: flex;
+									justify-content: space-between;
+									align-items: center;
+									margin-top: 16px;
+
+									&:last-of-type {
+										margin-top: 14px;
+									}
+
+									p {
+										color: $color3;
+									}
+
+									> div {
+										strong {
+											font-size: 14px;
+											font-weight: 700;
+											line-height: 22px; 
+											display: inline-block; 
+											width :56px;
+											line-height: 30px;
+											text-align: center;
+										}
+
+										.btn {
+											margin-left: 16px;
+											width: 144px;
+											height: 30px;
+											color: $primary2;
+											line-height: 28px;
+											font-size: 11px;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+
+				&+.membership-item {
+					&::before {
+						content: '';
+						display: block;
+						width: 100%;
+						height: 16px;
+						position: absolute;
+						top: -8px;
+						left: 50%;
+						transform: translateX(-50%);
+						background-image: url($image-url + 'contract/contract_line_bg.png');
+					}
+				}
+
+				.membership-title {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					position: relative;
+					padding: 20px 24px;
+					background-color: $color10;
+					border-radius: 12px;
+
+					&.greenbg {
+						background-color: $green2;
+						p {
+							span {
+								color: $color1;
+							}
+						}
+					}
+
+					p {
+						font-size: 24px;
+						font-weight: 400;
+						line-height: 36px;
+
+						span {
+							@include before-line(1px, 12px,$color: $line-color2);
+		
+							display: inline-block;
+							padding-left: 17px;
+							margin-left: 16px;
+							color: $primary3;
+							font-size: 24px;
+							font-weight: 700;
+							line-height: 36px;
+							
+							&::before {
+								top: 50%;
+								transform: translateY(-50%);
+								left: 0;
+							}
+
+							.icon-vip {
+								position: relative;
+								display: inline-block;
+								margin-right: 12px;
+								width: 32px;
+								height: 36px;
+								vertical-align: bottom;
+
+								&::after {
+									@include background(-300px, -200px, $url: $image-url-icon, $size: 500px);
+									@include position-center;
+
+									content: '';
+									width: 50px;
+									height: 50px;
+								}
+							}
+						}
+					}
+	
+					.badge-area {
+						display: flex;
+						gap: 4px;
+		
+						.badge {
+							display: inline-block;
+							padding: 0 10px;
+							height: 24px;
+							font-size: 11px;
+							font-weight: 500;
+							line-height: 24px;
+							border: 1px solid $color7;
+							border-radius: 999px;
+		
+							&.continue{
+								color: $color2;
+								border-color: $primary1;
+								background-color: $primary1;
+		
+							}
+							&.complete {
+								color: $color2;
+								border-color: $color1;
+								background-color: $color1;
+							}
+							&.meeting {
+								color: #E4AC1B;
+								border-color: #E4AC1B;
+								background-color: #FFFBF1;
+							}
+							&.contract {
+								color: $green4;
+								border-color: $green4;
+								background-color: #F4FEF9;
+							}
+							&.payment {
+								color: #631ED2;
+								border-color: #631ED2;
+								background-color: #F6F2FD;
+							}
+							&.etc {
+								color: $color1;
+								border-color: $color7;
+								background-color: #F4F4F4;
+							}
+							&.approve {
+								color: $color1;
+								border-color: $color7;
+								background-color: #F4F4F4;
+							}
+						}
+					}
+				}
+
+				.info-list {
+					.sub-title {
+						display: block;
+						padding: 0 8px;
+						margin-top: 30px;
+						font-size: 18px;
+						font-weight: 500;
+						line-height: 28px; 
+					}
+
+					.info-item {
+						margin-top: 16px;
+						padding: 24px 32px;
+						border-radius: 12px;
+						border: 1px solid $color7;
+						overflow: hidden;
+
+						.info-wrap {
+							display: flex;
+							gap: 40px;
+
+							&+.info-wrap {
+								border-top: 1px solid $color9;
+								margin-top: 20px;
+								padding-top: 21px;
+							}
+						}
+
+						&:has(.info-title) {
+							padding: 0;
+
+							.info-title {
+								padding: 12px 24px;
+								font-size: 16px;
+								font-weight: 700;
+								line-height: 26px;
+								background-color: $color10;
+
+								span {
+									margin-left: 4px;
+									display: inline-block;
+									color: $primary1;
+									font-size: 16px;
+									font-weight: 700;
+									line-height: 26px;
+								}
+							}
+
+							.info-wrap {
+								padding: 24px 32px;
+							}
+						}
+
+						ul {
+							width: calc(100% / 2);
+
+							li {
+								position: relative;
+								display: flex;
+								align-items: center;
+								gap: 16px;
+
+								&+li {
+									margin-top: 10px;
+								}
+
+								.btn.doc {
+									@include svg-icon('document', 16, $url: 'common/icon_16.svg',$margin: 6px 4px 0 0);
+									@include svg-icon('refresh', 16, $url: 'common/icon_16.svg',$margin: 6px 4px 0 0);
+
+									padding: 0 12px;
+									margin-left: 8px;
+									height: 30px;
+									line-height: 28px;
+									vertical-align: middle;
+								}
+
+								>span {
+									display: inline-block;
+									width: 66px;
+									color: $color3;
+									font-size: 14px;
+									font-weight: 400;
+									line-height: 26px;
+								}
+
+								>p,
+								.btn-area {
+									display: inline-block;
+									color: $color1;
+									font-size: 16px;
+									font-weight: 500;
+									line-height: 26px;
+									text-align: left;
+
+									.btn {
+										@include svg-icon('arrowright1', 12, $url: 'common/icon_12.svg',$margin: 9px 0 0 4px);
+
+										height: 32px;
+										line-height: 30px;
+										padding: 0 16px;
+										font-size: 12px;
+										font-weight: 500;
+										color: $color3;
+										border-radius: 999px;
+									}
+
+									span {
+										color: $primary3;
+									}
+								}
+
+								.clamp {
+									display: flex;
+									align-items: center;
+
+									span {
+										-webkit-box-orient: vertical;
+										color: $primary3;
+										max-width: 217px;
+										font-size: 16px;
+										font-weight: 500;
+										line-height: 26px;
+										display: -webkit-inline-box;
+										-webkit-line-clamp: 1;
+										overflow: hidden;
+									}
+								}
+
+								.tooltip-wrap {
+									.tooltip {
+										margin-bottom: 0;
+										top: 38px;
+										left: 8px;
+										bottom: auto;
+										border-radius: 12px;
+										border: 1px solid $primary4;
+										box-shadow: 2px 2px 3px 0px rgba(11, 14, 64, 0.25);
+
+										.tit{
+											font-size: 16px;
+											font-weight: 700;
+											line-height: 26px; 
+
+											.btn-close {
+												@include svg-icon('close', 16, $url: 'common/icon_20.svg');
+
+												background: none;
+												top: 19px;
+												right: 14px;
+											}
+										}
+										.cont {
+											p {
+												color: $color3;
+												font-size: 14px;
+												font-weight: 400;
+												line-height: 22px
+											}
+										}
+									}
+								}
+
+								.course-btn {
+									@include svg-icon('hole2', 16, $url: 'common/icon_16.svg',$margin: 4px 4px 0 0);
+
+									margin-left: 8px;
+									padding: 0 12px;
+									height: 30px;
+									font-size: 11px;
+									font-weight: 500;
+									line-height: 28px;
+									border-radius: 99px;
+									border: 1px solid $color9;
+
+									&::after {
+										display: none;
+									}
+								}
+							}
+						}
+					}
+				}
+
+				.info-wrap {
+					.payment-info {
+						margin-top: 30px;
+						border-radius: 12px;
+						overflow: hidden;
+						border: 1px solid $color7;
+						background-color: $color2;
+
+						li:not(.option) {
+							position: relative;
+							display: flex;
+							gap: 12px;
+							padding: 10px 32px;
+							align-items: center;
+							background-color: $color2;
+
+							&.full {
+								span {
+									width: calc(100% / 2)
+								}
+
+								> p {
+									width: calc(100% / 2 - 12px)
+								}
+							}
+
+							&+li {
+								&::before {
+									position: absolute;
+									top: 0;
+									left: 50%;
+									transform: translateX(-50%);
+									content: '';
+									width: calc(100% - 64px);
+									display: block;
+									border-top: 1px dashed $color7;
+								}
+							}
+
+							&:last-of-type {
+								padding-bottom: 24px;
+							}
+
+							&+.table-head {
+								margin-top: 12px;
+							}
+
+							&.table-head {
+								padding: 12px 32px;
+								background-color: $color9;
+								border-top: none;
+
+								&::before {
+									content: none;
+								}
+
+								&+.table-head {
+									border-top: 1px solid $color7;
+									margin-top: 0px;
+								}
+
+								>span {
+									color: $color1;
+									font-size: 16px;
+									font-weight: 700;
+									line-height: 26px;
+									
+									strong {
+										color: $primary1;
+									}
+								}
+
+								> p { 
+									color: $primary1;
+									font-size: 18px;
+									font-weight: 400;
+									line-height: 28px;
+
+									strong {
+										font-size: 20px;
+										font-weight: 700;
+										line-height: 30px; 
+									}
+								}
+
+								&+li {
+									margin-top: 14px;
+
+									&::before {
+										content: none;
+									}
+								}
+							}
+
+							&:has(.date) {
+								gap: 0;
+							}
+
+							&.point {
+								>span,
+								>p {
+									color: $green4;
+								}
+							}
+
+							>span {
+								display: block;
+								width: 160px;
+								color: $color3;
+								font-size: 14px;
+								font-weight: 400;
+								line-height: 22px;
+							}
+
+							>p {
+								width: calc(100% - 172px);
+								color: $primary2;
+								font-size: 16px;
+								font-weight: 400;
+								line-height: 26px;
+								text-align: right;
+
+								span {
+									display: inline-block;
+									margin-right: 2px;
+									font-weight: 700;
+								}
+
+								strong {
+									display: inline-block;
+									font-weight: 700;
+
+									&+strong {
+										margin-left: 12px;
+									}
+								}
+
+								&.remittance {
+									color: $green4
+								}
+							}
+
+							>div {
+								&+div {
+									@include before-line(1px, 20px,$margin: 2px 0 0 0, $color: $color9);
+								}
+							}
+
+							.amount {
+								width: 265px;
+								padding-right: 32px;
+								margin-left: 18px;
+
+								p {
+									color: $primary2;
+									font-size: 16px;
+									font-weight: 400;
+									line-height: 26px;
+									text-align: right;
+
+									strong {
+										display: inline-block ;
+										font-weight: 700;
+										margin-right: 2px; 
+									}
+								}
+							}
+
+							.status {
+								display: flex;
+								gap: 12px;
+								padding: 0 32px;
+								width: 216px;
+								align-items: center;
+								justify-content: center;
+
+								p {
+									font-size: 14px;
+									font-weight: 700;
+									line-height: 22px;
+								}
+
+								button {
+									@include svg-icon('receiptdetail', 16, $url: 'common/icon_16.svg',$margin: 6px 4px 0 0, $color: $primary2);
+
+									height: 30px;
+									line-height: 28px;
+									padding: 0 8px;
+									border-color: $color4;
+									font-size: 11px;
+									font-weight: 500;
+
+									&:disabled {
+										@include svg-icon('receiptdetail', 16, $url: 'common/icon_16.svg',$margin: 6px 4px 0 0, $color: $disable4);
+									}
+								}
+
+								&.outstanding  {
+									color: #E4AC1B;
+								}
+							}
+
+							.date {
+								padding-left: 32px;
+								width: 170px;
+
+								span {
+									color: $color3;
+									font-size: 14px;
+									font-weight: 400;
+									line-height: 22px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.btns.bottom {
+			padding: 16px 32px;
+			background-color: $color2;
+		}
+
+		&.combine {
+			.customer-info {
+				.customer-product {
+					background: linear-gradient(270deg, #3DB63B 0%, #6FCB6D 100%);
+				}
+			}
+		}
+	}
+}

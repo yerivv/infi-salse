@@ -1,0 +1,142 @@
+/**
+* --------------------------------
+* Layout
+* --------------------------------
+*/
+
+html {
+	width: 100%;
+}
+
+body {
+	position: relative;
+	width: 100%;
+	line-height: $line-height;
+	word-break: keep-all;
+	color: $color1;
+	font-size: $font-size;
+	font-weight: $font-weight;
+	font-family: $font-family1;
+	letter-spacing: $letter-spacing;
+	overflow-y: scroll;
+
+	&.fixed {
+		position: fixed;
+		overscroll-behavior: contain;
+	}
+
+	&:has(#container > iframe) {
+		overflow: hidden;
+	}
+
+	&.date-open {
+		&::before {
+			content: '';
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 100vh;
+			transition: opacity 500ms 200ms;
+			background-color: rgba(0, 0, 0, 0.5);
+			z-index: 1001;
+		}
+	}
+}
+
+#wrap {
+	position: relative;
+	width: 100%;
+}
+
+.inner {
+	position: relative;
+	margin: 0 auto;
+	width: 100%;
+}
+
+#container {
+	position: relative;
+	margin-top: 34px;
+	width: 100%;
+
+	> iframe {
+		width: 100%;
+		height: calc(100dvh - 34px);
+		border: 0;
+	}
+}
+
+#contents {
+	position: relative;
+	width: 100%;
+	min-height: calc(100dvh - 34px);
+
+	&:has(.title-area.header) {
+		padding-top: 46px;
+	}
+}
+
+#header.type1 {
+	& + #container {
+		#contents {
+			padding-top: 46px;
+		}
+	}
+}
+
+#contents_container {
+	.title-area.header {
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		z-index: 30;
+		padding: 12px 20px;
+		border-bottom: 1px solid $color9;
+		background-color: $color2;
+	
+		.tit {
+			font-size: 14px;
+			font-weight: 500;
+			line-height: 22px;
+			text-align: center;
+		}
+	
+		.btn-prev {
+			position: absolute;
+			top: 50%;
+			left: 10px;
+			transform: translate(0, -50%);
+			width: 40px;
+			height: 40px;
+		}
+	}
+}
+
+.title-area.header {
+	position: fixed;
+	left: 0;
+	top: 34px;
+	width: 100%;
+	z-index: 30;
+	padding: 12px 20px;
+	border-bottom: 1px solid $color9;
+	background-color: $color2;
+
+	.tit {
+		font-size: 14px;
+		font-weight: 500;
+		line-height: 22px;
+		text-align: center;
+	}
+
+	.btn-prev {
+		position: absolute;
+		top: 50%;
+		left: 10px;
+		transform: translate(0, -50%);
+		width: 40px;
+		height: 40px;
+	}
+}

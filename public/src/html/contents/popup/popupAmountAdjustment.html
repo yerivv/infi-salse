@@ -1,0 +1,181 @@
+<div class="cont">
+	<div class="amount-adjustment">
+		<p><i class="svgicon svgicon-cash"></i> 결제 금액</p>
+		<span><strong>10,000,000</strong>원</span>
+	</div>
+
+	<div class="form-entry">
+		<strong>계약금</strong>
+		<input type="number" name="" title="계약금 입력" placeholder="계약금 입력">
+	</div>
+
+	<div class="form-entry">
+		<strong>중도금(1차)</strong>
+		<div class="input-wrap">
+			<input type="number" name="" title="중도금 입력" placeholder="중도금 입력">
+			<button class="btn-add btn line"><i class="svgicon svgicon-plus"></i></button>
+		</div>
+	</div>
+
+	<div class="form-entry">
+		<strong>중도금(2차)</strong>
+		<div class="input-wrap">
+			<input type="number" name="" title="중도금 입력" placeholder="중도금 입력">
+			<button class="btn-remove btn line"><i class="svgicon svgicon-minus"></i></button>
+		</div>
+	</div>
+
+	<div class="form-entry">
+		<strong>잔금</strong>
+		<input type="number" name="" title="잔금 입력" placeholder="잔금 입력" disabled>
+	</div>
+
+	<div class="form-entry">
+		<strong>입금 기한</strong>
+		<span class="daterangepickers single"><input type="text" placeholder="YYYY.MM.DD" readonly><i class="svgicon svgicon-date"></i></span>
+	</div>
+
+	<div class="form-group">
+		<div class="form-entry">
+			<strong>결제 방식 선택</strong>
+			<div class="method-area">
+				<div class="method-entry">
+					<label><input type="radio" name="paymentmethod" class="nobankbook" checked><span>무통장입금</span></label>
+					<label><input type="radio" name="paymentmethod" class="virtual"><span>가상계좌</span></label>
+					<!-- 2025.02.05 삭제 // -->
+					<!-- <label><input type="radio" name="paymentmethod" class="full"><span>완납</span></label> -->
+					<!-- // 2025.02.05 삭제 -->
+				</div>
+				<div class="nobankbook-area">
+					<div class="bank-area">
+						<div class="select small">
+							<select title="select 선택">
+								<option value="" class="select-ti">은행 선택</option>
+								<option value="">국민은행</option>
+								<option value="">신한은행</option>
+								<option value="">하나은행</option>
+							</select>
+						</div>
+						<dl>
+							<dt>계좌번호</dt>
+							<dd>867737-04-002092</dd>
+						</dl>
+						<dl>
+							<dt>예금주</dt>
+							<dd>(주)한케이골프</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="virtual-account">
+					<div class="bank-area">
+
+						<div class="select-area">
+							<div class="select small">
+								<select title="select 선택">
+									<option value="" class="select-ti">은행 선택</option>
+									<option value="">국민은행</option>
+									<option value="">신한은행</option>
+									<option value="">하나은행</option>
+								</select>
+							</div>
+							<button class="btn blue" disabled>계좌 생성하기</button>
+						</div>
+
+						<div class="account-area">
+							<dl>
+								<dt>계좌번호</dt>
+								<dd>867737-04-002092</dd>
+							</dl>
+							<dl>
+								<dt>예금주</dt>
+								<dd>(주)한케이골프</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+				<!-- 2025.02.05 삭제 // -->
+				<!-- <div class="full-payment"> -->
+					<!-- <div class="bank-area"> -->
+						<!-- 거래관리 시 -->
+						<!-- <label><input type="checkbox" name=""><span><em>김고객</em>님으로 입금된 양수금이 확인 되었습니다.</span></label> -->
+						<!-- 계약관리 시 -->
+						<!-- <label><input type="checkbox" name=""><span><em>김고객</em>님으로 입금된 입회금이 확인 되었습니다.</span></label> -->
+					<!-- </div> -->
+				<!-- </div> -->
+				<!-- // 2025.02.05 삭제 -->
+			</div>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="form-entry">
+			<strong>입회금 정보</strong>
+			<!-- 계약관리 시 hide // -->
+			<!-- 2025.02.03 추가 // -->
+			<ul class="payment-info">
+				<li class="table-head">
+					<span>양수금</span>
+					<p><strong>11,000,000</strong>원</p>
+				</li>
+			</ul>
+			<!-- // 2025.02.03 추가 -->
+			<!-- // 계약관리 시 hide -->
+
+			<!-- 거래관리 시 hide //-->
+			<ul class="payment-info">
+				<li class="table-head">
+					<span>입회금</span>
+					<p><strong>11,000,000</strong>원</p>
+				</li>
+				<li>
+					<span>10월 신규 입회 프로모션</span>
+					<p><strong>900,000</strong>원</p>
+				</li>
+				<li>
+					<span>추가 영업 지원금</span>
+					<p><strong>100,000</strong>원</p>
+				</li>
+				<li>
+					<span>포인트</span>
+					<p><strong>10,000</strong>원</p>
+				</li>
+			</ul>
+
+			<ul class="payment-info">
+				<li class="table-head">
+					<span>결제 예정금액</span>
+					<p><strong>9,990,000</strong>원</p>
+				</li>
+				<li>
+					<span>계약금</span>
+					<p><strong>1,000,000</strong>원</p>
+				</li>
+				<li>
+					<span>중도금</span>
+					<p><strong>5,000,000</strong>원</p>
+				</li>
+				<li>
+					<span>잔금</span>
+					<p><strong>4,990,000</strong>원</p>
+				</li>
+			</ul>
+			<!--// 거래관리 시 hide -->
+
+			<ul class="payment-info type2">
+				<li class="table-head">
+					<span>계약 정보</span>
+					<p>VIP 10년 정식 회원권 - 전자계약</p>
+				</li>
+				<li class="table-head">
+					<span>입금 정보</span>
+					<p>(신한은행) 110-1111-11111  ㈜한케이골프</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="btns bottom">
+		<button type="button" class="btn gray" onclick="fn.popup('close', this);">초기화</button>
+		<button type="button" class="btn blue" onclick="fn.popup('close', this);">설정 완료하기</button>
+	</div>
+</div>

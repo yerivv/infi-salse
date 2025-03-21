@@ -1,0 +1,57 @@
+<div class="cont">
+	<p>등록한 일정을 확인하시고 고객과의 약속을 지켜주세요.</p>
+	<!--// 2024-12-11 수정  -->
+	<ul>
+		<li>
+			<strong>영업활동 구분</strong>
+			<span class="badge">기타</span>
+			별도일정
+		</li>
+		<li>
+			<strong>제목</strong>
+			강수영 고객님 소개로 친한 친구 소개 받음
+		</li>
+		<li>
+			<strong>약속시간​</strong>
+			2024.08.07 12:00 ~ 13:00
+		</li>
+		<li>
+			<strong>출퇴근</strong>
+			직출 / 계약체결 건으로 직출
+		</li>
+		<li>
+			<strong>고객정보</strong>
+			김유선 / 010-2458-1234 
+			<!--// 고객정보버튼 추가 -->
+			<a href="#" class="btn small line"><i class="svgicon svgicon-idcard"></i>고객정보 보기</a>
+			<!-- 고객정보버튼 추가 //-->
+		</li>
+		<li>
+			<strong>위치</strong>
+			사무실 / 도곡동 치휴한방병원​
+		</li>
+		<li>
+			<strong>내용</strong>
+			강수영 고객님의 지인분을 추천, 신규 회원권을 설명하기로 함 / 2차 설명 미팅
+		</li>
+		<!--// 일정수정경우(결과 추가) -->
+		<li>
+			<strong>결과</strong>
+			계약완료
+		</li>
+		<!-- 일정수정경우(결과 추가) //-->
+		<li>
+			<strong>문의내역</strong>
+			<span>
+				HK치구사 회원권에 관심이 있어서 문의드립니다 HK치구사 회원권에 관심이 있어서 문의드립니다
+			</span>
+			<a href="#" class="btn small line"><i class="svgicon svgicon-inquire"></i>문의내역 보기</a>
+		</li>
+	</ul>
+	<!-- 2024-12-11 수정  //-->
+	
+	<div class="btns bottom">
+		<button type="button" class="btn gray" onclick="fn.popup('close', this);">일정취소</button>
+		<button type="button" class="btn blue" onclick="fn.popup('open', '#popupRegistercalendarEdit');fn.timePickerInit('#editstartTime', '#editendTime', this)">수정</button>
+	</div>
+</div>
