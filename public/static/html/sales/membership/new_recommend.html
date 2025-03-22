@@ -2,328 +2,331 @@
 <html lang="ko">
 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta http-equiv="Content-Script-Type" content="text/javascript">
-	<meta http-equiv="Content-Style-Type" content="text/css">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"> -->
-	<meta name="viewport" content="width=960">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"> -->
+<meta name="viewport" content="width=960">
 
-	<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
 
-	<meta name="robots" content="index, nofollow">
-	<meta name="description" content="페이지 설명">
-	<meta name="keywords" content="키워드, 키워드">
+<meta name="robots" content="index, nofollow">
+<meta name="description" content="페이지 설명">
+<meta name="keywords" content="키워드, 키워드">
 
-	<meta property="og:site_name" content="한케이골프">
-	<meta property="og:type" content="website">
-	<meta property="og:title" content="title">
-	<meta property="og:image" content="image">
-	<meta property="og:url" content="url입력">
-	<meta property="og:description" content="페이지 설명">
+<meta property="og:site_name" content="한케이골프">
+<meta property="og:type" content="website">
+<meta property="og:title" content="title">
+<meta property="og:image" content="image">
+<meta property="og:url" content="url입력">
+<meta property="og:description" content="페이지 설명">
 
-	<link rel="shortcut icon" type="image/x-icon" href="../../../imgs/sales/common/favicon.ico">
-	<link rel="apple-touch-icon" href="../../../imgs/sales/common/apple-touch-icon.png">
+<link rel="shortcut icon" type="image/x-icon" href="../../../imgs/sales/common/favicon.ico">
+<link rel="apple-touch-icon" href="../../../imgs/sales/common/apple-touch-icon.png">
 
-	<!-- 공통 css, js -->
-	<link rel="stylesheet" href="../../../css/sales/lib/jquery-ui.min.css">
-	<link rel="stylesheet" href="../../../css/sales/lib/swiper-bundle.min.css">
-	<link rel="stylesheet" href="../../../css/sales/common.css">
-	<script src="../../../jscript/sales/lib/jquery-3.6.4.min.js"></script>
-	<script src="../../../jscript/sales/lib/jquery-ui.min.js"></script>
-	<script src="../../../jscript/sales/lib/jquery.ui.touch-punch.min.js"></script>
-	<script src="../../../jscript/sales/lib/swiper-bundle.min.js"></script>
+<!-- 공통 css, js -->
+<link rel="stylesheet" href="../../../css/sales/lib/jquery-ui.min.css">
+<link rel="stylesheet" href="../../../css/sales/lib/swiper-bundle.min.css">
+<link rel="stylesheet" href="../../../css/sales/common.css">
+<script src="../../../jscript/sales/lib/jquery-3.6.4.min.js"></script>
+<script src="../../../jscript/sales/lib/jquery-ui.min.js"></script>
+<script src="../../../jscript/sales/lib/jquery.ui.touch-punch.min.js"></script>
+<script src="../../../jscript/sales/lib/swiper-bundle.min.js"></script>
 
-	<script src="../../../jscript/sales/lib/moment.min.js"></script>
-	<script src="../../../jscript/sales/lib/daterangepicker.js"></script>
+<script src="../../../jscript/sales/lib/moment.min.js"></script>
+<script src="../../../jscript/sales/lib/daterangepicker.js"></script>
 
-	<script src="../../../jscript/sales/function.ui.js"></script>
-	<script src="../../../jscript/sales/common.ui.js"></script>
+<script src="../../../jscript/sales/function.ui.js"></script>
+<script src="../../../jscript/sales/common.ui.js"></script>
 
-	<!-- 페이지별 css, js -->
+<!-- 페이지별 css, js -->
 
-	<link rel="stylesheet" href="../../../css/sales/membership.css">
-	<link rel="stylesheet" href="../../../css/sales/override.css">
-
-
+<link rel="stylesheet" href="../../../css/sales/membership.css">
+<link rel="stylesheet" href="../../../css/sales/override.css">
 
 
 
-	<title> 회원권 추천 - 한케이골프</title>
+
+
+<title> 회원권 추천 - 한케이골프</title>
 
 
 </head>
 
 <body>
 
-	<noscript>
-		이 사이트를 이용하기 위해서 자바스크립트를 활성화 시킬 필요가 있습니다.
-		<a href="http://www.enable-javascript.com/ko/" target="_blank">브라우저에서 자바스크립트를 활성화하는 방법</a>을 참고 하세요.
-	</noscript>
+<noscript>
+	이 사이트를 이용하기 위해서 자바스크립트를 활성화 시킬 필요가 있습니다.
+	<a href="http://www.enable-javascript.com/ko/" target="_blank">브라우저에서 자바스크립트를 활성화하는 방법</a>을 참고 하세요.
+</noscript>
 
-	<div id="wrap">
-		<a href="#contents" class="skip">본문 영역으로 바로가기</a>
+<div id="wrap">
+	<a href="#contents" class="skip">본문 영역으로 바로가기</a>
 
-		<!-- header // -->
+	<!-- header // -->
 
-		<header id="header">
-			<div class="inner">
-				<h1 class="logo"><a href="#"><span class="blind">Han k Golf For Sales</span></a></h1>
+	<header id="header">
+		<div class="inner">
+			<h1 class="logo"><a href="#"><span class="blind">Han k Golf For Sales</span></a></h1>
 
-				<div class="tab-swiper">
-					<div class="swiper">
-						<div class="swiper-wrapper">
+			<div class="tab-swiper">
+				<div class="swiper">
+					<div class="swiper-wrapper">
 
-							<!--
-							.tab-swiper > .swiper-slide append, remove 후 swiper update를 위해 호출
+						<!--
+						.tab-swiper > .swiper-slide append, remove 후 swiper update를 위해 호출
 
-							default(첫번째 버튼 활성화):  fn.headerTabSwiper();
-							n번째 버튼 활성화: fn.headerTabSwiper(n-1);
-						-->
-							<div class="swiper-slide">
-								<a href="#" class="active">회원권 소개</a><!-- 활성화 class="active" -->
-								<button type="button" class="btn-close"><span class="blind">닫기</span><i class="svgicon svgicon-close"></i></button>
+						default(첫번째 버튼 활성화):  fn.headerTabSwiper();
+						n번째 버튼 활성화: fn.headerTabSwiper(n-1);
+					-->
+						<div class="swiper-slide">
+							<a href="#" class="active">회원권 소개</a><!-- 활성화 class="active" -->
+							<button type="button" class="btn-close"><span class="blind">닫기</span><i class="svgicon svgicon-close"></i></button>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="util">
+				<div class="toggle-area">
+					<label class="check-toggle">
+						<strong class="toggle-txt on">영업활동 ON</strong>
+						<input type="checkbox" name="">
+						<strong class="toggle-txt off">영업활동 OFF</strong>
+					</label>
+				</div>
+				<button type="button" class="btn-masking" onclick="fn.toggleActive(this)"><span class="blind">마스킹해제</span></button><!-- 활성화 class="active" -->
+				<button type="button" class="btn-allmenu" onclick="fn.popup('open', '#popupAllMenu');"><span class="blind">전체 메뉴</span></button>
+			</div>
+		</div>
+	</header>
+
+	<!-- // header -->
+
+	<!-- container // -->
+	<main id="container">
+		<!-- 본문 영역 // -->
+		<div id="contents" class="membership recommend recommend-new"> <!-- 해당 depth별로 class명 추가 -->
+
+			<div class="recommend-area inner">
+				<div class="title-area">
+					<h2 class="tit">회원권 추천</h2>
+					<button type="button" class="btn small" onclick="fn.popup('open', '#popupProspectiveCustomerRegistration');"><i class="svgicon svgicon-prospective"></i>담당고객으로 등록하기</button>
+				</div>
+<form name="questionFrm">
+				<div class="question-area">
+					<div class="cont">
+						<p class="txt-dot"><strong><span>우주최강최강최강기업</span> 고객님,</strong>회원권 추천을 위해 몇 가지 질문에 답해주세요</p>
+					</div>
+					<ul>
+						<li>
+							<strong>해외 골프가 처음이신가요?</strong>
+							<div class="sorting">
+								<div class="input-sorting">
+									<label><input type="radio" name="tempFirst"><span>네</span></label>
+									<label><input type="radio" name="tempFirst"><span>아니오</span></label>
+								</div>
 							</div>
+						</li>
 
-						</div>
-					</div>
+						<li>
+							<strong>희망하시는 예산이 어느 정도 되시나요?</strong>
+							<div class="sorting">
+								<div class="input-sorting">
+									<label><input type="checkbox" name=""><span>가성비</span></label>
+									<label><input type="checkbox" name=""><span>가심비</span></label>
+									<label><input type="checkbox" name=""><span>럭셔리</span></label>
+								</div>
+							</div>
+						</li>
+
+						<li>
+							<strong>몇 분이 같이 골프를 하시려고 하시나요?</strong>
+							<div class="sorting">
+								<div class="input-sorting">
+									<label><input type="radio" name="tempNumber"><span>2인 이하</span></label>
+									<label><input type="radio" name="tempNumber"><span>4인 이하</span></label>
+									<label><input type="radio" name="tempNumber"><span>8인 이하</span></label>
+								</div>
+							</div>
+						</li>
+
+						<li>
+							<strong>선호국가가 있으신가요?</strong>
+							<div class="sorting">
+								<div class="input-sorting">
+									<label><input type="checkbox" name=""><span>베트남</span></label>
+									<label><input type="checkbox" name=""><span>중국</span></label>
+									<label><input type="checkbox" name=""><span>일본</span></label>
+									<label><input type="checkbox" name=""><span>말레이시아</span></label>
+									<label><input type="checkbox" name=""><span>태국</span></label>
+									<label><input type="checkbox" name=""><span>필리핀</span></label>
+								</div>
+							</div>
+						</li>
+
+						<li>
+							<strong>해외 여행을 선호하는 월이 있으신가요?</strong>
+							<div class="sorting">
+								<div class="input-sorting">
+									<label><input type="checkbox" name=""><span>1월</span></label>
+									<label><input type="checkbox" name=""><span>2월</span></label>
+									<label><input type="checkbox" name=""><span>3월</span></label>
+									<label><input type="checkbox" name=""><span>4월</span></label>
+									<label><input type="checkbox" name=""><span>5월</span></label>
+									<label><input type="checkbox" name=""><span>6월</span></label>
+									<label><input type="checkbox" name=""><span>7월</span></label>
+									<label><input type="checkbox" name=""><span>8월</span></label>
+									<label><input type="checkbox" name=""><span>9월</span></label>
+									<label><input type="checkbox" name=""><span>10월</span></label>
+									<label><input type="checkbox" name=""><span>11월</span></label>
+									<label><input type="checkbox" name=""><span>12월</span></label>
+								</div>
+							</div>
+						</li>
+
+						<li>
+							<strong>선호하는 골프 유형을 선택해주세요.</strong>
+							<div class="sorting">
+								<div class="input-sorting">
+									<label><input type="checkbox" name=""><span>장박</span></label>
+									<label><input type="checkbox" name=""><span>비지니스</span></label>
+									<label><input type="checkbox" name=""><span>가족여행</span></label>
+									<label><input type="checkbox" name=""><span>포시즌</span></label>
+								</div>
+							</div>
+						</li>
+
+						<li>
+							<strong>골프 구력은 어느 정도 되시나요?</strong>
+							<div class="sorting">
+								<div class="input-sorting">
+									<label><input type="radio" name="tempLevel"><span>초급</span></label>
+									<label><input type="radio" name="tempLevel"><span>중급</span></label>
+									<label><input type="radio" name="tempLevel"><span>고급</span></label>
+								</div>
+							</div>
+						</li>
+
+						<li>
+							<strong>코스 난이도는 어떤 것을 주로 즐기시나요? <small>(코스 레이팅)</small></strong>
+							<div class="sorting">
+								<div class="input-sorting">
+									<label><input type="checkbox" name=""><span>매우 쉬움</span></label>
+									<label><input type="checkbox" name=""><span>쉬움</span></label>
+									<label><input type="checkbox" name=""><span>보통</span></label>
+									<label><input type="checkbox" name=""><span>어려움</span></label>
+									<label><input type="checkbox" name=""><span>매우 어려움</span></label>
+								</div>
+							</div>
+						</li>
+					</ul>
 				</div>
 
-				<div class="util">
-					<div class="toggle-area">
-						<label class="check-toggle">
-							<strong class="toggle-txt on">영업활동 ON</strong>
-							<input type="checkbox" name="">
-							<strong class="toggle-txt off">영업활동 OFF</strong>
-						</label>
-					</div>
-					<button type="button" class="btn-masking" onclick="fn.toggleActive(this)"><span class="blind">마스킹해제</span></button><!-- 활성화 class="active" -->
-					<button type="button" class="btn-allmenu" onclick="fn.popup('open', '#popupAllMenu');"><span class="blind">전체 메뉴</span></button>
+				<div class="btns bottom">
+					<button type="button" class="btn big btn-skip"><i class="svgicon svgicon-arrowleft"></i>건너뛰고 회원권 전체보기 바로 이동</button>
+
+					<button type="button" onclick="btnReset()" class="btn big line btn-reset" disabled="disabled"><i class="svgicon svgicon-refresh"></i>다시하기</button>
+					<button type="button" onclick="btnSubmit()" class="btn blue big btn-next" disabled="disabled">다음<i class="svgicon svgicon-arrowright"></i></button>
 				</div>
+</form>
 			</div>
-		</header>
 
-		<!-- // header -->
+		</div>
+		<script>
+			const btnChange = () => {
+				const questionArea = document.querySelector('.question-area');
+				const btn = document.querySelector('.btns.bottom');
 
-		<!-- container // -->
-		<main id="container">
-			<!-- 본문 영역 // -->
-			<div id="contents" class="membership recommend recommend-new"> <!-- 해당 depth별로 class명 추가 -->
-
-				<div class="recommend-area inner">
-					<div class="title-area">
-						<h2 class="tit">회원권 추천</h2>
-						<button type="button" class="btn small" onclick="fn.popup('open', '#popupProspectiveCustomerRegistration');"><i class="svgicon svgicon-prospective"></i>담당고객으로 등록하기</button>
-					</div>
-
-					<div class="question-area">
-						<div class="cont">
-							<p class="txt-dot"><strong><span>우주최강최강최강기업</span> 고객님,</strong>회원권 추천을 위해 몇 가지 질문에 답해주세요</p>
-						</div>
-
-						<ul>
-							<li>
-								<strong>해외 골프가 처음이신가요?</strong>
-								<div class="sorting">
-									<div class="input-sorting">
-										<label><input type="radio" name="tempFirst"><span>네</span></label>
-										<label><input type="radio" name="tempFirst"><span>아니오</span></label>
-									</div>
-								</div>
-							</li>
-
-							<li>
-								<strong>희망하시는 예산이 어느 정도 되시나요?</strong>
-								<div class="sorting">
-									<div class="input-sorting">
-										<label><input type="checkbox" name=""><span>가성비</span></label>
-										<label><input type="checkbox" name=""><span>가심비</span></label>
-										<label><input type="checkbox" name=""><span>럭셔리</span></label>
-									</div>
-								</div>
-							</li>
-
-							<li>
-								<strong>몇 분이 같이 골프를 하시려고 하시나요?</strong>
-								<div class="sorting">
-									<div class="input-sorting">
-										<label><input type="radio" name="tempNumber"><span>2인 이하</span></label>
-										<label><input type="radio" name="tempNumber"><span>4인 이하</span></label>
-										<label><input type="radio" name="tempNumber"><span>8인 이하</span></label>
-									</div>
-								</div>
-							</li>
-
-							<li>
-								<strong>선호국가가 있으신가요?</strong>
-								<div class="sorting">
-									<div class="input-sorting">
-										<label><input type="checkbox" name=""><span>베트남</span></label>
-										<label><input type="checkbox" name=""><span>중국</span></label>
-										<label><input type="checkbox" name=""><span>일본</span></label>
-										<label><input type="checkbox" name=""><span>말레이시아</span></label>
-										<label><input type="checkbox" name=""><span>태국</span></label>
-										<label><input type="checkbox" name=""><span>필리핀</span></label>
-									</div>
-								</div>
-							</li>
-
-							<li>
-								<strong>해외 여행을 선호하는 월이 있으신가요?</strong>
-								<div class="sorting">
-									<div class="input-sorting">
-										<label><input type="checkbox" name=""><span>1월</span></label>
-										<label><input type="checkbox" name=""><span>2월</span></label>
-										<label><input type="checkbox" name=""><span>3월</span></label>
-										<label><input type="checkbox" name=""><span>4월</span></label>
-										<label><input type="checkbox" name=""><span>5월</span></label>
-										<label><input type="checkbox" name=""><span>6월</span></label>
-										<label><input type="checkbox" name=""><span>7월</span></label>
-										<label><input type="checkbox" name=""><span>8월</span></label>
-										<label><input type="checkbox" name=""><span>9월</span></label>
-										<label><input type="checkbox" name=""><span>10월</span></label>
-										<label><input type="checkbox" name=""><span>11월</span></label>
-										<label><input type="checkbox" name=""><span>12월</span></label>
-									</div>
-								</div>
-							</li>
-
-							<li>
-								<strong>선호하는 골프 유형을 선택해주세요.</strong>
-								<div class="sorting">
-									<div class="input-sorting">
-										<label><input type="checkbox" name=""><span>장박</span></label>
-										<label><input type="checkbox" name=""><span>비지니스</span></label>
-										<label><input type="checkbox" name=""><span>가족여행</span></label>
-										<label><input type="checkbox" name=""><span>포시즌</span></label>
-									</div>
-								</div>
-							</li>
-
-							<li>
-								<strong>골프 구력은 어느 정도 되시나요?</strong>
-								<div class="sorting">
-									<div class="input-sorting">
-										<label><input type="radio" name="tempLevel"><span>초급</span></label>
-										<label><input type="radio" name="tempLevel"><span>중급</span></label>
-										<label><input type="radio" name="tempLevel"><span>고급</span></label>
-									</div>
-								</div>
-							</li>
-
-							<li>
-								<strong>코스 난이도는 어떤 것을 주로 즐기시나요? <small>(코스 레이팅)</small></strong>
-								<div class="sorting">
-									<div class="input-sorting">
-										<label><input type="checkbox" name=""><span>매우 쉬움</span></label>
-										<label><input type="checkbox" name=""><span>쉬움</span></label>
-										<label><input type="checkbox" name=""><span>보통</span></label>
-										<label><input type="checkbox" name=""><span>어려움</span></label>
-										<label><input type="checkbox" name=""><span>매우 어려움</span></label>
-									</div>
-								</div>
-							</li>
-						</ul>
-						<!-- </div>
-				</div> -->
-						<!-- // 2024.12.13 -->
-					</div>
-
-					<div class="btns bottom">
-						<button type="button" class="btn big btn-skip"><i class="svgicon svgicon-arrowleft"></i>건너뛰고 회원권 전체보기 바로 이동</button>
-
-						<button type="button" class="btn big line btn-reset" disabled="disabled"><i class="svgicon svgicon-refresh"></i>다시하기</button>
-						<button type="button" onclick="resultSubmit()" class="btn blue big btn-next" disabled="disabled">다음<i class="svgicon svgicon-arrowright"></i></button>
-					</div>
-				</div>
-
-			</div>
-			<script>
-				const btnChange = () => {
-					const questionArea = document.querySelector('.question-area');
-					const btn = document.querySelector('.btns.bottom');
-
-					questionArea.addEventListener("change", () => {
-						const checkedCount = questionArea.querySelectorAll('input:checked').length;
-
-						btn.querySelector('.btn-reset').disabled = checkedCount === 0;
-						btn.querySelector('.btn-next').disabled = checkedCount === 0;
-					});
+				const updateButtonState = () => {
+					const checkedCount = questionArea.querySelectorAll('input:checked').length;
+					btn.querySelector('.btn-reset').disabled = checkedCount === 0;
+					btn.querySelector('.btn-next').disabled = checkedCount === 0;
 				};
+				updateButtonState();
+				questionArea.addEventListener("change", updateButtonState);
+			};
 
-				const resultSubmit = () => {
-					window.location.href = 'new_recommend_result.html';
-				}
+			const btnReset = () => {
+				document.querySelector('[name=questionFrm]').reset();
+				btnChange();
+			}
 
-				document.addEventListener("DOMContentLoaded", btnChange);
-			</script>
-			<!-- // 본문 영역 -->
-		</main>
-		<!-- 팝업 : 고객 정보 등록 // -->
-		<article id="popupProspectiveCustomerRegistration" class="popup  popupprospectivecustomerregistration">
-			<div class="inner">
+			const btnSubmit = () => {
+				window.location.href = 'new_recommend_result.html';
+			}
 
-				<header class="header ">
-					<h2 class="tit">고객 정보 등록</h2>
-				</header>
+			document.addEventListener("DOMContentLoaded", btnChange);
+		</script>
+		<!-- // 본문 영역 -->
+	</main>
+	<!-- 팝업 : 고객 정보 등록 // -->
+	<article id="popupProspectiveCustomerRegistration" class="popup  popupprospectivecustomerregistration">
+		<div class="inner">
 
-				<div class="contents scrollbar">
-					<div class="scroll-content">
-						<div class="cont">
-							<form>
-								<input type="text" title="고객명 혹은 법인명을 입력" placeholder="고객명 혹은 법인명을 입력">
-								<input type="number" title="휴대폰 번호 입력" placeholder="휴대폰 번호 입력">
+			<header class="header ">
+				<h2 class="tit">고객 정보 등록</h2>
+			</header>
 
-								<div class="list-accordion">
-									<ul>
-										<li>
-											<button type="button" class="accordion-ti">
-												<label><input type="checkbox" name=""><span>(필수) 개인정보 수집 및 이용 동의</span></label>
-												<span class="accordion-arrow"><i class="svgicon svgicon-accordionarrow"></i></span>
-											</button>
-											<div class="accordion-cont">
-												<p>주식회사 한케이골프는 고객님의 문의 요청에 정확하고 <br>
-													성실한 답변을 드리기 위해 필요한 최소한의 개인정보를 <br>
-													수집하고 있으며, 제공한 모든 개인정보는 별도의 동의가 <br>
-													없는 한 해당 목적 이외의 다른 목적으로 사용하지 않습니다.<br>
-													고객님은 아래 개인정보 수집 및 이용에 관한 동의를 거부할 권리가 있으며, 동의를 거부하시는 경우에도 불이익은 <br>
-													없으나, 상담 서비스 이용이 불가함을 알려드립니다.
-												</p>
-												<div class="guidetxt dot">
-													<ul>
-														<li>개인정보 수집 내역 : 회사명, 담당자명, 전화번호, 이메일</li>
-														<li>용도 : 회원권 거래 문의 및 상담</li>
-														<li>보유 및 이용기간 : 보유기간 1년 및 관계 법령에 따른 보존기간</li>
-													</ul>
-												</div>
+			<div class="contents scrollbar">
+				<div class="scroll-content">
+					<div class="cont">
+						<form>
+							<input type="text" title="고객명 혹은 법인명을 입력" placeholder="고객명 혹은 법인명을 입력">
+							<input type="number" title="휴대폰 번호 입력" placeholder="휴대폰 번호 입력">
+
+							<div class="list-accordion">
+								<ul>
+									<li>
+										<button type="button" class="accordion-ti">
+											<label><input type="checkbox" name=""><span>(필수) 개인정보 수집 및 이용 동의</span></label>
+											<span class="accordion-arrow"><i class="svgicon svgicon-accordionarrow"></i></span>
+										</button>
+										<div class="accordion-cont">
+											<p>주식회사 한케이골프는 고객님의 문의 요청에 정확하고 <br>
+												성실한 답변을 드리기 위해 필요한 최소한의 개인정보를 <br>
+												수집하고 있으며, 제공한 모든 개인정보는 별도의 동의가 <br>
+												없는 한 해당 목적 이외의 다른 목적으로 사용하지 않습니다.<br>
+												고객님은 아래 개인정보 수집 및 이용에 관한 동의를 거부할 권리가 있으며, 동의를 거부하시는 경우에도 불이익은 <br>
+												없으나, 상담 서비스 이용이 불가함을 알려드립니다.
+											</p>
+											<div class="guidetxt dot">
+												<ul>
+													<li>개인정보 수집 내역 : 회사명, 담당자명, 전화번호, 이메일</li>
+													<li>용도 : 회원권 거래 문의 및 상담</li>
+													<li>보유 및 이용기간 : 보유기간 1년 및 관계 법령에 따른 보존기간</li>
+												</ul>
 											</div>
-										</li>
-									</ul>
-								</div>
-
-							</form>
-
-							<div class="btns bottom">
-								<button type="button" class="btn gray" onclick="fn.popup('close', this);">초기화</button>
-								<button type="button" class="btn blue" onclick="fn.popup('close', this);">등록</button>
+										</div>
+									</li>
+								</ul>
 							</div>
+
+						</form>
+
+						<div class="btns bottom">
+							<button type="button" class="btn gray" onclick="fn.popup('close', this);">초기화</button>
+							<button type="button" class="btn blue" onclick="fn.popup('close', this);">등록</button>
 						</div>
 					</div>
 				</div>
-
-				<button type="button" class="btn-close" onclick="fn.popup('close', this);"><span class="blind">닫기</span><i class="svgicon svgicon-close"></i></button>
 			</div>
-		</article>
-		<hr id="popupProspectiveCustomerRegistration_end">
-		<!-- // 팝업 : 고객 정보 등록 -->
-		<!-- // container -->
 
-		<!-- footer // -->
-		<footer id="footer"></footer>
-		<!-- // footer -->
-	</div>
+			<button type="button" class="btn-close" onclick="fn.popup('close', this);"><span class="blind">닫기</span><i class="svgicon svgicon-close"></i></button>
+		</div>
+	</article>
+	<hr id="popupProspectiveCustomerRegistration_end">
+	<!-- // 팝업 : 고객 정보 등록 -->
+	<!-- // container -->
+
+	<!-- footer // -->
+	<footer id="footer"></footer>
+	<!-- // footer -->
+</div>
 
 </body>
 

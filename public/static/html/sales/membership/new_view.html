@@ -129,8 +129,8 @@
                         </div> -->
                     </div>
                     <div class="view-tab">
-                        <button type="button" class="swiper-button-prev"><span class="blind">이전</span><i class="svgicon svgicon-arrowright"></i></button>
-                        <button type="button" class="swiper-button-next"><span class="blind">다음</span><i class="svgicon svgicon-arrowright"></i></button>
+                        <button type="button" class="swiper-button-prev blind"><span class="blind">이전</span><i class="svgicon svgicon-arrowleft2"></i></button>
+                        <button type="button" class="swiper-button-next blind"><span class="blind">다음</span><i class="svgicon svgicon-arrowleft2"></i></button>
 
                         <div class="swiper">
                             <div class="swiper-wrapper">
@@ -226,79 +226,78 @@
                     box.style.width = `calc(100% - ${selectWidth}px)`;
                 };
                 // 컨텐츠 스와이퍼
-                const tabContainer = document.querySelector('.tab-area');
-                let tabSwiper = new Swiper(tabContainer.querySelector('.swiper'), {
-                    slidesPerView: 'auto',
-                    navigation: {
-                        nextEl: tabContainer.querySelector('.swiper-button-next'),
-                        prevEl: tabContainer.querySelector('.swiper-button-prev'),
-                    },
-                    //freeMode: true,
-                    watchSlidesProgress: true,
-                });
+                function fnSwiper(a) {
+                    const tabContainer = document.querySelector('.tab-area');
+                    const detailContainer = document.querySelector('.detail-area');
 
-                const detailContainer = document.querySelector('.detail-area');
-                let detailSwiper = new Swiper(detailContainer.querySelector('.swiper'), {
-                    autoHeight: true,
-                    thumbs: {
-                        swiper: tabSwiper,
-                    },
-                    on: {
-                        slideChangeTransitionEnd: () => {
-                            window.scrollTo(0, 0);
-                        }
-                    }
-                });
+                    let tabSwiper = null;
+                    let detailSwiper = null;
 
-                // select 변경 시 Swiper 초기화 함수
-                const resetSwipers = () => {
-                    if (tabSwiper) tabSwiper.destroy(true, true);
-                    if (detailSwiper) detailSwiper.destroy(true, true);
-
-                    // 다시 Swiper 생성
-                    tabSwiper = new Swiper(tabContainer.querySelector('.swiper'), {
-                        slidesPerView: 'auto',
-                        navigation: {
-                            nextEl: tabContainer.querySelector('.swiper-button-next'),
-                            prevEl: tabContainer.querySelector('.swiper-button-prev'),
-                        },
-                        a11y: {
-                            enabled: false
-                        },
-                        ariaLive: 'off',
-                        freeMode: true,
-                        watchSlidesProgress: true,
-                    });
-
-                    detailSwiper = new Swiper(detailContainer.querySelector('.swiper'), {
-                        autoHeight: true,
-                        thumbs: {
-                            swiper: tabSwiper,
-                        },
-                        a11y: {
-                            enabled: false
-                        },
-                        ariaLive: 'off',
-                        on: {
-                            slideChangeTransitionEnd: () => {
-                                window.scrollTo(0, 0);
+                    const initializeSwipers = () => {
+                        tabSwiper = new Swiper(tabContainer.querySelector('.swiper'), {
+                            slidesPerView: 'auto',
+                            navigation: {
+                                nextEl: tabContainer.querySelector('.swiper-button-next'),
+                                prevEl: tabContainer.querySelector('.swiper-button-prev'),
+                            },
+                            freeMode: true,
+                            watchSlidesProgress: true,
+                            on: {
+                                init: () => {
+                                    tabContainer.querySelector('.swiper-button-next').classList.remove('blind');
+                                    tabContainer.querySelector('.swiper-button-prev').classList.remove('blind');
+                                },
                             }
+                        });
+
+                        detailSwiper = new Swiper(detailContainer.querySelector('.swiper'), {
+                            autoHeight: true,
+                            thumbs: {
+                                swiper: tabSwiper,
+                            },
+                            on: {
+                                init: () => {
+                                    // console.log('Swipers initialized');
+                                },
+                                slideChangeTransitionEnd: () => {
+                                    window.scrollTo(0, 0);
+                                }
+                            }
+                        });
+                    };
+
+                    const resetSwipers = () => {
+                        if (tabSwiper) {
+                            tabSwiper.destroy(true, true);
+                            tabSwiper = null;
                         }
-                    });
-                };
-                //detailSwiper.controller.control = tabSwiper;
-                const selectSwiper = () => {
+                        if (detailSwiper) {
+                            detailSwiper.destroy(true, true);
+                            detailSwiper = null;
+                        }
+                        initializeSwipers();
+                    };
+
+                    if (a === 'init' || !a) {
+                        initializeSwipers();
+                    } else if (a === 'reset') {
+                        resetSwipers();
+                    }
+                }
+
+                // 셀렉트 박스 변경시
+                function selectSwiper() {
                     const selects = document.querySelectorAll('.tab-area select');
                     selects.forEach(select => {
                         select.addEventListener('change', () => {
-                            //widthCalc();
-                            resetSwipers();
+                            fnSwiper('reset');
                         });
                     });
                 }
                 document.addEventListener("DOMContentLoaded", () => {
                     //setTimeout(widthCalc, 1000);
                     selectSwiper();
+                    fnSwiper('init');
                 });
             </script>
         </div>

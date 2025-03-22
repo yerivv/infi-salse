@@ -1022,6 +1022,88 @@ const fn = (() => {
 			}
 		},
 
+		// popup filter
+		popupFilter: (state, target, tab) => {
+			if (typeof target === 'object') {
+				target = target.closest('[class*=popup]') ? '#'+target.closest('[class*=popup]').id : target.attributes.href.value;
+			} else if (typeof target === 'undefined') {
+				target = '#'+document.querySelector(':focus').closest('[class*=popup]').id;
+			}
+
+			let
+				wrap = document.querySelector('body'),
+				popup = document.querySelector(target),
+				popupEnd = document.querySelector(target+'_end'),
+				popupLength = 0,
+				popupZindex = 999;
+
+			// 회원권 추천의 필터 탭으로 추가
+			if (tab) {
+				popup.setAttribute('data-tab', tab);
+			}
+
+			switch(state) {
+				case 'open':
+					if (!wrap.classList.contains('fixed')) {
+						scrollt = window.scrollY;
+						fn.scroll('disabled', scrollt);
+					}
+
+					popup.classList.add('active');
+					popup.setAttribute('tabindex','0');
+
+					popupLength = document.querySelectorAll('[class*=popup][class*=active]').length;
+
+					if (popupLength > 1) {
+						document.querySelectorAll('[class*=popup][class*=active]').forEach(function(popup) {
+							popup.classList.add('dimdisabled');
+						});
+					}
+
+					popup.style.zIndex = popupZindex + popupLength;
+					popup.setAttribute('data-popupzIndex', popupZindex + popupLength);
+					popup.classList.remove('dimdisabled');
+
+					if (document.querySelector(':focus')) {
+						document.querySelector(':focus').setAttribute('data-popupLength', popupLength);
+					}
+
+					popup.focus();
+					popupEnd.setAttribute('tabindex','0');
+					popupEnd.addEventListener('focus', () => {
+						popup.focus();
+					});
+
+					// 회원권 추천의 필터 탭으로 추가
+					const tabEvent = new CustomEvent('popup-open-tab', { detail: { tab } });
+					popup.dispatchEvent(tabEvent);
+
+					break;
+
+				case 'close':
+					popupLength = document.querySelectorAll('[class*=popup][class*=active]').length;
+
+					popup.classList.remove('active');
+					popup.removeAttribute('tabindex');
+					popup.removeAttribute('data-popupzIndex');
+					popupEnd.removeAttribute('tabindex');
+
+					if (popupLength <= 1) {
+						fn.scroll('enabled', scrollt);
+					} else {
+						if (popupZindex + popupLength - 1) {
+							document.querySelector('[data-popupzIndex="'+(popupZindex + popupLength - 1)+'"]').classList.remove('dimdisabled');
+						}
+					}
+
+					if (document.querySelector('[data-popupLength="'+popupLength+'"]')) {
+						document.querySelector('[data-popupLength="'+popupLength+'"]').focus();
+						document.querySelector('[data-popupLength="'+popupLength+'"]').removeAttribute('data-popupLength');
+					}
+					break;
+			}
+		},
+
 		// textarea
 		wordLimit: (target, limit) => {
 			const
