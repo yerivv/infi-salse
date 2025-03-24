@@ -885,41 +885,19 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   background: linear-gradient(90deg, rgba(78, 226, 167, 0.8) 0%, rgba(18, 167, 225, 0.8) 100%);
 }
-.membership.view-new .tab-area .view-select {
-  display: flex;
-  gap: 0 8px;
-}
-.membership.view-new .tab-area .view-select .select {
+.membership.view-new .tab-area .view-select .golflist {
   height: 28px;
   width: 151px;
 }
-.membership.view-new .tab-area .view-select .select .dropdown {
+.membership.view-new .tab-area .view-select .golflist .current {
+  position: relative;
   height: 28px;
-  border-radius: 15px;
-}
-.membership.view-new .tab-area .view-select .select .dropdown .current {
-  min-width: 90px;
-  padding: 0 33px 0 12px;
-  border-radius: 15px;
+  padding: 4px 23px 4px 12px;
+  background-color: #ffffff;
+  border-radius: 14px;
   background: rgba(255, 255, 255, 0.5);
-  border-width: 0;
-  color: #002394;
-  font-size: 12px;
-  line-height: 28px;
-  font-weight: 700;
 }
-.membership.view-new .tab-area .view-select .select .dropdown .icon-select {
-  position: absolute;
-  top: 50%;
-  left: auto;
-  right: 8px;
-  width: 12px;
-  height: 12px;
-  transition: all 0.125s ease-in-out;
-  pointer-events: none;
-  margin-top: -6px;
-}
-.membership.view-new .tab-area .view-select .select .dropdown .icon-select::after {
+.membership.view-new .tab-area .view-select .golflist .current::after {
   background-image: url(../../../static/imgs/sales/common/icon-arrow-view.svg);
   background-repeat: no-repeat;
   background-size: contain;
@@ -930,24 +908,67 @@
   content: "";
   width: 12px;
   height: 12px;
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  margin-top: -6px;
 }
-.membership.view-new .tab-area .view-select .select .dropdown .list {
-  border-width: 0;
+.membership.view-new .tab-area .view-select .golflist .current .selected {
+  display: block;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  color: #002394;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 700;
+}
+.membership.view-new .tab-area .view-select .golflist .box {
+  padding: 0 8px 4px 12px;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
+  background-color: #ffffff;
 }
-.membership.view-new .tab-area .view-select .select .dropdown .list .option {
-  padding: 4px 12px;
+.membership.view-new .tab-area .view-select .golflist .box .list li {
+  padding: 4px 0;
+}
+.membership.view-new .tab-area .view-select .golflist .box .list li .name {
   color: #002394;
   font-size: 12px;
   line-height: 20px;
   font-weight: 400;
 }
-.membership.view-new .tab-area .view-select .select .dropdown.open .current {
-  background: #fff;
+.membership.view-new .tab-area .view-select .golflist .box .list li.brand {
+  padding: 11px 0 12px;
+  border-top: 1px solid #eeeeee;
+}
+.membership.view-new .tab-area .view-select .golflist .box .list li.brand:first-of-type {
+  padding-top: 6px;
+  border-top-width: 0;
+}
+.membership.view-new .tab-area .view-select .golflist .box .list li.brand .name {
+  font-weight: 700;
+}
+.membership.view-new .tab-area .view-select .golflist .box .list li.brand .sub li {
+  padding: 0;
+  margin-top: 8px;
+}
+.membership.view-new .tab-area .view-select .golflist .box .list li.brand .sub li:first-child {
+  margin-top: 10px;
+}
+.membership.view-new .tab-area .view-select .golflist .box .list li.brand .sub .name {
+  color: #091b4d;
+  font-size: 11px;
+  line-height: 16px;
+  font-weight: 400;
+}
+.membership.view-new .tab-area .view-select .golflist.open .current {
   border-radius: 8px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+  background: white;
 }
 .membership.view-new .tab-area .view-tab {
   position: relative;
@@ -1029,10 +1050,10 @@
   font-weight: 700;
   opacity: 1;
 }
-.membership.view-new .tab-area .view-select:has(.select) {
+.membership.view-new .tab-area .view-select:has(.golflist) {
   padding-left: 10px;
 }
-.membership.view-new .tab-area .view-select:has(.select) + .view-tab {
+.membership.view-new .tab-area .view-select:has(.golflist) + .view-tab {
   width: calc(100% - 161px);
 }
 .membership.view-new .detail-area {
@@ -1044,21 +1065,33 @@
 .membership.view-new .detail-area .swiper-slide .img + .img {
   margin-top: 34px;
 }
-.membership.view-new .bt-application {
+.membership.view-new .box-application {
   position: fixed;
-  right: 30px;
-  bottom: 30px;
-  min-width: 205px;
-  color: #ffffff;
+  right: 32px;
+  bottom: 40px;
+  z-index: 10;
+  width: 220px;
+}
+.membership.view-new .box-application .bt-application {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 220px;
+  height: 46px;
+  padding: 0 11px 0 19px;
   border: 1px solid #53c38b;
   background-color: #4aae78;
   box-shadow: 3px 6px 10px 0px rgba(0, 0, 0, 0.15);
-  border-radius: 24px;
-  z-index: 10;
-  opacity: 1;
-  transition: opacity 0.6s;
+  border-radius: 99px;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 500;
+  text-align: left;
 }
-.membership.view-new .bt-application .svgicon-arrowright {
+.membership.view-new .box-application .bt-application .svgicon-accordionarrow {
   display: inline-block;
   width: 16px;
   height: 16px;
@@ -1066,8 +1099,46 @@
   overflow: hidden;
   background: none;
   background-color: #ffffff;
-  -webkit-mask-image: url("../../../static/imgs/sales/common/icon_20.svg#arrowright");
-  mask-image: url("../../../static/imgs/sales/common/icon_20.svg#arrowright");
+  -webkit-mask-image: url("../../../static/imgs/sales/common/icon_16.svg#accordionarrow");
+  mask-image: url("../../../static/imgs/sales/common/icon_16.svg#accordionarrow");
+}
+.membership.view-new .box-application .bt-application .svgicon {
+  transition: all 0.125s ease-in-out;
+}
+.membership.view-new .box-application .list {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 8px 12px 8px 20px;
+  border-radius: 12px;
+  border: 1px solid #eeeeee;
+  background: #ffffff;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+.membership.view-new .box-application .list ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px 0;
+  max-height: 298px;
+  overflow-y: auto;
+}
+.membership.view-new .box-application .list ul li {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 500;
+}
+.membership.view-new .box-application.open .bt-application .svgicon {
+  transform: rotate(180deg);
+}
+.membership.view-new .box-application.open .list {
+  bottom: 50px;
+  opacity: 1;
+  height: auto;
+  transition: all 0.15s cubic-bezier(0.25, 0, 0.25, 1.75), opacity 0.1s linear;
+  transform-origin: 50% 0;
 }
 .membership.recommend-new .title-area {
   display: flex;
@@ -1580,6 +1651,150 @@
 }
 .membership.result-new .list-area {
   padding: 0 32px;
+}
+.membership.main-new {
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.membership.main-new .mainb-cont {
+  padding: 60px;
+}
+.membership.main-new .mainb-cont .copy1 {
+  color: #2550d8;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 500;
+}
+.membership.main-new .mainb-cont .copy2 {
+  color: #002394;
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 400;
+}
+.membership.main-new .mainb-cont .copy2 strong {
+  font-weight: 700;
+}
+.membership.main-new .mainb-cont .copy3 {
+  margin-top: 24px;
+  color: #8f97b2;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 500;
+}
+.membership.main-new .mainb-cont .copy3 button {
+  display: flex;
+  align-items: center;
+  color: #8f97b2;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 500;
+}
+.membership.main-new .mainb-cont .copy3 .svgicon-useradd {
+  display: inline-block;
+  margin: 0 4px 0 0;
+  width: 16px;
+  height: 16px;
+  vertical-align: top;
+  overflow: hidden;
+  background: none;
+  background-color: #8f97b2;
+  -webkit-mask-image: url("../../../static/imgs/sales/common/icon_16.svg#useradd");
+  mask-image: url("../../../static/imgs/sales/common/icon_16.svg#useradd");
+}
+.membership.main-new .mainb-cont .copy3 .svgicon-arrowright2 {
+  display: inline-block;
+  margin: 0 0 0 2px;
+  width: 16px;
+  height: 16px;
+  vertical-align: top;
+  overflow: hidden;
+  background: none;
+  background-color: #8f97b2;
+  -webkit-mask-image: url("../../../static/imgs/sales/common/icon_16.svg#arrowright2");
+  mask-image: url("../../../static/imgs/sales/common/icon_16.svg#arrowright2");
+}
+.membership.main-new .mainb-cont .btns .btn {
+  min-width: 148px;
+  height: 38px;
+  padding: 8px 32px;
+  border: none 0;
+  color: #2550d8;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 700;
+  background-color: #DEEBFF;
+}
+.membership.main-new .mainb-cont .btns .btn.point {
+  color: #ffffff;
+  background-color: #2550d8;
+}
+.membership.main-new .mainb-cont .banner {
+  margin-top: 50px;
+}
+.membership.main-new .mainb-cont .banner a, .membership.main-new .mainb-cont .banner img {
+  display: block;
+}
+.membership.main-new .mainb-cont .copy1 + .copy2 {
+  margin-top: 16px;
+}
+.membership.main-new .main-cont .cont.logo-cont {
+  padding-bottom: 111px;
+}
+.membership.main-new .main-cont .list-area {
+  padding-bottom: 111px;
+}
+.membership.main-new .quickmenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+}
+.membership.main-new .quickmenu .menu-box {
+  padding: 20px 32px;
+  border-radius: 8px 8px 0px 0px;
+  background: rgba(255, 255, 255, 0.9);
+}
+.membership.main-new .quickmenu .menu-box dl {
+  display: flex;
+  align-items: center;
+}
+.membership.main-new .quickmenu .menu-box dt {
+  width: 96px;
+  color: #091b4d;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 700;
+  text-align: left;
+}
+.membership.main-new .quickmenu .menu-box dd {
+  display: flex;
+  align-items: center;
+  gap: 0 20px;
+}
+.membership.main-new .quickmenu .menu-box dd .item {
+  text-align: center;
+}
+.membership.main-new .quickmenu .menu-box dd .item .img {
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto;
+  border-radius: 99px;
+  background: rgba(243, 247, 254, 0.8);
+}
+.membership.main-new .quickmenu .menu-box dd .item .text {
+  display: block;
+  min-width: 66px;
+  font-size: 12px;
+  line-height: 17px;
+  font-weight: 500;
+  margin-top: 6px;
+  text-align: center;
 }
 
 .popup.popupcompare2 .btns.bottom .btn {
