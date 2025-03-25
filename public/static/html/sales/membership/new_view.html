@@ -113,50 +113,48 @@
             <div class="view-area">
                 <div class="tab-area">
                     <div class="view-select">
-                        <!-- 단순 결합
-                        <div class="golflist">
-                            <div class="current">
+                        <!-- 단순 결합 -->
+                        <!-- <div class="golflist">
+                            <div class="current" onclick="golfListView();">
                                 <span class="selected">삼투엔람 골프 리조트</span>
                             </div>
                             <div class="box">
                                 <ul class="list">
                                     <li>
-                                        <a href="#" class="name">삼투엔람 골프 리조트</a>
+                                        <a href="new_view.html" class="name">삼투엔람 골프 리조트</a>
                                     </li>
                                     <li>
-                                        <a href="#" class="name">삼투엔람 골프 리조트</a>
+                                        <a href="new_view.html" class="name">삼투엔람 골프 리조트</a>
                                     </li>
                                 </ul>
                             </div>
                         </div> -->
 
                         <!-- 결합인데 브랜드 -->
-                        <div class="golflist open">
-                            <div class="current">
+                        <div class="golflist">
+                            <div class="current" onclick="golfListView();">
                                 <span class="selected">삼투엔람 골프 리조트</span>
                             </div>
                             <div class="box">
                                 <ul class="list">
                                     <li class="brand">
-                                        <a href="#" class="name">빈펄</a>
+                                        <a href="new_view.html" class="name">빈펄</a>
                                         <ul class="sub">
-                                            <li><a href="#" class="name">빈펄</a></li>
-                                            <li><a href="#" class="name">나트랑</a></li>
-                                            <li><a href="#" class="name">하이퐁</a></li>
-                                            <li><a href="#" class="name">남호이안</a></li>
-                                            <li><a href="#" class="name">푸꾸옥</a></li>
+                                            <li><a href="new_view.html" class="name">나트랑</a></li>
+                                            <li><a href="new_view.html" class="name">하이퐁</a></li>
+                                            <li><a href="new_view.html" class="name">남호이안</a></li>
+                                            <li><a href="new_view.html" class="name">푸꾸옥</a></li>
                                         </ul>
                                     </li>
                                     <li class="brand">
-                                        <a href="#" class="name">남산</a>
+                                        <a href="new_view.html" class="name">남산</a>
                                         <ul class="sub">
-                                            <li><a href="#" class="name">남산</a></li>
-                                            <li><a href="#" class="name">남산1</a></li>
-                                            <li><a href="#" class="name">남산2</a></li>
+                                            <li><a href="new_view.html" class="name">남산1</a></li>
+                                            <li><a href="new_view.html" class="name">남산2</a></li>
                                         </ul>
                                     </li>
                                     <li class="brand">
-                                        <a href="#" class="name">삼투엔람 골프 리조트</a>
+                                        <a href="new_view.html" class="name">삼투엔람 골프 리조트</a>
                                     </li>
                                 </ul>
                             </div>
@@ -212,6 +210,9 @@
                                 <div class="img"><img src="../../../imgs/sales/temp/view-detail01.jpg" alt="이미지" /></div>
                             </div>
                             <div class="swiper-slide">
+                                <div class="video">
+                                    <iframe src="https://www.youtube.com/embed/o3GcOXTPd6w?autoplay=1&mute=1&controls=0&loop=1" title="YouTube video player"></iframe>
+                                </div>
                                 <div class="img"><img src="../../../imgs/sales/temp/view-detail02.jpg" alt="이미지" /></div>
                             </div>
                             <div class="swiper-slide">
@@ -241,7 +242,10 @@
                                 <div class="img"><img src="../../../imgs/sales/temp/view-detail10.png" alt="이미지" /></div>
                             </div>
                             <div class="swiper-slide">
-                                <div class="img"><img src="../../../imgs/sales/temp/view-detail11.jpg" alt="이미지" /></div>
+                                <!-- <div class="img"><img src="../../../imgs/sales/temp/view-detail11.jpg" alt="이미지" /></div> -->
+                                <div class="gallery">
+                                    <a href="intent://#Intent;action=android.intent.action.VIEW;type=image/*;end;" class="btn big btn-gallery">갤러리 바로가기 <i class="svgicon svgicon-arrowright"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -327,7 +331,7 @@
                 }
                 
                 //입회신청서
-                function application(a){
+                function application(){
                     const box = document.querySelector('.box-application');
                     if(box.classList.contains('open')){
                         box.classList.remove('open');
@@ -335,10 +339,36 @@
                         box.classList.add('open');
                     }
                 }
+
+                // 골프장 이동 관련
+                function golfListView(){
+                    const wrap = document.querySelector('.golflist')
+                    const current = wrap.querySelector('.current');
+                    if(wrap.classList.contains('open')){
+                        wrap.classList.remove('open');
+                    } else {
+                        wrap.classList.add('open');
+                    }
+                }
+                document.addEventListener("click", function (event) {
+                    const golfList = document.querySelector('.golflist');
+                    const boxApplication = document.querySelector('.box-application');
+
+                    if (golfList.contains(event.target)) {
+                        boxApplication.classList.remove("open");
+                    } else if (boxApplication.contains(event.target)) {
+                        golfList.classList.remove("open");
+                    } else {
+                        golfList.classList.remove("open");
+                        boxApplication.classList.remove("open");
+                    }
+                });
+
                 
                 document.addEventListener("DOMContentLoaded", () => {
                     fnSwiper('init');
                 });
+                
             </script>
         </div>
         <!-- // 본문 영역 -->

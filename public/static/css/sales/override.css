@@ -896,6 +896,7 @@
   background-color: #ffffff;
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
 }
 .membership.view-new .tab-area .view-select .golflist .current::after {
   background-image: url(../../../static/imgs/sales/common/icon-arrow-view.svg);
@@ -912,6 +913,7 @@
   right: 8px;
   top: 50%;
   margin-top: -6px;
+  transition: all 0.125s ease-in-out;
 }
 .membership.view-new .tab-area .view-select .golflist .current .selected {
   display: block;
@@ -926,6 +928,9 @@
   font-weight: 700;
 }
 .membership.view-new .tab-area .view-select .golflist .box {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
   padding: 0 8px 4px 12px;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
@@ -935,6 +940,7 @@
   padding: 4px 0;
 }
 .membership.view-new .tab-area .view-select .golflist .box .list li .name {
+  display: block;
   color: #002394;
   font-size: 12px;
   line-height: 20px;
@@ -948,15 +954,15 @@
   padding-top: 6px;
   border-top-width: 0;
 }
+.membership.view-new .tab-area .view-select .golflist .box .list li.brand:last-child {
+  padding-bottom: 0;
+}
 .membership.view-new .tab-area .view-select .golflist .box .list li.brand .name {
-  font-weight: 700;
+  font-weight: 500;
 }
 .membership.view-new .tab-area .view-select .golflist .box .list li.brand .sub li {
   padding: 0;
   margin-top: 8px;
-}
-.membership.view-new .tab-area .view-select .golflist .box .list li.brand .sub li:first-child {
-  margin-top: 10px;
 }
 .membership.view-new .tab-area .view-select .golflist .box .list li.brand .sub .name {
   color: #091b4d;
@@ -969,6 +975,15 @@
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   background: white;
+}
+.membership.view-new .tab-area .view-select .golflist.open .current::after {
+  transform: rotate(180deg);
+}
+.membership.view-new .tab-area .view-select .golflist.open .box {
+  opacity: 1;
+  height: auto;
+  transition: all 0.15s cubic-bezier(0.25, 0, 0.25, 1.75), opacity 0.1s linear;
+  transform-origin: 50% 0;
 }
 .membership.view-new .tab-area .view-tab {
   position: relative;
@@ -1041,7 +1056,8 @@
   min-width: 108px;
   color: #ffffff;
   font-size: 14px;
-  line-height: 22px 500;
+  line-height: 22px;
+  font-weight: 500;
   text-align: center;
   cursor: pointer;
   opacity: 0.7;
@@ -1064,6 +1080,48 @@
 }
 .membership.view-new .detail-area .swiper-slide .img + .img {
   margin-top: 34px;
+}
+.membership.view-new .detail-area .swiper-slide .video {
+  position: relative;
+  pointer-events: none;
+  max-width: none;
+  max-height: none;
+  width: 100%;
+  height: calc(100vh - 44px);
+}
+.membership.view-new .detail-area .swiper-slide .video iframe, .membership.view-new .detail-area .swiper-slide .video object, .membership.view-new .detail-area .swiper-slide .video embed {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  border: none 0;
+  padding: 0;
+  margin: 0;
+}
+.membership.view-new .detail-area .swiper-slide .gallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: calc(100vh - 44px);
+}
+.membership.view-new .detail-area .swiper-slide .gallery .btn-gallery {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.membership.view-new .detail-area .swiper-slide .gallery .btn-gallery .svgicon-arrowright {
+  display: inline-block;
+  margin: 14px 0 0 8px;
+  width: 16px;
+  height: 16px;
+  vertical-align: top;
+  overflow: hidden;
+  background: none;
+  background-color: #ffffff;
+  -webkit-mask-image: url("../../../static/imgs/sales/common/icon_20.svg#arrowright");
+  mask-image: url("../../../static/imgs/sales/common/icon_20.svg#arrowright");
 }
 .membership.view-new .box-application {
   position: fixed;
@@ -1918,4 +1976,14 @@
 }
 .popup.popupRecommendFilter .btns.bottom .btn.line {
   color: #092060;
+}
+
+.business.business-override tr.type td, .business.business-override tr.type th {
+  color: #4673FF;
+}
+.business.business-override tr.type td span, .business.business-override tr.type th span {
+  color: #4673FF;
+}
+.business.business-override.registration tr.type td {
+  color: #4673FF;
 }

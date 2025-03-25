@@ -1,0 +1,743 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"> -->
+	<meta name="viewport" content="width=960">
+
+	<meta name="format-detection" content="telephone=no, email=no, address=no">
+
+	<meta name="robots" content="index, nofollow">
+	<meta name="description" content="페이지 설명">
+	<meta name="keywords" content="키워드, 키워드">
+
+	<meta property="og:site_name" content="한케이골프">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="title">
+	<meta property="og:image" content="image">
+	<meta property="og:url" content="url입력">
+	<meta property="og:description" content="페이지 설명">
+
+	<link rel="shortcut icon" type="image/x-icon" href="../../../imgs/sales/common/favicon.ico">
+	<link rel="apple-touch-icon" href="../../../imgs/sales/common/apple-touch-icon.png">
+
+	<!-- 공통 css, js -->
+	<link rel="stylesheet" href="../../../css/sales/lib/jquery-ui.min.css">
+	<link rel="stylesheet" href="../../../css/sales/lib/swiper-bundle.min.css">
+	<link rel="stylesheet" href="../../../css/sales/common.css">
+	<script src="../../../jscript/sales/lib/jquery-3.6.4.min.js"></script>
+	<script src="../../../jscript/sales/lib/jquery-ui.min.js"></script>
+	<script src="../../../jscript/sales/lib/jquery.ui.touch-punch.min.js"></script>
+	<script src="../../../jscript/sales/lib/swiper-bundle.min.js"></script>
+
+	<script src="../../../jscript/sales/lib/chart.min.js"></script>
+
+	<script src="../../../jscript/sales/lib/moment.min.js"></script>
+	<script src="../../../jscript/sales/lib/daterangepicker.js"></script>
+
+	<script src="../../../jscript/sales/function.ui.js"></script>
+	<script src="../../../jscript/sales/common.ui.js"></script>
+
+	<!-- 페이지별 css, js -->
+
+	<link rel="stylesheet" href="../../../css/sales/business.css">
+	<link rel="stylesheet" href="../../../css/sales/override.css">
+
+
+
+
+
+	<title> 한케이골프</title>
+
+
+</head>
+
+<body>
+
+	<noscript>
+		이 사이트를 이용하기 위해서 자바스크립트를 활성화 시킬 필요가 있습니다.
+		<a href="http://www.enable-javascript.com/ko/" target="_blank">브라우저에서 자바스크립트를 활성화하는 방법</a>을 참고 하세요.
+	</noscript>
+
+	<div id="wrap">
+		<a href="#contents" class="skip">본문 영역으로 바로가기</a>
+
+		<!-- header // -->
+
+		<header id="header">
+			<div class="inner">
+				<h1 class="logo"><a href="#"><span class="blind">Han k Golf For Sales</span></a></h1>
+
+				<div class="tab-swiper">
+					<div class="swiper">
+						<div class="swiper-wrapper">
+
+							<!--
+							.tab-swiper > .swiper-slide append, remove 후 swiper update를 위해 호출
+
+							default(첫번째 버튼 활성화):  fn.headerTabSwiper();
+							n번째 버튼 활성화: fn.headerTabSwiper(n-1);
+						-->
+							<div class="swiper-slide">
+								<a href="#" class="active">영업활동분석</a><!-- 활성화 class="active" -->
+								<button type="button" class="btn-close"><span class="blind">닫기</span><i class="svgicon svgicon-close"></i></button>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="util">
+					<div class="toggle-area">
+						<label class="check-toggle">
+							<strong class="toggle-txt on">영업활동 ON</strong>
+							<input type="checkbox" name="">
+							<strong class="toggle-txt off">영업활동 OFF</strong>
+						</label>
+					</div>
+					<button type="button" class="btn-masking" onclick="fn.toggleActive(this)"><span class="blind">마스킹해제</span></button><!-- 활성화 class="active" -->
+					<button type="button" class="btn-allmenu" onclick="fn.popup('open', '#popupAllMenu');"><span class="blind">전체 메뉴</span></button>
+				</div>
+			</div>
+		</header>
+
+		<!-- // header -->
+
+		<!-- container // -->
+		<main id="container">
+			<!-- 본문 영역 // -->
+			<div id="contents" class="business  business-override"> <!-- 해당 depth별로 class명 추가 -->
+
+				<div class="title-area">
+					<div class="tit-area">
+						<h2 class="tit">영업활동분석</h2>
+						<button class="btn small" onclick="fn.popup('open', '#popupLeaderBoard')"><i class="svgicon svgicon-leaderboard"></i>리더보드 보기</button>
+					</div>
+					<div class="month-sit">
+						<div>
+							<p>월 현황</p>
+							<span class="daterangepickers single"><input type="text" placeholder="YYYY.MM.DD(D)" readonly><i class="svgicon svgicon-date"></i></span>
+						</div>
+						<button class="btn"><i class="icon icon-rank"></i>당월 시상후보</button>
+					</div>
+				</div>
+
+
+				<div class="situation-area">
+					<div class="situation-tab">
+						<p><strong><i class="icon icon-ranking"></i>목표</strong>하루에 2명이상 미팅 및 상담 잡고 신입TGS는 최대한 상품 숙지 및 TM활성화를 몸에 익힌다.</p>
+					</div>
+					<div class="sub-ti">
+						<strong>당월 영업현황</strong>
+
+						<p>반영 기준 : 2024. 08. 07 12:00<span>단위 : 원​</span></p>
+					</div>
+
+					<div class="graph-area">
+						<div class="graph-item">
+							<div class="graph-ti">
+								<p>총 완납구좌 수</p>
+								<strong>5.0<span> / 25.5</span></strong>
+							</div>
+							<div class="graph-cont">
+								<div class="full-chart paymentchart">
+									<div class="chart-wrap"><canvas id="myCharts"></canvas></div>
+									<div class="txt-percentage"><em>50</em>%</div>
+								</div>
+								<script>
+									fn.doughnutChart('.paymentchart', '#2550D8');
+								</script>
+								<ul>
+									<li>
+										완납구좌(신규입회)
+										<strong>5</strong>
+									</li>
+									<li>
+										목표구좌
+										<strong>6</strong>
+									</li>
+									<li>
+										목표달성율
+										<strong>50%</strong>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="graph-item">
+							<div class="graph-ti">
+								<p>총 매출액(원)</p>
+								<strong>170,300,000<span> / 353,700,000</span></strong>
+							</div>
+							<div class="graph-cont">
+								<div class="full-chart saleschart">
+									<div class="chart-wrap"><canvas id="myCharts"></canvas></div>
+									<div class="txt-percentage"><em>0</em>%</div>
+								</div>
+								<script>
+									fn.doughnutChart('.saleschart', '#4aae78');
+								</script>
+								<ul>
+									<li>
+										실적금액​(신규입회)
+										<strong>0</strong>
+									</li>
+									<li>
+										목표금액
+										<strong>170,400,000</strong>
+									</li>
+									<li>
+										매출달성율
+										<strong>0.00%</strong>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="report-area">
+					<!-- 2025.02.03 수정 // -->
+					<div class="sub-ti">
+						<p><strong>당월 실적 보고</strong></p>
+
+						<p>기준 : 2024.08.01 ~ 2024.08.07<span>단위 : 원​</span></p>
+					</div>
+					<!-- // 2025.02.03 수정 -->
+
+					<table class="scroll">
+						<colgroup>
+							<col style="width: 224px;">
+							<col style="width: 224px;">
+							<col style="width: 224px;">
+							<col style="width: 224px;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>회원권명</th>
+								<th>목표</th>
+								<th>완납구좌</th>
+								<!-- 2025.02.04 수정 //-->
+								<th>실적금액​(계약금포함)</th>
+								<!--// 2025.02.04 수정 -->
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>남산</td>
+								<td>2</td>
+								<td>2</td>
+								<td><span>10,300,000</span></td>
+							</tr>
+							<tr>
+								<td>미션힐스 MH LUXURY</td>
+								<td>1</td>
+								<td>1</td>
+								<td><span>9,300,000</span></td>
+							</tr>
+							<tr>
+								<td>미션힐스 MH GOLD</td>
+								<td>3</td>
+								<td>1</td>
+								<td><span>8,300,000</span></td>
+							</tr>
+							<tr>
+								<td>빈펄 VIP</td>
+								<td>2</td>
+								<td>2</td>
+								<td><span>6,300,000</span></td>
+							</tr>
+							<tr>
+								<td>빈펄 GOLD</td>
+								<td>3</td>
+								<td>2</td>
+								<td><span>10,300,000</span></td>
+							</tr>
+							<tr>
+								<td>양수/양도</td>
+								<td>0</td>
+								<td>0</td>
+								<td><span>0</span></td>
+							</tr>
+							<tr>
+								<td>남산</td>
+								<td>2</td>
+								<td>2</td>
+								<td><span>10,300,000</span></td>
+							</tr>
+							<tr>
+								<td>미션힐스 MH LUXURY</td>
+								<td>1</td>
+								<td>1</td>
+								<td><span>9,300,000</span></td>
+							</tr>
+							<tr>
+								<td>미션힐스 MH GOLD</td>
+								<td>3</td>
+								<td>1</td>
+								<td><span>8,300,000</span></td>
+							</tr>
+							<tr>
+								<td>빈펄 VIP</td>
+								<td>2</td>
+								<td>2</td>
+								<td><span>6,300,000</span></td>
+							</tr>
+							<tr>
+								<td>빈펄 GOLD</td>
+								<td>3</td>
+								<td>2</td>
+								<td><span>10,300,000</span></td>
+							</tr>
+							<tr class="type">
+								<td>양수도</td>
+								<td>0</td>
+								<td>0</td>
+								<td><span>0</span></td>
+							</tr>
+							<tr class="type">
+								<td>승급</td>
+								<td>0</td>
+								<td>0</td>
+								<td><span>0</span></td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td><strong>합 계</strong></td>
+								<td><strong>11</strong></td>
+								<td><strong>11</strong></td>
+								<td><span><strong>34,200,000</strong></span></td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+
+				<div class="report-area">
+					<!-- 2025.02.03 수정 // -->
+					<div class="sub-ti">
+						<p><strong>일일 예상구좌 현황​</strong></p>
+
+						<p>기준 : 2024.08.07 08:00<span><a href="#">예상구좌 등록<i class="icon icon-select"></i></a></span></p>
+					</div>
+					<!-- // 2025.02.03 수정 -->
+					<table>
+						<colgroup>
+							<col style="width: 298px;">
+							<col style="width: 298px;">
+							<col style="width: 298px;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>회원권명</th>
+								<th>완납구좌</th>
+								<th>구좌 추진사항</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>남산</td>
+								<td>2</td>
+								<td>계약 진행 예상​</td>
+							</tr>
+							<tr>
+								<td>미션힐스 MH LUXURY</td>
+								<td>1</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>미션힐스 MH GOLD</td>
+								<td>1</td>
+								<td>완납 예정​</td>
+							</tr>
+							<tr>
+								<td>빈펄 VIP</td>
+								<td>1</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>빈펄 GOLD</td>
+								<td>1</td>
+								<td></td>
+							</tr>
+							<tr class="type">
+								<td>양수도</td>
+								<td>0</td>
+								<td>0</td>
+							</tr>
+							<tr class="type">
+								<td>승급</td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="report-area">
+					<!-- 2025.02.03 수정 // -->
+					<div class="sub-ti">
+						<p><strong>일일활동업무​</strong></p>
+
+						<p>기준 : 2024.08.07 08:00<span><a href="#">활동업무 등록<i class="icon icon-select"></i></a></span></p>
+					</div>
+					<!-- // 2025.02.03 수정 -->
+					<table>
+						<colgroup>
+							<col style="width: 127px;">
+							<col style="width: 127px;">
+							<col style="width: 127px;">
+							<col style="width: 127px;">
+							<col style="width: 127px;">
+							<col style="width: 127px;">
+							<col style="width: 127px;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>TM</th>
+								<th>응답</th>
+								<th>카톡유입</th>
+								<th>블로그</th>
+								<th>문자발송</th>
+								<th>DB획득</th>
+								<th>미팅</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><span><strong>5</strong></span></td>
+								<td><span><strong>48</strong></span></td>
+								<td><span class="zero"><strong>0</strong></span></td>
+								<td><span><strong>1</strong></span></td>
+								<td><span class="zero"><strong>0</strong></span></td>
+								<td><span class="zero"><strong>0</strong></span></td>
+								<td><span><strong>1</strong></span></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<!-- 팝업 : 8월 영업실적 리더보드​ // -->
+				<article id="popupLeaderBoard" class="popup  popupleaderboard">
+					<div class="inner">
+
+						<header class="header ">
+							<h2 class="tit">8월 영업실적 리더보드</h2>
+						</header>
+
+						<div class="contents scrollbar">
+							<div class="scroll-content">
+								<div class="cont">
+									<!-- 2025.01.13 수정 //-->
+									<div class="select small">
+										<select title="날짜 선택">
+											<option value="" class="select-ti">날짜 선택</option>
+											<option value="" selected>2024.08</option>
+											<option value="">2024.07</option>
+											<option value="">2024.06</option>
+										</select>
+									</div>
+									<!--// 2025.01.13 수정 -->
+									<!-- tabmenu // -->
+									<div class="tabmenu">
+										<p class="date-txt">・기준일자 : 2024. 08. 07 12:30</p>
+										<!-- tab-ti // -->
+										<div class="tab-ti slide">
+											<div class="swiper">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide"><a href="#tabCont1" class="active">개인 시상</a></div> <!-- 활성화 class="active" -->
+													<div class="swiper-slide"><a href="#tabCont2">팀 시상</a></div>
+												</div>
+											</div>
+										</div>
+										<!-- // tab-ti -->
+										<!-- tab-contents // -->
+										<div id="tabCont1" class="tab-contents active"> <!-- 활성화 class="active" -->
+											<table>
+												<colgroup>
+													<col style="width: 45px;">
+													<col style="width: 164px;">
+													<col style="width: 56px;">
+													<col style="width: 56px;">
+													<col style="width: 94px;">
+													<col style="width: 114px;">
+													<col style="width: 83px;">
+												</colgroup>
+												<thead>
+													<tr>
+														<th>구분</th>
+														<th>부서 및 팀명​</th>
+														<th>담당자</th>
+														<th>직급</th>
+														<th>총 완납구좌 수</th>
+														<th>총 매출액(원)<em>(양수도/승급 포함)</em></th>
+														<th>비고</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>1</td>
+														<td>TGS 총괄본부 TS B팀</td>
+														<td>안상민</td>
+														<td>부사장</td>
+														<td>5.0</td>
+														<td><span>70,300,000</span></td>
+														<td>Leader 6th</td>
+													</tr>
+													<tr>
+														<td>2</td>
+														<td>TGS 총괄본부 TS A팀</td>
+														<td>송용호</td>
+														<td>전무</td>
+														<td>2.0</td>
+														<td><span>59,800,000</span></td>
+														<td></td>
+													</tr>
+													<tr>
+														<td>3</td>
+														<td>TGS 총괄본부 TGS 1팀</td>
+														<td>이영우</td>
+														<td>이사</td>
+														<td>1.5</td>
+														<td><span>27,000,000</span></td>
+														<td></td>
+													</tr>
+													<tr>
+														<td>4</td>
+														<td>TGS 총괄본부 TGS 1팀</td>
+														<td>이희준</td>
+														<td>부장</td>
+														<td>1.0</td>
+														<td><span>18,000,000</span></td>
+														<td></td>
+													</tr>
+													<tr>
+														<td>5</td>
+														<td>TGS 총괄본부 TS 5팀</td>
+														<td>송석호</td>
+														<td>부장</td>
+														<td>1.5</td>
+														<td><span>15,900,000</span></td>
+														<td></td>
+													</tr>
+													<tr>
+														<td>6</td>
+														<td>TGS 총괄본부 TS B팀</td>
+														<td>배경복</td>
+														<td>부장</td>
+														<td>1.0</td>
+														<td><span>13,000,000</span></td>
+														<td></td>
+													</tr>
+													<tr>
+														<td>7</td>
+														<td>TGS 총괄본부 TS A팀</td>
+														<td>김동준</td>
+														<td>상무</td>
+														<td>2.0</td>
+														<td><span>12,000,000</span></td>
+														<td></td>
+													</tr>
+													<tr>
+														<td>8</td>
+														<td>TGS 총괄본부 TGS 3팀</td>
+														<td>서준호</td>
+														<td>상무</td>
+														<td>1.0</td>
+														<td><span>11,325,000</span></td>
+														<td></td>
+													</tr>
+													<tr>
+														<td>9</td>
+														<td>TGS 총괄본부 TGS 3팀</td>
+														<td>심상돈</td>
+														<td>이사</td>
+														<td>1.0</td>
+														<td><span>9,00,000</span></td>
+														<td></td>
+													</tr>
+													<tr>
+														<td>10</td>
+														<td>TGS 총괄본부 TGS 3팀</td>
+														<td>복형준</td>
+														<td>부장</td>
+														<td>1.0</td>
+														<td><span>9,00,000</span></td>
+														<td></td>
+													</tr>
+													<tr>
+														<td colspan="4"><strong>총 계</strong></td>
+														<td><strong>24.0</strong></td>
+														<td><strong><span>284,765,000</span></strong></td>
+														<td></td>
+													</tr>
+												</tbody>
+											</table>
+
+											<div class="box-area">
+												<strong>개인 시상​</strong>
+												<p>
+													1위 : 현금 150만원, 2위 : 현금 100만원, 3위 : 현금 70만원, 4위 : 현금 50만원, 5위 : 현금 30만원 (1위~5위 1억이상 달성시)<br>
+													6~10위 : 현금 각 10만원 (매출 7천만원 이상 달성 시)
+												</p>
+											</div>
+										</div>
+										<div id="tabCont2" class="tab-contents">
+											<table>
+												<colgroup>
+													<col style="width: 45px;">
+													<col style="width: 164px;">
+													<col style="width: 56px;">
+													<col style="width: 56px;">
+													<col style="width: 94px;">
+													<col style="width: 114px;">
+													<col style="width: 83px;">
+												</colgroup>
+												<thead>
+													<tr>
+														<th>구분</th>
+														<th>부서 및 팀명​</th>
+														<th>팀장</th>
+														<th>직급</th>
+														<th>총 완납구좌 수</th>
+														<th>총 매출액(원)<em>(계약금 포함)</em></th>
+														<th>비고</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>1</td>
+														<td>TGS 총괄본부 TS B팀</td>
+														<td>안상민</td>
+														<td>부사장</td>
+														<td>5.0</td>
+														<td><span>70,300,000</span></td>
+														<td>Leader 6th</td>
+													</tr>
+													<tr>
+														<td>2</td>
+														<td>TGS 총괄본부 TS A팀</td>
+														<td>송용호</td>
+														<td>전무</td>
+														<td>2.0</td>
+														<td><span>59,800,000</span></td>
+														<td></td>
+													</tr>
+													<tr>
+														<td>3</td>
+														<td>TGS 총괄본부 TGS 1팀</td>
+														<td>이영우</td>
+														<td>이사</td>
+														<td>1.5</td>
+														<td><span>27,000,000</span></td>
+														<td></td>
+													</tr>
+													<tr>
+														<td>4</td>
+														<td>TGS 총괄본부 TGS 1팀</td>
+														<td>이희준</td>
+														<td>부장</td>
+														<td>1.0</td>
+														<td><span>18,000,000</span></td>
+														<td></td>
+													</tr>
+													<tr>
+														<td>5</td>
+														<td>TGS 총괄본부 TS 5팀</td>
+														<td>송석호</td>
+														<td>부장</td>
+														<td>1.5</td>
+														<td><span>15,900,000</span></td>
+														<td></td>
+													</tr>
+													<tr>
+														<td>6</td>
+														<td>TGS 총괄본부 TS B팀</td>
+														<td>배경복</td>
+														<td>부장</td>
+														<td>1.0</td>
+														<td><span>13,000,000</span></td>
+														<td></td>
+													</tr>
+													<tr>
+														<td>7</td>
+														<td>TGS 총괄본부 TS A팀</td>
+														<td>김동준</td>
+														<td>상무</td>
+														<td>2.0</td>
+														<td><span>12,000,000</span></td>
+														<td></td>
+													</tr>
+													<tr>
+														<td>8</td>
+														<td>TGS 총괄본부 TGS 3팀</td>
+														<td>서준호</td>
+														<td>상무</td>
+														<td>1.0</td>
+														<td><span>11,325,000</span></td>
+														<td></td>
+													</tr>
+													<tr>
+														<td>9</td>
+														<td>TGS 총괄본부 TGS 3팀</td>
+														<td>심상돈</td>
+														<td>이사</td>
+														<td>1.0</td>
+														<td><span>9,00,000</span></td>
+														<td></td>
+													</tr>
+													<tr>
+														<td>10</td>
+														<td>TGS 총괄본부 TGS 3팀</td>
+														<td>복형준</td>
+														<td>부장</td>
+														<td>1.0</td>
+														<td><span>9,00,000</span></td>
+														<td></td>
+													</tr>
+													<tr>
+														<td colspan="4"><strong>총 계</strong></td>
+														<td><strong>24.0</strong></td>
+														<td><strong><span>284,765,000</span></strong></td>
+														<td></td>
+													</tr>
+												</tbody>
+											</table>
+
+											<div class="box-area">
+												<strong>팀 시상 (팀 매출액 3억원 이상)</strong>
+												<p>1위 : 200만원, 2위 : 100만원</p>
+											</div>
+										</div>
+										<!-- // tab-contents -->
+									</div>
+									<!-- // tabmenu -->
+								</div>
+							</div>
+						</div>
+
+						<button type="button" class="btn-close" onclick="fn.popup('close', this);"><span class="blind">닫기</span><i class="svgicon svgicon-close"></i></button>
+					</div>
+				</article>
+				<hr id="popupLeaderBoard_end">
+				<!-- // 팝업 : 8월 영업실적 리더보드​​ -->
+
+
+			</div>
+			<!-- // 본문 영역 -->
+		</main>
+		<!-- // container -->
+
+		<!-- footer // -->
+		<footer id="footer"></footer>
+		<!-- // footer -->
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"> -->
+	<meta name="viewport" content="width=960">
+
+	<meta name="format-detection" content="telephone=no, email=no, address=no">
+
+	<meta name="robots" content="index, nofollow">
+	<meta name="description" content="페이지 설명">
+	<meta name="keywords" content="키워드, 키워드">
+
+	<meta property="og:site_name" content="한케이골프">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="title">
+	<meta property="og:image" content="image">
+	<meta property="og:url" content="url입력">
+	<meta property="og:description" content="페이지 설명">
+
+	<link rel="shortcut icon" type="image/x-icon" href="../../../imgs/sales/common/favicon.ico">
+	<link rel="apple-touch-icon" href="../../../imgs/sales/common/apple-touch-icon.png">
+
+	<!-- 공통 css, js -->
+	<link rel="stylesheet" href="../../../css/sales/lib/jquery-ui.min.css">
+	<link rel="stylesheet" href="../../../css/sales/lib/swiper-bundle.min.css">
+	<link rel="stylesheet" href="../../../css/sales/common.css">
+	<script src="../../../jscript/sales/lib/jquery-3.6.4.min.js"></script>
+	<script src="../../../jscript/sales/lib/jquery-ui.min.js"></script>
+	<script src="../../../jscript/sales/lib/jquery.ui.touch-punch.min.js"></script>
+	<script src="../../../jscript/sales/lib/swiper-bundle.min.js"></script>
+
+	<script src="../../../jscript/sales/lib/chart.min.js"></script>
+
+	<script src="../../../jscript/sales/lib/moment.min.js"></script>
+	<script src="../../../jscript/sales/lib/daterangepicker.js"></script>
+
+	<script src="../../../jscript/sales/function.ui.js"></script>
+	<script src="../../../jscript/sales/common.ui.js"></script>
+
+	<!-- 페이지별 css, js -->
+
+	<link rel="stylesheet" href="../../../css/sales/business.css">
+	<link rel="stylesheet" href="../../../css/sales/override.css">
+
+
+
+
+
+	<title> 일일예상구좌 등록​ - 한케이골프</title>
+
+
+</head>
+
+<body>
+
+	<noscript>
+		이 사이트를 이용하기 위해서 자바스크립트를 활성화 시킬 필요가 있습니다.
+		<a href="http://www.enable-javascript.com/ko/" target="_blank">브라우저에서 자바스크립트를 활성화하는 방법</a>을 참고 하세요.
+	</noscript>
+
+	<div id="wrap">
+		<a href="#contents" class="skip">본문 영역으로 바로가기</a>
+
+		<!-- header // -->
+
+		<header id="header">
+			<div class="inner">
+				<h1 class="logo"><a href="#"><span class="blind">Han k Golf For Sales</span></a></h1>
+
+				<div class="tab-swiper">
+					<div class="swiper">
+						<div class="swiper-wrapper">
+
+							<!--
+							.tab-swiper > .swiper-slide append, remove 후 swiper update를 위해 호출
+
+							default(첫번째 버튼 활성화):  fn.headerTabSwiper();
+							n번째 버튼 활성화: fn.headerTabSwiper(n-1);
+						-->
+							<div class="swiper-slide">
+								<a href="#" class="active">영업활동분석</a><!-- 활성화 class="active" -->
+								<button type="button" class="btn-close"><span class="blind">닫기</span><i class="svgicon svgicon-close"></i></button>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="util">
+					<div class="toggle-area">
+						<label class="check-toggle">
+							<strong class="toggle-txt on">영업활동 ON</strong>
+							<input type="checkbox" name="">
+							<strong class="toggle-txt off">영업활동 OFF</strong>
+						</label>
+					</div>
+					<button type="button" class="btn-masking" onclick="fn.toggleActive(this)"><span class="blind">마스킹해제</span></button><!-- 활성화 class="active" -->
+					<button type="button" class="btn-allmenu" onclick="fn.popup('open', '#popupAllMenu');"><span class="blind">전체 메뉴</span></button>
+				</div>
+			</div>
+		</header>
+
+		<!-- // header -->
+
+		<!-- container // -->
+		<main id="container">
+			<!-- 본문 영역 // -->
+			<div id="contents" class="business registration business-override"> <!-- 해당 depth별로 class명 추가 -->
+				<div class="title-area header">
+					<button type="button" class="btn-prev"><i class="svgicon svgicon-prev"><span class="blind">이전</span></i></button>
+					<h2 class="tit">일일예상구좌 등록​</h2>
+				</div>
+
+				<!-- 2025.02.03 수정 // -->
+				<!-- tabmenu // -->
+				<div class="tabmenu">
+					<div class="tab-ti full line">
+						<a href="#tabCont1" class="active">당일[2024.08.07]</a> <!-- 활성화 class="active" -->
+						<a href="#tabCont2">익일[2024.08.08]</a>
+					</div>
+
+					<!-- tab-contents // -->
+					<div id="tabCont1" class="tab-contents active">
+						<div class="inner">
+							<p><strong>당일[2024.08.07] 예상 구좌를 입력해주세요</strong></p>
+							<table>
+								<colgroup>
+									<col style="width: 180px;">
+									<col style="width: 100px;">
+									<col style="width: 240px;">
+								</colgroup>
+								<thead>
+									<tr>
+										<th>예상구좌</th>
+										<th>구좌수</th>
+										<th>구좌 추진사항</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>남산</td>
+										<td><input type="text" maxlength="4"></td>
+										<td><input type="text"></td>
+									</tr>
+									<tr>
+										<td>미션힐스 MH LUXURY</td>
+										<td><input type="text" maxlength="4"></td>
+										<td><input type="text"></td>
+									</tr>
+									<tr>
+										<td>미션힐스 MH GOLD</td>
+										<td><input type="text" maxlength="4"></td>
+										<td><input type="text"></td>
+									</tr>
+									<tr>
+										<td>빈펄 VIP</td>
+										<td><input type="text" maxlength="4"></td>
+										<td><input type="text"></td>
+									</tr>
+									<tr>
+										<td>빈펄 GOLD</td>
+										<td><input type="text" maxlength="4"></td>
+										<td><input type="text"></td>
+									</tr>
+									<tr class="type">
+										<td>양수도</td>
+										<td><input type="text" maxlength="4"></td>
+										<td><input type="text"></td>
+									</tr>
+									<tr class="type">
+										<td>승급</td>
+										<td><input type="text" maxlength="4"></td>
+										<td><input type="text"></td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="btns">
+								<!--// 2024-12-10 수정 -->
+								<button class="btn gray">취소</button>
+								<!-- 2024-12-10 수정 //-->
+								<button class="btn ">등록</button>
+							</div>
+						</div>
+					</div> <!-- 활성화 class="active" -->
+
+					<div id="tabCont2" class="tab-contents">
+						<div class="inner">
+							<p><strong>익일[2024.08.08] 예상 구좌를 입력해주세요</strong></p>
+							<table>
+								<colgroup>
+									<col style="width: 180px;">
+									<col style="width: 100px;">
+									<col style="width: 240px;">
+								</colgroup>
+								<thead>
+									<tr>
+										<th>예상구좌</th>
+										<th>구좌수</th>
+										<th>구좌 추진사항</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>남산</td>
+										<td><input type="text" maxlength="4"></td>
+										<td><input type="text"></td>
+									</tr>
+									<tr>
+										<td>미션힐스 MH LUXURY</td>
+										<td><input type="text" maxlength="4"></td>
+										<td><input type="text"></td>
+									</tr>
+									<tr>
+										<td>미션힐스 MH GOLD</td>
+										<td><input type="text" maxlength="4"></td>
+										<td><input type="text"></td>
+									</tr>
+									<tr>
+										<td>빈펄 VIP</td>
+										<td><input type="text" maxlength="4"></td>
+										<td><input type="text"></td>
+									</tr>
+									<tr>
+										<td>빈펄 GOLD</td>
+										<td><input type="text" maxlength="4"></td>
+										<td><input type="text"></td>
+									</tr>
+									<tr class="type">
+										<td>양수도</td>
+										<td><input type="text" maxlength="4"></td>
+										<td><input type="text"></td>
+									</tr>
+									<tr class="type">
+										<td>승급</td>
+										<td><input type="text" maxlength="4"></td>
+										<td><input type="text"></td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="btns">
+								<!--// 2024-12-10 수정 -->
+								<button class="btn gray">취소</button>
+								<!-- 2024-12-10 수정 //-->
+								<button class="btn ">등록</button>
+							</div>
+						</div>
+					</div>
+					<!-- // tab-contents -->
+				</div>
+				<!-- // tabmenu -->
+				<!-- // 2025.02.03 수정 -->
+			</div>
+			<!-- // 본문 영역 -->
+		</main>
+		<!-- // container -->
+
+		<!-- footer // -->
+		<footer id="footer"></footer>
+		<!-- // footer -->
+	</div>
+
+</body>
+
+</html>

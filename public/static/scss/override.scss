@@ -710,7 +710,7 @@
       background: linear-gradient(90deg, rgba(78, 226, 167, 0.80) 0%, rgba(18, 167, 225, 0.80) 100%);
       .view-select{
         .golflist{height:28px;width:151px;
-          .current{position:relative;height:28px;padding:4px 23px 4px 12px;background-color:$color2;border-radius:14px;background: rgba($color2, 0.50);
+          .current{position:relative;height:28px;padding:4px 23px 4px 12px;background-color:$color2;border-radius:14px;background: rgba($color2, 0.50);cursor:pointer;
             &::after{
               background-image: url(../../../static/imgs/sales/common/icon-arrow-view.svg);
               background-repeat: no-repeat;
@@ -726,20 +726,20 @@
               right:8px;
               top:50%;
               margin-top:-6px;
+              transition: all .125s ease-in-out;
             }
             .selected{@include ellipsis(1);color:$primary3;@include font(12px, 20px, 700);}
           }
-          .box{padding:0 8px 4px 12px;border-bottom-left-radius:8px;border-bottom-right-radius:8px;background-color:$color2;
+          .box{opacity:0;height:0;overflow:hidden;padding:0 8px 4px 12px;border-bottom-left-radius:8px;border-bottom-right-radius:8px;background-color:$color2;
             .list{
               li{padding:4px 0;
-                .name{color:$primary3;@include font(12px, 20px, 400);}
+                .name{display:block;color:$primary3;@include font(12px, 20px, 400);}
                 &.brand{padding:11px 0 12px;border-top:1px solid $color9;
                   &:first-of-type{padding-top:6px;border-top-width:0;}
-                  .name{font-weight:700;}
+                  &:last-child{padding-bottom:0;}
+                  .name{font-weight:500;}
                   .sub{
-                    li{padding:0;margin-top:8px;
-                      &:first-child{margin-top:10px;}
-                    }
+                    li{padding:0;margin-top:8px;}
                     .name{color:$color1;@include font(11px, 16px, 400);}
                   }
                 }
@@ -747,7 +747,11 @@
             }
           }
           &.open{
-            .current {border-radius:8px;border-bottom-left-radius:0;border-bottom-right-radius:0;background: rgba($color2, 1);}
+            .current{border-radius:8px;border-bottom-left-radius:0;border-bottom-right-radius:0;background: rgba($color2, 1);
+              &::after{transform:rotate(180deg);}
+            }
+            .box{opacity:1;height:auto;
+              transition: all 0.15s cubic-bezier(0.25, 0, 0.25, 1.75), opacity 0.1s linear;transform-origin: 50% 0;}
           }
         }
       }
@@ -769,7 +773,7 @@
           &:first-of-type{
             &::before{display:none;}
           }
-          .btn-tab{display:block;min-width:108px;color:$color2;@include font(14px, 22px 500);text-align:center;cursor:pointer;opacity:.7;}
+          .btn-tab{display:block;min-width:108px;color:$color2;@include font(14px, 22px, 500);text-align:center;cursor:pointer;opacity:.7;}
           &.swiper-slide-thumb-active{
             .btn-tab{font-weight:700;opacity:1;}
           }
@@ -783,6 +787,14 @@
     .detail-area{padding-top:44px;
       .swiper-slide{min-height:calc(100vh - 78px);
         .img + .img{margin-top:34px;}
+        .video{position:relative;pointer-events:none;max-width:none;max-height:none;width:100%;height:calc(100vh - 44px);
+          iframe, object, embed{pointer-events:none;position:absolute;top:0;left:0;width:100% !important;height:100% !important;border:none 0;padding:0;margin:0;}
+        }
+        .gallery{display:flex;align-items:center;justify-content:center;width:100%;height:calc(100vh - 44px);
+          .btn-gallery{padding-left:30px;padding-right:30px;
+            @include svg-icon('arrowright',16, $color: $color2, $margin: 14px 0 0 8px);
+          }
+        }
       }
     }
     .box-application{position:fixed;right:32px;bottom:40px;z-index:10;width:220px;
@@ -1181,6 +1193,21 @@
 
       .btn.line {
         color: $primary2;
+      }
+    }
+  }
+}
+
+.business{
+  &.business-override{
+    tr.type {
+      td, th {color:$primary4;
+        span {color:$primary4;}
+      }
+    }
+    &.registration{
+      tr.type {
+        td{color:$primary4;}
       }
     }
   }
