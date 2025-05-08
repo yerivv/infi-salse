@@ -69,7 +69,7 @@
 }
 .contract-override.view .membership-list .membership-wrap .contract-info2 .info-wrap .payment-info.contract > li:has(.wrap) .wrap > span {
   display: block;
-  width: 160px;
+  width: calc(100% - 410px);
   color: #596584;
   font-size: 14px;
   font-weight: 400;
@@ -464,6 +464,86 @@
   height: 30px;
   font-size: 11px;
   line-height: 28px;
+}
+.contract-override.view .membership-list .membership-item .info-list .info-item ul li > p {
+  width: calc(100% - 82px);
+}
+.contract-override.view .membership-list .membership-item .info-list .info-item ul.company li > span {
+  width: 90px;
+}
+.contract-override.view .membership-list .membership-item .info-list .info-item ul.company li > p {
+  width: calc(100% - 106px);
+}
+.contract-override.view .btns.bottom .btn {
+  max-width: 294px;
+}
+.contract-override .list-board .contract-list li .product div.info {
+  position: relative;
+  text-align: left;
+  width: calc(100% - 150px);
+  margin-left: -21px;
+}
+.contract-override .list-board .contract-list li .product div.info::before {
+  content: "";
+  width: 21px;
+  height: 100%;
+  background-color: #edf1f8;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.contract-override .list-board .contract-list li .product div.info p {
+  position: relative;
+  display: inline-block;
+  padding-left: 21px;
+  margin-left: 0;
+  color: #596584;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+}
+.contract-override .list-board .contract-list li .product div.info p::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 1px;
+  height: 10px;
+  background-color: #dddddd;
+  vertical-align: top;
+}
+.contract-override .list-board .contract-list li .product div.info p::before {
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+}
+.contract-override .list-board .contract-list li .product div.info p:first-of-type {
+  padding-left: 21px;
+  margin-left: 0;
+}
+.contract-override .list-board .contract-list li .product div.info p:first-of-type::before {
+  content: "";
+}
+.contract-override .list-board .contract-list li .product div.info p span {
+  margin-left: 4px;
+  color: #091b4d;
+  font-weight: 500;
+  line-height: 22px;
+}
+.contract-override .list-board .contract-list li .product .tooltip-wrap .tooltip .cont {
+  text-align: left;
+}
+.contract-override .list-board .contract-list li .product .tooltip-wrap .tooltip .cont p {
+  display: block;
+}
+
+.customer-override .list-content .inner .list-area .customer-list .list-item a div.badge.check span {
+  color: #002394;
+}
+.customer-override .list-content .inner .list-area .customer-list .list-item a div.badge.other span {
+  color: #17918A;
 }
 
 .membership.total-new .btn.green {
@@ -1227,6 +1307,9 @@
   padding-right: 32px;
   border-top: 1px solid #eeeeee;
 }
+.membership.recommend-new .recommend-area .btns.bottom .btn-skip {
+  width: auto;
+}
 .membership .recommends {
   display: flex;
   flex-wrap: wrap;
@@ -1986,4 +2069,107 @@
 }
 .business.business-override.registration tr.type td {
   color: #4673FF;
+}
+
+.main.main-override .sub-title h3 span.txt {
+  margin-left: 0;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+}
+.main.main-override .table .table-body .table-item.type {
+  color: #4673FF;
+}
+.main.main-override .table .table-body .table-item.type strong {
+  color: #4673FF;
+}
+.main.main-override .table .table-right .table-coloum.type strong {
+  color: #4673FF;
+}
+.main.main-override .table.sale-table .table-header .right {
+  background-color: rgba(243, 247, 254, 0.8);
+}
+.main.main-override .table.performance-table::after {
+  display: none;
+  right: 0;
+  width: 80px;
+  box-shadow: none;
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0.5) 10%, rgba(255, 255, 255, 0) 100%);
+}
+.main.main-override .table.performance-table::before {
+  left: 220px;
+}
+.main.main-override .table.performance-table .swiper-button-next {
+  right: 6px;
+  top: 50%;
+}
+.main.main-override .table.performance-table .swiper-button-prev {
+  left: 230px;
+  top: 50%;
+}
+.main.main-override .table.performance-table .table-header .table-head:not(.swiper-slide):nth-of-type(1) .table-item {
+  width: 223px;
+}
+.main.main-override .table.performance-table .table-header .table-head-swiper {
+  width: calc(100% - 224px);
+}
+.main.main-override .table.performance-table .table-header .table-head-swiper .swiper .swiper-wrapper .type {
+  background-color: rgba(243, 247, 254, 0.8);
+}
+.main.main-override .table.performance-table .table-header .table-head-swiper .swiper .swiper-wrapper .type .txt1 {
+  padding-right: 0;
+  text-align: right;
+}
+.main.main-override .table.performance-table .table-header .table-head-swiper .swiper .swiper-wrapper .type .txt2 {
+  padding-left: 0;
+  text-align: left;
+}
+.main.main-override .table.performance-table .table-header .table-head-swiper .swiper .swiper-wrapper .swiper-slide:nth-of-type(3) .table-item:first-of-type {
+  border-right: 1px solid #eeeeee;
+}
+.main.main-override .table.performance-table .table-body .table-left {
+  width: 223px;
+}
+.main.main-override .table.performance-table .table-body .table-swiper {
+  width: calc(100% - 224px);
+}
+.main.main-override .table.performance-table .table-body .table-swiper .swiper .swiper-wrapper .swiper-slide {
+  text-align: center;
+}
+.main.main-override .table.performance-table .table-body .table-swiper .swiper .swiper-wrapper .swiper-slide:last-of-type {
+  text-align: center;
+}
+.main.main-override .table.performance-table .table-footer .table-left {
+  width: 223px;
+}
+.main.main-override .table.performance-table .table-footer .table-footer-wrap .table-item:nth-of-type(1) {
+  width: 223px;
+}
+.main.main-override .table.performance-table .table-footer .table-footer-wrap .table-footer-swiper {
+  width: calc(100% - 224px);
+  text-align: center;
+}
+.main.main-override .table.performance-table .table-footer .table-footer-wrap .table-footer-swiper .swiper .swiper-wrapper .swiper-slide {
+  text-align: center;
+}
+.main.main-override .table.performance-table .table-footer .table-footer-wrap .table-footer-swiper .swiper .swiper-wrapper .swiper-slide:last-of-type {
+  text-align: center;
+}
+.main.main-override .table.performance-table .table-footer .table-footer-wrap .table-footer-swiper .swiper .swiper-wrapper .swiper-slide.type1 em {
+  color: #002394;
+}
+.main.main-override .table.performance-table .table-footer .table-footer-wrap .table-footer-swiper .swiper .swiper-wrapper .swiper-slide.type2 em {
+  color: #4673FF;
+}
+.main.main-override .chart-area .nodata {
+  color: #596584;
+}
+.main.main-override.vip .manager {
+  padding-left: 6px !important;
+  padding-right: 6px !important;
+  word-break: break-all;
+}
+.main.main-override.vip .manager.narrow {
+  padding-left: 3px !important;
+  padding-right: 3px !important;
 }
